@@ -7,16 +7,16 @@ import XCTest
 @testable import Kit
 
 class CoreBoxLayoutTests: XCTestCase {
-    private func layout(_ groups: [Int], bar: CGFloat = 10, gap: CGFloat = 6, cluster: CGFloat = 4, max: CGFloat = 300, scale: CGFloat = 2) -> CoreBoxLayout {
+    private func layout(_ groups: [Int], bar: CGFloat = 9, gap: CGFloat = 4, cluster: CGFloat = 7, max: CGFloat = 300, scale: CGFloat = 2) -> CoreBoxLayout {
         CoreBoxLayout(groups: groups, barWidth: bar, gap: gap, clusterGap: cluster, maxWidth: max, height: 18, scale: scale)
     }
 
     func testDefaultsForThisMac() {
-        let l = layout([12, 4])
+        let l = layout([4, 12])
         XCTAssertEqual(l.boxes.count, 16)
-        XCTAssertEqual(l.width, 254)
-        XCTAssertEqual(l.boxes[1].minX - l.boxes[0].minX, 16)
-        XCTAssertEqual(l.boxes[12].minX - l.boxes[11].minX, 20)
+        XCTAssertEqual(l.width, 211)
+        XCTAssertEqual(l.boxes[1].minX - l.boxes[0].minX, 13)
+        XCTAssertEqual(l.boxes[4].minX - l.boxes[3].minX, 20)
     }
 
     func testEmptyAndSingle() {
@@ -24,7 +24,7 @@ class CoreBoxLayoutTests: XCTestCase {
         XCTAssertEqual(layout([0]).boxes.count, 0)
         let one = layout([1])
         XCTAssertEqual(one.boxes.count, 1)
-        XCTAssertEqual(one.width, 10)
+        XCTAssertEqual(one.width, 9)
     }
 
     func testEveryCoreCountStaysSeparateAndOrdered() {
@@ -91,6 +91,29 @@ class CoreBoxLayoutTests: XCTestCase {
         }
         NSGraphicsContext.restoreGraphicsState()
         return rep
+    }
+    
+    func testCoreBoxesAreTallerOnlyWhileShown() {
+        let chart = BarChart(title: "CoreBoxRenderTest", config: ["Core boxes": true])
+        chart.renderScale = 2
+        let plain = chart.frame
+        
+        chart.setCoreGroups([1, 1])
+        XCTAssertEqual(chart.frame.height, CoreBoxLayout.boxHeight)
+        XCTAssertEqual(chart.frame.midY, plain.midY, "stays centered")
+        
+        chart.setCoreGroups(nil)
+        XCTAssertEqual(chart.frame, plain)
+    }
+    
+    func testCoreFrameLandsOnDevicePixels() {
+        for scale: CGFloat in [1, 2, 3] {
+            let chart = BarChart(title: "CoreBoxRenderTest", config: ["Core boxes": true])
+            chart.renderScale = scale
+            chart.setCoreGroups([1, 1])
+            let y = chart.frame.origin.y * scale
+            XCTAssertEqual(y.rounded(), y, accuracy: 0.0001)
+        }
     }
     
     func testOutlinesAreCrispAtOneAndTwoTimes() {

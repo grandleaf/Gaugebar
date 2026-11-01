@@ -28,9 +28,9 @@ public class BarChart: WidgetWrapper {
     private var coreBoxesSupported: Bool = false
     private var coreBoxesState: Bool = true
     private var coreStackState: Bool = true
-    private var coreBarWidth: Int = 10
-    private var coreGap: Int = 6
-    private var coreClusterGap: Int = 4
+    private var coreBarWidth: Int = 9
+    private var coreGap: Int = 4
+    private var coreClusterGap: Int = 7
     private var coreMaxWidth: Int = 300
     private var _coreGroups: [Int]? = nil
     internal var renderScale: CGFloat? = nil
@@ -251,8 +251,35 @@ public class BarChart: WidgetWrapper {
         self.setWidth(width)
     }
     
+    private var coreScale: CGFloat {
+        self.renderScale ?? self.window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 1
+    }
+    
+    // Core boxes stand taller than the other widgets, so only they get a taller frame.
+    private func updateCoreFrame() {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async { [weak self] in self?.updateCoreFrame() }
+            return
+        }
+        
+        let barHeight = Constants.Widget.height
+        var target = self.frame
+        if self.queue.sync(execute: { self._coreGroups }) != nil {
+            let scale = max(self.coreScale, 1)
+            target.size.height = CoreBoxLayout.boxHeight
+            target.origin.y = (((barHeight - CoreBoxLayout.boxHeight) / 2) * scale).rounded() / scale
+        } else {
+            target.size.height = barHeight - (2*Constants.Widget.margin.y)
+            target.origin.y = Constants.Widget.margin.y
+        }
+        
+        if target != self.frame {
+            self.frame = target
+        }
+    }
+    
     private func drawCoreBoxes(_ value: [[ColorValue]], groups: [Int], colorZones: colorZones) {
-        let scale = self.renderScale ?? self.window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 1
+        let scale = self.coreScale
         let dark = NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
         var origin: CGFloat = 0
         
@@ -321,6 +348,7 @@ public class BarChart: WidgetWrapper {
     public override func viewDidChangeBackingProperties() {
         super.viewDidChangeBackingProperties()
         if self.coreBoxesEnabled {
+            self.updateCoreFrame()
             self.redraw()
         }
     }
@@ -332,6 +360,7 @@ public class BarChart: WidgetWrapper {
             return true
         }
         if updated {
+            self.updateCoreFrame()
             self.redraw()
         }
     }
@@ -419,10 +448,10 @@ public class BarChart: WidgetWrapper {
                     action: #selector(self.changeCoreBarWidth), values: [4, 5, 6, 7, 8, 9, 10, 12], selected: self.coreBarWidth
                 )),
                 PreferencesRow(localizedString("Box gap"), component: self.coreSizeView(
-                    action: #selector(self.changeCoreGap), values: [1, 2, 3, 4, 5, 6, 8], selected: self.coreGap
+                    action: #selector(self.changeCoreGap), values: [1, 2, 3, 4, 5, 6, 7, 8], selected: self.coreGap
                 )),
                 PreferencesRow(localizedString("Cluster gap"), component: self.coreSizeView(
-                    action: #selector(self.changeCoreClusterGap), values: [0, 2, 4, 6, 8, 10], selected: self.coreClusterGap
+                    action: #selector(self.changeCoreClusterGap), values: [0, 2, 4, 6, 7, 8, 10], selected: self.coreClusterGap
                 )),
                 PreferencesRow(localizedString("Maximum width"), component: self.coreSizeView(
                     action: #selector(self.changeCoreMaxWidth), values: [120, 160, 200, 250, 300, 400, 500], selected: self.coreMaxWidth

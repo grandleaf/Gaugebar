@@ -11,8 +11,8 @@ Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrov
 ### Per-core meter
 Each core gets its own outlined box, so every core stays identifiable even at 0%.
 
-- Boxes fill from the bottom, with system load under user load.
-- Cores are ordered by cluster, with a larger gap between clusters.
+- Boxes are 19 points tall and fill from the bottom, with system load under user load.
+- Efficiency cores come first, then performance cores, with a larger gap between clusters.
 - The outline follows the menu bar's appearance, so it matches the menu bar text.
 - On Macs with many cores, boxes shrink to fit the maximum width, down to 3 points wide with 1 point gaps.
 
@@ -22,12 +22,12 @@ The CPU bar chart with per-core usage is the default widget. Open the settings f
 |---|---|
 | Separate core boxes | On |
 | Stack system and user | On. Turn it off to use the widget's **Color** option instead |
-| Box width | 10 pt |
-| Box gap | 6 pt |
-| Cluster gap | 4 pt, added to the box gap |
+| Box width | 9 pt |
+| Box gap | 4 pt |
+| Cluster gap | 7 pt, added to the box gap |
 | Maximum width | 300 pt |
 
-The defaults take about 254 points for 16 cores. If that is too much menu bar space, 6 pt boxes with 3 pt gaps take about 145 points.
+The defaults take about 211 points for 16 cores. If that is too much menu bar space, 6 pt boxes with 3 pt gaps take about 148 points.
 
 The **Cluster** color keeps cluster coloring, using a darker shade for system load.
 

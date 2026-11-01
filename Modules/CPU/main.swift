@@ -276,7 +276,7 @@ public class CPU: Module {
     /// Per-core values ordered by cluster, with the size of each cluster.
     private func coreBoxValues(_ value: CPU_Load, cores: [core_s], widget: BarChart) -> ([[ColorValue]], [Int]) {
         let count = value.usagePerCore.count
-        let rank: (core_s) -> Int = { $0.type == .super ? 0 : $0.type == .efficiency ? 2 : 1 }
+        let rank: (core_s) -> Int = { $0.type == .efficiency ? 0 : $0.type == .super ? 2 : 1 }
         
         var order = Array(0..<count)
         var groups = [count]

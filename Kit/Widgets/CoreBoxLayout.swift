@@ -8,6 +8,7 @@
 import Foundation
 
 public struct CoreBoxLayout {
+    public static let boxHeight: CGFloat = 19
     public static let minimumBarWidth: CGFloat = 3
     public static let minimumGap: CGFloat = 1
 
@@ -46,6 +47,13 @@ public struct CoreBoxLayout {
             bar = max(snapDown(bar * ratio), Self.minimumBarWidth)
             space = max(snapDown(space * ratio), Self.minimumGap)
             extra = max(snapDown(extra * ratio), 0)
+
+            // Boxes stopped at their minimum, so the gaps have to give up the rest.
+            let used = CGFloat(count) * bar + gaps * space + clusterGaps * extra
+            if used > maxWidth && gaps > 0 {
+                let room = maxWidth - CGFloat(count) * bar - clusterGaps * extra
+                space = max(snapDown(room / gaps), Self.minimumGap)
+            }
 
             // Rounding down can leave room to spare, so give it back to the boxes.
             let step = 1 / pixels
