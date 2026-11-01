@@ -289,11 +289,15 @@ public class CPU: Module {
         let stacked = widget.coreStackEnabled
         let system = value.systemPerCore ?? []
         let user = value.userPerCore ?? []
+        let systemColor = self.systemColor
+        let userColor = self.userColor
+        let clusterColors: [coreType: NSColor]? = widget.colorState == .cluster
+            ? [.efficiency: self.eCoresColor, .performance: self.pCoresColor, .super: self.sCoresColor]
+            : nil
         let val: [[ColorValue]] = order.map { i in
             var clusterColor: NSColor? = nil
-            if widget.colorState == .cluster {
-                let type = cores.first(where: { $0.id == i })?.type
-                clusterColor = type == .efficiency ? self.eCoresColor : type == .super ? self.sCoresColor : self.pCoresColor
+            if let clusterColors {
+                clusterColor = clusterColors[cores.first(where: { $0.id == i })?.type ?? .performance] ?? self.pCoresColor
             }
             guard stacked, system.indices.contains(i), user.indices.contains(i) else {
                 return [ColorValue(value.usagePerCore[i], color: clusterColor)]
@@ -304,7 +308,7 @@ public class CPU: Module {
                     ColorValue(user[i], color: color)
                 ]
             }
-            return [ColorValue(system[i], color: self.systemColor), ColorValue(user[i], color: self.userColor)]
+            return [ColorValue(system[i], color: systemColor), ColorValue(user[i], color: userColor)]
         }
         return (val, groups)
     }
