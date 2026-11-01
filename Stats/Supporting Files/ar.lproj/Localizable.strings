@@ -101,14 +101,14 @@
 "Enable" = "تفعيل"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "إعدادات الإحصاءات";
+"Stats Setup" = "إعدادات Gaugebar";
 "Previous" = "السابق";
 "Previous page" = "الصفحة السابقة";
 "Next" = "التالي";
 "Next page" = "الصفحة التالية";
 "Finish" = "إنهاء";
 "Finish setup" = "إنهاء الإعداد";
-"Welcome to Stats" = "مرحبًا بك في الإحصاءات";
+"Welcome to Stats" = "مرحبًا بك في Gaugebar";
 "welcome_message" = "شكرًا لاستخدام الإحصاءات، أداة مراقبة نظام macOS المجانية ومفتوحة المصدر لشريط القوائم الخاص بك.";
 "Select preset" = "اختر الإعداد المسبق"; // gemma4:31b
 "select_preset_message" = "اختر مجموعة أولية من الوحدات. يمكنك تخصيص كل شيء لاحقاً في الإعدادات."; // gemma4:31b
@@ -129,12 +129,12 @@
 
 // Alerts
 "New version available" = "إصدار جديد متاح";
-"Click to install the new version of Stats" = "انقر لتثبيت الإصدار الجديد من الإحصاءات";
+"Click to install the new version of Stats" = "انقر لتثبيت الإصدار الجديد من Gaugebar";
 "Successfully updated" = "تم التحديث بنجاح";
-"Stats was updated to v" = "تم تحديث الإحصاءات إلى الإصدار v%0";
+"Stats was updated to v" = "تم تحديث Gaugebar إلى الإصدار v%0";
 "Reset settings text" = "سيتم إعادة ضبط جميع إعدادات التطبيق وسيتم إعادة تشغيل التطبيق. هل تريد المتابعة؟";
 "Deregister text" = "سيتم إلغاء تسجيل الجهاز من System Stats وسيتم تسجيل خروجك. هل أنت متأكد أنك تريد القيام بذلك؟"; // gemma4:31b-it-qat
-"Support text" = "شكرًا لك على استخدامك ل Stats! \n\nيستغرق الحفاظ على هذا المشروع مفتوح المصدر وتحسينه وقتًا وموارد. دعمكم يساعدنا على الاستمرار في توفير تطبيق مجاني وموثوق للجميع. كل جزء صغير يساعدنا!";
+"Support text" = "شكرًا لك على استخدامك ل Gaugebar! \n\nيستغرق الحفاظ على هذا المشروع مفتوح المصدر وتحسينه وقتًا وموارد. دعمكم يساعدنا على الاستمرار في توفير تطبيق مجاني وموثوق للجميع. كل جزء صغير يساعدنا!";
 
 // Settings
 "Open Activity Monitor" = "فتح مراقب النشاط";
@@ -163,8 +163,8 @@
 "Import settings" = "استيراد الإعدادات"; // translategemma:4b
 "Export settings" = "تصدير الإعدادات"; // gemma4:31b
 "Reset settings" = "إعادة ضبط الإعدادات";
-"Pause the Stats" = "إيقاف الإحصاءات";
-"Resume the Stats" = "استئناف الإحصاءات";
+"Pause the Stats" = "إيقاف Gaugebar";
+"Resume the Stats" = "استئناف Gaugebar";
 "Combined modules" = "الوحدات المجتمعة";
 "Show icon instead of widgets" = "إظهار الأيقونة بدلاً من عناصر الواجهة";
 "Combined details" = "تفاصيل مجمعة"; // translategemma:4b
@@ -187,11 +187,11 @@
 "Display" = "شاشة"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "تم تثبيت أحدث إصدار من الإحصاءات";
+"The latest version of Stats installed" = "تم تثبيت أحدث إصدار من Gaugebar";
 "Downloading..." = "جار التحميل...";
 "Installing..." = "جارٍ التثبيت..."; // qwen3.8:27b
 "Updating..." = "جارٍ التحديث..."; // qwen3.8:27b
-"Stats will restart automatically" = "سيتم إعادة تشغيل Stats تلقائيًا"; // qwen3.8:27b
+"Stats will restart automatically" = "سيتم إعادة تشغيل Gaugebar تلقائيًا"; // qwen3.8:27b
 "Current version: " = "الإصدار الحالي:  ";
 "Latest version: " = "الإصدار الأحدث:    ";
 "Changelog" = "سجل التغييرات"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "إلغاء تثبيت مساعد المروحة";
 "Approve in System Settings ▸ Login Items" = "وافق في إعدادات النظام ▸ عناصر تسجيل الدخول"; // gemma4:31b
 "Fan helper needs your approval" = "مساعد المروحة يتطلب موافقتك"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "للتحكم في المراوح، قم بتفعيل Stats في إعدادات النظام ▸ عناصر تسجيل الدخول."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "للتحكم في المراوح، قم بتفعيل Gaugebar في إعدادات النظام ▸ عناصر تسجيل الدخول."; // gemma4:31b
 "Open Login Items" = "فتح عناصر تسجيل الدخول"; // gemma4:31b
 "Could not enable the fan helper" = "تعذر تفعيل مساعد المروحة"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "افتح إعدادات النظام ▸ عناصر تسجيل الدخول، وتأكد من السماح لـ Stats في الخلفية، ثم حاول مرة أخرى."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "افتح إعدادات النظام ▸ عناصر تسجيل الدخول، وتأكد من السماح لـ Gaugebar في الخلفية، ثم حاول مرة أخرى."; // gemma4:31b
 "Fan value" = "قيمة المروحة";
 "Turn off fan" = "إيقاف تشغيل المروحة";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "أنت على وشك إيقاف تشغيل المروحة. هذا ليس إجراءً مُوصى به يمكن أن يتسبب في تلف جهازك، هل تريد بالتأكيد القيام بذلك؟";

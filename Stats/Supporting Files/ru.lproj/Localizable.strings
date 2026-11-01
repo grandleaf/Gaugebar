@@ -101,15 +101,15 @@
 "Enable" = "Включить"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Настройки Stats";
+"Stats Setup" = "Настройки Gaugebar";
 "Previous" = "Назад";
 "Previous page" = "Предыдущая страница";
 "Next" = "Вперёд";
 "Next page" = "Следующая страница";
 "Finish" = "Завершить";
 "Finish setup" = "Завершить настройку";
-"Welcome to Stats" = "Добро пожаловать в Stats";
-"welcome_message" = "Спасибо за использование Stats, бесплатного системного монитора macOS с открытым исходным кодом для системного меню.";
+"Welcome to Stats" = "Добро пожаловать в Gaugebar";
+"welcome_message" = "Спасибо за использование Gaugebar, бесплатного системного монитора macOS с открытым исходным кодом для системного меню.";
 "Select preset" = "Выберите предустановку";
 "select_preset_message" = "Выберите начальный набор модулей. Все остальные параметры можно будет настроить позже в разделе «Настройки».";
 "Default" = "По умолчанию";
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Проверять наличие новой версии каждый месяц (раз в месяц)";
 "Never check for updates (not recommended)" = "Никогда не проверять наличие обновлений (не рекомендуется)";
 "The configuration is completed" = "Настройка завершена";
-"finish_setup_message" = "Все готово! \n Stats — это инструмент с открытым исходным кодом, он бесплатный и всегда будет бесплатным. \n Если вам нравится, вы можете поддержать проект, это всегда ценно!";
+"finish_setup_message" = "Все готово! \n Gaugebar — это инструмент с открытым исходным кодом, он бесплатный и всегда будет бесплатным. \n Если вам нравится, вы можете поддержать проект, это всегда ценно!";
 
 // Alerts
 "New version available" = "Доступна новая версия";
-"Click to install the new version of Stats" = "Нажмите, чтобы установить новую версию Stats";
+"Click to install the new version of Stats" = "Нажмите, чтобы установить новую версию Gaugebar";
 "Successfully updated" = "Успешно обновлено";
-"Stats was updated to v" = "Stats обновлено до v%0";
+"Stats was updated to v" = "Gaugebar обновлено до v%0";
 "Reset settings text" = "Все настройки приложения будут сброшены, и приложение будет перезапущено. Вы уверены, что хотите это сделать?";
 "Deregister text" = "Компьютер будет удален из System Stats, и вы выйдете из системы. Вы уверены, что хотите это сделать?";
-"Support text" = "Спасибо за использование Stats.\n\n Поддержание и улучшение этого проекта с открытым исходным кодом требует времени и ресурсов. Ваша поддержка помогает нам продолжать предоставлять бесплатное и надежное приложение для всех.\n\nЕсли вы находите Stats полезным, пожалуйста, подумайте о том, чтобы сделать взнос. Каждый маленький кусочек помогает!";
+"Support text" = "Спасибо за использование Gaugebar.\n\n Поддержание и улучшение этого проекта с открытым исходным кодом требует времени и ресурсов. Ваша поддержка помогает нам продолжать предоставлять бесплатное и надежное приложение для всех.\n\nЕсли вы находите Gaugebar полезным, пожалуйста, подумайте о том, чтобы сделать взнос. Каждый маленький кусочек помогает!";
 
 // Settings
 "Open Activity Monitor" = "Открыть Мониторинг системы";
@@ -163,8 +163,8 @@
 "Import settings" = "Импортировать настройки";
 "Export settings" = "Экспортировать настройки";
 "Reset settings" = "Сбросить настройки";
-"Pause the Stats" = "Приостановить Stats";
-"Resume the Stats" = "Возобновить Stats";
+"Pause the Stats" = "Приостановить Gaugebar";
+"Resume the Stats" = "Возобновить Gaugebar";
 "Combined modules" = "Комбинированные модули";
 "Show icon instead of widgets" = "Показывать значок вместо виджетов";
 "Combined details" = "Комбинированные детали";
@@ -191,7 +191,7 @@
 "Downloading..." = "Скачивание...";
 "Installing..." = "Установка..."; // qwen3.8:27b
 "Updating..." = "Обновление..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats будет автоматически перезапущен"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar будет автоматически перезапущен"; // qwen3.8:27b
 "Current version: " = "Текущая версия:      ";
 "Latest version: " = "Последняя версия:  ";
 "Changelog" = "Журнал изменений"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Удалить помощник для вентилятора";
 "Approve in System Settings ▸ Login Items" = "Разрешить в Системных настройках ▸ Элементы входа"; // qwen3.8:27b
 "Fan helper needs your approval" = "Помощник вентилятора требует вашего разрешения"; // qwen3.8:27b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Чтобы управлять вентиляторами, включите Stats в Системных настройках ▸ Элементы входа."; // qwen3.8:27b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Чтобы управлять вентиляторами, включите Gaugebar в Системных настройках ▸ Элементы входа."; // qwen3.8:27b
 "Open Login Items" = "Открыть элементы входа"; // qwen3.8:27b
 "Could not enable the fan helper" = "Не удалось включить помощник вентилятора"; // qwen3.8:27b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Откройте Системные настройки ▸ Элементы входа, убедитесь, что Stats разрешён в фоновом режиме, затем повторите попытку."; // qwen3.8:27b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Откройте Системные настройки ▸ Элементы входа, убедитесь, что Gaugebar разрешён в фоновом режиме, затем повторите попытку."; // qwen3.8:27b
 "Fan value" = "Значение вентилятора";
 "Turn off fan" = "Выключить вентилятор";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Вы собираетесь выключить вентилятор. Это не рекомендуемое действие, которое может сломать ваш Mac. Вы уверены, что хотите это сделать?";

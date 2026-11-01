@@ -1,0 +1,7 @@
+// Project-wide Gaugebar build settings.
+// Your Apple team ID goes in Config/Local.xcconfig, which git ignores.
+// Copy Config/Local.example.xcconfig to Config/Local.xcconfig to start.
+
+DEVELOPMENT_TEAM =
+
+#include? "Local.xcconfig"

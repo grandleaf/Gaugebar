@@ -101,15 +101,15 @@
 "Enable" = "启用"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats设置";
+"Stats Setup" = "Gaugebar设置";
 "Previous" = "上一步";
 "Previous page" = "上一页";
 "Next" = "下一步";
 "Next page" = "下一页";
 "Finish" = "完成";
 "Finish setup" = "完成设置";
-"Welcome to Stats" = "欢迎使用Stats";
-"welcome_message" = "感谢你使用Stats，一个免费的开源macOS菜单栏系统监视器。";
+"Welcome to Stats" = "欢迎使用Gaugebar";
+"welcome_message" = "感谢你使用Gaugebar，一个免费的开源macOS菜单栏系统监视器。";
 "Select preset" = "选择预设"; // gemma4:31b
 "select_preset_message" = "选择一组初始模块。您稍后可以在“设置”中自定义所有内容。"; // gemma4:31b
 "Default" = "默认"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "每月检查一次新版本（一月一次）";
 "Never check for updates (not recommended)" = "不要检查更新（不推荐）";
 "The configuration is completed" = "配置完成";
-"finish_setup_message" = "设置完成！Stats是一个开源且永远免费的工具。如果你喜欢它，你可以支持这个项目，非常感谢!";
+"finish_setup_message" = "设置完成！Gaugebar是一个开源且永远免费的工具。如果你喜欢它，你可以支持这个项目，非常感谢!";
 
 // Alerts
 "New version available" = "新版本可用";
-"Click to install the new version of Stats" = "点击安装Stats的新版本";
+"Click to install the new version of Stats" = "点击安装Gaugebar的新版本";
 "Successfully updated" = "更新成功";
-"Stats was updated to v" = "Stats已更新到 v%0";
+"Stats was updated to v" = "Gaugebar已更新到 v%0";
 "Reset settings text" = "应用程序的所有设置将会被重置，应用程序也将重新启动。你确定要这么做吗？";
 "Deregister text" = "这台机器将从 System Stats 中注销，并且您将被登出。您确定要这样做吗？"; // gemma4:31b-it-qat
-"Support text" = "感谢您使用Stats！\n\n 维护和改进这个开源项目需要花费时间和资源。您的支持能帮助我们继续给每个人提供这样免费且可靠的应用程序。\n\n如果您觉得Stats对您有帮助，请考虑给我们一份捐助。即使是一点一滴都有很大的帮助！";
+"Support text" = "感谢您使用Gaugebar！\n\n 维护和改进这个开源项目需要花费时间和资源。您的支持能帮助我们继续给每个人提供这样免费且可靠的应用程序。\n\n如果您觉得Gaugebar对您有帮助，请考虑给我们一份捐助。即使是一点一滴都有很大的帮助！";
 
 // Settings
 "Open Activity Monitor" = "打开活动监视器";
@@ -163,8 +163,8 @@
 "Import settings" = "导入设置";
 "Export settings" = "导出设置";
 "Reset settings" = "初始化所有设置";
-"Pause the Stats" = "暂停Stats";
-"Resume the Stats" = "恢复Stats";
+"Pause the Stats" = "暂停Gaugebar";
+"Resume the Stats" = "恢复Gaugebar";
 "Combined modules" = "合并模块";
 "Show icon instead of widgets" = "显示图标而非小组件";
 "Combined details" = "合并详情";
@@ -187,11 +187,11 @@
 "Display" = "显示器"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "已安装最新版Stats";
+"The latest version of Stats installed" = "已安装最新版Gaugebar";
 "Downloading..." = "下载中...";
 "Installing..." = "正在安装..."; // qwen3.8:27b
 "Updating..." = "正在更新..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats 将自动重启"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar 将自动重启"; // qwen3.8:27b
 "Current version: " = "当前版本：";
 "Latest version: " = "最新版本：";
 "Changelog" = "更新日志"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "卸载风扇控制程序";
 "Approve in System Settings ▸ Login Items" = "在系统设置 ▸ 登录项中批准"; // gemma4:31b
 "Fan helper needs your approval" = "风扇辅助工具需要您的批准"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "若要控制风扇，请在“系统设置”▸“登录项”中启用 Stats。"; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "若要控制风扇，请在“系统设置”▸“登录项”中启用 Gaugebar。"; // gemma4:31b
 "Open Login Items" = "打开登录项"; // gemma4:31b
 "Could not enable the fan helper" = "无法启用风扇助手"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "打开“系统设置” ▸ “登录项”，确保 Stats 已允许在后台运行，然后重试。"; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "打开“系统设置” ▸ “登录项”，确保 Gaugebar 已允许在后台运行，然后重试。"; // gemma4:31b
 "Fan value" = "风扇转数";
 "Turn off fan" = "禁用风扇";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "你想禁用你的风扇，这可能损害你的Mac。不推荐进行这个操作，你确定要继续吗？";

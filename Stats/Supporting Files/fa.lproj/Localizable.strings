@@ -101,15 +101,15 @@
 "Enable" = "فعال کردن"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "نصب Stats";
+"Stats Setup" = "نصب Gaugebar";
 "Previous" = "قبلی";
 "Previous page" = "صفحه قبل";
 "Next" = "بعدی";
 "Next page" = "صفحه بعد";
 "Finish" = "پایان";
 "Finish setup" = "پایان نصب";
-"Welcome to Stats" = "به Stats خوش آمدید";
-"welcome_message" = "ممنون از اینکه از Stats که یک اپ مانیتور کردن سیستم برای منو بار مک‌او‌اس هست استفاده می کنید.";
+"Welcome to Stats" = "به Gaugebar خوش آمدید";
+"welcome_message" = "ممنون از اینکه از Gaugebar که یک اپ مانیتور کردن سیستم برای منو بار مک‌او‌اس هست استفاده می کنید.";
 "Select preset" = "انتخاب پیش‌فرض"; // gemma4:31b
 "select_preset_message" = "یک مجموعه اولیه از ماژول‌ها را انتخاب کنید. بعداً می‌توانید همه چیز را در تنظیمات شخصی‌سازی کنید."; // gemma4:31b
 "Default" = "پیش‌فرض"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "بررسی ماهانه برای نسخه جدید (ماهی یک بار)";
 "Never check for updates (not recommended)" = "هیچ وقت نسخه‌ی جدید بررسی نشود (پیشنهاد نمی‌شود)";
 "The configuration is completed" = "پیکربندی کامل شد";
-"finish_setup_message" = "همه چیز آماده است! \n Stats یک ابزار متن باز رایگان است و همیشه رایگان خواهد بود \n اگر از این پروژه راضی بودید می‌توانید از ما حمایت کنید";
+"finish_setup_message" = "همه چیز آماده است! \n Gaugebar یک ابزار متن باز رایگان است و همیشه رایگان خواهد بود \n اگر از این پروژه راضی بودید می‌توانید از ما حمایت کنید";
 
 // Alerts
 "New version available" = "نسخه‌ی جدید در دسترس است";
-"Click to install the new version of Stats" = "برای نصب نسخه‌ی جدید Stats کلیک کنید";
+"Click to install the new version of Stats" = "برای نصب نسخه‌ی جدید Gaugebar کلیک کنید";
 "Successfully updated" = "با موفقیت به‌روزرسانی شد";
-"Stats was updated to v" = "Stats به نسخه v%0 به‌روزرسانی شد";
+"Stats was updated to v" = "Gaugebar به نسخه v%0 به‌روزرسانی شد";
 "Reset settings text" = "تمام تنظیمات اپلیکیشن ریست خواهد شد و اپ دوباره راه‌اندازی خواهد شد، آیا از این کار مطمئنید؟";
 "Deregister text" = "دستگاه از System Stats لغو ثبت خواهد شد و شما خارج خواهید شد. آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟"; // gemma4:31b-it-qat
-"Support text" = "از اینکه از Stats استفاده می کنید متشکریم!\n\nنگهداری و بهبود این پروژه منبع باز زمان و منابع می طلبد. پشتیبانی شما به ما کمک می‌کند تا به ارائه یک برنامه رایگان و قابل اعتماد برای همه ادامه دهیم.\n\nاگر آمارها را مفید می‌دانید، لطفاً در نظر بگیرید. هر ذره کمک می کند!";
+"Support text" = "از اینکه از Gaugebar استفاده می کنید متشکریم!\n\nنگهداری و بهبود این پروژه منبع باز زمان و منابع می طلبد. پشتیبانی شما به ما کمک می‌کند تا به ارائه یک برنامه رایگان و قابل اعتماد برای همه ادامه دهیم.\n\nاگر آمارها را مفید می‌دانید، لطفاً در نظر بگیرید. هر ذره کمک می کند!";
 
 // Settings
 "Open Activity Monitor" = "باز کردن نظارت فعالیت‌ها";
@@ -163,8 +163,8 @@
 "Import settings" = "وارد کردن تنظیمات"; // translategemma:4b
 "Export settings" = "صادر کردن تنظیمات"; // gemma4:31b
 "Reset settings" = "ریست تنظیمات";
-"Pause the Stats" = "متوقف کردن Stats";
-"Resume the Stats" = "ادامه‌ی کار Stats";
+"Pause the Stats" = "متوقف کردن Gaugebar";
+"Resume the Stats" = "ادامه‌ی کار Gaugebar";
 "Combined modules" = "ماژول‌های ترکیبی"; // translategemma:4b
 "Show icon instead of widgets" = "نمایش نماد به‌جای ابزارک‌ها";
 "Combined details" = "جزئیات ترکیبی"; // translategemma:4b
@@ -187,11 +187,11 @@
 "Display" = "نمایشگر"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "آخرین نسخه‌ی Stats نصب شده است";
+"The latest version of Stats installed" = "آخرین نسخه‌ی Gaugebar نصب شده است";
 "Downloading..." = "دانلود...";
 "Installing..." = "در حال نصب..."; // qwen3.8:27b
 "Updating..." = "در حال به‌روزرسانی..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats به‌طور خودکار راه‌اندازی مجدد می‌شود"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar به‌طور خودکار راه‌اندازی مجدد می‌شود"; // qwen3.8:27b
 "Current version: " = "نسخه فعلی:  ";
 "Latest version: " = "آخرین نسخه:    ";
 "Changelog" = "تغییرات"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "حذف ابزار کمکی فن"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "در تنظیمات سیستم ▸ موارد ورود تایید کنید"; // gemma4:31b
 "Fan helper needs your approval" = "ابزار کمکی فن به تأیید شما نیاز دارد"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "برای کنترل فن‌ها، Stats را در تنظیمات سیستم ▸ آیتم‌های ورود فعال کنید."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "برای کنترل فن‌ها، Gaugebar را در تنظیمات سیستم ▸ آیتم‌های ورود فعال کنید."; // gemma4:31b
 "Open Login Items" = "باز کردن آیتم‌های ورود"; // gemma4:31b
 "Could not enable the fan helper" = "امکان فعال‌سازی کمک‌کننده فن وجود نداشت"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "تنظیمات سیستم ▸ آیتم‌های ورود را باز کنید، مطمئن شوید که Stats در پس‌زمینه مجاز است، سپس دوباره تلاش کنید."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "تنظیمات سیستم ▸ آیتم‌های ورود را باز کنید، مطمئن شوید که Gaugebar در پس‌زمینه مجاز است، سپس دوباره تلاش کنید."; // gemma4:31b
 "Fan value" = "مقدار فن"; // translategemma:4b
 "Turn off fan" = "خاموش کردن فن"; // gemma4:31b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "شما قصد دارید فن را خاموش کنید. این اقدام توصیه نمی‌شود و می‌تواند به Mac شما آسیب برساند، آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟"; // gemma4:31b

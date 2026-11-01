@@ -101,15 +101,15 @@
 "Enable" = "Aktivera"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats-installation";
+"Stats Setup" = "Gaugebar-installation";
 "Previous" = "Föregående";
 "Previous page" = "Föregående sida";
 "Next" = "Nästa";
 "Next page" = "Nästa sida";
 "Finish" = "Avsluta";
 "Finish setup" = "Avsluta installationen";
-"Welcome to Stats" = "Välkommen till Stats";
-"welcome_message" = "Tack för att du använder Stats, ett gratis macOS-systemövervakningsverktyg med öppen källkod för din menyrad.";
+"Welcome to Stats" = "Välkommen till Gaugebar";
+"welcome_message" = "Tack för att du använder Gaugebar, ett gratis macOS-systemövervakningsverktyg med öppen källkod för din menyrad.";
 "Select preset" = "Välj förinställning"; // gemma4:31b
 "select_preset_message" = "Välj en startuppsättning av moduler. Du kan anpassa allt senare i Inställningar."; // gemma4:31b
 "Default" = "Standard"; // gemma4:31b
@@ -125,21 +125,21 @@
 "Check for a new version every month (once a month)" = "Kontrollera efter en ny version varje månad (en gång i månaden)";
 "Never check for updates (not recommended)" = "Kontrollera aldrig efter uppdateringar (rekommenderas inte)";
 "The configuration is completed" = "Konfigurationen är slutförd";
-"finish_setup_message" = "Allt är inställt! \n Stats är ett verktyg med öppen källkod, det är gratis och kommer alltid att vara det. \n Om du gillar det kan du stödja projektet, det uppskattas alltid!";
+"finish_setup_message" = "Allt är inställt! \n Gaugebar är ett verktyg med öppen källkod, det är gratis och kommer alltid att vara det. \n Om du gillar det kan du stödja projektet, det uppskattas alltid!";
 
 // Alerts
 "New version available" = "Ny version tillgänglig";
-"Click to install the new version of Stats" = "Klicka för att installera den nya versionen av Stats";
+"Click to install the new version of Stats" = "Klicka för att installera den nya versionen av Gaugebar";
 "Successfully updated" = "Uppdateringen lyckades";
-"Stats was updated to v" = "Stats uppdaterades till v%0";
+"Stats was updated to v" = "Gaugebar uppdaterades till v%0";
 "Reset settings text" = "Alla programinställningar kommer att återställas och programmet startas om. Är du säker på att du vill göra detta?";
 "Deregister text" = "Maskinen kommer att avregistreras från System Stats och du kommer att loggas ut. Är du säker på att du vill göra detta?"; // gemma4:31b-it-qat
-"Support text" = "Tack för att du använder Stats!\n\n Att underhålla och förbättra detta projekt med öppen källkod tar tid och resurser. Ditt stöd hjälper oss att fortsätta tillhandahålla en gratis och tillförlitlig applikation för alla.\n\nOm du tycker att Stats är användbart kan du överväga att ge ett bidrag. Varje liten bit hjälper!";
+"Support text" = "Tack för att du använder Gaugebar!\n\n Att underhålla och förbättra detta projekt med öppen källkod tar tid och resurser. Ditt stöd hjälper oss att fortsätta tillhandahålla en gratis och tillförlitlig applikation för alla.\n\nOm du tycker att Gaugebar är användbart kan du överväga att ge ett bidrag. Varje liten bit hjälper!";
 
 // Settings
 "Open Activity Monitor" = "Öppna Aktivitetsövervakaren";
 "Report a bug" = "Rapportera en bugg";
-"Support the application" = "Stöd Stats";
+"Support the application" = "Stöd Gaugebar";
 "Close application" = "Stäng applikationen";
 "Open application settings" = "Öppna applikationsinställningar";
 "Open dashboard" = "Öppna instrumentpanelen";
@@ -163,8 +163,8 @@
 "Import settings" = "Importera inställningar";
 "Export settings" = "Exportera inställningar";
 "Reset settings" = "Återställ inställningar";
-"Pause the Stats" = "Pausa Stats";
-"Resume the Stats" = "Återuppta Stats";
+"Pause the Stats" = "Pausa Gaugebar";
+"Resume the Stats" = "Återuppta Gaugebar";
 "Combined modules" = "Kombinerade moduler";
 "Show icon instead of widgets" = "Visa ikon istället för widgetar";
 "Combined details" = "Kombinerade detaljer";
@@ -187,11 +187,11 @@
 "Display" = "Skärm"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Den senaste versionen av Stats är installerad";
+"The latest version of Stats installed" = "Den senaste versionen av Gaugebar är installerad";
 "Downloading..." = "Laddar ner...";
 "Installing..." = "Installerar..."; // qwen3.8:27b
 "Updating..." = "Uppdaterar..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats startar om automatiskt"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar startar om automatiskt"; // qwen3.8:27b
 "Current version: " = "Nuvarande version:  ";
 "Latest version: " = "Senaste version:    ";
 "Changelog" = "Ändringslogg"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Avinstallera fläkthjälpare";
 "Approve in System Settings ▸ Login Items" = "Godkänn i Systeminställningar ▸ Inloggningsobjekt"; // gemma4:31b
 "Fan helper needs your approval" = "Fläkthjälpprogrammet behöver ditt godkännande"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "För att styra fläktarna, aktivera Stats i Systeminställningar ▸ Inloggningsobjekt."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "För att styra fläktarna, aktivera Gaugebar i Systeminställningar ▸ Inloggningsobjekt."; // gemma4:31b
 "Open Login Items" = "Öppna inloggningsobjekt"; // gemma4:31b
 "Could not enable the fan helper" = "Kunde inte aktivera fläkthjälparen"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Öppna Systeminställningar ▸ Inloggningsobjekt, se till att Stats är tillåtet i bakgrunden, och försök sedan igen."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Öppna Systeminställningar ▸ Inloggningsobjekt, se till att Gaugebar är tillåtet i bakgrunden, och försök sedan igen."; // gemma4:31b
 "Fan value" = "Fläktvärde";
 "Turn off fan" = "Stäng av fläkt";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Du håller på att stänga av fläkten. Detta är en inte rekommenderad åtgärd som kan skada din Mac, är du säker på att du vill göra detta?";

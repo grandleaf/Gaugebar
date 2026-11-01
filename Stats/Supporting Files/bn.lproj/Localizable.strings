@@ -101,15 +101,15 @@
 "Enable" = "সক্রিয় করুন"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats সেটআপ";
+"Stats Setup" = "Gaugebar সেটআপ";
 "Previous" = "পূর্ববর্তী";
 "Previous page" = "পূর্ববর্তী পৃষ্ঠা";
 "Next" = "পরবর্তী";
 "Next page" = "পরবর্তী পৃষ্ঠা";
 "Finish" = "সম্পন্ন";
 "Finish setup" = "সেটআপ সম্পন্ন করুন";
-"Welcome to Stats" = "Stats-এ স্বাগতম";
-"welcome_message" = "Stats ব্যবহার করার জন্য ধন্যবাদ। আপনার মেনু বারে ব্যবহারের জন্য এটি একটি বিনামূল্যের, ওপেন-সোর্স macOS সিস্টেম মনিটর।";
+"Welcome to Stats" = "Gaugebar-এ স্বাগতম";
+"welcome_message" = "Gaugebar ব্যবহার করার জন্য ধন্যবাদ। আপনার মেনু বারে ব্যবহারের জন্য এটি একটি বিনামূল্যের, ওপেন-সোর্স macOS সিস্টেম মনিটর।";
 "Select preset" = "প্রিসেট নির্বাচন করুন"; // gemma4:31b
 "select_preset_message" = "মডিউলগুলোর একটি প্রাথমিক সেট বেছে নিন। আপনি পরে সেটিংস-এ সবকিছু কাস্টমাইজ করতে পারবেন।"; // gemma4:31b
 "Default" = "পূর্বনির্ধারিত"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "প্রতি মাসে নতুন সংস্করণ পরীক্ষা করুন (মাসে একবার)";
 "Never check for updates (not recommended)" = "আপডেট কখনো পরীক্ষা করবেন না (প্রস্তাবিত নয়)";
 "The configuration is completed" = "সেটআপ সম্পন্ন হয়েছে";
-"finish_setup_message" = "সবকিছু প্রস্তুত! \n Stats একটি ওপেন-সোর্স টুল; এটি বিনামূল্যে এবং সবসময়ই থাকবে। \n আপনি যদি এটি পছন্দ করেন, তাহলে প্রকল্পটিকে সমর্থন করতে পারেন। প্রতিটি সহায়তাই মূল্যবান!";
+"finish_setup_message" = "সবকিছু প্রস্তুত! \n Gaugebar একটি ওপেন-সোর্স টুল; এটি বিনামূল্যে এবং সবসময়ই থাকবে। \n আপনি যদি এটি পছন্দ করেন, তাহলে প্রকল্পটিকে সমর্থন করতে পারেন। প্রতিটি সহায়তাই মূল্যবান!";
 
 // Alerts
 "New version available" = "নতুন সংস্করণ পাওয়া গেছে";
-"Click to install the new version of Stats" = "Stats-এর নতুন সংস্করণ ইনস্টল করতে ক্লিক করুন";
+"Click to install the new version of Stats" = "Gaugebar-এর নতুন সংস্করণ ইনস্টল করতে ক্লিক করুন";
 "Successfully updated" = "সফলভাবে আপডেট হয়েছে";
-"Stats was updated to v" = "Stats v%0 তে আপডেট হয়েছে";
+"Stats was updated to v" = "Gaugebar v%0 তে আপডেট হয়েছে";
 "Reset settings text" = "এই অ্যাপের সব সেটিংস পুনরায় সেট হয়ে যাবে এবং অ্যাপটি পুনরায় চালু হবে। আপনি কি এটি করতে চান?";
 "Deregister text" = "কম্পিউটারটি System Stats থেকে ডি-রেজিস্টার করা হবে এবং আপনি লগ আউট হয়ে যাবেন। আপনি কি নিশ্চিত যে আপনি এটি করতে চান?"; // gemma4:31b-it-qat
-"Support text" = "Stats ব্যবহার করার জন্য ধন্যবাদ!\n\nএই ওপেন-সোর্স প্রকল্পটি রক্ষণাবেক্ষণ ও উন্নত করতে সময় ও সম্পদ লাগে। আপনার সহায়তা আমাদের সবার জন্য একটি বিনামূল্যের ও নির্ভরযোগ্য অ্যাপ দিতে সাহায্য করে।\n\nStats যদি আপনার কাজে লাগে, তাহলে অবদান রাখার কথা বিবেচনা করুন। প্রতিটি ছোট অবদানই কাজে আসে!";
+"Support text" = "Gaugebar ব্যবহার করার জন্য ধন্যবাদ!\n\nএই ওপেন-সোর্স প্রকল্পটি রক্ষণাবেক্ষণ ও উন্নত করতে সময় ও সম্পদ লাগে। আপনার সহায়তা আমাদের সবার জন্য একটি বিনামূল্যের ও নির্ভরযোগ্য অ্যাপ দিতে সাহায্য করে।\n\nGaugebar যদি আপনার কাজে লাগে, তাহলে অবদান রাখার কথা বিবেচনা করুন। প্রতিটি ছোট অবদানই কাজে আসে!";
 
 // Settings
 "Open Activity Monitor" = "Activity Monitor খুলুন";
@@ -163,8 +163,8 @@
 "Import settings" = "সেটিংস আমদানি করুন";
 "Export settings" = "সেটিংস রপ্তানি করুন";
 "Reset settings" = "সেটিংস পুনরায় সেট করুন";
-"Pause the Stats" = "Stats বিরতি দিন";
-"Resume the Stats" = "Stats পুনরায় শুরু করুন";
+"Pause the Stats" = "Gaugebar বিরতি দিন";
+"Resume the Stats" = "Gaugebar পুনরায় শুরু করুন";
 "Combined modules" = "সম্মিলিত মডিউল";
 "Show icon instead of widgets" = "উইজেটের পরিবর্তে আইকন দেখান";
 "Combined details" = "সম্মিলিত বিবরণ";
@@ -187,11 +187,11 @@
 "Display" = "ডিসপ্লে";
 
 // Update
-"The latest version of Stats installed" = "Stats-এর সর্বশেষ সংস্করণ ইনস্টল করা আছে";
+"The latest version of Stats installed" = "Gaugebar-এর সর্বশেষ সংস্করণ ইনস্টল করা আছে";
 "Downloading..." = "ডাউনলোড হচ্ছে...";
 "Installing..." = "ইনস্টল হচ্ছে..."; // qwen3.8:27b
 "Updating..." = "হালনাগাদ হচ্ছে..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats স্বয়ংক্রিয়ভাবে পুনরায় শুরু হবে"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar স্বয়ংক্রিয়ভাবে পুনরায় শুরু হবে"; // qwen3.8:27b
 "Current version: " = "বর্তমান সংস্করণ:  ";
 "Latest version: " = "সর্বশেষ সংস্করণ:    ";
 "Changelog" = "পরিবর্তন তালিকা"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "ফ্যান হেল্পার আনইনস্টল করুন";
 "Approve in System Settings ▸ Login Items" = "সিস্টেম সেটিংস-এ অনুমোদন করুন ▸ লগইন আইটেম"; // gemma4:31b
 "Fan helper needs your approval" = "ফ্যান হেল্পারের আপনার অনুমোদনের প্রয়োজন"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "ফ্যানগুলো নিয়ন্ত্রণ করতে, সিস্টেম সেটিংস ▸ লগইন আইটেমস-এ Stats সক্ষম করুন।"; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "ফ্যানগুলো নিয়ন্ত্রণ করতে, সিস্টেম সেটিংস ▸ লগইন আইটেমস-এ Gaugebar সক্ষম করুন।"; // gemma4:31b
 "Open Login Items" = "লগইন আইটেম খুলুন"; // gemma4:31b
 "Could not enable the fan helper" = "ফ্যান হেল্পারটি সক্ষম করা যায়নি"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "সিস্টেম সেটিংস ▸ লগইন আইটেমস খুলুন, নিশ্চিত করুন যে Stats ব্যাকগ্রাউন্ডে অনুমোদিত, তারপর আবার চেষ্টা করুন।"; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "সিস্টেম সেটিংস ▸ লগইন আইটেমস খুলুন, নিশ্চিত করুন যে Gaugebar ব্যাকগ্রাউন্ডে অনুমোদিত, তারপর আবার চেষ্টা করুন।"; // gemma4:31b
 "Fan value" = "ফ্যানের মান";
 "Turn off fan" = "ফ্যান বন্ধ করুন";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "আপনি ফ্যান বন্ধ করতে যাচ্ছেন। এটি সুপারিশকৃত নয় এবং এতে আপনার Mac-এর ক্ষতি হতে পারে। আপনি কি নিশ্চিত?";

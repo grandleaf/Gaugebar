@@ -101,15 +101,15 @@
 "Enable" = "Povoliť"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Nastavenie Stats";
+"Stats Setup" = "Nastavenie Gaugebar";
 "Previous" = "Späť";
 "Previous page" = "Predchádzajúca strana";
 "Next" = "Ďalej";
 "Next page" = "Ďalšia strana";
 "Finish" = "Dokončiť";
 "Finish setup" = "Dokončiť nastavenie";
-"Welcome to Stats" = "Vitajte v Stats";
-"welcome_message" = "Ďakujeme, že používate Stats, bezplatný open source monitor systému macOS.";
+"Welcome to Stats" = "Vitajte v Gaugebar";
+"welcome_message" = "Ďakujeme, že používate Gaugebar, bezplatný open source monitor systému macOS.";
 "Select preset" = "Vybrať prednastavenie"; // gemma4:31b
 "select_preset_message" = "Vyberte si počiatočnú súpravu modulov. Všetko si môžete neskôr prispôsobiť v Nastaveniach."; // gemma4:31b
 "Default" = "Predvolené"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Kontrola novej verzie každý mesiac (raz mesačne)";
 "Never check for updates (not recommended)" = "Nikdy nekontrolovať aktualizácie (neodporúča sa)";
 "The configuration is completed" = "Konfigurácia je dokončená";
-"finish_setup_message" = "Všetko je pripravené! \n Stats je open source nástroj, který je zadarmo a vždy bude. \n Ak sa vám páči, môžete projekt podporiť, ceníme si to!";
+"finish_setup_message" = "Všetko je pripravené! \n Gaugebar je open source nástroj, který je zadarmo a vždy bude. \n Ak sa vám páči, môžete projekt podporiť, ceníme si to!";
 
 // Alerts
 "New version available" = "Je k dispozícii nová verzia";
-"Click to install the new version of Stats" = "Inštalovať novú verziu Stats";
+"Click to install the new version of Stats" = "Inštalovať novú verziu Gaugebar";
 "Successfully updated" = "Úspešne aktualizované";
-"Stats was updated to v" = "Stats bol aktualizovaný na v%0";
+"Stats was updated to v" = "Gaugebar bol aktualizovaný na v%0";
 "Reset settings text" = "Všetky nastavenia aplikácie budú zresetované a aplikácia bude reštartovaná. Ste si istý, že chcete pokračovať?";
 "Deregister text" = "Počítač bude odregistrovaný zo System Stats a vy budete odhlásení. Ste si istí, že to chcete urobiť?"; // gemma4:31b-it-qat
-"Support text" = "Ďakujeme, že používate Stats!\n\n Udržiavanie a zlepšovanie tohto open-source projektu si vyžaduje čas a zdroje. Vaša podpora nám pomáha pokračovať v poskytovaní bezplatnej a spoľahlivej aplikácie pre každého.\n\nAk považujete Stats za užitočné, zvážte prosím možnosť prispieť. Každý malý kúsok pomôže!";
+"Support text" = "Ďakujeme, že používate Gaugebar!\n\n Udržiavanie a zlepšovanie tohto open-source projektu si vyžaduje čas a zdroje. Vaša podpora nám pomáha pokračovať v poskytovaní bezplatnej a spoľahlivej aplikácie pre každého.\n\nAk považujete Gaugebar za užitočné, zvážte prosím možnosť prispieť. Každý malý kúsok pomôže!";
 
 // Settings
 "Open Activity Monitor" = "Otvoriť Monitor aktivity";
@@ -163,8 +163,8 @@
 "Import settings" = "Importovať nastavenia"; // gemma4:31b
 "Export settings" = "Exportovať nastavenia"; // gemma4:31b
 "Reset settings" = "Obnoviť nastavenia";
-"Pause the Stats" = "Pozastaviť Stats";
-"Resume the Stats" = "Obnoviť Stats";
+"Pause the Stats" = "Pozastaviť Gaugebar";
+"Resume the Stats" = "Obnoviť Gaugebar";
 "Combined modules" = "Kombinovať moduly";
 "Show icon instead of widgets" = "Zobraziť ikonu namiesto widgetov";
 "Combined details" = "Kombinované detaily"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Displej"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Bola nainštalovaná najnovšia verzia Stats";
+"The latest version of Stats installed" = "Bola nainštalovaná najnovšia verzia Gaugebar";
 "Downloading..." = "Sťahovanie...";
 "Installing..." = "Inštalácia..."; // qwen3.8:27b
 "Updating..." = "Aktualizovanie..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats sa automaticky reštartuje"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar sa automaticky reštartuje"; // qwen3.8:27b
 "Current version: " = "Aktuálna verzia: ";
 "Latest version: " = "Najnovšia verzia: ";
 "Changelog" = "Zoznam zmien"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Odinštalovať pomocníka pre ventilátor"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "Schváliť v Systemových nastaveniach ▸ Položky pri prihlasovaní"; // gemma4:31b
 "Fan helper needs your approval" = "Pomocník ventilátora potrebuje váš súhlas"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ak chcete ovládať ventilátory, zapnite Stats v Systemových nastaveniach ▸ Položky pri prihlasovaní."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ak chcete ovládať ventilátory, zapnite Gaugebar v Systemových nastaveniach ▸ Položky pri prihlasovaní."; // gemma4:31b
 "Open Login Items" = "Otvoriť položky pri prihlasovaní"; // gemma4:31b
 "Could not enable the fan helper" = "Nebolo možné zapnúť pomocný nástroj pre ventilátor"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otvorte Nastavenia systému ▸ Položky pri prihlasovaní, uistite sa, že je Stats povolený v pozadí, a potom skúste znova."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otvorte Nastavenia systému ▸ Položky pri prihlasovaní, uistite sa, že je Gaugebar povolený v pozadí, a potom skúste znova."; // gemma4:31b
 "Fan value" = "Hodnota ventilátora"; // gemma4:31b
 "Turn off fan" = "Vypnúť ventilátor"; // gemma4:31b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Chystáte sa vypnúť ventilátor. Toto je neodporúčaná akcia, ktorá môže poškodiť váš Mac, ste si istý, že to chcete urobiť?"; // gemma4:31b

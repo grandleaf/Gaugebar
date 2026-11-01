@@ -101,15 +101,15 @@
 "Enable" = "Активиране"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Настройки на Stats";
+"Stats Setup" = "Настройки на Gaugebar";
 "Previous" = "Предишно";
 "Previous page" = "Предишна страница";
 "Next" = "Следващо";
 "Next page" = "Следваща страница";
 "Finish" = "Приключване";
 "Finish setup" = "Приключване на настройването";
-"Welcome to Stats" = "Добре дошли в Stats";
-"welcome_message" = "Благодарим Ви, че ползвате Stats, безплатен системен монитор за macOS с отворен код.";
+"Welcome to Stats" = "Добре дошли в Gaugebar";
+"welcome_message" = "Благодарим Ви, че ползвате Gaugebar, безплатен системен монитор за macOS с отворен код.";
 "Select preset" = "Изберете пресет"; // gemma4:31b
 "select_preset_message" = "Изберете начален комплект от модули. Можете да персонализирате всичко по-късно в Настройките."; // gemma4:31b
 "Default" = "По подразбиране"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Проверяване за нова версия всеки месец (веднъж на месец)";
 "Never check for updates (not recommended)" = "Без проверяване за нови версии (не се препоръчва)";
 "The configuration is completed" = "Конфигурацията е завършена";
-"finish_setup_message" = "Всичко е настроено! \n Stats е приложение с отворен код, безплатно е и винаги ще бъде. \n Ако ви допада, може да подкрепите проекта, ще сме много благодарни!";
+"finish_setup_message" = "Всичко е настроено! \n Gaugebar е приложение с отворен код, безплатно е и винаги ще бъде. \n Ако ви допада, може да подкрепите проекта, ще сме много благодарни!";
 
 // Alerts
 "New version available" = "Налична е нова версия";
-"Click to install the new version of Stats" = "Натиснете, за да инсталирате новата версия на Stats";
+"Click to install the new version of Stats" = "Натиснете, за да инсталирате новата версия на Gaugebar";
 "Successfully updated" = "Успешно обновяване";
-"Stats was updated to v" = "Stats е обновена до версия v%0";
+"Stats was updated to v" = "Gaugebar е обновена до версия v%0";
 "Reset settings text" = "Всички настройки на приложението ще бъдат занулени и приложението ще се рестартира. Сигурни ли сте, че искате това?";
 "Deregister text" = "Компютърът ще бъде дерегистриран от System Stats и вие ще бъдете излогвани. Сигурни ли сте, че искате да направите това?"; // gemma4:31b-it-qat
-"Support text" = "Благодарим ви, че използвате Stats!\n\nПоддържането и подобряването на този проект с отворен код изисква време и ресурси. Вашата подкрепа ни помага да продължим да предоставяме безплатно и надеждно приложение за всички.\n\nАко намирате Stats за полезно, моля, помислете дали да не дадете своя принос. Всяка малка част помага!";
+"Support text" = "Благодарим ви, че използвате Gaugebar!\n\nПоддържането и подобряването на този проект с отворен код изисква време и ресурси. Вашата подкрепа ни помага да продължим да предоставяме безплатно и надеждно приложение за всички.\n\nАко намирате Gaugebar за полезно, моля, помислете дали да не дадете своя принос. Всяка малка част помага!";
 
 // Settings
 "Open Activity Monitor" = "Отваряне на монитора на активностите";
@@ -163,8 +163,8 @@
 "Import settings" = "Импортирай настройките"; // gemma4:31b
 "Export settings" = "Експортирай настройките"; // gemma4:31b
 "Reset settings" = "Зануляване на настройките";
-"Pause the Stats" = "Паузиране на Stats";
-"Resume the Stats" = "Продължаване на Stats";
+"Pause the Stats" = "Паузиране на Gaugebar";
+"Resume the Stats" = "Продължаване на Gaugebar";
 "Combined modules" = "Комбинирани модули"; // translategemma:4b
 "Show icon instead of widgets" = "Показване на икона вместо уиджети";
 "Combined details" = "Комбинирани подробности"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Дисплей"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Имате най-новата версия на Stats";
+"The latest version of Stats installed" = "Имате най-новата версия на Gaugebar";
 "Downloading..." = "Изтегляне...";
 "Installing..." = "Инсталиране..."; // qwen3.8:27b
 "Updating..." = "Обновяване..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats ще се рестартира автоматично"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar ще се рестартира автоматично"; // qwen3.8:27b
 "Current version: " = "Текуща версия:  ";
 "Latest version: " = "Последна версия:    ";
 "Changelog" = "Бележки за промените"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Деинсталирай помощника за вентилатора"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "Одобрете в Системни настройки ▸ Обекти за вход"; // gemma4:31b
 "Fan helper needs your approval" = "Помощникът за вентилатора се нуждае от вашето одобрение"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "За да контролирате вентилаторите, активирайте Stats в Системни настройки ▸ Обекти за вход."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "За да контролирате вентилаторите, активирайте Gaugebar в Системни настройки ▸ Обекти за вход."; // gemma4:31b
 "Open Login Items" = "Отвори обекти при вход"; // gemma4:31b
 "Could not enable the fan helper" = "Не успя да се активира помощникът за вентилатора"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Отворете Системни настройки ▸ Обекти за вход, уверете се, че Stats е разрешен във фонов режим, след това опитайте отново."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Отворете Системни настройки ▸ Обекти за вход, уверете се, че Gaugebar е разрешен във фонов режим, след това опитайте отново."; // gemma4:31b
 "Fan value" = "Стойност на вентилатора"; // gemma4:31b
 "Turn off fan" = "Изключи вентилатора"; // gemma4:31b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Вие ще изключите вентилатора. Това не е препоръчително действие, което може да повреди вашия Mac, сигурни ли сте, че искате да направите това?"; // gemma4:31b

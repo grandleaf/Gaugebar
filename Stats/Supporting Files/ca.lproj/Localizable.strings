@@ -101,15 +101,15 @@
 "Enable" = "Activa"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Configuració de Stats";
+"Stats Setup" = "Configuració de Gaugebar";
 "Previous" = "Previ";
 "Previous page" = "Pàgina prèvia";
 "Next" = "Següent";
 "Next page" = "pàgina següent";
 "Finish" = "Finalitzar";
 "Finish setup" = "Finalitzar configuració";
-"Welcome to Stats" = "Benvingut/Benvinguda a Stats";
-"welcome_message" = "Gràcies per fer servir Stats, una aplicació de monitorització per a la teva barra de menús de macOS de codi lliure.";
+"Welcome to Stats" = "Benvingut/Benvinguda a Gaugebar";
+"welcome_message" = "Gràcies per fer servir Gaugebar, una aplicació de monitorització per a la teva barra de menús de macOS de codi lliure.";
 "Select preset" = "Selecciona la preconfiguració"; // gemma4:31b
 "select_preset_message" = "Tria un conjunt inicial de mòduls. Pots personalitzar-ho tot més tard als Ajustos."; // gemma4:31b
 "Default" = "Per defecte"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Comprovar noves versions cada mes (una vegada al mes)";
 "Never check for updates (not recommended)" = "No comprovar mai noves versions (no recomanat)";
 "The configuration is completed" = "La configuració s'ha completat"; // gemma4:31b
-"finish_setup_message" = "Tot està configurat! \n Stats és una eina de codi lliure, és gratuït i sempre ho serà. \n Si el gaudeixes pots contribuir al projecte, sempre és benvingut!";
+"finish_setup_message" = "Tot està configurat! \n Gaugebar és una eina de codi lliure, és gratuït i sempre ho serà. \n Si el gaudeixes pots contribuir al projecte, sempre és benvingut!";
 
 // Alerts
 "New version available" = "Nova versió disponible";
-"Click to install the new version of Stats" = "Clica per a instal·lar la nova versió d'Stats";
+"Click to install the new version of Stats" = "Clica per a instal·lar la nova versió d'Gaugebar";
 "Successfully updated" = "Actualització completada amb èxit";
-"Stats was updated to v" = "Stats s'ha actualitzat a v%0";
+"Stats was updated to v" = "Gaugebar s'ha actualitzat a v%0";
 "Reset settings text" = "Tota la configuració actual serà esborrada i l'aplicació es reiniciarà. Estàs segur/segura de voler fer això?";
 "Deregister text" = "L'ordinador serà desregistrat de System Stats i tancaràs la sessió. Estàs segur que vols fer això?"; // gemma4:31b-it-qat
-"Support text" = "Gràcies per utilitzar Stats!\n\n Mantenir i millorar aquest projecte de codi obert requereix temps i recursos. El vostre suport ens ajuda a continuar oferint una aplicació gratuïta i fiable per a tothom.\n\nSi trobeu Stats útil, penseu a fer una contribució. Cada petita mica ajuda!";
+"Support text" = "Gràcies per utilitzar Gaugebar!\n\n Mantenir i millorar aquest projecte de codi obert requereix temps i recursos. El vostre suport ens ajuda a continuar oferint una aplicació gratuïta i fiable per a tothom.\n\nSi trobeu Gaugebar útil, penseu a fer una contribució. Cada petita mica ajuda!";
 
 // Settings
 "Open Activity Monitor" = "Obre el Visor d'Activitat";
@@ -163,8 +163,8 @@
 "Import settings" = "Importa configuració";
 "Export settings" = "Exporta configuració";
 "Reset settings" = "Reinicia configuració";
-"Pause the Stats" = "Pausa Stats";
-"Resume the Stats" = "Continua Stats";
+"Pause the Stats" = "Pausa Gaugebar";
+"Resume the Stats" = "Continua Gaugebar";
 "Combined modules" = "Mòduls combinats";
 "Show icon instead of widgets" = "Mostra la icona en lloc dels ginys";
 "Combined details" = "Detalls combinats";
@@ -187,11 +187,11 @@
 "Display" = "Pantalla"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "L'última versió d'Stats està instal·lada";
+"The latest version of Stats installed" = "L'última versió d'Gaugebar està instal·lada";
 "Downloading..." = "Baixant...";
 "Installing..." = "Instal·lant..."; // qwen3.8:27b
 "Updating..." = "Actualitzant..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats es reiniciarà automàticament"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar es reiniciarà automàticament"; // qwen3.8:27b
 "Current version: " = "Versió instal·lada: ";
 "Latest version: " = "Última versió: ";
 "Changelog" = "Registre de canvis"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Desinstal·la l'ajuda del ventilador";
 "Approve in System Settings ▸ Login Items" = "Aprova a Ajustos del sistema ▸ Elements d'inici"; // gemma4:31b
 "Fan helper needs your approval" = "L'ajudant del ventilador necessita la teva aprovació"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Per controlar els ventiladors, activa Stats als Ajustos del sistema ▸ Elements d'inici."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Per controlar els ventiladors, activa Gaugebar als Ajustos del sistema ▸ Elements d'inici."; // gemma4:31b
 "Open Login Items" = "Obre els elements d'inici"; // gemma4:31b
 "Could not enable the fan helper" = "No s'ha pogut activar l'ajudant del ventilador"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Obre els Ajustos del sistema ▸ Elements d'inici, assegura't que Stats estigui permès en segon pla i després torna-ho a intentar."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Obre els Ajustos del sistema ▸ Elements d'inici, assegura't que Gaugebar estigui permès en segon pla i després torna-ho a intentar."; // gemma4:31b
 "Fan value" = "Valor del ventilador";
 "Turn off fan" = "Apaga el ventilador";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Estàs a punt d'apagar el ventilador. No està recomanat i pot espatllar el teu mac, estàs segur/segura que vols fer això?";

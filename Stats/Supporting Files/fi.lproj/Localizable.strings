@@ -101,15 +101,15 @@
 "Enable" = "Ota käyttöön"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats asennus";
+"Stats Setup" = "Gaugebar asennus";
 "Previous" = "Edellinen";
 "Previous page" = "Edellinen sivu";
 "Next" = "Seuraava";
 "Next page" = "Seuraava sivu";
 "Finish" = "Valmis";
 "Finish setup" = "Viimeistele asennus";
-"Welcome to Stats" = "Tervetuloa Stats:iin";
-"welcome_message" = "Kiitos, että käytät Statsia, ilmaista avoimen lähdekoodin macOS-järjestelmämonitoria valikkorivillesi.";
+"Welcome to Stats" = "Tervetuloa Gaugebar:iin";
+"welcome_message" = "Kiitos, että käytät Gaugebaria, ilmaista avoimen lähdekoodin macOS-järjestelmämonitoria valikkorivillesi.";
 "Select preset" = "Valitse esiasetus"; // gemma4:31b
 "select_preset_message" = "Valitse moduulien aloituspaketti. Voit muokata kaikkea myöhemmin Asetuksista."; // gemma4:31b
 "Default" = "Oletus"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Tarkista uusi versio kuukausittain (kerran kuukaudessa)";
 "Never check for updates (not recommended)" = "Älä koskaan tarkista päivityksiä (ei suositeltu)";
 "The configuration is completed" = "Määritys on valmis";
-"finish_setup_message" = "Kaikki on valmista! \n Stats on avoimen lähdekoodin työkalu, se on ilmainen ja tulee aina olemaan. \n Jos pidät siitä, voit tukea projektia, mikä on aina arvostettua!";
+"finish_setup_message" = "Kaikki on valmista! \n Gaugebar on avoimen lähdekoodin työkalu, se on ilmainen ja tulee aina olemaan. \n Jos pidät siitä, voit tukea projektia, mikä on aina arvostettua!";
 
 // Alerts
 "New version available" = "Uusi versio saatavilla";
-"Click to install the new version of Stats" = "Klikkaa asentaaksesi uuden version Statsista";
+"Click to install the new version of Stats" = "Klikkaa asentaaksesi uuden version Gaugebarista";
 "Successfully updated" = "Päivitys onnistui";
-"Stats was updated to v" = "Stats päivitettiin versioon v%0";
+"Stats was updated to v" = "Gaugebar päivitettiin versioon v%0";
 "Reset settings text" = "Kaikki sovelluksen asetukset nollataan, ja sovellus käynnistetään uudelleen. Haluatko varmasti tehdä tämän?";
 "Deregister text" = "Laite poistetaan rekisteröinnistä System Statsista ja sinut kirjataan ulos. Oletko varma, että haluat tehdä tämän?"; // gemma4:31b-it-qat
-"Support text" = "Kiitos, että käytät Statsia!\n\n Tämän avoimen lähdekoodin projektin ylläpitäminen ja parantaminen vie aikaa ja resursseja. Tukesi auttaa meitä jatkossakin tarjoamaan ilmaisen ja luotettavan sovelluksen kaikille.\n\nJos Stats on mielestäsi hyödyllinen, harkitse lahjoituksen tekemistä. Jokainen pieni osa auttaa!";
+"Support text" = "Kiitos, että käytät Gaugebaria!\n\n Tämän avoimen lähdekoodin projektin ylläpitäminen ja parantaminen vie aikaa ja resursseja. Tukesi auttaa meitä jatkossakin tarjoamaan ilmaisen ja luotettavan sovelluksen kaikille.\n\nJos Gaugebar on mielestäsi hyödyllinen, harkitse lahjoituksen tekemistä. Jokainen pieni osa auttaa!";
 
 // Settings
 "Open Activity Monitor" = "Avaa Aktiviteettimonitori";
@@ -163,8 +163,8 @@
 "Import settings" = "Tuo asetukset";
 "Export settings" = "Vie asetukset";
 "Reset settings" = "Nollaa asetukset";
-"Pause the Stats" = "Keskeytä Stats";
-"Resume the Stats" = "Jatka Statsin käyttöä";
+"Pause the Stats" = "Keskeytä Gaugebar";
+"Resume the Stats" = "Jatka Gaugebarin käyttöä";
 "Combined modules" = "Yhdistetyt moduulit";
 "Show icon instead of widgets" = "Näytä kuvake widgettien sijaan";
 "Combined details" = "Yhdistetyt tiedot";
@@ -187,11 +187,11 @@
 "Display" = "Näyttö"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Stats on päivitetty viimeisimpään versioon";
+"The latest version of Stats installed" = "Gaugebar on päivitetty viimeisimpään versioon";
 "Downloading..." = "Ladataan...";
 "Installing..." = "Asennetaan..."; // qwen3.8:27b
 "Updating..." = "Päivitetään..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats käynnistyy uudelleen automaattisesti"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar käynnistyy uudelleen automaattisesti"; // qwen3.8:27b
 "Current version: " = "Nykyinen versio:  ";
 "Latest version: " = "Viimeisin versio:    ";
 "Changelog" = "Muutosloki"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Poista tuuletinavustaja";
 "Approve in System Settings ▸ Login Items" = "Hyväksy Järjestelmäasetuksissa ▸ Kirjautumiskohteet"; // gemma4:31b
 "Fan helper needs your approval" = "Tuuletinapuohjelma tarvitsee hyväksyntäsi"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Hallitaksesi tuulettimia, ota Stats käyttöön kohdassa Järjestelmäasetukset ▸ Kirjautumiskohteet."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Hallitaksesi tuulettimia, ota Gaugebar käyttöön kohdassa Järjestelmäasetukset ▸ Kirjautumiskohteet."; // gemma4:31b
 "Open Login Items" = "Avaa kirjautumiskohteet"; // gemma4:31b
 "Could not enable the fan helper" = "Tuulettimen apuohjelmaa ei voitu ottaa käyttöön"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Avaa Järjestelmäasetukset ▸ Kirjautumiskohteet, varmista, että Stats on sallittu taustalla, ja yritä sitten uudelleen."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Avaa Järjestelmäasetukset ▸ Kirjautumiskohteet, varmista, että Gaugebar on sallittu taustalla, ja yritä sitten uudelleen."; // gemma4:31b
 "Fan value" = "Tuulettimen arvo";
 "Turn off fan" = "Sammuta tuuletin";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Olet sammuttamassa tuuletinta. Tämä ei ole suositeltavaa ja voi vahingoittaa Maciasi. Haluatko varmasti tehdä tämän?";

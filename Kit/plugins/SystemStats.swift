@@ -970,7 +970,7 @@ class MQTTManager: NSObject {
     private let log: NextLog
     private var packetIdentifier: UInt16 = 1
     
-    private let stateQueue = DispatchQueue(label: "eu.exelban.Stats.Remote.MQTT")
+    private let stateQueue = DispatchQueue(label: "io.github.grandleaf.Gaugebar.Remote.MQTT")
     private static let stateQueueKey = DispatchSpecificKey<Void>()
     
     private lazy var metrics = RemoteMetricBatch(queue: self.stateQueue) { [weak self] data in
@@ -1447,7 +1447,7 @@ extension MQTTManager: URLSessionWebSocketDelegate {
 // MARK: - Keychain
 
 enum RemoteKeychain {
-    private static let service: String = (Bundle.main.bundleIdentifier ?? "eu.exelban.Stats") + ".remote"
+    private static let service: String = (Bundle.main.bundleIdentifier ?? "io.github.grandleaf.Gaugebar") + ".remote"
     
     static func read(_ key: String) -> String? {
         let query: [String: Any] = [

@@ -281,7 +281,7 @@ public class LineChartView: ChartView {
         self.fixedScale = fixedScale
         self.zeroValue = zeroValue
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Line")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Line")
         self.animationEnabled = animation
         
         self.dateFormatter.dateFormat = "dd/MM HH:mm:ss"
@@ -819,7 +819,7 @@ public class NetworkChartView: ChartView {
         self.inChart = LineChartView(frame: inFrame, num: num, color: inColor, scale: scale, fixedScale: fixedScale, zeroValue: 256.0, animation: animation)
         self.outChart = LineChartView(frame: outFrame, num: num, color: outColor, scale: scale, fixedScale: fixedScale, zeroValue: 256.0, animation: animation)
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Network")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Network")
         
         self.inChart.setMinMax(minMax)
         self.outChart.setMinMax(minMax)
@@ -944,7 +944,7 @@ public class PieChartView: ChartView {
         self.segments = segments
         self.lineCap = lineCap
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Pie")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Pie")
         self.animationEnabled = animation
         
         self.setAccessibilityElement(true)
@@ -1081,7 +1081,7 @@ public class TachometerGraphView: ChartView {
         self.filled = filled
         self.segments = segments
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Tachometer")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Tachometer")
         self.animationEnabled = animation
     }
     
@@ -1146,7 +1146,7 @@ public class GaugeChartView: ChartView {
         self.segments = segments
         self.title = title
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Gauge")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Gauge")
         self.animationEnabled = animation
         
         self.setAccessibilityElement(true)
@@ -1281,7 +1281,7 @@ public class ColumnChartView: ChartView {
     private var cursor: CGPoint? = nil
     
     public init(frame: NSRect = NSRect.zero, num: Int, animation: Bool = true) {
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Column")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Column")
         self.animationEnabled = animation
         self.values = Array(repeating: ColorValue(0, color: .controlAccentColor), count: num)
         
@@ -1412,7 +1412,7 @@ public class GridChartView: ChartView {
     
     public init(frame: NSRect = .zero, grid: (rows: Int, columns: Int)) {
         self.grid = grid
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Grid")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Grid")
         let totalCells = max(grid.rows * grid.columns, 1)
         self.values = Array(repeating: nil, count: totalCells)
         
@@ -1515,7 +1515,7 @@ public class BarChartView: ChartView {
         self.size = size
         self.horizontal = horizontal
         
-        super.init(frame: frame, queueLabel: "eu.exelban.Stats.Charts.Bar")
+        super.init(frame: frame, queueLabel: "io.github.grandleaf.Gaugebar.Charts.Bar")
         self.animationEnabled = animation
     }
     

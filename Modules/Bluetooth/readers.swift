@@ -39,7 +39,7 @@ internal class DevicesReader: Reader<[BLEDevice]>, CBCentralManagerDelegate, CBP
     
     private var characteristicsDict: [UUID: CBCharacteristic] = [:]
     private var bleLevels: [UUID: KeyValue_t] = [:]
-    private let stateQueue = DispatchQueue(label: "eu.exelban.Stats.Bluetooth.DevicesReader")
+    private let stateQueue = DispatchQueue(label: "io.github.grandleaf.Gaugebar.Bluetooth.DevicesReader")
     
     private var profilerCache: (ts: Date, value: ([bleDevice], [String]))? = nil
     private var pmsetCache: (ts: Date, value: [bleDevice])? = nil

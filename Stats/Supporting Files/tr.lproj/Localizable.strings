@@ -101,15 +101,15 @@
 "Enable" = "Etkinleştir"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats kurulumu";
+"Stats Setup" = "Gaugebar kurulumu";
 "Previous" = "Önceki";
 "Previous page" = "Önceki sayfa";
 "Next" = "Sonraki";
 "Next page" = "Sonraki sayfa";
 "Finish" = "Tamamla";
 "Finish setup" = "Kurulumu tamamla";
-"Welcome to Stats" = "Stats'a hoş geldiniz";
-"welcome_message" = "Stats'ı kullandığınız için teşekkürler. Stats, menü çubuğunda çalışan ücretsiz ve açık kaynaklı bir macOS sistem monitörüdür.";
+"Welcome to Stats" = "Gaugebar'a hoş geldiniz";
+"welcome_message" = "Gaugebar'ı kullandığınız için teşekkürler. Gaugebar, menü çubuğunda çalışan ücretsiz ve açık kaynaklı bir macOS sistem monitörüdür.";
 "Select preset" = "Ön ayar seç"; // gemma4:31b
 "select_preset_message" = "Başlangıç modülü grubunu seçin. Daha sonra Ayarlar'dan her şeyi özelleştirebilirsiniz."; // gemma4:31b
 "Default" = "Varsayılan"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Her ay yeni sürüm olup olmadığını denetle (ayda bir kez)";
 "Never check for updates (not recommended)" = "Güncellemeleri hiçbir zaman denetleme (önerilmez)";
 "The configuration is completed" = "Yapılandırma tamamlandı";
-"finish_setup_message" = "Her şey hazır! \n Stats açık kaynaklı ve ücretsiz bir araçtır; her zaman da öyle kalacaktır. \n Stats'ı beğendiyseniz projeyi destekleyebilirsiniz; desteğiniz için teşekkürler!";
+"finish_setup_message" = "Her şey hazır! \n Gaugebar açık kaynaklı ve ücretsiz bir araçtır; her zaman da öyle kalacaktır. \n Gaugebar'ı beğendiyseniz projeyi destekleyebilirsiniz; desteğiniz için teşekkürler!";
 
 // Alerts
 "New version available" = "Yeni sürüm mevcut";
-"Click to install the new version of Stats" = "Stats'ın yeni sürümünü yüklemek için tıklayın";
+"Click to install the new version of Stats" = "Gaugebar'ın yeni sürümünü yüklemek için tıklayın";
 "Successfully updated" = "Başarıyla güncellendi";
-"Stats was updated to v" = "Stats, v%0 sürümüne güncellendi";
+"Stats was updated to v" = "Gaugebar, v%0 sürümüne güncellendi";
 "Reset settings text" = "Tüm uygulama ayarları sıfırlanacak ve uygulama yeniden başlatılacak. Bunu yapmak istediğinizden emin misiniz?";
 "Deregister text" = "Bu bilgisayarın System Stats kaydı silinecek ve oturumunuz kapatılacak. Bunu yapmak istediğinizden emin misiniz?"; // gemma4:31b-it-qat
-"Support text" = "Stats'ı kullandığınız için teşekkür ederiz.\n\nBu açık kaynaklı projeyi sürdürmek ve geliştirmek zaman ve kaynak gerektirir. Desteğiniz, herkes için ücretsiz ve güvenilir bir uygulama sunmaya devam etmemize yardımcı olur.\n\nStats'ı yararlı buluyorsanız katkıda bulunmayı düşünün. Her katkı değerlidir!";
+"Support text" = "Gaugebar'ı kullandığınız için teşekkür ederiz.\n\nBu açık kaynaklı projeyi sürdürmek ve geliştirmek zaman ve kaynak gerektirir. Desteğiniz, herkes için ücretsiz ve güvenilir bir uygulama sunmaya devam etmemize yardımcı olur.\n\nGaugebar'ı yararlı buluyorsanız katkıda bulunmayı düşünün. Her katkı değerlidir!";
 
 // Settings
 "Open Activity Monitor" = "Etkinlik Monitörü'nü aç";
@@ -163,8 +163,8 @@
 "Import settings" = "Ayarları içe aktar";
 "Export settings" = "Ayarları dışa aktar";
 "Reset settings" = "Ayarları sıfırla";
-"Pause the Stats" = "Stats'ı duraklat";
-"Resume the Stats" = "Stats'ı devam ettir";
+"Pause the Stats" = "Gaugebar'ı duraklat";
+"Resume the Stats" = "Gaugebar'ı devam ettir";
 "Combined modules" = "Birleşik modüller";
 "Show icon instead of widgets" = "Widget’lar yerine simge göster";
 "Combined details" = "Birleşik ayrıntılar";
@@ -187,11 +187,11 @@
 "Display" = "Ekran";
 
 // Update
-"The latest version of Stats installed" = "Stats'ın en son sürümü yüklü";
+"The latest version of Stats installed" = "Gaugebar'ın en son sürümü yüklü";
 "Downloading..." = "İndiriliyor...";
 "Installing..." = "Yükleniyor..."; // qwen3.8:27b
 "Updating..." = "Güncelleniyor..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats otomatik olarak yeniden başlayacak"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar otomatik olarak yeniden başlayacak"; // qwen3.8:27b
 "Current version: " = "Mevcut sürüm: ";
 "Latest version: " = "En son sürüm: ";
 "Changelog" = "Değişiklik geçmişi"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Fan yardımcısını kaldır";
 "Approve in System Settings ▸ Login Items" = "Sistem Ayarları ▸ Giriş Öğeleri'nde onayla"; // gemma4:31b
 "Fan helper needs your approval" = "Fan yardımcısı için onayınız gerekiyor"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Fanları denetlemek için Sistem Ayarları ▸ Giriş Öğeleri'nde Stats'ın arka planda çalışmasına izin verin."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Fanları denetlemek için Sistem Ayarları ▸ Giriş Öğeleri'nde Gaugebar'ın arka planda çalışmasına izin verin."; // gemma4:31b
 "Open Login Items" = "Giriş Öğeleri'ni aç"; // gemma4:31b
 "Could not enable the fan helper" = "Fan yardımcısı etkinleştirilemedi"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Sistem Ayarları ▸ Giriş Öğeleri'ni açın, Stats'ın arka planda çalışmasına izin verildiğinden emin olun ve tekrar deneyin."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Sistem Ayarları ▸ Giriş Öğeleri'ni açın, Gaugebar'ın arka planda çalışmasına izin verildiğinden emin olun ve tekrar deneyin."; // gemma4:31b
 "Fan value" = "Fan değeri";
 "Turn off fan" = "Fanı kapat";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Fanı kapatmak üzeresiniz. Bu işlem önerilmez ve Mac'inize zarar verebilir. Bunu yapmak istediğinizden emin misiniz?";

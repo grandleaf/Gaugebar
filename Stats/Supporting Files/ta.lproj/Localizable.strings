@@ -101,15 +101,15 @@
 "Enable" = "இயக்கு"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats அமைப்பு";
+"Stats Setup" = "Gaugebar அமைப்பு";
 "Previous" = "முந்தைய";
 "Previous page" = "முந்தைய பக்கம்";
 "Next" = "அடுத்த";
 "Next page" = "அடுத்த பக்கம்";
 "Finish" = "முடி";
 "Finish setup" = "அமைப்பை முடி";
-"Welcome to Stats" = "Stats-க்கு வரவேற்கிறோம்";
-"welcome_message" = "Stats பயன்படுத்தியமைக்கு நன்றி, உங்கள் மெனுப் பட்டைக்கான இலவச திறந்த மூல macOS கணினி கண்காணிப்பான்.";
+"Welcome to Stats" = "Gaugebar-க்கு வரவேற்கிறோம்";
+"welcome_message" = "Gaugebar பயன்படுத்தியமைக்கு நன்றி, உங்கள் மெனுப் பட்டைக்கான இலவச திறந்த மூல macOS கணினி கண்காணிப்பான்.";
 "Select preset" = "முன்அமைப்பைத் தேர்ந்தெடு";
 "select_preset_message" = "தொடக்க தொகுதிகளைத் தேர்வு செய்யவும். பின்னர் அமைப்புகளில் அனைத்தையும் தனிப்பயனாக்கலாம்.";
 "Default" = "இயல்புநிலை";
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "மாதந்தோறும் புதிய பதிப்பைச் சோதி (ஒரு மாதத்திற்கு ஒருமுறை)";
 "Never check for updates (not recommended)" = "புதுப்பிப்புகளுக்கு ஒருபோதும் சோதிக்க வேண்டாம் (பரிந்துரைக்கப்படவில்லை)";
 "The configuration is completed" = "அமைப்பு முடிந்தது";
-"finish_setup_message" = "அனைத்தும் அமைக்கப்பட்டுவிட்டது! \n Stats ஒரு திறந்த மூல கருவி, இது இலவசம் மற்றும் எப்போதும் இலவசமாக இருக்கும். \n உங்களுக்கு இது பிடித்திருந்தால் திட்டத்திற்கு ஆதரவளிக்கலாம், அது எப்போதும் பாராட்டப்படும்!";
+"finish_setup_message" = "அனைத்தும் அமைக்கப்பட்டுவிட்டது! \n Gaugebar ஒரு திறந்த மூல கருவி, இது இலவசம் மற்றும் எப்போதும் இலவசமாக இருக்கும். \n உங்களுக்கு இது பிடித்திருந்தால் திட்டத்திற்கு ஆதரவளிக்கலாம், அது எப்போதும் பாராட்டப்படும்!";
 
 // Alerts
 "New version available" = "புதிய பதிப்பு கிடைக்கிறது";
-"Click to install the new version of Stats" = "Stats-ன் புதிய பதிப்பை நிறுவ கிளிக் செய்யவும்";
+"Click to install the new version of Stats" = "Gaugebar-ன் புதிய பதிப்பை நிறுவ கிளிக் செய்யவும்";
 "Successfully updated" = "வெற்றிகரமாக புதுப்பிக்கப்பட்டது";
-"Stats was updated to v" = "Stats v%0-க்கு புதுப்பிக்கப்பட்டது";
+"Stats was updated to v" = "Gaugebar v%0-க்கு புதுப்பிக்கப்பட்டது";
 "Reset settings text" = "அனைத்து பயன்பாட்டு அமைப்புகளும் மீட்டமைக்கப்பட்டு, பயன்பாடு மறுதொடக்கம் செய்யப்படும். இதைச் செய்ய விரும்புகிறீர்களா?";
 "Deregister text" = "இந்த இயந்திரம் System Stats-இல் பதிவுநீக்கம் செய்யப்பட்டு, நீங்கள் வெளியேற்றப்படுவீர்கள். இதைச் செய்ய விரும்புகிறீர்களா?";
-"Support text" = "Stats பயன்படுத்தியமைக்கு நன்றி!\n\nஇந்த திறந்த மூல திட்டத்தை பராமரித்தல் மற்றும் மேம்படுத்துதல் நேரம் மற்றும் வளங்களை எடுக்கிறது. உங்கள் ஆதரவு, எல்லோருக்கும் இலவச மற்றும் நம்பகமான பயன்பாட்டைத் தொடர வழிவகுக்கிறது.\n\nStats பயனுள்ளதாக இருந்தால், தயவுசெய்து பங்களிப்பைக் கருத்தில் கொள்ளுங்கள். ஒவ்வொரு சிறிய பங்களிப்பும் உதவுகிறது!";
+"Support text" = "Gaugebar பயன்படுத்தியமைக்கு நன்றி!\n\nஇந்த திறந்த மூல திட்டத்தை பராமரித்தல் மற்றும் மேம்படுத்துதல் நேரம் மற்றும் வளங்களை எடுக்கிறது. உங்கள் ஆதரவு, எல்லோருக்கும் இலவச மற்றும் நம்பகமான பயன்பாட்டைத் தொடர வழிவகுக்கிறது.\n\nGaugebar பயனுள்ளதாக இருந்தால், தயவுசெய்து பங்களிப்பைக் கருத்தில் கொள்ளுங்கள். ஒவ்வொரு சிறிய பங்களிப்பும் உதவுகிறது!";
 
 // Settings
 "Open Activity Monitor" = "Activity Monitor-ஐத் திற";
@@ -163,8 +163,8 @@
 "Import settings" = "அமைப்புகளை இறக்குமதி செய்";
 "Export settings" = "அமைப்புகளை ஏற்றுமதி செய்";
 "Reset settings" = "அமைப்புகளை மீட்டமை";
-"Pause the Stats" = "Stats-ஐ நிறுத்து";
-"Resume the Stats" = "Stats-ஐ மீண்டும் தொடங்கு";
+"Pause the Stats" = "Gaugebar-ஐ நிறுத்து";
+"Resume the Stats" = "Gaugebar-ஐ மீண்டும் தொடங்கு";
 "Combined modules" = "ஒன்றிணைக்கப்பட்ட தொகுதிகள்";
 "Show icon instead of widgets" = "விட்ஜெட்டுகளுக்குப் பதிலாக ஐகானைக் காட்டு";
 "Combined details" = "ஒன்றிணைக்கப்பட்ட விவரங்கள்";
@@ -187,11 +187,11 @@
 "Display" = "காட்சி";
 
 // Update
-"The latest version of Stats installed" = "Stats-ன் சமீபத்திய பதிப்பு நிறுவப்பட்டுள்ளது";
+"The latest version of Stats installed" = "Gaugebar-ன் சமீபத்திய பதிப்பு நிறுவப்பட்டுள்ளது";
 "Downloading..." = "பதிவிறக்குகிறது...";
 "Installing..." = "நிறுவப்படுகிறது..."; // qwen3.8:27b
 "Updating..." = "புதுப்பிப்பது..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats தானாக மீண்டும் தொடங்கும்"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar தானாக மீண்டும் தொடங்கும்"; // qwen3.8:27b
 "Current version: " = "தற்போதைய பதிப்பு:  ";
 "Latest version: " = "சமீபத்திய பதிப்பு:    ";
 "Changelog" = "மாற்றப் பதிவு"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "விசிறி உதவியாளரை நீக்கு";
 "Approve in System Settings ▸ Login Items" = "System Settings ▸ Login Items-இல் அங்கீகரி";
 "Fan helper needs your approval" = "விசிறி உதவியாளரின் அங்கீகாரம் தேவை";
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "விசிறிகளைக் கட்டுப்படுத்த, System Settings ▸ Login Items-இல் Stats-ஐ இயக்கவும்.";
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "விசிறிகளைக் கட்டுப்படுத்த, System Settings ▸ Login Items-இல் Gaugebar-ஐ இயக்கவும்.";
 "Open Login Items" = "Login Items-ஐத் திற";
 "Could not enable the fan helper" = "விசிறி உதவியாளரை இயக்க முடியவில்லை";
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "System Settings ▸ Login Items-ஐத் திறந்து, Stats பின்னணியில் அனுமதிக்கப்பட்டுள்ளதா என்று உறுதி செய்து, மீண்டும் முயற்சிக்கவும்.";
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "System Settings ▸ Login Items-ஐத் திறந்து, Gaugebar பின்னணியில் அனுமதிக்கப்பட்டுள்ளதா என்று உறுதி செய்து, மீண்டும் முயற்சிக்கவும்.";
 "Fan value" = "விசிறி மதிப்பு";
 "Turn off fan" = "விசிறியை அணை";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "விசிறியை அணைக்கப் போகிறீர்கள். இது பரிந்துரைக்கப்படாத செயல், இது Mac-ஐ சேதப்படுத்தலாம். இதைச் செய்ய விரும்புகிறீர்களா?";

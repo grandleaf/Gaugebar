@@ -101,15 +101,15 @@
 "Enable" = "Activează"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Configurare Stats"; // gemma4:31b
+"Stats Setup" = "Configurare Gaugebar"; // gemma4:31b
 "Previous" = "Anterior"; // translategemma:4b
 "Previous page" = "Pagina anterioară"; // translategemma:4b
 "Next" = "Următorul"; // gemma4:31b
 "Next page" = "Pagina următoare"; // translategemma:4b
 "Finish" = "Finalizare"; // gemma4:31b
 "Finish setup" = "Finalizează configurarea"; // gemma4:31b
-"Welcome to Stats" = "Bun venit la Stats"; // gemma4:31b
-"welcome_message" = "Vă mulțumim că folosiți Stats, un monitor de sistem macOS gratuit și cu sursă deschisă pentru bara de meniu."; // gemma4:31b
+"Welcome to Stats" = "Bun venit la Gaugebar"; // gemma4:31b
+"welcome_message" = "Vă mulțumim că folosiți Gaugebar, un monitor de sistem macOS gratuit și cu sursă deschisă pentru bara de meniu."; // gemma4:31b
 "Select preset" = "Selectați prestabilirea"; // gemma4:31b
 "select_preset_message" = "Alegeți un set inițial de module. Puteți personaliza totul mai târziu în Setări."; // gemma4:31b
 "Default" = "Implicit"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Verifică dacă există o versiune nouă în fiecare lună (o dată pe lună)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Nu verifica niciodată actualizările (nu este recomandat)"; // gemma4:31b
 "The configuration is completed" = "Configurarea este finalizată"; // gemma4:31b
-"finish_setup_message" = "Totul este configurat! \n Stats este un instrument open source, este gratuit și va rămâne așa. \n Dacă vă place, puteți susține proiectul, este întotdeauna apreciat!"; // gemma4:31b
+"finish_setup_message" = "Totul este configurat! \n Gaugebar este un instrument open source, este gratuit și va rămâne așa. \n Dacă vă place, puteți susține proiectul, este întotdeauna apreciat!"; // gemma4:31b
 
 // Alerts
 "New version available" = "Versiune nouă disponibilă";
-"Click to install the new version of Stats" = "Click aici pentru a instala noua versiune Stats";
+"Click to install the new version of Stats" = "Click aici pentru a instala noua versiune Gaugebar";
 "Successfully updated" = "Actualizat cu succes";
-"Stats was updated to v" = "Stats a fost actualizat la v%0";
+"Stats was updated to v" = "Gaugebar a fost actualizat la v%0";
 "Reset settings text" = "Toate setările aplicației vor fi resetate și aplicația va fi repornită. Sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b
 "Deregister text" = "Calculatorul va fi dezînregistrat din System Stats și veți fi deconectat. Sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b-it-qat
-"Support text" = "Vă mulțumim pentru utilizarea Stats!\n\n Menținerea și îmbunătățirea acestui proiect open-source necesită timp și resurse. Sprijinul dumneavoastră ne ajută să continuăm să oferim o aplicație gratuită și fiabilă pentru toată lumea.\n\nDacă Stats vă este util, vă rugăm să luați în considerare posibilitatea de a face o contribuție. Fiecare bănuț ajută!";
+"Support text" = "Vă mulțumim pentru utilizarea Gaugebar!\n\n Menținerea și îmbunătățirea acestui proiect open-source necesită timp și resurse. Sprijinul dumneavoastră ne ajută să continuăm să oferim o aplicație gratuită și fiabilă pentru toată lumea.\n\nDacă Gaugebar vă este util, vă rugăm să luați în considerare posibilitatea de a face o contribuție. Fiecare bănuț ajută!";
 
 // Settings
 "Open Activity Monitor" = "Deschide Monitorul de Activitate";
@@ -163,8 +163,8 @@
 "Import settings" = "Importă setările"; // gemma4:31b
 "Export settings" = "Exportă setările"; // gemma4:31b
 "Reset settings" = "Resetează setările"; // translategemma:4b
-"Pause the Stats" = "Pauzează Stats"; // gemma4:31b
-"Resume the Stats" = "Reluați Stats"; // gemma4:31b
+"Pause the Stats" = "Pauzează Gaugebar"; // gemma4:31b
+"Resume the Stats" = "Reluați Gaugebar"; // gemma4:31b
 "Combined modules" = "Module combinate"; // gemma4:31b
 "Show icon instead of widgets" = "Afișează pictograma în locul widgeturilor";
 "Combined details" = "Detalii combinate"; // translategemma:4b
@@ -187,11 +187,11 @@
 "Display" = "Ecran"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Cea mai recentă versiune de Stats instalată";
+"The latest version of Stats installed" = "Cea mai recentă versiune de Gaugebar instalată";
 "Downloading..." = "Se descarcă...";
 "Installing..." = "Se instalează..."; // qwen3.8:27b
 "Updating..." = "Se actualizează..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats se va reporni automat"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar se va reporni automat"; // qwen3.8:27b
 "Current version: " = "Versiunea curentă: ";
 "Latest version: " = "Versiunea cea mai recentă: ";
 "Changelog" = "Jurnalul modificărilor"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Dezinstalează asistentul pentru ventilator"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "Aprobă în Setări sistem ▸ Elemente de autentificare"; // gemma4:31b
 "Fan helper needs your approval" = "Ajutorul pentru ventilator necesită aprobarea ta"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Pentru a controla ventilatoarele, activează Stats în Setări de sistem ▸ Elementele de autentificare."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Pentru a controla ventilatoarele, activează Gaugebar în Setări de sistem ▸ Elementele de autentificare."; // gemma4:31b
 "Open Login Items" = "Deschide elementele de autentificare"; // gemma4:31b
 "Could not enable the fan helper" = "Nu s-a putut activa utilitarul pentru ventilator"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Deschide Setări sistem ▸ Elemente de autentificare, asigură-te că Stats este permis în fundal, apoi încearcă din nou."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Deschide Setări sistem ▸ Elemente de autentificare, asigură-te că Gaugebar este permis în fundal, apoi încearcă din nou."; // gemma4:31b
 "Fan value" = "Valoarea ventilatorului"; // gemma4:31b
 "Turn off fan" = "Oprește ventilatorul"; // translategemma:4b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Sunteți pe cale să opriți ventilatorul. Aceasta nu este o acțiune recomandată care poate deteriora Mac-ul dumneavoastră, sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b

@@ -101,15 +101,15 @@
 "Enable" = "Włącz";
 
 // Setup
-"Stats Setup" = "Konfiguracja Stats";
+"Stats Setup" = "Konfiguracja Gaugebar";
 "Previous" = "Poprzednia";
 "Previous page" = "Poprzednia strona";
 "Next" = "Następna";
 "Next page" = "Następna strona";
 "Finish" = "Zakończ";
 "Finish setup" = "Zakończ konfigurację";
-"Welcome to Stats" = "Witamy w Stats";
-"welcome_message" = "Dziękujemy za korzystanie ze Stats,\n bezpłatnego monitora systemu macOS o otwartym kodzie źródłowym.";
+"Welcome to Stats" = "Witamy w Gaugebar";
+"welcome_message" = "Dziękujemy za korzystanie ze Gaugebar,\n bezpłatnego monitora systemu macOS o otwartym kodzie źródłowym.";
 "Select preset" = "Wybierz ustawienie wstępne";
 "select_preset_message" = "Wybierz początkowy zestaw modułów. Wszystko możesz później dostosować w Ustawieniach.";
 "Default" = "Domyślny";
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Sprawdzaj nową wersję co miesiąc (raz w miesiącu)";
 "Never check for updates (not recommended)" = "Nigdy nie sprawdzaj czy są aktualizacje (niezalecane)";
 "The configuration is completed" = "Konfiguracja zakończona";
-"finish_setup_message" = "Wszystko gotowe! \n Stats to narzędzie open source, które jest bezpłatne i zawsze takie będzie. \n Jeśli Ci się spodoba, możesz wesprzeć projekt, to jest zawsze mile widziane!";
+"finish_setup_message" = "Wszystko gotowe! \n Gaugebar to narzędzie open source, które jest bezpłatne i zawsze takie będzie. \n Jeśli Ci się spodoba, możesz wesprzeć projekt, to jest zawsze mile widziane!";
 
 // Alerts
 "New version available" = "Dostępna nowa wersja";
 "Click to install the new version of Stats" = "Kliknij, aby zainstalować nową wersję";
 "Successfully updated" = "Zaktualizowano pomyślnie";
-"Stats was updated to v" = "Stats został zaktualizowany do v%0";
+"Stats was updated to v" = "Gaugebar został zaktualizowany do v%0";
 "Reset settings text" = "Wszystkie ustawienia aplikacji zostaną zresetowane, a aplikacja zostanie uruchomiona ponownie. Czy na pewno chcesz to zrobić?";
 "Deregister text" = "Komputer zostanie wyrejestrowany ze System Stats, a Ty zostaniesz wylogowany. Czy na pewno chcesz to zrobić?";
-"Support text" = "Dziękujemy za korzystanie ze Stats! \n\n Utrzymanie i ulepszanie tego open-source projektu wymaga czasu i zasobów. Twoje wsparcie pomaga nam nadal dostarczać bezpłatną i niezawodną aplikację dla każdego.\n\nJeśli uważasz, że Stats jest pomocny, rozważ dokonanie wpłaty. Każda drobnostka pomaga!";
+"Support text" = "Dziękujemy za korzystanie ze Gaugebar! \n\n Utrzymanie i ulepszanie tego open-source projektu wymaga czasu i zasobów. Twoje wsparcie pomaga nam nadal dostarczać bezpłatną i niezawodną aplikację dla każdego.\n\nJeśli uważasz, że Gaugebar jest pomocny, rozważ dokonanie wpłaty. Każda drobnostka pomaga!";
 
 // Settings
 "Open Activity Monitor" = "Otwórz Monitor Aktywności";
@@ -163,8 +163,8 @@
 "Import settings" = "Importuj ustawienia";
 "Export settings" = "Eksportuj ustawienia";
 "Reset settings" = "Resetuj ustawienia";
-"Pause the Stats" = "Wstrzymaj Stats";
-"Resume the Stats" = "Wznów Stats";
+"Pause the Stats" = "Wstrzymaj Gaugebar";
+"Resume the Stats" = "Wznów Gaugebar";
 "Combined modules" = "Połączone moduły";
 "Show icon instead of widgets" = "Pokaż ikonę zamiast widżetów";
 "Combined details" = "Złączone szczegóły";
@@ -187,11 +187,11 @@
 "Display" = "Wyświetlacz";
 
 // Update
-"The latest version of Stats installed" = "Najnowsza wersja Stats zainstalowana";
+"The latest version of Stats installed" = "Najnowsza wersja Gaugebar zainstalowana";
 "Downloading..." = "Pobieranie...";
 "Installing..." = "Instalowanie...";
 "Updating..." = "Aktualizowanie...";
-"Stats will restart automatically" = "Stats zostanie automatycznie uruchomiony ponownie";
+"Stats will restart automatically" = "Gaugebar zostanie automatycznie uruchomiony ponownie";
 "Current version: " = "Aktualna wersja: ";
 "Latest version: " = "Najnowsza wersja: ";
 "Changelog" = "Dziennik zmian";
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Odinstaluj narzędzie do wentylatora";
 "Approve in System Settings ▸ Login Items" = "Zatwierdź w Ustawieniach systemowych ▸ Elementy logowania";
 "Fan helper needs your approval" = "Narzędzie do wentylatora potrzebuje zgody";
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Aby sterować wentylatorami, włącz Stats w Ustawieniach systemowych ▸ Elementy logowania.";
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Aby sterować wentylatorami, włącz Gaugebar w Ustawieniach systemowych ▸ Elementy logowania.";
 "Open Login Items" = "Otwórz elementy logowania";
 "Could not enable the fan helper" = "Nie można włączyć narzędzia do wentylatora";
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otwórz Ustawienia systemowe ▸ Elementy logowania, upewnij się, że aplikacja Stats może działać w tle, a następnie spróbuj ponownie";
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otwórz Ustawienia systemowe ▸ Elementy logowania, upewnij się, że aplikacja Gaugebar może działać w tle, a następnie spróbuj ponownie";
 "Fan value" = "Wartość wentylatora";
 "Turn off fan" = "Wyłączyć wentylator";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Zamierzasz wyłączyć wentylator. To nie jest zalecana czynność, która może spowodować uszkodzenie komputera Mac. Czy na pewno chcesz to zrobić?";

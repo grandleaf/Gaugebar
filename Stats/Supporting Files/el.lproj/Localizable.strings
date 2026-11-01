@@ -101,15 +101,15 @@
 "Enable" = "Ενεργοποίηση"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Εγκατάσταση Stats";
+"Stats Setup" = "Εγκατάσταση Gaugebar";
 "Previous" = "Προηγούμενο";
 "Previous page" = "Προηγούμενη σελίδα";
 "Next" = "Επόμενο";
 "Next page" = "Επόμενη σελίδα";
 "Finish" = "Τέλος";
 "Finish setup" = "Τέλος εγκατάστασης";
-"Welcome to Stats" = "Καλώς ήρθες στο Stats";
-"welcome_message" = "Ευχαριστούμε που χρησιμοποιείτε το Stats, ένα δωρεάν εργαλείο παρακολούθησης συστήματος macOS ανοιχτού κώδικα για τη γραμμή μενού σας."; // gemma4:31b
+"Welcome to Stats" = "Καλώς ήρθες στο Gaugebar";
+"welcome_message" = "Ευχαριστούμε που χρησιμοποιείτε το Gaugebar, ένα δωρεάν εργαλείο παρακολούθησης συστήματος macOS ανοιχτού κώδικα για τη γραμμή μενού σας."; // gemma4:31b
 "Select preset" = "Επιλογή προκαθορισμού"; // gemma4:31b
 "select_preset_message" = "Επιλέξτε ένα αρχικό σύνολο ενοτήτων. Μπορείτε να προσαρμόσετε τα πάντα αργότερα στις Ρυθμίσεις."; // gemma4:31b
 "Default" = "Προεπιλεγμένο"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Έλεγχος για νέα έκδοση κάθε μήνα (μία φορά τον μήνα)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Ποτέ μην ελέγχετε για ενημερώσεις (δεν συνιστάται)"; // gemma4:31b
 "The configuration is completed" = "Η διαμόρφωση ολοκληρώθηκε"; // gemma4:31b
-"finish_setup_message" = "Όλα είναι έτοιμα! \n Το Stats είναι ένα εργαλείο ανοιχτού κώδικα, είναι δωρεάν και θα παραμείνει έτσι. \n Αν σας αρέσει, μπορείτε να υποστηρίξετε το έργο, εκτιμάται πάντα!"; // gemma4:31b
+"finish_setup_message" = "Όλα είναι έτοιμα! \n Το Gaugebar είναι ένα εργαλείο ανοιχτού κώδικα, είναι δωρεάν και θα παραμείνει έτσι. \n Αν σας αρέσει, μπορείτε να υποστηρίξετε το έργο, εκτιμάται πάντα!"; // gemma4:31b
 
 // Alerts
 "New version available" = "Νέα έκδοση διαθέσιμη";
-"Click to install the new version of Stats" = "Πάτησε εδώ για την εγκατάσταση της νέας έκδοσης του Stats";
+"Click to install the new version of Stats" = "Πάτησε εδώ για την εγκατάσταση της νέας έκδοσης του Gaugebar";
 "Successfully updated" = "Επιτυχής ενημέρωση";
-"Stats was updated to v" = "Το Stats ενημερώθηκε στην έκδοση %0";
+"Stats was updated to v" = "Το Gaugebar ενημερώθηκε στην έκδοση %0";
 "Reset settings text" = "Όλες οι ρυθμίσεις της εφαρμογής θα αρχικοποιηθούν και η εφαρμογή θα επανεκκινηθεί. Είστε σίγουροι;";
 "Deregister text" = "Ο υπολογιστής θα απαγραφεί από το System Stats και θα αποσυνδεθείτε. Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;"; // gemma4:31b-it-qat
-"Support text" = "Σας ευχαριστούμε για τη χρήση των Stats!\n\n Η συντήρηση και η βελτίωση αυτού του έργου ανοιχτού κώδικα απαιτεί χρόνο και πόρους. Η υποστήριξή σας μας βοηθά να συνεχίσουμε να παρέχουμε μια δωρεάν και αξιόπιστη εφαρμογή για όλους.\n\nΕάν βρίσκετε το Stats χρήσιμο, παρακαλούμε σκεφτείτε να συνεισφέρετε. Κάθε μικρό ποσό βοηθάει!";
+"Support text" = "Σας ευχαριστούμε για τη χρήση των Gaugebar!\n\n Η συντήρηση και η βελτίωση αυτού του έργου ανοιχτού κώδικα απαιτεί χρόνο και πόρους. Η υποστήριξή σας μας βοηθά να συνεχίσουμε να παρέχουμε μια δωρεάν και αξιόπιστη εφαρμογή για όλους.\n\nΕάν βρίσκετε το Gaugebar χρήσιμο, παρακαλούμε σκεφτείτε να συνεισφέρετε. Κάθε μικρό ποσό βοηθάει!";
 
 // Settings
 "Open Activity Monitor" = "Άνοιγμα Παρακολούθησης Δραστηριότητας";
@@ -163,8 +163,8 @@
 "Import settings" = "Εισαγωγή ρυθμίσεων"; // translategemma:4b
 "Export settings" = "Εξαγωγή ρυθμίσεων"; // gemma4:31b
 "Reset settings" = "Επαναφορά ρυθμίσεων";
-"Pause the Stats" = "Παύση του Stats";
-"Resume the Stats" = "Ξαναρχίζω το Stats";
+"Pause the Stats" = "Παύση του Gaugebar";
+"Resume the Stats" = "Ξαναρχίζω το Gaugebar";
 "Combined modules" = "Συνένωση ενοτήτων";
 "Show icon instead of widgets" = "Εμφάνιση εικονιδίου αντί για widgets";
 "Combined details" = "Συνδυασμένες λεπτομέρειες"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Οθόνη"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Η τελευταία έκδοση του Stats είναι εγκατεστημένη";
+"The latest version of Stats installed" = "Η τελευταία έκδοση του Gaugebar είναι εγκατεστημένη";
 "Downloading..." = "Λήψη...";
 "Installing..." = "Εγκατάσταση..."; // qwen3.8:27b
 "Updating..." = "Ενημέρωση..."; // qwen3.8:27b
-"Stats will restart automatically" = "Το Stats θα επανεκκινήσει αυτόματα"; // qwen3.8:27b
+"Stats will restart automatically" = "Το Gaugebar θα επανεκκινήσει αυτόματα"; // qwen3.8:27b
 "Current version: " = "Τρέχουσα έκδοση:  ";
 "Latest version: " = "Τελευταία έκδοση:    ";
 "Changelog" = "Ημερολόγιο αλλαγών"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Απεγκατάσταση fan helper";
 "Approve in System Settings ▸ Login Items" = "Εγκρίνετε στις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης"; // gemma4:31b
 "Fan helper needs your approval" = "Ο βοηθός ανεμιστήρα χρειάζεται την έγκρισή σας"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Για να ελέγξετε τους ανεμιστήρες, ενεργοποιήστε το Stats στις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Για να ελέγξετε τους ανεμιστήρες, ενεργοποιήστε το Gaugebar στις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης."; // gemma4:31b
 "Open Login Items" = "Ανοίξτε τα Αντικείμενα σύνδεσης"; // gemma4:31b
 "Could not enable the fan helper" = "Δεν ήταν δυνατή η ενεργοποίηση του βοηθητικού προγράμματος του ανεμιστήρα"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ανοίξτε τις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης, βεβαιωθείτε ότι το Stats είναι επιτρεπτό στο παρασκήνιο, και στη συνέχεια δοκιμάστε ξανά."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ανοίξτε τις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης, βεβαιωθείτε ότι το Gaugebar είναι επιτρεπτό στο παρασκήνιο, και στη συνέχεια δοκιμάστε ξανά."; // gemma4:31b
 "Fan value" = "Τιμή ανεμιστήρα"; // gemma4:31b
 "Turn off fan" = "Απενεργοποίηση ανεμιστήρα"; // gemma4:31b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Πρόκειται να απενεργοποιήσετε τον ανεμιστήρα. Αυτή είναι μια μη προτεινόμενη ενέργεια που μπορεί να προκαλέσει βλάβη στον Mac σας, είστε σίγουροι ότι θέλετε να το κάνετε αυτό;"; // gemma4:31b

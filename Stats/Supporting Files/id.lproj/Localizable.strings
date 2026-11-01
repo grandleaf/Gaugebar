@@ -101,15 +101,15 @@
 "Enable" = "Aktifkan"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Pengaturan Stats"; // gemma4:31b
+"Stats Setup" = "Pengaturan Gaugebar"; // gemma4:31b
 "Previous" = "Sebelumnya"; // translategemma:4b
 "Previous page" = "Halaman sebelumnya"; // translategemma:4b
 "Next" = "Berikutnya"; // gemma4:31b
 "Next page" = "Halaman berikutnya"; // translategemma:4b
 "Finish" = "Selesai"; // translategemma:4b
 "Finish setup" = "Selesaikan penyiapan"; // gemma4:31b
-"Welcome to Stats" = "Selamat datang di Stats"; // translategemma:4b
-"welcome_message" = "Terima kasih telah menggunakan Stats, monitor sistem macOS sumber terbuka gratis untuk bilah menu Anda."; // gemma4:31b
+"Welcome to Stats" = "Selamat datang di Gaugebar"; // translategemma:4b
+"welcome_message" = "Terima kasih telah menggunakan Gaugebar, monitor sistem macOS sumber terbuka gratis untuk bilah menu Anda."; // gemma4:31b
 "Select preset" = "Pilih preset"; // gemma4:31b
 "select_preset_message" = "Pilih set awal modul. Anda dapat menyesuaikan semuanya nanti di Pengaturan."; // gemma4:31b
 "Default" = "Bawaan"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Periksa versi baru setiap bulan (sekali sebulan)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Jangan pernah periksa pembaruan (tidak direkomendasikan)"; // gemma4:31b
 "The configuration is completed" = "Konfigurasi telah selesai"; // gemma4:31b
-"finish_setup_message" = "Semuanya sudah siap!\nStats adalah alat sumber terbuka, gratis dan akan selalu gratis.\nJika Anda menyukainya, Anda dapat mendukung proyek ini, hal ini selalu dihargai!"; // gemma4:31b
+"finish_setup_message" = "Semuanya sudah siap!\nGaugebar adalah alat sumber terbuka, gratis dan akan selalu gratis.\nJika Anda menyukainya, Anda dapat mendukung proyek ini, hal ini selalu dihargai!"; // gemma4:31b
 
 // Alerts
 "New version available" = "Versi baru tersedia";
-"Click to install the new version of Stats" = "Klik untuk memasang versi baru dari Stats";
+"Click to install the new version of Stats" = "Klik untuk memasang versi baru dari Gaugebar";
 "Successfully updated" = "Pembaruan berhasil";
-"Stats was updated to v" = "Stats telah diperbarui ke v%0";
+"Stats was updated to v" = "Gaugebar telah diperbarui ke v%0";
 "Reset settings text" = "Semua pengaturan aplikasi akan diatur ulang, dan aplikasi akan mengulang kembali. Anda yakin untuk melakukan ini?";
 "Deregister text" = "Komputer akan dideregistrasi dari System Stats dan Anda akan keluar. Apakah Anda yakin ingin melakukan ini?"; // gemma4:31b-it-qat
-"Support text" = "Terima kasih telah menggunakan Stats!\n\nMemelihara dan meningkatkan proyek sumber terbuka ini membutuhkan waktu dan sumber daya. Dukungan Anda membantu kami untuk terus menyediakan aplikasi yang gratis dan dapat diandalkan untuk semua orang.\n\nJika Anda merasa Stats bermanfaat, mohon pertimbangkan untuk memberikan kontribusi. Setiap hal kecil akan sangat membantu!";
+"Support text" = "Terima kasih telah menggunakan Gaugebar!\n\nMemelihara dan meningkatkan proyek sumber terbuka ini membutuhkan waktu dan sumber daya. Dukungan Anda membantu kami untuk terus menyediakan aplikasi yang gratis dan dapat diandalkan untuk semua orang.\n\nJika Anda merasa Gaugebar bermanfaat, mohon pertimbangkan untuk memberikan kontribusi. Setiap hal kecil akan sangat membantu!";
 
 // Settings
 "Open Activity Monitor" = "Buka Monitor Aktivitas";
@@ -163,8 +163,8 @@
 "Import settings" = "Impor pengaturan"; // translategemma:4b
 "Export settings" = "Ekspor pengaturan"; // gemma4:31b
 "Reset settings" = "Atur ulang pengaturan";
-"Pause the Stats" = "Jeda Stats"; // gemma4:31b
-"Resume the Stats" = "Lanjutkan Stats"; // gemma4:31b
+"Pause the Stats" = "Jeda Gaugebar"; // gemma4:31b
+"Resume the Stats" = "Lanjutkan Gaugebar"; // gemma4:31b
 "Combined modules" = "Modul gabungan"; // gemma4:31b
 "Show icon instead of widgets" = "Tampilkan ikon sebagai pengganti widget";
 "Combined details" = "Detail gabungan"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Layar"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Versi terbaru dari Stats telah dipasang";
+"The latest version of Stats installed" = "Versi terbaru dari Gaugebar telah dipasang";
 "Downloading..." = "Mengunduh...";
 "Installing..." = "Menginstal..."; // qwen3.8:27b
 "Updating..." = "Memperbarui..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats akan dimulai ulang secara otomatis"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar akan dimulai ulang secara otomatis"; // qwen3.8:27b
 "Current version: " = "Versi sekarang:  ";
 "Latest version: " = "Versi terbaru:    ";
 "Changelog" = "Catatan Perubahan"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Hapus instalasi pembantu kipas"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "Setujui di Pengaturan Sistem ▸ Item Login"; // gemma4:31b
 "Fan helper needs your approval" = "Alat bantu kipas membutuhkan persetujuan Anda"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Untuk mengontrol kipas, aktifkan Stats di Pengaturan Sistem ▸ Item Login."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Untuk mengontrol kipas, aktifkan Gaugebar di Pengaturan Sistem ▸ Item Login."; // gemma4:31b
 "Open Login Items" = "Buka Item Login"; // gemma4:31b
 "Could not enable the fan helper" = "Tidak dapat mengaktifkan helper kipas"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Buka Pengaturan Sistem ▸ Item Login, pastikan Stats diizinkan di latar belakang, kemudian coba lagi."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Buka Pengaturan Sistem ▸ Item Login, pastikan Gaugebar diizinkan di latar belakang, kemudian coba lagi."; // gemma4:31b
 "Fan value" = "Nilai kipas"; // gemma4:31b
 "Turn off fan" = "Matikan kipas"; // translategemma:4b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Anda akan mematikan kipas. Ini adalah tindakan yang tidak direkomendasikan yang dapat merusak Mac Anda, apakah Anda yakin ingin melakukannya?"; // gemma4:31b

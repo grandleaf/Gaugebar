@@ -101,15 +101,15 @@
 "Enable" = "Engedélyezés"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "A Stats beállítása";
+"Stats Setup" = "A Gaugebar beállítása";
 "Previous" = "Előző";
 "Previous page" = "Előző oldal";
 "Next" = "Következő";
 "Next page" = "Következő oldal";
 "Finish" = "Befejezés";
 "Finish setup" = "Beállítás befejezése";
-"Welcome to Stats" = "Üdvözlünk a Stats programban";
-"welcome_message" = "Köszönjük, hogy a Stats programot használod, ami egy ingyenes, nyílt forráskódú, macOS rendszer monitorozó alkalmazás a menüsorodba.";
+"Welcome to Stats" = "Üdvözlünk a Gaugebar programban";
+"welcome_message" = "Köszönjük, hogy a Gaugebar programot használod, ami egy ingyenes, nyílt forráskódú, macOS rendszer monitorozó alkalmazás a menüsorodba.";
 "Select preset" = "Válasszon előbeállítást"; // gemma4:31b
 "select_preset_message" = "Válasszon egy kezdő modulkészletet. Mindent később testreszabhat a Beállításokban."; // gemma4:31b
 "Default" = "Alapértelmezett"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Új verzió keresése minden hónapban (havi egyszer)";
 "Never check for updates (not recommended)" = "Ne keressen frissítéseket (nem ajánlott)";
 "The configuration is completed" = "A konfiguráció befejezve";
-"finish_setup_message" = "Minden beállítva!\nA Stats egy nyílt forráskódú eszköz, ami ingyenes és az is marad.\nHa hasznosnak találod, támogathatod a fejlesztését, mindig nagyra értékeljük!";
+"finish_setup_message" = "Minden beállítva!\nA Gaugebar egy nyílt forráskódú eszköz, ami ingyenes és az is marad.\nHa hasznosnak találod, támogathatod a fejlesztését, mindig nagyra értékeljük!";
 
 // Alerts
 "New version available" = "Új verzió érhető el";
-"Click to install the new version of Stats" = "Kattintson a Stats új verziójának telepítéséhez";
+"Click to install the new version of Stats" = "Kattintson a Gaugebar új verziójának telepítéséhez";
 "Successfully updated" = "Sikeres frissítés";
-"Stats was updated to v" = "A Stats sikeresen frissítve lett a(z) v%0 verzióra";
+"Stats was updated to v" = "A Gaugebar sikeresen frissítve lett a(z) v%0 verzióra";
 "Reset settings text" = "Minden alkalmazásbeállítás alaphelyzetbe fog állni, és az alkalmazás újra fog indulni. Biztosan ezt szeretné?";
 "Deregister text" = "A gépet törlik a System Stats regisztrációjából, és kijelentkeztetik. Biztosan szeretné ezt megtenni?"; // gemma4:31b-it-qat
-"Support text" = "Köszönjük, hogy használja a Stats-t!\n\n A nyílt forráskódú projekt fenntartása és fejlesztése időt és erőforrásokat igényel. Az Ön támogatása segít nekünk abban, hogy továbbra is ingyenes és megbízható alkalmazást nyújtsunk mindenkinek.\n\nHa hasznosnak találja a Stats-t, kérjük, fontolja meg, hogy hozzájáruljon. Minden kis aprócska összeg segít!";
+"Support text" = "Köszönjük, hogy használja a Gaugebar-t!\n\n A nyílt forráskódú projekt fenntartása és fejlesztése időt és erőforrásokat igényel. Az Ön támogatása segít nekünk abban, hogy továbbra is ingyenes és megbízható alkalmazást nyújtsunk mindenkinek.\n\nHa hasznosnak találja a Gaugebar-t, kérjük, fontolja meg, hogy hozzájáruljon. Minden kis aprócska összeg segít!";
 
 // Settings
 "Open Activity Monitor" = "Tevékenységfigyelő megnyitása";
@@ -163,8 +163,8 @@
 "Import settings" = "Beállítások importálása"; // gemma4:31b
 "Export settings" = "Beállítások exportálása"; // gemma4:31b
 "Reset settings" = "Beállítások alaphelyzetbe állítása";
-"Pause the Stats" = "Stats felfüggesztése";
-"Resume the Stats" = "Stats folytatása";
+"Pause the Stats" = "Gaugebar felfüggesztése";
+"Resume the Stats" = "Gaugebar folytatása";
 "Combined modules" = "Egyesített modulok";
 "Show icon instead of widgets" = "Ikon megjelenítése widgetek helyett";
 "Combined details" = "Kombinált részletek"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Kijelző"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "A Stats legújabb verziója van telepítve";
+"The latest version of Stats installed" = "A Gaugebar legújabb verziója van telepítve";
 "Downloading..." = "Letöltés...";
 "Installing..." = "Telepítés..."; // qwen3.8:27b
 "Updating..." = "Frissítés..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats automatikusan újraindul"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar automatikusan újraindul"; // qwen3.8:27b
 "Current version: " = "Jelenlegi verzió:  ";
 "Latest version: " = "Legújabb verzió:    ";
 "Changelog" = "Változások"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Ventilátor segítő törlése";
 "Approve in System Settings ▸ Login Items" = "Hagyja jóvá a Rendszerbeállítások ▸ Bejelentkezési elemek"; // gemma4:31b
 "Fan helper needs your approval" = "A ventilátor-segédprogramnak szükség van az Ön jóváhagyására"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "A ventilátorok vezérléséhez engedélyezze a Stats-t a Rendszerbeállítások ▸ Bejelentkezési elemekben."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "A ventilátorok vezérléséhez engedélyezze a Gaugebar-t a Rendszerbeállítások ▸ Bejelentkezési elemekben."; // gemma4:31b
 "Open Login Items" = "Nyisd meg a bejelentkezési elemeket"; // gemma4:31b
 "Could not enable the fan helper" = "Nem sikerült aktiválni a ventilátor segédprogramot"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Nyissa meg a Rendszerbeállítások ▸ Bejelentkezési elemek menüt, győződjön meg róla, hogy a Stats engedélyezve van a háttérben, majd próbálja újra."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Nyissa meg a Rendszerbeállítások ▸ Bejelentkezési elemek menüt, győződjön meg róla, hogy a Gaugebar engedélyezve van a háttérben, majd próbálja újra."; // gemma4:31b
 "Fan value" = "Ventilátor érték";
 "Turn off fan" = "Ventilátor kikapcsolása";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "A ventilátor ki lesz kapcsolva. Ez a művelet károsíthatja a macjét, ezért nem ajánlott. Biztosan ki akarja kapcsolni a ventilátort?";

@@ -1,5 +1,6 @@
-APP = Stats
-BUNDLE_ID = eu.exelban.$(APP)
+APP = Gaugebar
+SCHEME = Stats
+BUNDLE_ID = io.github.grandleaf.$(APP)
 
 BUILD_PATH = $(PWD)/build
 APP_PATH = "$(BUILD_PATH)/$(APP).app"
@@ -18,7 +19,7 @@ archive: test-smc clean
 	echo "Exporting application archive..."
 
 	xcodebuild \
-  		-scheme $(APP) \
+  		-scheme $(SCHEME) \
   		-destination 'platform=OS X,arch=x86_64' \
   		-configuration Release archive \
   		-archivePath $(BUILD_PATH)/$(APP).xcarchive

@@ -101,15 +101,15 @@
 "Enable" = "Inschakelen"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats Installatie";
+"Stats Setup" = "Gaugebar Installatie";
 "Previous" = "Vorige"; // translategemma:4b
 "Previous page" = "Vorige pagina"; // translategemma:4b
 "Next" = "Volgende"; // translategemma:4b
 "Next page" = "Volgende pagina"; // translategemma:4b
 "Finish" = "Voltooien"; // gemma4:31b
 "Finish setup" = "Voltooi configuratie"; // gemma4:31b
-"Welcome to Stats" = "Welkom bij Stats"; // translategemma:4b
-"welcome_message" = "Bedankt dat je Stats gebruikt, een gratis open-source macOS-systeemmonitor voor je menubalk."; // gemma4:31b
+"Welcome to Stats" = "Welkom bij Gaugebar"; // translategemma:4b
+"welcome_message" = "Bedankt dat je Gaugebar gebruikt, een gratis open-source macOS-systeemmonitor voor je menubalk."; // gemma4:31b
 "Select preset" = "Selecteer preset"; // gemma4:31b
 "select_preset_message" = "Kies een startset van modules. Je kunt later alles aanpassen in de Instellingen."; // gemma4:31b
 "Default" = "Standaard"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Controleer elke maand op een nieuwe versie (één keer per maand)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Nooit controleren op updates (niet aanbevolen)"; // gemma4:31b
 "The configuration is completed" = "De configuratie is voltooid"; // gemma4:31b
-"finish_setup_message" = "Alles is ingesteld! \n Stats is een open source-tool, het is gratis en dat zal het altijd blijven. \n Als je het leuk vindt, kun je het project ondersteunen, dat wordt altijd gewaardeerd!"; // gemma4:31b
+"finish_setup_message" = "Alles is ingesteld! \n Gaugebar is een open source-tool, het is gratis en dat zal het altijd blijven. \n Als je het leuk vindt, kun je het project ondersteunen, dat wordt altijd gewaardeerd!"; // gemma4:31b
 
 // Alerts
 "New version available" = "Nieuwe versie beschikbaar";
-"Click to install the new version of Stats" = "Klik om de nieuwe versie van Stats te installeren";
+"Click to install the new version of Stats" = "Klik om de nieuwe versie van Gaugebar te installeren";
 "Successfully updated" = "Succesvol bijgewerkt";
-"Stats was updated to v" = "Stats is bijgewerkt naar v%0";
+"Stats was updated to v" = "Gaugebar is bijgewerkt naar v%0";
 "Reset settings text" = "Alle applicatie instellingen worden gereset en de applicatie wordt opnieuw opgestart. Weet je zeker dat je dit wilt doen?";
 "Deregister text" = "De computer wordt afgemeld bij System Stats en je wordt uitgelogd. Weet je zeker dat je dit wilt doen?"; // gemma4:31b-it-qat
-"Support text" = "Bedankt voor het gebruik van Stats! Het onderhouden en verbeteren van dit open-source project kost tijd en middelen. Als je Stats nuttig vindt, overweeg dan alsjeblieft om een bijdrage te leveren. Alle beetjes helpen!";
+"Support text" = "Bedankt voor het gebruik van Gaugebar! Het onderhouden en verbeteren van dit open-source project kost tijd en middelen. Als je Gaugebar nuttig vindt, overweeg dan alsjeblieft om een bijdrage te leveren. Alle beetjes helpen!";
 
 // Settings
 "Open Activity Monitor" = "Open Activiteitenweergave";
@@ -163,8 +163,8 @@
 "Import settings" = "Importeer instellingen"; // gemma4:31b
 "Export settings" = "Exporteer instellingen";
 "Reset settings" = "Instellingen resetten"; // gemma4:31b
-"Pause the Stats" = "Pauzeer de Stats"; // gemma4:31b
-"Resume the Stats" = "Hervat de Stats";
+"Pause the Stats" = "Pauzeer de Gaugebar"; // gemma4:31b
+"Resume the Stats" = "Hervat de Gaugebar";
 "Combined modules" = "Gecombineerde modules"; // translategemma:4b
 "Show icon instead of widgets" = "Toon pictogram in plaats van widgets";
 "Combined details" = "Gecombineerde details";
@@ -187,11 +187,11 @@
 "Display" = "Scherm"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "De laatste versie van Stats is geïnstalleerd.";
+"The latest version of Stats installed" = "De laatste versie van Gaugebar is geïnstalleerd.";
 "Downloading..." = "Aan het downloaden...";
 "Installing..." = "Installeren..."; // qwen3.8:27b
 "Updating..." = "Bijwerken..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats wordt automatisch opnieuw opgestart"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar wordt automatisch opnieuw opgestart"; // qwen3.8:27b
 "Current version: " = "Huidige versie:  ";
 "Latest version: " = "Nieuwste versie:    ";
 "Changelog" = "Wijzigingen"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Verwijder ventilator-helper"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "Goedkeuren in Systeeminstellingen ▸ Inlogitems"; // gemma4:31b
 "Fan helper needs your approval" = "Fan-helper heeft uw goedkeuring nodig"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Om de ventilatoren te bedienen, schakel Stats in in Systeeminstellingen ▸ Inlogitems."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Om de ventilatoren te bedienen, schakel Gaugebar in in Systeeminstellingen ▸ Inlogitems."; // gemma4:31b
 "Open Login Items" = "Open Inlogitems"; // gemma4:31b
 "Could not enable the fan helper" = "Kon de fan-helper niet inschakelen"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Open Systeeminstellingen ▸ Inlogitems, zorg ervoor dat Stats is toegestaan op de achtergrond, en probeer het dan opnieuw."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Open Systeeminstellingen ▸ Inlogitems, zorg ervoor dat Gaugebar is toegestaan op de achtergrond, en probeer het dan opnieuw."; // gemma4:31b
 "Fan value" = "Ventilatorwaarde"; // gemma4:31b
 "Turn off fan" = "Ventilator uitschakelen"; // gemma4:31b
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Je gaat de ventilator uitschakelen. Dit is geen aanbevolen actie die je Mac kan beschadigen, weet je zeker dat je dit wilt doen?"; // gemma4:31b

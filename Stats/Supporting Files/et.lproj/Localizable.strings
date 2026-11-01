@@ -101,15 +101,15 @@
 "Enable" = "Luba"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats seadistamine";
+"Stats Setup" = "Gaugebar seadistamine";
 "Previous" = "Eelmine";
 "Previous page" = "Eelmine leht";
 "Next" = "Järgmine";
 "Next page" = "Järgmine leht";
 "Finish" = "Lõpeta";
 "Finish setup" = "Lõpeta seadistamine";
-"Welcome to Stats" = "Tere tulemast Statsi";
-"welcome_message" = "Täname, et kasutate Statsi, tasuta avatud lähtekoodiga macOS-i süsteemimonitor menüüriba jaoks.";
+"Welcome to Stats" = "Tere tulemast Gaugebari";
+"welcome_message" = "Täname, et kasutate Gaugebari, tasuta avatud lähtekoodiga macOS-i süsteemimonitor menüüriba jaoks.";
 "Select preset" = "Vali etteseadistus"; // gemma4:31b
 "select_preset_message" = "Vali moodulite algne komplekt. Sa saad kõike hiljem seadetes kohandada."; // gemma4:31b
 "Default" = "Vaikimisi"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Kontrolli uut versiooni iga kuu (üks kord kuus)";
 "Never check for updates (not recommended)" = "Ära kunagi kontrolli värskendusi (pole soovitatav)";
 "The configuration is completed" = "Seadistamine on lõpetatud";
-"finish_setup_message" = "Kõik on paika pandud! \n Stats on avatud lähtekoodiga tööriist, see on tasuta ja jääb alati tasuta. \n Kui teile meeldib, saate projekti toetada, see on alati teretulnud!";
+"finish_setup_message" = "Kõik on paika pandud! \n Gaugebar on avatud lähtekoodiga tööriist, see on tasuta ja jääb alati tasuta. \n Kui teile meeldib, saate projekti toetada, see on alati teretulnud!";
 
 // Alerts
 "New version available" = "Uus versioon on saadaval";
-"Click to install the new version of Stats" = "Klõpsa Statsi uue versiooni installimiseks";
+"Click to install the new version of Stats" = "Klõpsa Gaugebari uue versiooni installimiseks";
 "Successfully updated" = "Edukalt värskendatud";
-"Stats was updated to v" = "Stats värskendati versioonile %0";
+"Stats was updated to v" = "Gaugebar värskendati versioonile %0";
 "Reset settings text" = "Kõik rakenduse seaded lähtestatakse ja rakendus taaskäivitatakse. Kas olete kindel, et soovite seda teha?";
 "Deregister text" = "Arvuti deregistreeritakse System Statsist ja teid logitakse välja. Kas olete kindel, et soovite seda teha?"; // gemma4:31b-it-qat
-"Support text" = "Täname teid Statsi kasutamise eest!\n\n Selle avatud lähtekoodiga projekti hooldamine ja täiustamine nõuab aega ja ressursse. Teie toetus aitab meil jätkuvalt pakkuda kõigile tasuta ja usaldusväärset rakendust.\n\nJa kui Stats on teie arvates kasulik, siis palun kaaluge panuse andmist. Iga väike summa aitab!";
+"Support text" = "Täname teid Gaugebari kasutamise eest!\n\n Selle avatud lähtekoodiga projekti hooldamine ja täiustamine nõuab aega ja ressursse. Teie toetus aitab meil jätkuvalt pakkuda kõigile tasuta ja usaldusväärset rakendust.\n\nJa kui Gaugebar on teie arvates kasulik, siis palun kaaluge panuse andmist. Iga väike summa aitab!";
 
 // Settings
 "Open Activity Monitor" = "Ava aktiivsusmonitor";
@@ -163,8 +163,8 @@
 "Import settings" = "Impordi seaded";
 "Export settings" = "Ekspordi seaded";
 "Reset settings" = "Lähtesta seaded";
-"Pause the Stats" = "Peata Stats";
-"Resume the Stats" = "Jätka Stats";
+"Pause the Stats" = "Peata Gaugebar";
+"Resume the Stats" = "Jätka Gaugebar";
 "Combined modules" = "Kombineeritud moodulid";
 "Show icon instead of widgets" = "Näita vidinate asemel ikooni";
 "Combined details" = "Ühendatud andmed";
@@ -191,7 +191,7 @@
 "Downloading..." = "Allalaadimine...";
 "Installing..." = "Paigaldamine..."; // qwen3.8:27b
 "Updating..." = "Uuendamine..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats taaskäivitub automaatselt"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar taaskäivitub automaatselt"; // qwen3.8:27b
 "Current version: " = "Praegune versioon: ";
 "Latest version: " = "Uusim version: ";
 "Changelog" = "Muudatuste logi"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Desinstalli ventilaatoriabiline";
 "Approve in System Settings ▸ Login Items" = "Kinnita Süsteemi seadetes ▸ Sisselogimise üksused"; // gemma4:31b
 "Fan helper needs your approval" = "Ventilaatori abiutill vajab teie heaks kiitmist"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ventilaatorite juhtimiseks aktiveeri Stats Süsteemi seadetes ▸ Sisselogimise üksused."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ventilaatorite juhtimiseks aktiveeri Gaugebar Süsteemi seadetes ▸ Sisselogimise üksused."; // gemma4:31b
 "Open Login Items" = "Ava sisselogimise üksused"; // gemma4:31b
 "Could not enable the fan helper" = "Ei õnnestunud ventilaatori abiutliiti aktiveerida"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ava Süsteemi seaded ▸ Logimise üksused, veendu, et Stats on lubatud taustal, seejärel proovi uuesti."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ava Süsteemi seaded ▸ Logimise üksused, veendu, et Gaugebar on lubatud taustal, seejärel proovi uuesti."; // gemma4:31b
 "Fan value" = "Ventilaatori väärtus";
 "Turn off fan" = "Lülita ventilaator välja";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Te kavatstate lülitada ventilator välja. See ei ole soovitatav tegevus, mis võib kahjustada teie Mac-i. Kas olete kindel, et soovite seda teha?";

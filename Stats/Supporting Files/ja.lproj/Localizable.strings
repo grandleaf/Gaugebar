@@ -101,15 +101,15 @@
 "Enable" = "有効にする"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats セットアップ";
+"Stats Setup" = "Gaugebar セットアップ";
 "Previous" = "前";
 "Previous page" = "前のページ";
 "Next" = "次";
 "Next page" = "次のページ";
 "Finish" = "完了";
 "Finish setup" = "セットアップ完了";
-"Welcome to Stats" = "Stats へようこそ";
-"welcome_message" = "メニューバー用の無料のオープンソースmacOSシステムモニターであるStatsをご利用いただきありがとうございます。"; // gemma4:31b
+"Welcome to Stats" = "Gaugebar へようこそ";
+"welcome_message" = "メニューバー用の無料のオープンソースmacOSシステムモニターであるGaugebarをご利用いただきありがとうございます。"; // gemma4:31b
 "Select preset" = "プリセットを選択"; // gemma4:31b
 "select_preset_message" = "モジュールの初期セットを選択してください。後で「設定」からすべてをカスタマイズできます。"; // gemma4:31b
 "Default" = "デフォルト"; // gemma4:31b
@@ -125,23 +125,23 @@
 "Check for a new version every month (once a month)" = "毎月アップデートを確認する（月1回）";
 "Never check for updates (not recommended)" = "アップデートを確認しない（非推奨）";
 "The configuration is completed" = "設定が完了しました"; // translategemma:4b
-"finish_setup_message" = "すべての設定が完了しました！ \n Stats はオープンソースのツールであり、無料で、これからも無料です。 \n 気に入っていただけたら、プロジェクトの支援をお願いします！"; // gemma4:31b
+"finish_setup_message" = "すべての設定が完了しました！ \n Gaugebar はオープンソースのツールであり、無料で、これからも無料です。 \n 気に入っていただけたら、プロジェクトの支援をお願いします！"; // gemma4:31b
 
 // Alerts
 "New version available" = "新しいバージョンが利用可能です";
-"Click to install the new version of Stats" = "クリックして新しいバージョンの Stats をインストール";
+"Click to install the new version of Stats" = "クリックして新しいバージョンの Gaugebar をインストール";
 "Successfully updated" = "正常にアップデートされました";
-"Stats was updated to v" = "Stats v%0 にアップデートしました";
+"Stats was updated to v" = "Gaugebar v%0 にアップデートしました";
 "Reset settings text" = "アプリの設定をすべてリセットし、アプリを再起動します。本当に続けますか？";
 "Deregister text" = "このコンピュータはSystem Statsから登録解除され、ログアウトされます。本当に実行しますか？"; // gemma4:31b-it-qat
-"Support text" = "Statsをご利用いただきありがとうございます！\n\n オープンソースプロジェクトの維持と改善には、時間とリソースが必要です。皆様のご支援が、無料で信頼できるアプリを継続して提供するための力になっています。\n\nStatsが役に立っていると感じたら、寄付をご検討ください。少額でも大いに役立ちます！";
+"Support text" = "Gaugebarをご利用いただきありがとうございます！\n\n オープンソースプロジェクトの維持と改善には、時間とリソースが必要です。皆様のご支援が、無料で信頼できるアプリを継続して提供するための力になっています。\n\nGaugebarが役に立っていると感じたら、寄付をご検討ください。少額でも大いに役立ちます！";
 
 // Settings
 "Open Activity Monitor" = "アクティビティモニタを開く";
 "Report a bug" = "バグを報告";
-"Support the application" = "Stats をサポート";
-"Close application" = "Stats を終了";
-"Open application settings" = "Stats の設定を開く";
+"Support the application" = "Gaugebar をサポート";
+"Close application" = "Gaugebar を終了";
+"Open application settings" = "Gaugebar の設定を開く";
 "Open dashboard" = "ダッシュボードを開く";
 "No notifications available in this module" = "このモジュールには利用可能な通知がありません";
 "Open Calendar" = "カレンダーを開く";
@@ -163,8 +163,8 @@
 "Import settings" = "設定をインポート"; // gemma4:31b
 "Export settings" = "設定をエクスポート"; // gemma4:31b
 "Reset settings" = "設定をリセット";
-"Pause the Stats" = "Statsを一時停止"; // gemma4:31b
-"Resume the Stats" = "Statsを再開"; // gemma4:31b
+"Pause the Stats" = "Gaugebarを一時停止"; // gemma4:31b
+"Resume the Stats" = "Gaugebarを再開"; // gemma4:31b
 "Combined modules" = "統合モジュール"; // translategemma:4b
 "Show icon instead of widgets" = "ウィジェットの代わりにアイコンを表示";
 "Combined details" = "統合された詳細"; // translategemma:4b
@@ -187,11 +187,11 @@
 "Display" = "ディスプレイ"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "最新の Stats がインストールされています";
+"The latest version of Stats installed" = "最新の Gaugebar がインストールされています";
 "Downloading..." = "ダウンロード中...";
 "Installing..." = "インストール中..."; // qwen3.8:27b
 "Updating..." = "更新中..."; // qwen3.8:27b
-"Stats will restart automatically" = "Statsは自動的に再起動されます"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebarは自動的に再起動されます"; // qwen3.8:27b
 "Current version: " = "現在のバージョン: ";
 "Latest version: " = "最新のバージョン: ";
 "Changelog" = "変更履歴"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "ファンヘルパーをアンインストール"; // gemma4:31b
 "Approve in System Settings ▸ Login Items" = "システム設定 ▸ ログイン項目で承認してください"; // gemma4:31b
 "Fan helper needs your approval" = "ファンヘルパーにはあなたの承認が必要です"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "ファンを制御するには、「システム設定」▸「ログイン項目」でStatsを有効にしてください。"; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "ファンを制御するには、「システム設定」▸「ログイン項目」でGaugebarを有効にしてください。"; // gemma4:31b
 "Open Login Items" = "ログイン項目を開く"; // gemma4:31b
 "Could not enable the fan helper" = "ファンヘルパーを有効にできませんでした"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "「システム設定 ▸ ログイン項目」を開き、Statsがバックグラウンドで許可されていることを確認してから、もう一度お試しください。"; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "「システム設定 ▸ ログイン項目」を開き、Gaugebarがバックグラウンドで許可されていることを確認してから、もう一度お試しください。"; // gemma4:31b
 "Fan value" = "ファンの表示単位";
 "Turn off fan" = "ファンの停止";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "ファンの停止はmacに大きなダメージを与える可能性がある為、推奨されません。本当に実行しますか？";

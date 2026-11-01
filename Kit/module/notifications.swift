@@ -41,7 +41,7 @@ open class NotificationsWrapper: NSStackView {
     
     public func initIDs(_ ids: [String]) {
         for id in ids {
-            let notificationID = "Stats_\(self.module)_\(id)"
+            let notificationID = "Gaugebar_\(self.module)_\(id)"
             self.ids[notificationID] = nil
             self.streak[notificationID] = 0
             removeNotification(notificationID)
@@ -49,7 +49,7 @@ open class NotificationsWrapper: NSStackView {
     }
     
     public func checkDouble(id rid: String, value: Double, threshold: Double, title: String, subtitle: String, less: Bool = false, consecutive: Int = 2) {
-        let id = "Stats_\(self.module)_\(rid)"
+        let id = "Gaugebar_\(self.module)_\(rid)"
         let first = less ? value > threshold : value < threshold
         let second = less ? value <= threshold : value >= threshold
 
@@ -74,7 +74,7 @@ open class NotificationsWrapper: NSStackView {
     }
     
     public func newNotification(id rid: String, title: String, subtitle: String? = nil) {
-        let id = "Stats_\(self.module)_\(rid)"
+        let id = "Gaugebar_\(self.module)_\(rid)"
         
         if self.ids[id] != nil {
             removeNotification(id)
@@ -86,7 +86,7 @@ open class NotificationsWrapper: NSStackView {
     }
     
     public func hideNotification(_ rid: String) {
-        let id = "Stats_\(self.module)_\(rid)"
+        let id = "Gaugebar_\(self.module)_\(rid)"
         if self.ids[id] != nil {
             removeNotification(id)
             self.ids[id] = nil

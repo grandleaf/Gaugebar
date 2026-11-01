@@ -78,10 +78,10 @@ public class DB {
     public static let shared = DB()
     
     private var lldb: LLDB? = nil
-    private let queue = DispatchQueue(label: "eu.exelban.db")
+    private let queue = DispatchQueue(label: "io.github.grandleaf.db")
     private let ttl: Int = 60*60
     
-    private let historyQueue = DispatchQueue(label: "eu.exelban.db.history")
+    private let historyQueue = DispatchQueue(label: "io.github.grandleaf.db.history")
     private let historyRetention: TimeInterval = 24*60*60
     private var historyTimer: DispatchSourceTimer?
     // Only unsaved samples are kept in memory; stored history is merged when reading or saving.
@@ -102,8 +102,8 @@ public class DB {
     
     init() {
         let fileManager = FileManager.default
-        let supportPath = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Stats")
-        let tmpPath = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("Stats")
+        let supportPath = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!.appendingPathComponent("Gaugebar")
+        let tmpPath = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("Gaugebar")
         
         for path in [supportPath, tmpPath] {
             try? fileManager.createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)

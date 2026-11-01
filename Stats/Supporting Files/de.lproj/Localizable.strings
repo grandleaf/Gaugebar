@@ -101,15 +101,15 @@
 "Enable" = "Aktivieren"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats einrichten";
+"Stats Setup" = "Gaugebar einrichten";
 "Previous" = "Zurück";
 "Previous page" = "Vorherige Seite";
 "Next" = "Weiter";
 "Next page" = "Nächste Seite";
 "Finish" = "Fertig";
 "Finish setup" = "Einrichtung abschließen";
-"Welcome to Stats" = "Willkommen bei Stats";
-"welcome_message" = "Vielen Dank, dass Sie Stats verwenden – einen kostenlosen Open-Source-Systemmonitor für Ihre macOS-Menüleiste.";
+"Welcome to Stats" = "Willkommen bei Gaugebar";
+"welcome_message" = "Vielen Dank, dass Sie Gaugebar verwenden – einen kostenlosen Open-Source-Systemmonitor für Ihre macOS-Menüleiste.";
 "Select preset" = "Voreinstellung auswählen"; // gemma4:31b
 "select_preset_message" = "Wählen Sie ein Startset an Modulen. Sie können später in den Einstellungen alles anpassen."; // gemma4:31b
 "Default" = "Standard"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Monatlich nach einer neuen Version suchen (einmal pro Monat)";
 "Never check for updates (not recommended)" = "Nie nach Updates suchen (nicht empfohlen)";
 "The configuration is completed" = "Die Einrichtung ist abgeschlossen";
-"finish_setup_message" = "Alles ist eingerichtet! \n Stats ist ein Open-Source-Tool, das kostenlos ist und immer kostenlos bleiben wird. \n Wenn es Ihnen gefällt, können Sie das Projekt unterstützen – das wird immer geschätzt!";
+"finish_setup_message" = "Alles ist eingerichtet! \n Gaugebar ist ein Open-Source-Tool, das kostenlos ist und immer kostenlos bleiben wird. \n Wenn es Ihnen gefällt, können Sie das Projekt unterstützen – das wird immer geschätzt!";
 
 // Alerts
 "New version available" = "Neue Version verfügbar";
-"Click to install the new version of Stats" = "Klicken, um die neue Version von Stats zu installieren";
+"Click to install the new version of Stats" = "Klicken, um die neue Version von Gaugebar zu installieren";
 "Successfully updated" = "Erfolgreich aktualisiert";
-"Stats was updated to v" = "Stats wurde auf v%0 aktualisiert";
+"Stats was updated to v" = "Gaugebar wurde auf v%0 aktualisiert";
 "Reset settings text" = "Alle Einstellungen der App werden zurückgesetzt und die App wird neu gestartet. Sind Sie sicher, dass Sie das tun möchten?";
 "Deregister text" = "Der Rechner wird von System Stats deregistriert und Sie werden ausgeloggt. Sind Sie sicher, dass Sie dies tun möchten?"; // gemma4:31b-it-qat
-"Support text" = "Vielen Dank, dass Sie Stats verwenden!\n\n Die Pflege und Verbesserung dieses Open-Source-Projekts erfordert Zeit und Ressourcen. Ihre Unterstützung hilft uns, weiterhin eine kostenlose und zuverlässige App für alle bereitzustellen.\n\nWenn Sie Stats hilfreich finden, erwägen Sie bitte einen Beitrag. Jede Kleinigkeit hilft!";
+"Support text" = "Vielen Dank, dass Sie Gaugebar verwenden!\n\n Die Pflege und Verbesserung dieses Open-Source-Projekts erfordert Zeit und Ressourcen. Ihre Unterstützung hilft uns, weiterhin eine kostenlose und zuverlässige App für alle bereitzustellen.\n\nWenn Sie Gaugebar hilfreich finden, erwägen Sie bitte einen Beitrag. Jede Kleinigkeit hilft!";
 
 // Settings
 "Open Activity Monitor" = "Aktivitätsanzeige öffnen";
@@ -163,8 +163,8 @@
 "Import settings" = "Einstellungen importieren";
 "Export settings" = "Einstellungen exportieren";
 "Reset settings" = "Einstellungen zurücksetzen";
-"Pause the Stats" = "Stats pausieren";
-"Resume the Stats" = "Stats fortsetzen";
+"Pause the Stats" = "Gaugebar pausieren";
+"Resume the Stats" = "Gaugebar fortsetzen";
 "Combined modules" = "Kombinierte Module";
 "Show icon instead of widgets" = "Symbol statt Widgets anzeigen";
 "Combined details" = "Kombinierte Details";
@@ -187,11 +187,11 @@
 "Display" = "Bildschirm";
 
 // Update
-"The latest version of Stats installed" = "Die neueste Version von Stats ist installiert";
+"The latest version of Stats installed" = "Die neueste Version von Gaugebar ist installiert";
 "Downloading..." = "Wird heruntergeladen …";
 "Installing..." = "Installation läuft..."; // qwen3.8:27b
 "Updating..." = "Wird aktualisiert..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats wird automatisch neu gestartet"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar wird automatisch neu gestartet"; // qwen3.8:27b
 "Current version: " = "Aktuelle Version:  ";
 "Latest version: " = "Neueste Version:   ";
 "Changelog" = "Änderungsprotokoll"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Lüfter-Hilfsprogramm deinstallieren";
 "Approve in System Settings ▸ Login Items" = "Bestätigen in den Systemeinstellungen ▸ Anmeldeobjekte"; // gemma4:31b
 "Fan helper needs your approval" = "Lüfter-Hilfsprogramm benötigt Ihre Zustimmung"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Um die Lüfter zu steuern, aktivieren Sie Stats in den Systemeinstellungen ▸ Anmeldeobjekte."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "Um die Lüfter zu steuern, aktivieren Sie Gaugebar in den Systemeinstellungen ▸ Anmeldeobjekte."; // gemma4:31b
 "Open Login Items" = "Anmeldeobjekte öffnen"; // gemma4:31b
 "Could not enable the fan helper" = "Konnte den Lüfter-Helper nicht aktivieren"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Öffne die Systemeinstellungen ▸ Anmeldeobjekte, stelle sicher, dass Stats im Hintergrund erlaubt ist, und versuche es dann erneut."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Öffne die Systemeinstellungen ▸ Anmeldeobjekte, stelle sicher, dass Gaugebar im Hintergrund erlaubt ist, und versuche es dann erneut."; // gemma4:31b
 "Fan value" = "Lüfterwert";
 "Turn off fan" = "Lüfter ausschalten";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Sie sind dabei, den Lüfter auszuschalten. Dies ist keine empfohlene Aktion und kann Ihren Mac beschädigen. Sind Sie sicher, dass Sie das tun möchten?";

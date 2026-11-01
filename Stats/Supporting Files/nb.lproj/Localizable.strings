@@ -101,15 +101,15 @@
 "Enable" = "Aktiver"; // qwen3.8:27b
 
 // Setup
-"Stats Setup" = "Stats-oppsett";
+"Stats Setup" = "Gaugebar-oppsett";
 "Previous" = "Forrige";
 "Previous page" = "Forrige side";
 "Next" = "Neste";
 "Next page" = "Neste side";
 "Finish" = "Fullfør";
 "Finish setup" = "Fullfør oppsett";
-"Welcome to Stats" = "Velkommen til Stats";
-"welcome_message" = "Takk for at du bruker Stats, en fritt tilgjengelig systemovervåkningsapp for menylinjen i macOS.";
+"Welcome to Stats" = "Velkommen til Gaugebar";
+"welcome_message" = "Takk for at du bruker Gaugebar, en fritt tilgjengelig systemovervåkningsapp for menylinjen i macOS.";
 "Select preset" = "Velg forhåndsinnstilling"; // gemma4:31b
 "select_preset_message" = "Velg et startsett med moduler. Du kan tilpasse alt senere i innstillingene."; // gemma4:31b
 "Default" = "Standard"; // gemma4:31b
@@ -125,16 +125,16 @@
 "Check for a new version every month (once a month)" = "Se etter ny versjon én gang hver måned";
 "Never check for updates (not recommended)" = "Aldri se etter ny versjon (ikke anbefalt)";
 "The configuration is completed" = "Konfigurasjonen er fullført";
-"finish_setup_message" = "Alt er satt opp! \n Stats er et fritt tilgjengelig verktøy, det er gratis og vil alltid være det. \n Hvis du liker Stats, kan du støtte prosjektet, det settes veldig pris på!";
+"finish_setup_message" = "Alt er satt opp! \n Gaugebar er et fritt tilgjengelig verktøy, det er gratis og vil alltid være det. \n Hvis du liker Gaugebar, kan du støtte prosjektet, det settes veldig pris på!";
 
 // Alerts
 "New version available" = "Ny versjon tilgjengelig";
-"Click to install the new version of Stats" = "Klikk for å installere ny versjon av Stats";
+"Click to install the new version of Stats" = "Klikk for å installere ny versjon av Gaugebar";
 "Successfully updated" = "Oppdateringen var vellykket";
-"Stats was updated to v" = "Stats ble oppdatert til v%0";
+"Stats was updated to v" = "Gaugebar ble oppdatert til v%0";
 "Reset settings text" = "Alle innstillinger vil bli nullstilt og applikasjonen vil starte på nytt. Er du sikker på at du vil gjøre dette?";
 "Deregister text" = "Maskinen vil bli avregistrert fra System Stats, og du vil bli logget ut. Er du sikker på at du vil gjøre dette?"; // gemma4:31b-it-qat
-"Support text" = "Takk for at du bruker Stats!\n\nDet krever tid og ressurser å vedlikeholde og forbedre dette åpen kildekode-prosjektet. Din støtte hjelper oss med å fortsette å tilby et gratis og pålitelig program for alle. Hvis du synes Stats er nyttig, kan du vurdere å gi et bidrag. Hver eneste lille bit hjelper!";
+"Support text" = "Takk for at du bruker Gaugebar!\n\nDet krever tid og ressurser å vedlikeholde og forbedre dette åpen kildekode-prosjektet. Din støtte hjelper oss med å fortsette å tilby et gratis og pålitelig program for alle. Hvis du synes Gaugebar er nyttig, kan du vurdere å gi et bidrag. Hver eneste lille bit hjelper!";
 
 // Settings
 "Open Activity Monitor" = "Åpne Aktivitetsmonitor";
@@ -163,8 +163,8 @@
 "Import settings" = "Importer innstillinger"; // gemma4:31b
 "Export settings" = "Eksporter innstillinger"; // gemma4:31b
 "Reset settings" = "Nullstill innstillinger";
-"Pause the Stats" = "Sett Stats på pause";
-"Resume the Stats" = "Gjenoppta Stats";
+"Pause the Stats" = "Sett Gaugebar på pause";
+"Resume the Stats" = "Gjenoppta Gaugebar";
 "Combined modules" = "Kombinerte moduler";
 "Show icon instead of widgets" = "Vis ikon i stedet for widgeter";
 "Combined details" = "Kombinerte detaljer"; // gemma4:31b
@@ -187,11 +187,11 @@
 "Display" = "Skjerm"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Du har den nyeste versjonen av Stats";
+"The latest version of Stats installed" = "Du har den nyeste versjonen av Gaugebar";
 "Downloading..." = "Laster ned...";
 "Installing..." = "Installerer..."; // qwen3.8:27b
 "Updating..." = "Oppdaterer..."; // qwen3.8:27b
-"Stats will restart automatically" = "Stats starter på nytt automatisk"; // qwen3.8:27b
+"Stats will restart automatically" = "Gaugebar starter på nytt automatisk"; // qwen3.8:27b
 "Current version: " = "Nåværende versjon: ";
 "Latest version: " = "Nyeste version: ";
 "Changelog" = "Endringslogg"; // qwen3.8:27b
@@ -401,10 +401,10 @@
 "Uninstall fan helper" = "Avinstaller viftehjelper";
 "Approve in System Settings ▸ Login Items" = "Godkjenn i Systeminnstillinger ▸ Innloggingselementer"; // gemma4:31b
 "Fan helper needs your approval" = "Viftehjelperen trenger din godkjenning"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "For å styre viftene, aktiver Stats i Systeminnstillinger ▸ Innloggingselementer."; // gemma4:31b
+"To control the fans, enable Stats in System Settings ▸ Login Items." = "For å styre viftene, aktiver Gaugebar i Systeminnstillinger ▸ Innloggingselementer."; // gemma4:31b
 "Open Login Items" = "Åpne påloggingselementer"; // gemma4:31b
 "Could not enable the fan helper" = "Kunne ikke aktivere viftehjelperen"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Åpne Systeminnstillinger ▸ Innloggingselementer, sørg for at Stats er tillatt i bakgrunnen, og prøv deretter på nytt."; // gemma4:31b
+"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Åpne Systeminnstillinger ▸ Innloggingselementer, sørg for at Gaugebar er tillatt i bakgrunnen, og prøv deretter på nytt."; // gemma4:31b
 "Fan value" = "Vifteverdi";
 "Turn off fan" = "Slå av viften";
 "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Du skal nå slå av viften. Dette er en ikke-anbefalt handling som kan skade Mac-en din, er du sikker på at du vil gjøre dette?";
