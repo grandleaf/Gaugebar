@@ -25,6 +25,8 @@ internal class LoadReader: Reader<CPU_Load> {
     private var response: CPU_Load = CPU_Load()
     private var numCPUsU: natural_t = 0
     private var usagePerCore: [Double] = []
+    private var systemPerCore: [Double] = []
+    private var userPerCore: [Double] = []
     private var cores: [core_s]? = nil
     
     public override func setup() {
@@ -45,6 +47,8 @@ internal class LoadReader: Reader<CPU_Load> {
         let result: kern_return_t = host_processor_info(machHostPort, PROCESSOR_CPU_LOAD_INFO, &self.numCPUsU, &self.cpuInfo, &self.numCpuInfo)
         if result == KERN_SUCCESS {
             self.usagePerCore = []
+            self.systemPerCore = []
+            self.userPerCore = []
             
             if let prevCpuInfo = self.prevCpuInfo {
                 for i in 0 ..< Int32(self.numCPUs) {
@@ -61,21 +65,29 @@ internal class LoadReader: Reader<CPU_Load> {
                     let total = inUse + UInt64(idle)
                     if total != 0 {
                         self.usagePerCore.append(min(1, Double(inUse) / Double(total)))
+                        self.systemPerCore.append(min(1, Double(system) / Double(total)))
+                        self.userPerCore.append(min(1, (Double(user) + Double(nice)) / Double(total)))
                     }
                 }
             }
             let showHyperthratedCores = Store.shared.bool(key: "CPU_hyperhreading", defaultValue: false)
             if showHyperthratedCores || !self.hasHyperthreadingCores {
                 self.response.usagePerCore = self.usagePerCore
+                self.response.systemPerCore = self.systemPerCore
+                self.response.userPerCore = self.userPerCore
             } else {
                 var i = 0
                 var a = 0
                 
                 self.response.usagePerCore = []
+                self.response.systemPerCore = []
+                self.response.userPerCore = []
                 while i < Int(self.usagePerCore.count/2) {
                     a = i*2
                     if self.usagePerCore.indices.contains(a) && self.usagePerCore.indices.contains(a+1) {
                         self.response.usagePerCore.append((Double(self.usagePerCore[a]) + Double(self.usagePerCore[a+1])) / 2)
+                        self.response.systemPerCore?.append((self.systemPerCore[a] + self.systemPerCore[a+1]) / 2)
+                        self.response.userPerCore?.append((self.userPerCore[a] + self.userPerCore[a+1]) / 2)
                     }
                     i += 1
                 }

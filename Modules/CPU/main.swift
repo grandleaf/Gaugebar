@@ -12,6 +12,8 @@ import Kit
 public struct CPU_Load: Codable, RemoteType {
     public var totalUsage: Double = 0
     var usagePerCore: [Double] = []
+    var systemPerCore: [Double]? = nil
+    var userPerCore: [Double]? = nil
     var usageECores: Double? = nil
     var usagePCores: Double? = nil
     var usageSCores: Double? = nil
@@ -69,7 +71,7 @@ public class CPU: Module {
     private var averageLoadReader: AverageLoadReader? = nil
     
     private var usagePerCoreState: Bool {
-        Store.shared.bool(key: "\(self.config.name)_usagePerCore", defaultValue: false)
+        Store.shared.bool(key: "\(self.config.name)_usagePerCore", defaultValue: true)
     }
     private var splitValueState: Bool {
         Store.shared.bool(key: "\(self.config.name)_splitValue", defaultValue: false)
@@ -209,8 +211,11 @@ public class CPU: Module {
             case let widget as BarChart:
                 var val: [[ColorValue]] = [[ColorValue(value.totalUsage)]]
                 let cores = SystemKit.shared.device.info.cpu?.cores ?? []
+                var coreGroups: [Int]? = nil
                 
-                if self.usagePerCoreState {
+                if self.usagePerCoreState && widget.coreBoxesEnabled {
+                    (val, coreGroups) = self.coreBoxValues(value, cores: cores, widget: widget)
+                } else if self.usagePerCoreState {
                     if widget.colorState == .cluster {
                         val = []
                         for (i, v) in value.usagePerCore.enumerated() {
@@ -247,6 +252,7 @@ public class CPU: Module {
                         val = widget.colorState == .cluster ? clusters : clustersPlain
                     }
                 }
+                widget.setCoreGroups(coreGroups)
                 widget.setValue(val)
             case let widget as PieChart:
                 widget.setValue([
@@ -265,5 +271,41 @@ public class CPU: Module {
         if self.systemWidgetsUpdatesState {
             SystemWidgetUpdates.shared.update(value, key: "CPU@LoadReader", kinds: [CPU_entry.kind, "UnitedWidget"], defaults: self.userDefaults)
         }
+    }
+    
+    /// Per-core values ordered by cluster, with the size of each cluster.
+    private func coreBoxValues(_ value: CPU_Load, cores: [core_s], widget: BarChart) -> ([[ColorValue]], [Int]) {
+        let count = value.usagePerCore.count
+        let rank: (core_s) -> Int = { $0.type == .super ? 0 : $0.type == .efficiency ? 2 : 1 }
+        
+        var order = Array(0..<count)
+        var groups = [count]
+        if cores.count == count, Set(cores.map({ $0.id })) == Set((0..<count).map({ Int32($0) })) {
+            let sorted = cores.sorted { (rank($0), $0.id) < (rank($1), $1.id) }
+            order = sorted.map { Int($0.id) }
+            groups = Dictionary(grouping: sorted, by: rank).sorted(by: { $0.key < $1.key }).map { $0.value.count }
+        }
+        
+        let stacked = widget.coreStackEnabled
+        let system = value.systemPerCore ?? []
+        let user = value.userPerCore ?? []
+        let val: [[ColorValue]] = order.map { i in
+            var clusterColor: NSColor? = nil
+            if widget.colorState == .cluster {
+                let type = cores.first(where: { $0.id == i })?.type
+                clusterColor = type == .efficiency ? self.eCoresColor : type == .super ? self.sCoresColor : self.pCoresColor
+            }
+            guard stacked, system.indices.contains(i), user.indices.contains(i) else {
+                return [ColorValue(value.usagePerCore[i], color: clusterColor)]
+            }
+            if let color = clusterColor {
+                return [
+                    ColorValue(system[i], color: color.blended(withFraction: 0.4, of: .black) ?? color),
+                    ColorValue(user[i], color: color)
+                ]
+            }
+            return [ColorValue(system[i], color: self.systemColor), ColorValue(user[i], color: self.userColor)]
+        }
+        return (val, groups)
     }
 }

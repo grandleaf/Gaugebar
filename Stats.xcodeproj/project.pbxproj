@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6A0C0F1000000000000C0F3 /* CoreBoxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */; };
+		A6A0C0F1000000000000C0F5 /* CoreBoxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */; };
 		4A05F9BD83C04F70BFFF7F37 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369463B2B7EA4AF0A895A9B6 /* Kit.swift */; };
 		5C044F7A2B3DE6F3005F6951 /* portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C044F792B3DE6F3005F6951 /* portal.swift */; };
 		5C0A2A8A292A5B4D009B4C1F /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 5C0A2A89292A5B4D009B4C1F /* SMJobBlessUtil.py */; };
@@ -467,6 +469,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoxLayout.swift; sourceTree = "<group>"; };
+		A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoxLayout.swift; sourceTree = "<group>"; };
 		A6A0C0F1000000000000C0F1 /* Gaugebar.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Gaugebar.xcconfig; sourceTree = "<group>"; };
 		0192A7ED2B017E190056F918 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		13BE56042D0E6963001C58EC /* en-AU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-AU"; path = "en-AU.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -1003,6 +1007,7 @@
 				9A2847592666AA2700EC1F6D /* Mini.swift */,
 				9A2847582666AA2700EC1F6D /* Label.swift */,
 				9A28475D2666AA2700EC1F6D /* BarChart.swift */,
+				A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */,
 				9A2847552666AA2700EC1F6D /* LineChart.swift */,
 				9A2847572666AA2700EC1F6D /* PieChart.swift */,
 				9A2847562666AA2700EC1F6D /* NetworkChart.swift */,
@@ -1189,6 +1194,7 @@
 				9AAC5E2E280ACC120043D892 /* Info.plist */,
 				9AAC5E40280ACC210043D892 /* RAM.swift */,
 				369463B2B7EA4AF0A895A9B6 /* Kit.swift */,
+				A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */,
 				8B3025000000000000000002 /* Bluetooth.swift */,
 				8B3679000000000000000003 /* Disk.swift */,
 			);
@@ -2030,6 +2036,7 @@
 				9AD7F866266F759200E5F863 /* smc.swift in Sources */,
 				9A2847612666AA2700EC1F6D /* PieChart.swift in Sources */,
 				9A2847672666AA2700EC1F6D /* BarChart.swift in Sources */,
+				A6A0C0F1000000000000C0F3 /* CoreBoxLayout.swift in Sources */,
 				9A28477B2666AA5000EC1F6D /* popup.swift in Sources */,
 				9A2848202666AB3600EC1F6D /* types.swift in Sources */,
 				9A28481E2666AB3600EC1F6D /* extensions.swift in Sources */,
@@ -2139,6 +2146,7 @@
 			files = (
 				9AAC5E41280ACC210043D892 /* RAM.swift in Sources */,
 				4A05F9BD83C04F70BFFF7F37 /* Kit.swift in Sources */,
+				A6A0C0F1000000000000C0F5 /* CoreBoxLayout.swift in Sources */,
 				8B3025000000000000000001 /* Bluetooth.swift in Sources */,
 				8B3679000000000000000002 /* Disk.swift in Sources */,
 			);

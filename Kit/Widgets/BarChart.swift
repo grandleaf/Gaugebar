@@ -25,6 +25,19 @@ public class BarChart: WidgetWrapper {
     private var boxSettingsView: NSSwitch? = nil
     private var frameSettingsView: NSSwitch? = nil
     
+    private var coreBoxesSupported: Bool = false
+    private var coreBoxesState: Bool = true
+    private var coreStackState: Bool = true
+    private var coreBarWidth: Int = 10
+    private var coreGap: Int = 6
+    private var coreClusterGap: Int = 4
+    private var coreMaxWidth: Int = 300
+    private var _coreGroups: [Int]? = nil
+    internal var renderScale: CGFloat? = nil
+    
+    public var coreBoxesEnabled: Bool { self.coreBoxesSupported && self.coreBoxesState }
+    public var coreStackEnabled: Bool { self.coreStackState }
+    
     public var NSLabelCharts: [NSAttributedString] = []
     
     public init(title: String, config: NSDictionary?, preview: Bool = false) {
@@ -51,6 +64,9 @@ public class BarChart: WidgetWrapper {
             if let box = configuration["Box"] as? Bool {
                 self.boxState = box
             }
+            if let coreBoxes = config!["Core boxes"] as? Bool {
+                self.coreBoxesSupported = coreBoxes
+            }
             if let unsupportedColors = configuration["Unsupported colors"] as? [String] {
                 self.colors = self.colors.filter{ !unsupportedColors.contains($0.key) }
             }
@@ -75,6 +91,12 @@ public class BarChart: WidgetWrapper {
             self.frameState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_frame", defaultValue: self.frameState)
             self.labelState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_label", defaultValue: self.labelState)
             self.colorState = SColor.fromString(Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState.key))
+            self.coreBoxesState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreBoxes", defaultValue: self.coreBoxesState)
+            self.coreStackState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreStack", defaultValue: self.coreStackState)
+            self.coreBarWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreBarWidth", defaultValue: self.coreBarWidth)
+            self.coreGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreGap", defaultValue: self.coreGap)
+            self.coreClusterGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreClusterGap", defaultValue: self.coreClusterGap)
+            self.coreMaxWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreMaxWidth", defaultValue: self.coreMaxWidth)
         }
         
         if preview {
@@ -110,14 +132,21 @@ public class BarChart: WidgetWrapper {
         var value: [[ColorValue]] = []
         var pressureLevel: RAMPressure = .normal
         var colorZones: colorZones = (0.6, 0.8)
+        var coreGroups: [Int]? = nil
         self.queue.sync {
             value = self._value
             pressureLevel = self._pressureLevel
             colorZones = self._colorZones
+            coreGroups = self._coreGroups
         }
         
         guard !value.isEmpty else {
             self.setWidth(0)
+            return
+        }
+        
+        if let coreGroups, coreGroups.reduce(0, +) == value.count {
+            self.drawCoreBoxes(value, groups: coreGroups, colorZones: colorZones)
             return
         }
         
@@ -222,6 +251,91 @@ public class BarChart: WidgetWrapper {
         self.setWidth(width)
     }
     
+    private func drawCoreBoxes(_ value: [[ColorValue]], groups: [Int], colorZones: colorZones) {
+        let scale = self.renderScale ?? self.window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 1
+        let dark = NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+        var origin: CGFloat = 0
+        
+        if self.labelState {
+            let letterHeight = self.frame.height / 3
+            let letterWidth: CGFloat = 6.0
+            
+            var yMargin: CGFloat = 0
+            for char in self.NSLabelCharts {
+                char.draw(with: CGRect(x: 0, y: yMargin, width: letterWidth, height: letterHeight))
+                yMargin += letterHeight
+            }
+            origin = letterWidth + Constants.Widget.spacing
+        }
+        
+        let layout = CoreBoxLayout(
+            groups: groups,
+            barWidth: CGFloat(self.coreBarWidth),
+            gap: CGFloat(self.coreGap),
+            clusterGap: CGFloat(self.coreClusterGap),
+            maxWidth: CGFloat(self.coreMaxWidth),
+            height: self.frame.size.height,
+            scale: scale
+        )
+        
+        let outlineColor = (dark ? NSColor.white : NSColor.black).withAlphaComponent(0.8)
+        let pixel = 1 / max(scale, 1)
+        let line: CGFloat = 1
+        
+        for (i, box) in layout.boxes.enumerated() {
+            let frame = box.offsetBy(dx: origin, dy: 0)
+            let inner = frame.insetBy(dx: line, dy: line)
+            
+            var y = inner.minY
+            for segment in value[i] {
+                guard segment.value > 0 else { continue }
+                var height = (inner.height * CGFloat(segment.value) / pixel).rounded() * pixel
+                height = min(max(height, pixel), inner.maxY - y)
+                guard height > 0 else { continue }
+                self.coreFillColor(segment, dark: dark, colorZones: colorZones).setFill()
+                NSRect(x: inner.minX, y: y, width: inner.width, height: height).fill()
+                y += height
+            }
+            
+            outlineColor.setStroke()
+            let outline = NSBezierPath(rect: frame.insetBy(dx: line/2, dy: line/2))
+            outline.lineWidth = line
+            outline.stroke()
+        }
+        
+        self.setWidth(origin + layout.width + Constants.Widget.margin.x*2)
+    }
+    
+    private func coreFillColor(_ segment: ColorValue, dark: Bool, colorZones: colorZones) -> NSColor {
+        if let color = segment.color {
+            return color
+        }
+        switch self.colorState {
+        case .systemAccent: return .controlAccentColor
+        case .utilization: return segment.value.usageColor(zones: colorZones, reversed: false)
+        case .monochrome: return dark ? .white : .black
+        default: return self.colorState.additional as? NSColor ?? .controlAccentColor
+        }
+    }
+    
+    public override func viewDidChangeBackingProperties() {
+        super.viewDidChangeBackingProperties()
+        if self.coreBoxesEnabled {
+            self.redraw()
+        }
+    }
+    
+    public func setCoreGroups(_ newValue: [Int]?) {
+        let updated = self.queue.sync { () -> Bool in
+            guard self._coreGroups != newValue else { return false }
+            self._coreGroups = newValue
+            return true
+        }
+        if updated {
+            self.redraw()
+        }
+    }
+    
     public func setValue(_ newValue: [[ColorValue]]) {
         let updated = self.queue.sync { () -> Bool in
             let tolerance: CGFloat = 0.01
@@ -291,7 +405,74 @@ public class BarChart: WidgetWrapper {
             PreferencesRow(localizedString("Frame"), component: frame)
         ]))
         
+        if self.coreBoxesSupported {
+            view.addArrangedSubview(PreferencesSection([
+                PreferencesRow(localizedString("Separate core boxes"), component: switchView(
+                    action: #selector(self.toggleCoreBoxes),
+                    state: self.coreBoxesState
+                )),
+                PreferencesRow(localizedString("Stack system and user"), component: switchView(
+                    action: #selector(self.toggleCoreStack),
+                    state: self.coreStackState
+                )),
+                PreferencesRow(localizedString("Box width"), component: self.coreSizeView(
+                    action: #selector(self.changeCoreBarWidth), values: [4, 5, 6, 7, 8, 9, 10, 12], selected: self.coreBarWidth
+                )),
+                PreferencesRow(localizedString("Box gap"), component: self.coreSizeView(
+                    action: #selector(self.changeCoreGap), values: [1, 2, 3, 4, 5, 6, 8], selected: self.coreGap
+                )),
+                PreferencesRow(localizedString("Cluster gap"), component: self.coreSizeView(
+                    action: #selector(self.changeCoreClusterGap), values: [0, 2, 4, 6, 8, 10], selected: self.coreClusterGap
+                )),
+                PreferencesRow(localizedString("Maximum width"), component: self.coreSizeView(
+                    action: #selector(self.changeCoreMaxWidth), values: [120, 160, 200, 250, 300, 400, 500], selected: self.coreMaxWidth
+                ))
+            ]))
+        }
+        
         return view
+    }
+    
+    private func coreSizeView(action: Selector, values: [Int], selected: Int) -> NSView {
+        selectView(
+            action: action,
+            items: values.map { KeyValue_t(key: "\($0)", value: "\($0) pt") },
+            selected: "\(selected)"
+        )
+    }
+    
+    private func storeCoreSize(_ sender: NSMenuItem, key: String, apply: (Int) -> Void) {
+        guard let raw = sender.representedObject as? String, let value = Int(raw) else { return }
+        apply(value)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_\(key)", value: value)
+        self.redraw()
+    }
+    
+    @objc private func toggleCoreBoxes(_ sender: NSControl) {
+        self.coreBoxesState = controlState(sender)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_coreBoxes", value: self.coreBoxesState)
+        self.redraw()
+    }
+    
+    @objc private func toggleCoreStack(_ sender: NSControl) {
+        self.coreStackState = controlState(sender)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_coreStack", value: self.coreStackState)
+    }
+    
+    @objc private func changeCoreBarWidth(_ sender: NSMenuItem) {
+        self.storeCoreSize(sender, key: "coreBarWidth") { self.coreBarWidth = $0 }
+    }
+    
+    @objc private func changeCoreGap(_ sender: NSMenuItem) {
+        self.storeCoreSize(sender, key: "coreGap") { self.coreGap = $0 }
+    }
+    
+    @objc private func changeCoreClusterGap(_ sender: NSMenuItem) {
+        self.storeCoreSize(sender, key: "coreClusterGap") { self.coreClusterGap = $0 }
+    }
+    
+    @objc private func changeCoreMaxWidth(_ sender: NSMenuItem) {
+        self.storeCoreSize(sender, key: "coreMaxWidth") { self.coreMaxWidth = $0 }
     }
     
     @objc private func toggleLabel(_ sender: NSControl) {

@@ -567,3 +567,11 @@
 "It is not recommended to enable remote control unless you know what you are doing." = "It is not recommended to enable remote control unless you know what you are doing.";
 "Live CPU, RAM, disk and network metrics" = "Live CPU, RAM, disk and network metrics";
 "Monitor HTTP, ICMP and custom endpoints" = "Monitor HTTP, ICMP and custom endpoints";
+
+// Core boxes
+"Separate core boxes" = "Separate core boxes";
+"Stack system and user" = "Stack system and user";
+"Box width" = "Box width";
+"Box gap" = "Box gap";
+"Cluster gap" = "Cluster gap";
+"Maximum width" = "Maximum width";

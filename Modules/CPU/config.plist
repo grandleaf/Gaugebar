@@ -22,7 +22,7 @@
 		<key>mini</key>
 		<dict>
 			<key>Default</key>
-			<true/>
+			<false/>
 			<key>Preview</key>
 			<dict>
 				<key>Value</key>
@@ -50,8 +50,10 @@
 		</dict>
 		<key>bar_chart</key>
 		<dict>
+			<key>Core boxes</key>
+			<true/>
 			<key>Default</key>
-			<false/>
+			<true/>
 			<key>Preview</key>
 			<dict>
 				<key>Value</key>
