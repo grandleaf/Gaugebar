@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Kontrola nové verze každý měsíc (jednou měsíčně)";
 "Never check for updates (not recommended)" = "Nikdy nekontrolovat aktualizace (nedoporučuje se)";
 "The configuration is completed" = "Konfigurace je dokončena";
-"finish_setup_message" = "Vše je připraveno!\nGaugebar je open source nástroj, který je zdarma a vždy bude.\nPokud se vám líbí, můžete projekt podpořit, vždy se to cení!";
+"finish_setup_message" = "Vše je připraveno!\nGaugebar je open source nástroj, který je zdarma a vždy bude.";
 
 // Alerts
 "New version available" = "Nová verze k dispozici";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Úspěšně aktualizováno";
 "Stats was updated to v" = "Gaugebar byly aktualizovány na v%0";
 "Reset settings text" = "Všechna nastavení aplikace budou resetována a aplikace bude restartována. Jste si jisti, že to chcete udělat?";
-"Deregister text" = "Počítač bude odregistrován ze System Stats a vy budete odhlášeni. Jste si jisti, že to chcete udělat?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Děkujeme, že používáte Gaugebar!\n\n Udržování a zlepšování tohoto open-source projektu vyžaduje čas a zdroje. Vaše podpora nám pomáhá nadále poskytovat bezplatnou a spolehlivou aplikaci pro každého.\n\nPokud vám Gaugebar pomáhají, zvažte prosím možnost přispět. Každý malý kousek pomůže!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "V tomto modulu nejsou k dispozici žádná oznámení"; // gemma4:31b
 "Open Calendar" = "Otevřít kalendář"; // translategemma:4b
 "Toggle the module" = "Přepnout modul"; // gemma4:31b
-"Open System Stats" = "Otevřít System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Zavřít nastavení modulu"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Získejte oznámení, když zařízení přestane být online nebo dosáhne prahu"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Nedoporučuje se povolit dálkové ovládání, pokud nevíte, co děláte."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Živé metriky CPU, RAM, disku a sítě"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Přihlaste se do System Stats, abyste viděli svá zařízení"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Sledovat HTTP, ICMP a vlastní koncové body"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Sledujte a ovládejte své Macs kdekoli. Přihlaste se ke svému účtu System Stats a zobrazte si všechna svá zařízení a hostitele na jednom místě."; // qwen3.8:27b
+ // qwen3.8:27b

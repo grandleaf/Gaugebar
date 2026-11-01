@@ -125,7 +125,8 @@
 "Check for a new version every month (once a month)" = "Periksa versi baru setiap bulan (sekali sebulan)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Jangan pernah periksa pembaruan (tidak direkomendasikan)"; // gemma4:31b
 "The configuration is completed" = "Konfigurasi telah selesai"; // gemma4:31b
-"finish_setup_message" = "Semuanya sudah siap!\nGaugebar adalah alat sumber terbuka, gratis dan akan selalu gratis.\nJika Anda menyukainya, Anda dapat mendukung proyek ini, hal ini selalu dihargai!"; // gemma4:31b
+"finish_setup_message" = "Semuanya sudah siap!\nGaugebar adalah alat sumber terbuka, gratis dan akan selalu gratis.";
+ // gemma4:31b
 
 // Alerts
 "New version available" = "Versi baru tersedia";
@@ -133,7 +134,7 @@
 "Successfully updated" = "Pembaruan berhasil";
 "Stats was updated to v" = "Gaugebar telah diperbarui ke v%0";
 "Reset settings text" = "Semua pengaturan aplikasi akan diatur ulang, dan aplikasi akan mengulang kembali. Anda yakin untuk melakukan ini?";
-"Deregister text" = "Komputer akan dideregistrasi dari System Stats dan Anda akan keluar. Apakah Anda yakin ingin melakukan ini?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Terima kasih telah menggunakan Gaugebar!\n\nMemelihara dan meningkatkan proyek sumber terbuka ini membutuhkan waktu dan sumber daya. Dukungan Anda membantu kami untuk terus menyediakan aplikasi yang gratis dan dapat diandalkan untuk semua orang.\n\nJika Anda merasa Gaugebar bermanfaat, mohon pertimbangkan untuk memberikan kontribusi. Setiap hal kecil akan sangat membantu!";
 
 // Settings
@@ -146,7 +147,7 @@
 "No notifications available in this module" = "Tidak ada notifikasi yang tersedia di modul ini"; // gemma4:31b
 "Open Calendar" = "Buka Kalender"; // translategemma:4b
 "Toggle the module" = "Alihkan modul"; // gemma4:31b
-"Open System Stats" = "Buka System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Tutup pengaturan modul"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +569,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Dapatkan notifikasi ketika perangkat offline atau mencapai ambang batas"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Tidak disarankan untuk mengaktifkan kontrol jarak jauh kecuali Anda tahu apa yang Anda lakukan."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Metrik langsung CPU, RAM, disk, dan jaringan"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Masuk ke System Stats untuk melihat perangkat Anda"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Pantau HTTP, ICMP dan endpoint kustom"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Pantau dan kendalikan Mac Anda dari mana saja. Masuk ke akun System Stats Anda untuk melihat semua perangkat dan host Anda di satu tempat."; // qwen3.8:27b
+ // qwen3.8:27b

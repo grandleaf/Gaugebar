@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "প্রতি মাসে নতুন সংস্করণ পরীক্ষা করুন (মাসে একবার)";
 "Never check for updates (not recommended)" = "আপডেট কখনো পরীক্ষা করবেন না (প্রস্তাবিত নয়)";
 "The configuration is completed" = "সেটআপ সম্পন্ন হয়েছে";
-"finish_setup_message" = "সবকিছু প্রস্তুত! \n Gaugebar একটি ওপেন-সোর্স টুল; এটি বিনামূল্যে এবং সবসময়ই থাকবে। \n আপনি যদি এটি পছন্দ করেন, তাহলে প্রকল্পটিকে সমর্থন করতে পারেন। প্রতিটি সহায়তাই মূল্যবান!";
+"finish_setup_message" = "সবকিছু প্রস্তুত! \n Gaugebar একটি ওপেন-সোর্স টুল; এটি বিনামূল্যে এবং সবসময়ই থাকবে।";
 
 // Alerts
 "New version available" = "নতুন সংস্করণ পাওয়া গেছে";
@@ -133,7 +133,7 @@
 "Successfully updated" = "সফলভাবে আপডেট হয়েছে";
 "Stats was updated to v" = "Gaugebar v%0 তে আপডেট হয়েছে";
 "Reset settings text" = "এই অ্যাপের সব সেটিংস পুনরায় সেট হয়ে যাবে এবং অ্যাপটি পুনরায় চালু হবে। আপনি কি এটি করতে চান?";
-"Deregister text" = "কম্পিউটারটি System Stats থেকে ডি-রেজিস্টার করা হবে এবং আপনি লগ আউট হয়ে যাবেন। আপনি কি নিশ্চিত যে আপনি এটি করতে চান?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Gaugebar ব্যবহার করার জন্য ধন্যবাদ!\n\nএই ওপেন-সোর্স প্রকল্পটি রক্ষণাবেক্ষণ ও উন্নত করতে সময় ও সম্পদ লাগে। আপনার সহায়তা আমাদের সবার জন্য একটি বিনামূল্যের ও নির্ভরযোগ্য অ্যাপ দিতে সাহায্য করে।\n\nGaugebar যদি আপনার কাজে লাগে, তাহলে অবদান রাখার কথা বিবেচনা করুন। প্রতিটি ছোট অবদানই কাজে আসে!";
 
 // Settings
@@ -146,7 +146,6 @@
 "No notifications available in this module" = "এই মডিউলে কোনো বিজ্ঞপ্তি নেই";
 "Open Calendar" = "ক্যালেন্ডার খুলুন";
 "Toggle the module" = "মডিউল চালু/বন্ধ করুন";
-"Open System Stats" = "System Stats খুলুন";
 "Close module settings" = "মডিউল সেটিংস বন্ধ করুন"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +567,6 @@
 "Get notified when a device goes offline or hits a threshold" = "কোনো ডিভাইস অফলাইন হলে বা একটি সীমা ছুঁয়ে গেলে নোটিফিকেশন পান"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "রিমোট কন্ট্রোল সক্রিয় করার পরামর্শ দেওয়া হয় না যদি না আপনি যা করছেন তা জানেন।"; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "লাইভ CPU, RAM, ডিস্ক এবং নেটওয়ার্ক মেট্রিক্স"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "System Stats-এ লগইন করে আপনার ডিভাইস দেখুন"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP এবং কাস্টম এন্ডপয়েন্ট মনিটর করুন"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "যেকোনো জায়গা থেকে আপনার Mac-গুলো মনিটর ও নিয়ন্ত্রণ করুন। System Stats অ্যাকাউন্টে সাইন ইন করে এক জায়গায় আপনার সব ডিভাইস ও হোস্ট দেখুন।"; // qwen3.8:27b
+ // qwen3.8:27b

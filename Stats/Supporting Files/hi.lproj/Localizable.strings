@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "हर महीने (महीने में एक बार) एक नए संस्करण की जांच करें";
 "Never check for updates (not recommended)" = "अपडेट की जांच कभी न करें (अनुशंसित नहीं)";
 "The configuration is completed" = "कॉन्फ़िगरेशन पूरा हो गया है";
-"finish_setup_message" = "सब कुछ सेट किया गया है! \n आँकड़े एक खुला स्रोत उपकरण है, यह मुफ़्त है और हमेशा रहेगा। \n यदि आप इसका आनंद लेते हैं तो आप एक परियोजना का समर्थन कर सकते हैं, यह हमेशा सराहना की जाती है!";
+"finish_setup_message" = "सब कुछ सेट किया गया है! \n आँकड़े एक खुला स्रोत उपकरण है, यह मुफ़्त है और हमेशा रहेगा।";
 
 // Alerts
 "New version available" = "नया संस्करण उपलब्ध है";
@@ -133,7 +133,7 @@
 "Successfully updated" = "सफलतापूर्वक अपडेट किया गया";
 "Stats was updated to v" = "Gaugebar को v%0 पर अपडेट किया गया";
 "Reset settings text" = "सभी एप्लिकेशन सेटिंग्स रीसेट हो जाएंगी और एप्लिकेशन को पुनरारंभ किया जाएगा। क्या आप वाकई ऐसा करना चाहते हैं?";
-"Deregister text" = "मशीन को System Stats से डीरजिस्टर कर दिया जाएगा और आप लॉग आउट हो जाएंगे। क्या आप वाकई ऐसा करना चाहते हैं?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Gaugebar का उपयोग करने के लिए धन्यवाद!\n\n इस ओपन-सोर्स प्रोजेक्ट को बनाए रखने और सुधारने में समय और संसाधन लगते हैं। आपका समर्थन हमें सभी के लिए एक निःशुल्क और विश्वसनीय एप्लिकेशन प्रदान करना जारी रखने में मदद करता है.\n\nयदि आपको Gaugebar मददगार लगता है, तो कृपया योगदान देने पर विचार करें। हर छोटी-छोटी मदद मददगार होती है!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "इस मॉड्यूल में कोई नोटिफिकेशन उपलब्ध नहीं हैं"; // gemma4:31b
 "Open Calendar" = "कैलेंडर खोलें"; // translategemma:4b
 "Toggle the module" = "मॉड्यूल को टॉगल करें"; // gemma4:31b
-"Open System Stats" = "System Stats खोलें"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "मॉड्यूल सेटिंग्स बंद करें"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "जब कोई डिवाइस ऑफलाइन हो जाए या किसी सीमा को पार कर जाए तो सूचना प्राप्त करें"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "यदि आप यह नहीं जानते कि आप क्या कर रहे हैं, तो रिमोट कंट्रोल सक्षम करने की अनुशंसा नहीं की जाती।"; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "लाइव CPU, RAM, डिस्क और नेटवर्क मेट्रिक्स"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "अपने डिवाइस देखने के लिए System Stats में लॉगिन करें"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP और कस्टम एंडपॉइंट की निगरानी करें"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "कहीं भी अपने Macs को मॉनिटर करें और नियंत्रित करें। अपने सभी devices और hosts को एक जगह देखने के लिए अपने System Stats खाते में साइन इन करें।"; // qwen3.8:27b
+ // qwen3.8:27b

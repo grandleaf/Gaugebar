@@ -179,7 +179,7 @@ internal class UsageReader: Reader<Network_Usage>, CWEventDelegate, CLLocationMa
         get { Store.shared.bool(key: "Network_VPNMode", defaultValue: false) }
     }
     private var publicIPState: Bool {
-        get { Store.shared.bool(key: "Network_publicIP", defaultValue: true) }
+        get { Store.shared.bool(key: "Network_publicIP", defaultValue: false) }
     }
     
     private var usageResetInterval: AppUpdateInterval? {
@@ -669,38 +669,21 @@ internal class UsageReader: Reader<Network_Usage>, CWEventDelegate, CLLocationMa
     private func getPublicIP() {
         guard self.publicIPState else { return }
         
-        struct Addr_s: Decodable {
-            let ipv4: String?
-            let ipv6: String?
-            let country: String?
-        }
-        
+        // Opt-in: only runs after the user turns on Public IP in the Network settings.
         DispatchQueue.global(qos: .userInitiated).async {
-            let response = syncShell("curl -s -4 https://api.mac-stats.com/ip")
-            if !response.isEmpty, let data = response.data(using: .utf8),
-               let addr = try? JSONDecoder().decode(Addr_s.self, from: data) {
-                if let ip = addr.ipv4, self.isIPv4(ip) {
-                    self.usage.raddr.v4 = ip
-                }
-                if let countryCode = addr.country {
-                    self.usage.raddr.countryCode = countryCode
-                }
+            let ip = syncShell("curl -s -4 https://api.ipify.org").trimmingCharacters(in: .whitespacesAndNewlines)
+            if !ip.isEmpty, self.isIPv4(ip) {
+                self.usage.raddr.v4 = ip
             }
         }
         DispatchQueue.global(qos: .userInitiated).async {
-            let response = syncShell("curl -s -6 https://api.mac-stats.com/ip")
-            if !response.isEmpty, let data = response.data(using: .utf8),
-               let addr = try? JSONDecoder().decode(Addr_s.self, from: data) {
-                if let ip = addr.ipv6, !self.isIPv4(ip) {
-                    self.usage.raddr.v6 = ip
-                }
-                if let countryCode = addr.country {
-                    self.usage.raddr.countryCode = countryCode
-                }
+            let ip = syncShell("curl -s -6 https://api6.ipify.org").trimmingCharacters(in: .whitespacesAndNewlines)
+            if !ip.isEmpty, !self.isIPv4(ip) {
+                self.usage.raddr.v6 = ip
             }
         }
     }
-    
+
     private func getBytesInfo() -> Bandwidth? {
         let index = if_nametoindex(self.interfaceID)
         guard index != 0 else { return nil }

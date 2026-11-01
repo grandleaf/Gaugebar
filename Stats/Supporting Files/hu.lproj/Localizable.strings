@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Új verzió keresése minden hónapban (havi egyszer)";
 "Never check for updates (not recommended)" = "Ne keressen frissítéseket (nem ajánlott)";
 "The configuration is completed" = "A konfiguráció befejezve";
-"finish_setup_message" = "Minden beállítva!\nA Gaugebar egy nyílt forráskódú eszköz, ami ingyenes és az is marad.\nHa hasznosnak találod, támogathatod a fejlesztését, mindig nagyra értékeljük!";
+"finish_setup_message" = "Minden beállítva!\nA Gaugebar egy nyílt forráskódú eszköz, ami ingyenes és az is marad.";
 
 // Alerts
 "New version available" = "Új verzió érhető el";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Sikeres frissítés";
 "Stats was updated to v" = "A Gaugebar sikeresen frissítve lett a(z) v%0 verzióra";
 "Reset settings text" = "Minden alkalmazásbeállítás alaphelyzetbe fog állni, és az alkalmazás újra fog indulni. Biztosan ezt szeretné?";
-"Deregister text" = "A gépet törlik a System Stats regisztrációjából, és kijelentkeztetik. Biztosan szeretné ezt megtenni?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Köszönjük, hogy használja a Gaugebar-t!\n\n A nyílt forráskódú projekt fenntartása és fejlesztése időt és erőforrásokat igényel. Az Ön támogatása segít nekünk abban, hogy továbbra is ingyenes és megbízható alkalmazást nyújtsunk mindenkinek.\n\nHa hasznosnak találja a Gaugebar-t, kérjük, fontolja meg, hogy hozzájáruljon. Minden kis aprócska összeg segít!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "Nincsenek elérhető értesítések ebben a modulban";
 "Open Calendar" = "Naptár megnyitása"; // gemma4:31b
 "Toggle the module" = "Kapcsolja a modult"; // gemma4:31b
-"Open System Stats" = "System Stats megnyitása"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Modulbeállítások bezárása"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Értesítést kapsz, amikor egy eszköz offline lesz vagy eléri a küszöbértéket"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Nem ajánlott a távvezérlés engedélyezése, hacsak nem tudod, mit csinálsz."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Élő CPU, RAM, lemez és hálózati metrikák"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Bejelentkezés a System Stats-ba az eszközöid megtekintéséhez"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP és egyedi végpontok figyelése"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Kövesd nyomon és irányítsd a Macjeidet bárhol. Jelentkezz be a System Stats fiókodba, hogy egy helyen lásd az összes eszközödet és hostodat."; // qwen3.8:27b
+ // qwen3.8:27b

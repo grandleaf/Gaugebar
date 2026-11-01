@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Verifique se há uma nova versão todos os meses (uma vez por mês)";
 "Never check for updates (not recommended)" = "Nunca verifique se há atualizações (não recomendado)";
 "The configuration is completed" = "A configuração está concluída";
-"finish_setup_message" = "Tudo pronto! \n O Gaugebar é uma ferramenta de código aberto, é gratuita e sempre será. \n Se você gostou, você pode apoiar o projeto, sua ajuda sempre será bem vinda!";
+"finish_setup_message" = "Tudo pronto! \n O Gaugebar é uma ferramenta de código aberto, é gratuita e sempre será.";
 
 // Alerts
 "New version available" = "Nova versão disponível";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Atualizado com sucesso";
 "Stats was updated to v" = "Gaugebar foi atualizado para v%0";
 "Reset settings text" = "Todas as configurações do aplicativo serão redefinidas e o aplicativo será reiniciado. Tem certeza de que deseja fazer isso?";
-"Deregister text" = "O computador será desregistrado do System Stats e você será desconectado. Tem certeza de que deseja fazer isso?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Obrigado por usar o Gaugebar!\n\nA manutenção e o aprimoramento deste projeto de código aberto exigem tempo e recursos. Seu apoio nos ajuda a continuar fornecendo um aplicativo gratuito e confiável para todos.\n\nSe você acha o Gaugebar útil, considere fazer uma contribuição. Cada pedacinho ajuda!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "Nenhuma notificação disponível neste módulo";
 "Open Calendar" = "Abrir calendário"; // gemma4:31b
 "Toggle the module" = "Alternar o módulo"; // gemma4:31b
-"Open System Stats" = "Abrir System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Fechar configurações do módulo"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Ser notificado quando um dispositivo ficar offline ou atingir um limite"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Não é recomendado ativar o controle remoto a menos que você saiba o que está fazendo."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Métricas em tempo real de CPU, RAM, disco e rede"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Faça login no System Stats para ver seus dispositivos"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Monitorar HTTP, ICMP e pontos de acesso personalizados"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Monitore e controle seus Macs de qualquer lugar. Entre na sua conta do System Stats para ver todos os seus dispositivos e hosts em um só lugar."; // qwen3.8:27b
+ // qwen3.8:27b

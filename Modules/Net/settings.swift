@@ -111,7 +111,7 @@ internal class Settings: NSStackView, Settings_v, NSTextFieldDelegate {
         self.connectivityHTTPHost = Store.shared.string(key: "\(self.title)_HTTPHost", defaultValue: self.connectivityHTTPHost)
         self.updateConnectivityIntervalValue = Store.shared.int(key: "\(self.title)_updateICMPInterval", defaultValue: self.updateConnectivityIntervalValue)
         self.connectivityMode = ConnectivityReader.ConnectivityMode(rawValue: Store.shared.string(key: "\(self.title)_connectivityMode", defaultValue: "icmp")) ?? .icmp
-        self.publicIPState = Store.shared.bool(key: "\(self.title)_publicIP", defaultValue: self.publicIPState)
+        self.publicIPState = Store.shared.bool(key: "\(self.title)_publicIP", defaultValue: false)
         self.publicIPRefreshInterval = Store.shared.string(key: "\(self.title)_publicIPRefreshInterval", defaultValue: self.publicIPRefreshInterval)
         self.baseValue = Store.shared.string(key: "\(self.title)_base", defaultValue: self.baseValue)
         self.speedUnitValue = networkSpeedUnit(from: Store.shared.string(key: "\(self.title)_speedUnit", defaultValue: self.speedUnitValue)).key

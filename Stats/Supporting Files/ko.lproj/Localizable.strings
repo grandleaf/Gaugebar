@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "달마다 새 버전 확인 (한 달에 한 번)";
 "Never check for updates (not recommended)" = "업데이트 확인 안 함 (추천하지 않음)";
 "The configuration is completed" = "설정이 완료되었습니다";
-"finish_setup_message" = "모든 것이 설정되었습니다! \n Gaugebar는 무료 오픈 소스 도구이며 앞으로도 그럴 것입니다. \n 이 애플리케이션이 마음에 드셨다면 프로젝트를 후원 하실 수 있습니다. 늘 감사합니다!";
+"finish_setup_message" = "모든 것이 설정되었습니다! \n Gaugebar는 무료 오픈 소스 도구이며 앞으로도 그럴 것입니다.";
 
 // Alerts
 "New version available" = "새로운 버전을 이용할 수 있습니다";
@@ -133,7 +133,7 @@
 "Successfully updated" = "성공적으로 업데이트되었습니다";
 "Stats was updated to v" = "Gaugebar가 v%0 버전으로 업데이트되었습니다";
 "Reset settings text" = "모든 애플리케이션 설정이 재설정되고 다시 시작됩니다. 계속 진행하시겠습니까?";
-"Deregister text" = "기기가 System Stats에서 등록 해제되며 로그아웃됩니다. 정말로 진행하시겠습니까?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Gaugebar를 사용해 주셔서 감사합니다!\n\n 이 오픈 소스 프로젝트를 유지 관리하고 개선하는 데는 시간과 리소스가 필요합니다. 여러분의 지원은 모든 사람에게 신뢰할 수 있는 무료 애플리케이션을 계속 제공하는 데 도움이 됩니다.\n\nGaugebar가 도움이 된다면 기여를 고려해 주세요. 여러분의 작은 도움이 큰 힘이 됩니다!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "이 모듈에서 사용할 수 있는 알림이 없습니다";
 "Open Calendar" = "캘린더 열기";
 "Toggle the module" = "모듈 전환";
-"Open System Stats" = "System Stats 열기"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "모듈 설정 닫기"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "장치가 오프라인 상태가 되거나 임계값에 도달하면 알림을 받습니다"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "무엇을 하는지 알지 못한다면 원격 제어를 활성화하지 않는 것이 좋습니다."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "실시간 CPU, RAM, 디스크 및 네트워크 지표"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "System Stats에 로그인하여 기기를 확인하세요"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP 및 사용자 정의 엔드포인트 모니터링"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "어디서나 Mac을 모니터링하고 제어하세요. System Stats 계정에 로그인하여 모든 기기와 호스트를 한 곳에서 확인하세요."; // qwen3.8:27b
+ // qwen3.8:27b

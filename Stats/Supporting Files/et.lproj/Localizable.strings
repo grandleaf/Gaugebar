@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Kontrolli uut versiooni iga kuu (üks kord kuus)";
 "Never check for updates (not recommended)" = "Ära kunagi kontrolli värskendusi (pole soovitatav)";
 "The configuration is completed" = "Seadistamine on lõpetatud";
-"finish_setup_message" = "Kõik on paika pandud! \n Gaugebar on avatud lähtekoodiga tööriist, see on tasuta ja jääb alati tasuta. \n Kui teile meeldib, saate projekti toetada, see on alati teretulnud!";
+"finish_setup_message" = "Kõik on paika pandud! \n Gaugebar on avatud lähtekoodiga tööriist, see on tasuta ja jääb alati tasuta.";
 
 // Alerts
 "New version available" = "Uus versioon on saadaval";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Edukalt värskendatud";
 "Stats was updated to v" = "Gaugebar värskendati versioonile %0";
 "Reset settings text" = "Kõik rakenduse seaded lähtestatakse ja rakendus taaskäivitatakse. Kas olete kindel, et soovite seda teha?";
-"Deregister text" = "Arvuti deregistreeritakse System Statsist ja teid logitakse välja. Kas olete kindel, et soovite seda teha?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Täname teid Gaugebari kasutamise eest!\n\n Selle avatud lähtekoodiga projekti hooldamine ja täiustamine nõuab aega ja ressursse. Teie toetus aitab meil jätkuvalt pakkuda kõigile tasuta ja usaldusväärset rakendust.\n\nJa kui Gaugebar on teie arvates kasulik, siis palun kaaluge panuse andmist. Iga väike summa aitab!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "Selles moodulis pole saadaval teavitusi.";
 "Open Calendar" = "Ava kalender";
 "Toggle the module" = "Lülita moodul sisse";
-"Open System Stats" = "Ava System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Sulge mooduli seaded"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Teavita mind, kui seade on võrgust väljas või ületab piirmäära"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Ei ole soovitatav lubada kaugjuhtimist, kui te ei tea, mida teete."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Reaalajas CPU, RAM, ketta ja võrgu meetrikad"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Logi sisse System Stats et näha oma seadmeid"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Jälgi HTTP, ICMP ja kohandatud lõpppunkte"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Jälgige ja haldage oma Mac'isid kõikjal. Logige sisse oma System Statsi kontole, et näha kõiki oma seadmeid ja hoste ühes kohas."; // qwen3.8:27b
+ // qwen3.8:27b

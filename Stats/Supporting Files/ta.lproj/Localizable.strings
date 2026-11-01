@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "மாதந்தோறும் புதிய பதிப்பைச் சோதி (ஒரு மாதத்திற்கு ஒருமுறை)";
 "Never check for updates (not recommended)" = "புதுப்பிப்புகளுக்கு ஒருபோதும் சோதிக்க வேண்டாம் (பரிந்துரைக்கப்படவில்லை)";
 "The configuration is completed" = "அமைப்பு முடிந்தது";
-"finish_setup_message" = "அனைத்தும் அமைக்கப்பட்டுவிட்டது! \n Gaugebar ஒரு திறந்த மூல கருவி, இது இலவசம் மற்றும் எப்போதும் இலவசமாக இருக்கும். \n உங்களுக்கு இது பிடித்திருந்தால் திட்டத்திற்கு ஆதரவளிக்கலாம், அது எப்போதும் பாராட்டப்படும்!";
+"finish_setup_message" = "அனைத்தும் அமைக்கப்பட்டுவிட்டது! \n Gaugebar ஒரு திறந்த மூல கருவி, இது இலவசம் மற்றும் எப்போதும் இலவசமாக இருக்கும்.";
 
 // Alerts
 "New version available" = "புதிய பதிப்பு கிடைக்கிறது";
@@ -133,7 +133,6 @@
 "Successfully updated" = "வெற்றிகரமாக புதுப்பிக்கப்பட்டது";
 "Stats was updated to v" = "Gaugebar v%0-க்கு புதுப்பிக்கப்பட்டது";
 "Reset settings text" = "அனைத்து பயன்பாட்டு அமைப்புகளும் மீட்டமைக்கப்பட்டு, பயன்பாடு மறுதொடக்கம் செய்யப்படும். இதைச் செய்ய விரும்புகிறீர்களா?";
-"Deregister text" = "இந்த இயந்திரம் System Stats-இல் பதிவுநீக்கம் செய்யப்பட்டு, நீங்கள் வெளியேற்றப்படுவீர்கள். இதைச் செய்ய விரும்புகிறீர்களா?";
 "Support text" = "Gaugebar பயன்படுத்தியமைக்கு நன்றி!\n\nஇந்த திறந்த மூல திட்டத்தை பராமரித்தல் மற்றும் மேம்படுத்துதல் நேரம் மற்றும் வளங்களை எடுக்கிறது. உங்கள் ஆதரவு, எல்லோருக்கும் இலவச மற்றும் நம்பகமான பயன்பாட்டைத் தொடர வழிவகுக்கிறது.\n\nGaugebar பயனுள்ளதாக இருந்தால், தயவுசெய்து பங்களிப்பைக் கருத்தில் கொள்ளுங்கள். ஒவ்வொரு சிறிய பங்களிப்பும் உதவுகிறது!";
 
 // Settings
@@ -146,7 +145,6 @@
 "No notifications available in this module" = "இந்த தொகுதியில் அறிவிப்புகள் எதுவும் இல்லை";
 "Open Calendar" = "நாட்காட்டியைத் திற";
 "Toggle the module" = "தொகுதியை மாற்று";
-"Open System Stats" = "System Stats-ஐத் திற";
 "Close module settings" = "தொகுதி அமைப்புகளை மூடு"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +566,6 @@
 "Get notified when a device goes offline or hits a threshold" = "ஒரு சாதனம் ஆஃப்லைனாகும்போது அல்லது ஒரு வரம்பை அடையும்போது அறிவிப்பு பெறுங்கள்"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "நீங்கள் என்ன செய்கிறீர்கள் என்று தெரியாதவரை, தூர கட்டுப்பாட்டை இயக்குவது பரிந்துரைக்கப்படுவதில்லை."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "நேரலை CPU, RAM, டிஸ்க் மற்றும் நெட்வொர்க் அளவீடுகள்"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "System Stats இல் உள்நுழைந்து உங்கள் சாதனங்களைக் காணவும்"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP மற்றும் தனிப்பயன் எண்ட்பாய்ண்டுகளை கண்காணிக்கவும்"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "எங்கிருந்தாலும் உங்கள் Macs-ஐ கண்காணிக்கவும் மற்றும் கட்டுப்படுத்தவும். உங்கள் அனைத்து சாதனங்களையும் ஹோஸ்ட்களையும் ஒரே இடத்தில் காண, உங்கள் System Stats கணக்கில் உள்நுழையவும்."; // qwen3.8:27b
+ // qwen3.8:27b

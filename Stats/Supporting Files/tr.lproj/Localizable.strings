@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Her ay yeni sürüm olup olmadığını denetle (ayda bir kez)";
 "Never check for updates (not recommended)" = "Güncellemeleri hiçbir zaman denetleme (önerilmez)";
 "The configuration is completed" = "Yapılandırma tamamlandı";
-"finish_setup_message" = "Her şey hazır! \n Gaugebar açık kaynaklı ve ücretsiz bir araçtır; her zaman da öyle kalacaktır. \n Gaugebar'ı beğendiyseniz projeyi destekleyebilirsiniz; desteğiniz için teşekkürler!";
+"finish_setup_message" = "Her şey hazır! \n Gaugebar açık kaynaklı ve ücretsiz bir araçtır; her zaman da öyle kalacaktır.";
 
 // Alerts
 "New version available" = "Yeni sürüm mevcut";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Başarıyla güncellendi";
 "Stats was updated to v" = "Gaugebar, v%0 sürümüne güncellendi";
 "Reset settings text" = "Tüm uygulama ayarları sıfırlanacak ve uygulama yeniden başlatılacak. Bunu yapmak istediğinizden emin misiniz?";
-"Deregister text" = "Bu bilgisayarın System Stats kaydı silinecek ve oturumunuz kapatılacak. Bunu yapmak istediğinizden emin misiniz?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Gaugebar'ı kullandığınız için teşekkür ederiz.\n\nBu açık kaynaklı projeyi sürdürmek ve geliştirmek zaman ve kaynak gerektirir. Desteğiniz, herkes için ücretsiz ve güvenilir bir uygulama sunmaya devam etmemize yardımcı olur.\n\nGaugebar'ı yararlı buluyorsanız katkıda bulunmayı düşünün. Her katkı değerlidir!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "Bu modülde kullanılabilir bildirim yok";
 "Open Calendar" = "Takvimi aç";
 "Toggle the module" = "Modülü aç/kapat";
-"Open System Stats" = "System Stats'ı aç"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Modül ayarlarını kapat"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Bir cihaz çevrimdışı olduğunda veya bir eşiğe ulaştığında bildirim alın"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Ne yaptığınızı bilmiyorsanız, uzaktan kontrolü etkinleştirmek önerilmez."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Canlı CPU, RAM, disk ve ağ metrikleri"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Cihazlarınızı görmek için System Stats'a giriş yapın"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP ve özel uç noktaları izle"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Mac'lerinizi her yerden izleyin ve yönetin. Tüm cihazlarınızı ve ana bilgisayarlarınızı tek bir yerde görmek için System Stats hesabınıza giriş yapın."; // qwen3.8:27b
+ // qwen3.8:27b

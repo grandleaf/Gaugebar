@@ -125,7 +125,8 @@
 "Check for a new version every month (once a month)" = "בדוק אם קיימת גרסה חדשה בכל חודש (פעם בחודש)"; // gemma4:31b
 "Never check for updates (not recommended)" = "לעולם לא לבדוק עדכונים (לא מומלץ)"; // gemma4:31b
 "The configuration is completed" = "ההגדרה הושלמה"; // translategemma:4b
-"finish_setup_message" = "הכל מוכן! \n Gaugebar הוא כלי קוד פתוח, הוא בחינם ותמיד יישאר כך. \n אם אתם נהנים ממנו, תוכלו לתמוך בפרויקט, זה תמיד מוערך!"; // gemma4:31b
+"finish_setup_message" = "הכל מוכן! \n Gaugebar הוא כלי קוד פתוח, הוא בחינם ותמיד יישאר כך.";
+ // gemma4:31b
 
 // Alerts
 "New version available" = "גרסא חדשה זמינה";
@@ -133,7 +134,7 @@
 "Successfully updated" = "עודכן בהצלחה";
 "Stats was updated to v" = "Gaugebar עודכן לגרסה v%0";
 "Reset settings text" = "?כל הגדרות התוכנה יתאפסו והתוכנה תופעל מחדש. האם אתם בטוחים שאתם רוצים לעשות את זה";
-"Deregister text" = "המחשב יבוטל רישומו מ-System Stats ותתנתק מהמערכת. האם אתה בטוח שברצונך לעשות זאת?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "תודה על השימוש בסטטיסטיקה!\n\n תחזוקה ושיפור של פרויקט קוד פתוח זה דורש זמן ומשאבים. התמיכה שלך עוזרת לנו להמשיך לספק אפליקציה חינמית ומהימנה לכולם.\n\nאם אתה מוצא שסטטיסטיקות מועילות, שקול לתרום. כל טיפה עוזרת!";
 
 // Settings
@@ -146,7 +147,7 @@
 "No notifications available in this module" = "אין התראות זמינות במודול זה"; // translategemma:4b
 "Open Calendar" = "פתח את לוח השנה"; // gemma4:31b
 "Toggle the module" = "החלף את המודול"; // gemma4:31b
-"Open System Stats" = "פתח את System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "סגור את הגדרות המודול"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +569,6 @@
 "Get notified when a device goes offline or hits a threshold" = "קבל התראה כשמתקן יוצא מקו או מגיע לסף"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "לא מומלץ להפעיל שליטה מרחוק אלא אם כן אתם יודעים מה אתם עושים."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "מדדים בזמן אמת של CPU, RAM, דיסק ורשת"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "התחברות ל-System Stats כדי לראות את המכשירים שלך"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "ניטור HTTP, ICMP ונקודות קצה מותאמות"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "מעקב ושליטה במאקים שלך מכל מקום. התחבר לחשבון System Stats שלך כדי לראות את כל המכשירים והמארחים שלך במקום אחד."; // qwen3.8:27b
+ // qwen3.8:27b

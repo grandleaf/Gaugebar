@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Проверять наличие новой версии каждый месяц (раз в месяц)";
 "Never check for updates (not recommended)" = "Никогда не проверять наличие обновлений (не рекомендуется)";
 "The configuration is completed" = "Настройка завершена";
-"finish_setup_message" = "Все готово! \n Gaugebar — это инструмент с открытым исходным кодом, он бесплатный и всегда будет бесплатным. \n Если вам нравится, вы можете поддержать проект, это всегда ценно!";
+"finish_setup_message" = "Все готово! \n Gaugebar — это инструмент с открытым исходным кодом, он бесплатный и всегда будет бесплатным.";
 
 // Alerts
 "New version available" = "Доступна новая версия";
@@ -133,7 +133,6 @@
 "Successfully updated" = "Успешно обновлено";
 "Stats was updated to v" = "Gaugebar обновлено до v%0";
 "Reset settings text" = "Все настройки приложения будут сброшены, и приложение будет перезапущено. Вы уверены, что хотите это сделать?";
-"Deregister text" = "Компьютер будет удален из System Stats, и вы выйдете из системы. Вы уверены, что хотите это сделать?";
 "Support text" = "Спасибо за использование Gaugebar.\n\n Поддержание и улучшение этого проекта с открытым исходным кодом требует времени и ресурсов. Ваша поддержка помогает нам продолжать предоставлять бесплатное и надежное приложение для всех.\n\nЕсли вы находите Gaugebar полезным, пожалуйста, подумайте о том, чтобы сделать взнос. Каждый маленький кусочек помогает!";
 
 // Settings
@@ -146,7 +145,6 @@
 "No notifications available in this module" = "В этом модуле нет доступных уведомлений";
 "Open Calendar" = "Открыть календарь";
 "Toggle the module" = "Переключить модуль";
-"Open System Stats" = "Открыть System Stats";
 "Close module settings" = "Закрыть настройки модуля"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +566,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Уведомлять, когда устройство отключается или достигает порога"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Не рекомендуется включать удалённое управление, если вы не знаете, что делаете."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Живые метрики CPU, RAM, диска и сети"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Войдите в System Stats, чтобы увидеть ваши устройства"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Мониторинг HTTP, ICMP и пользовательских конечных точек"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Мониторинг и управление вашими Mac из любого места. Войдите в свой аккаунт System Stats, чтобы увидеть все свои устройства и хосты в одном месте."; // qwen3.8:27b
+ // qwen3.8:27b

@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "بررسی ماهانه برای نسخه جدید (ماهی یک بار)";
 "Never check for updates (not recommended)" = "هیچ وقت نسخه‌ی جدید بررسی نشود (پیشنهاد نمی‌شود)";
 "The configuration is completed" = "پیکربندی کامل شد";
-"finish_setup_message" = "همه چیز آماده است! \n Gaugebar یک ابزار متن باز رایگان است و همیشه رایگان خواهد بود \n اگر از این پروژه راضی بودید می‌توانید از ما حمایت کنید";
+"finish_setup_message" = "همه چیز آماده است! \n Gaugebar یک ابزار متن باز رایگان است و همیشه رایگان خواهد بود";
 
 // Alerts
 "New version available" = "نسخه‌ی جدید در دسترس است";
@@ -133,7 +133,7 @@
 "Successfully updated" = "با موفقیت به‌روزرسانی شد";
 "Stats was updated to v" = "Gaugebar به نسخه v%0 به‌روزرسانی شد";
 "Reset settings text" = "تمام تنظیمات اپلیکیشن ریست خواهد شد و اپ دوباره راه‌اندازی خواهد شد، آیا از این کار مطمئنید؟";
-"Deregister text" = "دستگاه از System Stats لغو ثبت خواهد شد و شما خارج خواهید شد. آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "از اینکه از Gaugebar استفاده می کنید متشکریم!\n\nنگهداری و بهبود این پروژه منبع باز زمان و منابع می طلبد. پشتیبانی شما به ما کمک می‌کند تا به ارائه یک برنامه رایگان و قابل اعتماد برای همه ادامه دهیم.\n\nاگر آمارها را مفید می‌دانید، لطفاً در نظر بگیرید. هر ذره کمک می کند!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "در این ماژول هیچ اعلانی موجود نیست"; // gemma4:31b
 "Open Calendar" = "باز کردن تقویم"; // translategemma:4b
 "Toggle the module" = "تغییر وضعیت ماژول"; // gemma4:31b
-"Open System Stats" = "باز کردن System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "بستن تنظیمات ماژول"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "خبردار شوید وقتی دستگاهی آفلاین شود یا به آستانه برسد"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "توصیه نمی‌شود که کنترل از راه دور را فعال کنید مگر اینکه بدانید چه کاری انجام می‌دهید."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "شاخص‌های زنده CPU، RAM، دیسک و شبکه"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "برای مشاهده دستگاه‌های خود به System Stats وارد شوید"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "پایش HTTP، ICMP و نقاط پایانی سفارشی"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Mac‌های خود را از هر جایی پایش و کنترل کنید. برای مشاهده همه دستگاه‌ها و میزبان‌های خود در یک مکان، وارد حساب System Stats خود شوید."; // qwen3.8:27b
+ // qwen3.8:27b

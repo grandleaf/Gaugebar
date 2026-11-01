@@ -133,7 +133,7 @@ internal class Popup: PopupWrapper {
         self.chartScale = Scale.fromString(Store.shared.string(key: "\(self.title)_chartScale", defaultValue: self.chartScale.key))
         self.chartFixedScale = Store.shared.int(key: "\(self.title)_chartFixedScale", defaultValue: self.chartFixedScale)
         self.chartFixedScaleSize = SizeUnit.fromString(Store.shared.string(key: "\(self.title)_chartFixedScaleSize", defaultValue: self.chartFixedScaleSize.key))
-        self.publicIPState = Store.shared.bool(key: "\(self.title)_publicIP", defaultValue: self.publicIPState)
+        self.publicIPState = Store.shared.bool(key: "\(self.title)_publicIP", defaultValue: false)
         self.interfaceDetailsState = Store.shared.bool(key: "\(self.title)_interfaceDetails", defaultValue: self.interfaceDetailsState)
         self.emojiCCState = Store.shared.bool(key: "\(self.title)_emojiCC", defaultValue: self.emojiCCState)
         

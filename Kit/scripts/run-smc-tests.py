@@ -2,7 +2,7 @@
 """Run: python3 Kit/scripts/run-smc-tests.py (macOS, Xcode, Python 3).
 
 Runs Tests/SMC.swift against both architecture branches with fake IOKit and
-sleep calls, plus helper lifecycle tests with fake XPC and service operations.
+sleep calls.
 Production source is unchanged; temporary build files are removed.
 This standalone suite is independent of the existing Xcode Tests target.
 """
@@ -19,49 +19,6 @@ BOUNDARIES = (
     "IOObjectRelease", "IOServiceOpen", "IOServiceClose",
     "IOConnectCallStructMethod", "usleep",
 )
-
-
-def swift_block(source, declaration):
-    """Extract a complete declaration; fail if the expected source moves."""
-    if source.count(declaration) != 1:
-        raise RuntimeError(f"Missing or ambiguous declaration: {declaration}")
-    start = source.index(declaration)
-    opening = source.rfind("{", start, source.index("\n", start))
-    if opening < start:
-        raise RuntimeError(f"Declaration must open on its first line: {declaration}")
-    depth = 0
-    for index in range(opening, len(source)):
-        if source[index] == "{":
-            depth += 1
-        elif source[index] == "}":
-            depth -= 1
-            if depth == 0:
-                return source[start:index + 1]
-    raise RuntimeError(f"Unbalanced declaration: {declaration}")
-
-
-def helper_source():
-    # Compile the actual lifecycle logic, with XPC/service boundaries supplied
-    # by Tests/SMC.swift. Never run the privileged helper's entry point.
-    server = (ROOT / "SMC/Helper/main.swift").read_text()
-    state = swift_block(server, "final class HelperConnectionState {")
-    state = state.replace("NSXPCConnection", "FakeHelperClientConnection")
-    client = (ROOT / "Kit/helpers.swift").read_text()
-    methods = "\n".join(swift_block(client, declaration) for declaration in (
-        "private func reinstall()",
-        "private func helper(_ completion:",
-        "private func restoreFanModes(completion:",
-        "public func uninstall(silent:",
-    ))
-    methods = methods.replace("private func", "func")
-    methods = methods.replace('SMC.shared.getValue("FNum")', "FakeHelperEnvironment.current.fanCount")
-    methods = methods.replace("if #available(macOS 13, *)", "if self.useModernService")
-    methods = methods.replace("SMAppService.", "FakeHelperService.")
-    methods = methods.replace("NotificationCenter.default", "FakeHelperNotifications.default")
-    methods = methods.replace('Bundle.main.path(forResource: "smc", ofType: nil)!', '"/mock/smc"')
-    return ("import Foundation\n" + state + "\n" +
-            swift_block(client, "public enum SMCHelperInstallState {") + "\n" +
-            "final class TestSMCHelper: HelperClientFixture {\n" + methods + "\n}\n")
 
 
 def run():
@@ -86,10 +43,9 @@ def run():
     names = re.findall(r"^    func (test\w+)\(\)", tests, re.MULTILINE)
     if not names or len(names) != len(set(names)):
         raise RuntimeError("Missing or duplicate tests")
-    with tempfile.TemporaryDirectory(prefix="stats-smc-tests-") as directory:
+    with tempfile.TemporaryDirectory(prefix="gaugebar-smc-tests-") as directory:
         build = Path(directory)
         (build / "SMCUnderTest.swift").write_text(source)
-        (build / "HelperUnderTest.swift").write_text(helper_source())
         env = dict(os.environ, SWIFT_MODULECACHE_PATH=str(build / "cache"))
         for branch in ("intel", "arm64"):
             selected = [n for n in names if not n.startswith(
@@ -109,8 +65,7 @@ def run():
                        "-Xlinker", "-rpath", "-Xlinker", str(private_frameworks)]
             if branch == "arm64":
                 command += ["-D", "TEST_ARM64"]
-            command += [str(build / "SMCUnderTest.swift"), str(build / "HelperUnderTest.swift"),
-                        str(ROOT / "SMC/Helper/protocol.swift"),
+            command += [str(build / "SMCUnderTest.swift"),
                         str(TESTS / "SMC.swift"), str(build / "main.swift"),
                         "-o", str(executable)]
             subprocess.run(command, check=True, env=env, timeout=180)

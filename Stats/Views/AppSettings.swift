@@ -13,10 +13,6 @@ import Cocoa
 import Kit
 
 class ApplicationSettings: NSStackView {
-    private var updateIntervalValue: String {
-        Store.shared.string(key: "update-interval", defaultValue: AppUpdateInterval.silent.rawValue)
-    }
-    
     private var temperatureUnitsValue: String {
         get { Store.shared.string(key: "temperature_units", defaultValue: "system") }
         set { Store.shared.set(key: "temperature_units", value: newValue) }
@@ -59,16 +55,10 @@ class ApplicationSettings: NSStackView {
         set { Store.shared.set(key: "keep_menubar_positions", value: newValue) }
     }
     
-    private var updateSelector: NSPopUpButton?
     private var startAtLoginBtn: NSSwitch?
-    private var remoteControlBtn: NSSwitch?
-    private var remoteUpdatesBtn: NSSwitch?
     
     private var combinedModulesView: PreferencesSection?
-    private var fanHelperView: PreferencesSection?
-    private var remoteView: PreferencesSection?
     
-    private var updateWindow: UpdateWindow?
     private let moduleSelector: ModuleSelectorView = ModuleSelectorView()
     
     private var CPUeButton: NSButton?
@@ -81,7 +71,6 @@ class ApplicationSettings: NSStackView {
     private var CPUsTest: CPUStressTest = CPUStressTest(type: .super)
     private var GPUTest: GPUStressTest? = GPUStressTest()
     
-    private var planField: NSTextField?
     
     init() {
         super.init(frame: NSRect(x: 0, y: 0, width: Constants.Settings.width, height: Constants.Settings.height))
@@ -98,18 +87,12 @@ class ApplicationSettings: NSStackView {
         
         scrollView.stackView.addArrangedSubview(self.informationView())
         
-        self.updateSelector = selectView(
-            action: #selector(self.toggleUpdateInterval),
-            items: AppUpdateIntervals,
-            selected: self.updateIntervalValue
-        )
         self.startAtLoginBtn = switchView(
             action: #selector(self.toggleLaunchAtLogin),
             state: LaunchAtLogin.isEnabled
         )
         
         scrollView.stackView.addArrangedSubview(PreferencesSection([
-            PreferencesRow(localizedString("Check for updates"), component: self.updateSelector!),
             PreferencesRow(localizedString("Temperature"), component: selectView(
                 action: #selector(self.toggleTemperatureUnits),
                 items: TemperatureUnits,
@@ -157,37 +140,6 @@ class ApplicationSettings: NSStackView {
         scrollView.stackView.addArrangedSubview(self.combinedModulesView!)
         self.updateCombinedModulesSettings()
         
-        self.remoteControlBtn = switchView(
-            action: #selector(self.toggleRemoteControlState),
-            state: SystemStats.shared.control
-        )
-        self.remoteUpdatesBtn = switchView(
-            action: #selector(self.toggleRemoteUpdateState),
-            state: SystemStats.shared.update
-        )
-        self.planField = textView(SystemStats.shared.plan?.rawValue.capitalized ?? "Free")
-        self.remoteView = PreferencesSection(title: "System Stats", [
-            PreferencesRow(localizedString("Authorization"), component: buttonView(#selector(self.loginToRemote), text: localizedString("Sign in"))),
-            PreferencesRow(localizedString("Identificator"), component: textView(SystemStats.shared.id.uuidString)),
-            PreferencesRow(localizedString("Plan"), component: self.planField!),
-            PreferencesRow(localizedString("Monitoring"), component: switchView(
-                action: #selector(self.toggleRemoteMonitoringState),
-                state: SystemStats.shared.monitoring
-            )),
-            PreferencesRow(localizedString("Control"), component: self.remoteControlBtn!),
-            PreferencesRow(localizedString("Update"), component: self.remoteUpdatesBtn!),
-            PreferencesRow(component: buttonView(#selector(self.logoutFromRemote), text: localizedString("Sign out"))),
-            PreferencesRow(component: buttonView(#selector(self.deregisterFromRemote), text: localizedString("Deregister")))
-        ])
-        scrollView.stackView.addArrangedSubview(self.remoteView!)
-        self.remoteView?.setRowVisibility(1, newState: false)
-        self.remoteView?.setRowVisibility(2, newState: false)
-        self.remoteView?.setRowVisibility(3, newState: false)
-        self.remoteView?.setRowVisibility(4, newState: false)
-        self.remoteView?.setRowVisibility(5, newState: false)
-        self.remoteView?.setRowVisibility(6, newState: false)
-        self.remoteView?.setRowVisibility(7, newState: false)
-        
         scrollView.stackView.addArrangedSubview(PreferencesSection(title: localizedString("Settings"), [
             PreferencesRow(
                 localizedString("Export settings"),
@@ -202,14 +154,6 @@ class ApplicationSettings: NSStackView {
                 component: buttonView(#selector(self.resetSettings), text: localizedString("Reset"))
             )
         ]))
-        
-        self.fanHelperView = PreferencesSection([
-            PreferencesRow(
-                localizedString("Uninstall fan helper"),
-                component: buttonView(#selector(self.uninstallHelper), text: localizedString("Uninstall"))
-            )
-        ])
-        scrollView.stackView.addArrangedSubview(self.fanHelperView!)
         
         self.addArrangedSubview(scrollView)
         
@@ -242,34 +186,16 @@ class ApplicationSettings: NSStackView {
         scrollView.stackView.addArrangedSubview(PreferencesSection(title: localizedString("Stress tests"), tests))
         #endif
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.toggleUninstallHelperButton), name: .fanHelperState, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.handleRemoteState), name: .remoteState, object: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .fanHelperState, object: nil)
-    }
-    
     internal func viewWillAppear() {
         self.startAtLoginBtn?.state = LaunchAtLogin.isEnabled ? .on : .off
-        self.remoteControlBtn?.state = SystemStats.shared.control ? .on : .off
         
-        self.planField?.stringValue = SystemStats.shared.plan?.rawValue.capitalized ?? "Free"
-        self.setRemoteSettings(SystemStats.shared.isAuthorized)
         
-        var idx = self.updateSelector?.indexOfSelectedItem ?? 0
-        if let items = self.updateSelector?.menu?.items {
-            for (i, item) in items.enumerated() {
-                if let obj = item.representedObject as? String, obj == self.updateIntervalValue {
-                    idx = i
-                }
-            }
-        }
-        self.updateSelector?.selectItem(at: idx)
     }
     
     private func informationView() -> NSView {
@@ -291,7 +217,7 @@ class ApplicationSettings: NSStackView {
         let statsName: NSTextField = TextView(frame: NSRect(x: 0, y: 0, width: view.frame.width, height: 22))
         statsName.alignment = .center
         statsName.font = NSFont.systemFont(ofSize: 20, weight: .regular)
-        statsName.stringValue = "Stats"
+        statsName.stringValue = "Gaugebar"
         statsName.isSelectable = true
         
         let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
@@ -304,20 +230,12 @@ class ApplicationSettings: NSStackView {
         statsVersion.isSelectable = true
         statsVersion.toolTip = "\(localizedString("Build number")) \(buildNumber)"
         
-        let updateButton: NSButton = NSButton()
-        updateButton.title = localizedString("Check for update")
-        updateButton.bezelStyle = .rounded
-        updateButton.target = self
-        updateButton.action = #selector(self.updateAction)
-        
         container.addRow(with: [iconView])
         container.addRow(with: [statsName])
         container.addRow(with: [statsVersion])
-        container.addRow(with: [updateButton])
         
         container.row(at: 1).height = 22
         container.row(at: 2).height = 20
-        container.row(at: 3).height = 30
         
         view.addArrangedSubview(container)
         
@@ -325,35 +243,6 @@ class ApplicationSettings: NSStackView {
     }
     
     // MARK: - actions
-    
-    @objc private func updateAction() {
-        updater.check(force: true, completion: { result, error in
-            if error != nil {
-                debug("error updater.check(): \(error!.localizedDescription)")
-                return
-            }
-            
-            guard let version: version_s = result else {
-                debug("download error(): no version found")
-                return
-            }
-            
-            DispatchQueue.main.async(execute: {
-                if self.updateWindow == nil {
-                    let w = UpdateWindow()
-                    w.onClose = { [weak self = self] in self?.updateWindow = nil }
-                    self.updateWindow = w
-                }
-                self.updateWindow?.open(version, settingButton: true)
-                return
-            })
-        })
-    }
-    
-    @objc private func toggleUpdateInterval(_ sender: NSMenuItem) {
-        guard let key = sender.representedObject as? String else { return }
-        Store.shared.set(key: "update-interval", value: key)
-    }
     
     @objc private func toggleTemperatureUnits(_ sender: NSMenuItem) {
         guard let key = sender.representedObject as? String else { return }
@@ -454,17 +343,6 @@ class ApplicationSettings: NSStackView {
         }
     }
     
-    @objc private func toggleUninstallHelperButton(_ notification: Notification) {
-        guard let state = notification.userInfo?["state"] as? Bool, let v = self.fanHelperView else {
-            return
-        }
-        v.isHidden = !state
-    }
-    
-    @objc private func uninstallHelper() {
-        SMCHelper.shared.uninstall()
-    }
-    
     @objc private func toggleCPUeStressTest() {
         if self.CPUeTest.isRunning {
             self.CPUeTest.stop()
@@ -504,81 +382,6 @@ class ApplicationSettings: NSStackView {
         } else {
             test.start()
             self.GPUButton?.title = localizedString("Stop")
-        }
-    }
-    
-    @objc private func toggleRemoteMonitoringState(_ sender: NSButton) {
-        SystemStats.shared.monitoring = sender.state == NSControl.StateValue.on
-    }
-    @objc private func toggleRemoteControlState(_ sender: NSButton) {
-        if sender.state == .on {
-            let alert = NSAlert()
-            alert.messageText = localizedString("Warning")
-            alert.informativeText = localizedString("It is not recommended to enable remote control unless you know what you are doing.")
-            alert.alertStyle = .warning
-            alert.addButton(withTitle: localizedString("Enable"))
-            alert.addButton(withTitle: localizedString("Cancel"))
-            let response = alert.runModal()
-            if response == .alertFirstButtonReturn {
-                SystemStats.shared.control = true
-            } else {
-                sender.state = .off
-            }
-        } else {
-            SystemStats.shared.control = false
-        }
-    }
-    @objc private func toggleRemoteUpdateState(_ sender: NSButton) {
-        SystemStats.shared.update = sender.state == NSControl.StateValue.on
-    }
-    
-    @objc private func handleRemoteState(_ notification: Notification) {
-        guard let auth = notification.userInfo?["auth"] as? Bool else { return }
-        self.setRemoteSettings(auth)
-    }
-    
-    @objc private func loginToRemote() {
-        SystemStats.shared.login()
-    }
-    
-    @objc private func logoutFromRemote() {
-        SystemStats.shared.logout()
-    }
-    
-    @objc private func deregisterFromRemote() {
-        let alert = NSAlert()
-        alert.messageText = localizedString("Deregister")
-        alert.informativeText = localizedString("Deregister text")
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: localizedString("Yes"))
-        alert.addButton(withTitle: localizedString("No"))
-        
-        if alert.runModal() == .alertFirstButtonReturn {
-            SystemStats.shared.deregister()
-        }
-    }
-    
-    private func setRemoteSettings(_ auth: Bool) {
-        DispatchQueue.main.async {
-            if auth {
-                self.remoteView?.setRowVisibility(1, newState: true)
-                self.remoteView?.setRowVisibility(2, newState: true)
-                self.remoteView?.setRowVisibility(3, newState: true)
-                self.remoteView?.setRowVisibility(4, newState: true)
-                self.remoteView?.setRowVisibility(5, newState: true)
-                self.remoteView?.setRowVisibility(6, newState: true)
-                self.remoteView?.setRowVisibility(7, newState: true)
-                self.remoteView?.setRowVisibility(0, newState: false)
-            } else {
-                self.remoteView?.setRowVisibility(0, newState: true)
-                self.remoteView?.setRowVisibility(1, newState: false)
-                self.remoteView?.setRowVisibility(2, newState: false)
-                self.remoteView?.setRowVisibility(3, newState: false)
-                self.remoteView?.setRowVisibility(4, newState: false)
-                self.remoteView?.setRowVisibility(5, newState: false)
-                self.remoteView?.setRowVisibility(6, newState: false)
-                self.remoteView?.setRowVisibility(7, newState: false)
-            }
         }
     }
     

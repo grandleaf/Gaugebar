@@ -305,19 +305,11 @@ public extension Notification.Name {
     static let clickInSettings = Notification.Name("clickInSettings")
     static let refreshPublicIP = Notification.Name("refreshPublicIP")
     static let resetTotalNetworkUsage = Notification.Name("resetTotalNetworkUsage")
-    static let syncFansControl = Notification.Name("syncFansControl")
-    static let checkFanModes = Notification.Name("checkFanModes")
-    static let fanHelperState = Notification.Name("fanHelperState")
     static let toggleOneView = Notification.Name("toggleOneView")
     static let widgetRearrange = Notification.Name("widgetRearrange")
     static let moduleRearrange = Notification.Name("moduleRearrange")
     static let pause = Notification.Name("pause")
-    static let toggleFanControl = Notification.Name("toggleFanControl")
     static let combinedModulesPopup = Notification.Name("combinedModulesPopup")
-    static let remoteLoginSuccess = Notification.Name("remoteLoginSuccess")
-    static let remoteState = Notification.Name("remoteState")
-    static let remoteAuthenticated = Notification.Name("remoteAuthenticated")
-    static let remoteUpdate = Notification.Name("remoteUpdate")
     static let openWindow = Notification.Name("openWindow")
 }
 
@@ -485,4 +477,9 @@ public struct DeviceResponse: Codable {
     public let user_code: String
     public let verification_uri_complete: URL
     public let interval: Int?
+}
+
+// Kept so module value types keep their upstream shape. Nothing sends these values.
+public protocol RemoteType {
+    func remote() -> Data?
 }

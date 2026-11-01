@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "ตรวจสอบเวอร์ชันใหม่ทุกเดือน (เดือนละครั้ง)";
 "Never check for updates (not recommended)" = "ไม่เช็คการอัปเดต (ไม่แนะนำ)";
 "The configuration is completed" = "การกำหนดค่าเสร็จสมบูรณ์";
-"finish_setup_message" = "ทุกอย่างถูกตั้งค่า! \n Gaugebar เป็นเครื่องมือโอเพ่นซอร์สที่ฟรีและจะเป็นแบบนี้ตลอดไป \n ถ้าคุณชอบ คุณสามารถสนับสนุนโปรเจคนี้ เราพร้อมรับและขอบคุณเสมอ!";
+"finish_setup_message" = "ทุกอย่างถูกตั้งค่า! \n Gaugebar เป็นเครื่องมือโอเพ่นซอร์สที่ฟรีและจะเป็นแบบนี้ตลอดไป";
 
 // Alerts
 "New version available" = "มีเวอร์ชันใหม่ให้ใช้งาน";
@@ -133,7 +133,7 @@
 "Successfully updated" = "อัพเดทสำเร็จ";
 "Stats was updated to v" = "Gaugebar อัพเดทเป็น v%0";
 "Reset settings text" = "การตั้งค่าของแอพพลิเคชันทั้งหมดจะถูกรีเซ็ตและแอพพลิเคชันจะเริ่มต้นใหม่ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการนี้?";
-"Deregister text" = "เครื่องจะถูกยกเลิกการลงทะเบียนจาก System Stats และคุณจะถูกออกจากระบบ คุณแน่ใจหรือไม่ว่าต้องการดำเนินการนี้?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "ขอขอบคุณที่ใช้ Gaugebar!\n\nการบำรุงรักษาและปรับปรุงโครงการโอเพนซอร์สนี้ต้องใช้เวลาและทรัพยากร การสนับสนุนของคุณช่วยให้เราสามารถให้บริการแอปพลิเคชันฟรีและเชื่อถือได้สำหรับทุกคนต่อไปได้\n\n หากคุณพบว่า Gaugebar มีประโยชน์ โปรดพิจารณาให้ความช่วยเหลือ ทุก ๆ ความช่วยเหลือเล็ก ๆ น้อย ๆ ล้วนมีประโยชน์!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "ไม่มีการแจ้งเตือนที่พร้อมใช้งานในโมดูลนี้"; // gemma4:31b
 "Open Calendar" = "เปิดปฏิทิน"; // translategemma:4b
 "Toggle the module" = "สลับโมดูล"; // gemma4:31b
-"Open System Stats" = "เปิด System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "ปิดการตั้งค่าโมดูล"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "รับการแจ้งเตือนเมื่ออุปกรณ์ออฟไลน์หรือถึงเกณฑ์"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "ไม่แนะนำให้เปิดใช้งานการควบคุมระยะไกล เว้นแต่คุณจะรู้ว่าคุณกำลังทำอะไรอยู่"; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "เมตริกแบบเรียลไทม์ของ CPU, RAM, ดิสก์ และเครือข่าย"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "เข้าสู่ระบบ System Stats เพื่อดูอุปกรณ์ของคุณ"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "ตรวจสอบ HTTP, ICMP และจุดปลายทางที่กำหนดเอง"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "ติดตามและควบคุม Mac ของคุณได้จากทุกที่. เข้าสู่ระบบบัญชี System Stats ของคุณเพื่อดูอุปกรณ์และโฮสต์ทั้งหมดของคุณในที่เดียว."; // qwen3.8:27b
+ // qwen3.8:27b

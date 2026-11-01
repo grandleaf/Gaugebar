@@ -125,7 +125,8 @@
 "Check for a new version every month (once a month)" = "Verifică dacă există o versiune nouă în fiecare lună (o dată pe lună)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Nu verifica niciodată actualizările (nu este recomandat)"; // gemma4:31b
 "The configuration is completed" = "Configurarea este finalizată"; // gemma4:31b
-"finish_setup_message" = "Totul este configurat! \n Gaugebar este un instrument open source, este gratuit și va rămâne așa. \n Dacă vă place, puteți susține proiectul, este întotdeauna apreciat!"; // gemma4:31b
+"finish_setup_message" = "Totul este configurat! \n Gaugebar este un instrument open source, este gratuit și va rămâne așa.";
+ // gemma4:31b
 
 // Alerts
 "New version available" = "Versiune nouă disponibilă";
@@ -133,7 +134,7 @@
 "Successfully updated" = "Actualizat cu succes";
 "Stats was updated to v" = "Gaugebar a fost actualizat la v%0";
 "Reset settings text" = "Toate setările aplicației vor fi resetate și aplicația va fi repornită. Sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b
-"Deregister text" = "Calculatorul va fi dezînregistrat din System Stats și veți fi deconectat. Sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Vă mulțumim pentru utilizarea Gaugebar!\n\n Menținerea și îmbunătățirea acestui proiect open-source necesită timp și resurse. Sprijinul dumneavoastră ne ajută să continuăm să oferim o aplicație gratuită și fiabilă pentru toată lumea.\n\nDacă Gaugebar vă este util, vă rugăm să luați în considerare posibilitatea de a face o contribuție. Fiecare bănuț ajută!";
 
 // Settings
@@ -146,7 +147,7 @@
 "No notifications available in this module" = "Nu sunt disponibile notificări în acest modul"; // gemma4:31b
 "Open Calendar" = "Deschide calendarul"; // translategemma:4b
 "Toggle the module" = "Comută modulul"; // gemma4:31b
-"Open System Stats" = "Deschide System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Închide setările modulului"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +569,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Primești o notificare când un dispozitiv devine offline sau atinge un prag"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Nu este recomandat să activați controlul la distanță dacă nu știți ce faceți."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Metrici în direct pentru CPU, RAM, disc și rețea"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Conectați-vă la System Stats pentru a vă vedea dispozitivele"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Monitorizează HTTP, ICMP și puncte de acces personalizate"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Monitorizați și controlați Mac-urile dvs. de oriunde. Conectați-vă la contul dvs. System Stats pentru a vă vedea toate dispozitivele și gazdele într-un singur loc."; // qwen3.8:27b
+ // qwen3.8:27b

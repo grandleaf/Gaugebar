@@ -125,7 +125,8 @@
 "Check for a new version every month (once a month)" = "Έλεγχος για νέα έκδοση κάθε μήνα (μία φορά τον μήνα)"; // gemma4:31b
 "Never check for updates (not recommended)" = "Ποτέ μην ελέγχετε για ενημερώσεις (δεν συνιστάται)"; // gemma4:31b
 "The configuration is completed" = "Η διαμόρφωση ολοκληρώθηκε"; // gemma4:31b
-"finish_setup_message" = "Όλα είναι έτοιμα! \n Το Gaugebar είναι ένα εργαλείο ανοιχτού κώδικα, είναι δωρεάν και θα παραμείνει έτσι. \n Αν σας αρέσει, μπορείτε να υποστηρίξετε το έργο, εκτιμάται πάντα!"; // gemma4:31b
+"finish_setup_message" = "Όλα είναι έτοιμα! \n Το Gaugebar είναι ένα εργαλείο ανοιχτού κώδικα, είναι δωρεάν και θα παραμείνει έτσι.";
+ // gemma4:31b
 
 // Alerts
 "New version available" = "Νέα έκδοση διαθέσιμη";
@@ -133,7 +134,7 @@
 "Successfully updated" = "Επιτυχής ενημέρωση";
 "Stats was updated to v" = "Το Gaugebar ενημερώθηκε στην έκδοση %0";
 "Reset settings text" = "Όλες οι ρυθμίσεις της εφαρμογής θα αρχικοποιηθούν και η εφαρμογή θα επανεκκινηθεί. Είστε σίγουροι;";
-"Deregister text" = "Ο υπολογιστής θα απαγραφεί από το System Stats και θα αποσυνδεθείτε. Είστε σίγουροι ότι θέλετε να το κάνετε αυτό;"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Σας ευχαριστούμε για τη χρήση των Gaugebar!\n\n Η συντήρηση και η βελτίωση αυτού του έργου ανοιχτού κώδικα απαιτεί χρόνο και πόρους. Η υποστήριξή σας μας βοηθά να συνεχίσουμε να παρέχουμε μια δωρεάν και αξιόπιστη εφαρμογή για όλους.\n\nΕάν βρίσκετε το Gaugebar χρήσιμο, παρακαλούμε σκεφτείτε να συνεισφέρετε. Κάθε μικρό ποσό βοηθάει!";
 
 // Settings
@@ -146,7 +147,7 @@
 "No notifications available in this module" = "Δεν υπάρχουν διαθέσιμες ειδοποιήσεις σε αυτήν τη μονάδα"; // gemma4:31b
 "Open Calendar" = "Άνοιγμα Ημερολογίου"; // translategemma:4b
 "Toggle the module" = "Εναλλαγή της μονάδας"; // gemma4:31b
-"Open System Stats" = "Άνοιξε το System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Κλείσιμο ρυθμίσεων μονάδας"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +569,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Λάβετε ειδοποίηση όταν μια συσκευή αποσυνδεθεί ή φτάσει ένα όριο"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Δεν συνιστάται η ενεργοποίηση του απομακρυσμένου ελέγχου εκτός αν γνωρίζετε τι κάνετε."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Ζωντανές μετρήσεις CPU, RAM, δίσκου και δικτύου"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Συνδεθείτε στο System Stats για να δείτε τις συσκευές σας"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Παρακολούθηση HTTP, ICMP και προσαρμοσμένων τελείων"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Παρακολουθείτε και ελέγχετε τα Mac σας από οπουδήποτε. Συνδεθείτε στον λογαριασμό σας System Stats για να δείτε όλες τις συσκευές και τους ξενιστές σας σε ένα σημείο."; // qwen3.8:27b
+ // qwen3.8:27b

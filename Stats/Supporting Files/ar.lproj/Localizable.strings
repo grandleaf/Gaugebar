@@ -133,7 +133,7 @@
 "Successfully updated" = "تم التحديث بنجاح";
 "Stats was updated to v" = "تم تحديث Gaugebar إلى الإصدار v%0";
 "Reset settings text" = "سيتم إعادة ضبط جميع إعدادات التطبيق وسيتم إعادة تشغيل التطبيق. هل تريد المتابعة؟";
-"Deregister text" = "سيتم إلغاء تسجيل الجهاز من System Stats وسيتم تسجيل خروجك. هل أنت متأكد أنك تريد القيام بذلك؟"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "شكرًا لك على استخدامك ل Gaugebar! \n\nيستغرق الحفاظ على هذا المشروع مفتوح المصدر وتحسينه وقتًا وموارد. دعمكم يساعدنا على الاستمرار في توفير تطبيق مجاني وموثوق للجميع. كل جزء صغير يساعدنا!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "لا توجد إشعارات متاحة في هذه الوحدة";
 "Open Calendar" = "فتح التقويم"; // translategemma:4b
 "Toggle the module" = "تبديل الوحدة"; // gemma4:31b
-"Open System Stats" = "فتح System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "إغلاق إعدادات الوحدة"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "احصل على إشعار عندما يصبح الجهاز غير متصل أو يصل إلى حد معين"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "لا يُنصح بتفعيل التحكم عن بُعد إلا إذا كنت تعرف ما تفعله."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "مقاييس مباشرة لـ CPU وRAM والقرص والشبكة"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "سجّل الدخول إلى System Stats لعرض أجهزتك"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "مراقبة HTTP و ICMP ونقاط النهاية المخصصة"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "راقب Macs وتحكّم بها من أي مكان. سجّل الدخول إلى حساب System Stats الخاص بك لعرض جميع أجهزتك ومضيفاتك في مكان واحد."; // qwen3.8:27b
+ // qwen3.8:27b

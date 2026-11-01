@@ -43,7 +43,7 @@ public class Portal: PortalWrapper {
         SizeUnit.fromString(Store.shared.string(key: "\(self.name)_chartFixedScaleSize", defaultValue: SizeUnit.MB.key))
     }
     private var publicIPState: Bool {
-        Store.shared.bool(key: "\(self.name)_publicIP", defaultValue: true)
+        Store.shared.bool(key: "\(self.name)_publicIP", defaultValue: false)
     }
     private var emojiCCState: Bool {
         Store.shared.bool(key: "\(self.name)_emojiCC", defaultValue: true)

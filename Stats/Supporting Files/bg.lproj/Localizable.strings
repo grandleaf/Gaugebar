@@ -125,7 +125,7 @@
 "Check for a new version every month (once a month)" = "Проверяване за нова версия всеки месец (веднъж на месец)";
 "Never check for updates (not recommended)" = "Без проверяване за нови версии (не се препоръчва)";
 "The configuration is completed" = "Конфигурацията е завършена";
-"finish_setup_message" = "Всичко е настроено! \n Gaugebar е приложение с отворен код, безплатно е и винаги ще бъде. \n Ако ви допада, може да подкрепите проекта, ще сме много благодарни!";
+"finish_setup_message" = "Всичко е настроено! \n Gaugebar е приложение с отворен код, безплатно е и винаги ще бъде.";
 
 // Alerts
 "New version available" = "Налична е нова версия";
@@ -133,7 +133,7 @@
 "Successfully updated" = "Успешно обновяване";
 "Stats was updated to v" = "Gaugebar е обновена до версия v%0";
 "Reset settings text" = "Всички настройки на приложението ще бъдат занулени и приложението ще се рестартира. Сигурни ли сте, че искате това?";
-"Deregister text" = "Компютърът ще бъде дерегистриран от System Stats и вие ще бъдете излогвани. Сигурни ли сте, че искате да направите това?"; // gemma4:31b-it-qat
+ // gemma4:31b-it-qat
 "Support text" = "Благодарим ви, че използвате Gaugebar!\n\nПоддържането и подобряването на този проект с отворен код изисква време и ресурси. Вашата подкрепа ни помага да продължим да предоставяме безплатно и надеждно приложение за всички.\n\nАко намирате Gaugebar за полезно, моля, помислете дали да не дадете своя принос. Всяка малка част помага!";
 
 // Settings
@@ -146,7 +146,7 @@
 "No notifications available in this module" = "В този модул няма налични известия"; // gemma4:31b
 "Open Calendar" = "Отвори календара"; // translategemma:4b
 "Toggle the module" = "Превключи модула"; // gemma4:31b
-"Open System Stats" = "Отвори System Stats"; // gemma4:31b
+ // gemma4:31b
 "Close module settings" = "Затваряне на настройките на модула"; // qwen3.8:27b
 
 // Application settings
@@ -568,6 +568,6 @@
 "Get notified when a device goes offline or hits a threshold" = "Получавайте уведомления, когато устройство загуби връзка или достигне праг"; // qwen3.8:27b
 "It is not recommended to enable remote control unless you know what you are doing." = "Не се препоръчва активирането на дистанционното управление, освен ако не знаете какво правите."; // qwen3.8:27b
 "Live CPU, RAM, disk and network metrics" = "Живи метрики за CPU, RAM, диск и мрежа"; // qwen3.8:27b
-"Login to System Stats to see your devices" = "Вход в System Stats за да видите устройствата си"; // qwen3.8:27b
+ // qwen3.8:27b
 "Monitor HTTP, ICMP and custom endpoints" = "Мониторинг на HTTP, ICMP и персонализирани крайни точки"; // qwen3.8:27b
-"Monitor and control your Macs from anywhere. Sign in to your System Stats account to see all your devices and hosts in one place." = "Наблюдавайте и управлявайте вашите Macs от навсякъде. Влезте в акаунта си в System Stats, за да видите всички свои устройства и хостове на едно място."; // qwen3.8:27b
+ // qwen3.8:27b
