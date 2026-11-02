@@ -33,6 +33,22 @@
 			<key>Order</key>
 			<integer>1</integer>
 		</dict>
+		<key>gauge</key>
+		<dict>
+			<key>Default</key>
+			<false/>
+			<key>Preview</key>
+			<dict>
+				<key>Value</key>
+				<string>0.32</string>
+			</dict>
+			<key>Unsupported colors</key>
+			<array>
+				<string>pressure</string>
+			</array>
+			<key>Order</key>
+			<integer>7</integer>
+		</dict>
 		<key>line_chart</key>
 		<dict>
 			<key>Default</key>
@@ -48,6 +64,10 @@
 		</dict>
 		<key>bar_chart</key>
 		<dict>
+			<key>Core boxes</key>
+			<true/>
+			<key>Core settings</key>
+			<false/>
 			<key>Default</key>
 			<false/>
 			<key>Preview</key>

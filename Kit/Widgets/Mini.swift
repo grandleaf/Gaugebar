@@ -18,7 +18,7 @@ public class Mini: WidgetWrapper {
     
     private var colors: [SColor] = SColor.allCases
     
-    private var _value: Double = 0
+    internal var _value: Double = 0
     private var _pressureLevel: RAMPressure = .normal
     private var _colorZones: colorZones = (0.6, 0.8)
     private var _suffix: String = "%"
@@ -30,6 +30,10 @@ public class Mini: WidgetWrapper {
         (self.labelState ? 31 : 36) + (2*Constants.Widget.margin.x)
     }
     
+    /// Empty space kept on each side of the text.
+    internal var sidePadding: CGFloat { 0 }
+    internal var defaultAlignment: String { "left" }
+    
     private var alignment: NSTextAlignment {
         if let alignmentPair = Alignments.first(where: { $0.key == self.alignmentState }) {
             return alignmentPair.additional as? NSTextAlignment ?? .left
@@ -37,7 +41,7 @@ public class Mini: WidgetWrapper {
         return .left
     }
     
-    public init(title: String, config: NSDictionary?, preview: Bool = false) {
+    public init(title: String, config: NSDictionary?, preview: Bool = false, type: widget_t = .mini) {
         var widgetTitle: String = title
         if config != nil {
             var configuration = config!
@@ -69,7 +73,7 @@ public class Mini: WidgetWrapper {
         
         self.defaultLabel = widgetTitle
         self._label = widgetTitle
-        super.init(.mini, title: widgetTitle, frame: CGRect(
+        super.init(type, title: widgetTitle, frame: CGRect(
             x: 0,
             y: Constants.Widget.margin.y,
             width: Constants.Widget.width + (2*Constants.Widget.margin.x),
@@ -77,6 +81,7 @@ public class Mini: WidgetWrapper {
         ))
         
         self.canDrawConcurrently = true
+        self.alignmentState = self.defaultAlignment
         
         if !preview {
             self.colorState = SColor.fromString(Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState.key))
@@ -105,8 +110,11 @@ public class Mini: WidgetWrapper {
             suffix = self._suffix
         }
         
+        let text = "\(Int(value.rounded(toPlaces: 2) * 100))\(suffix)"
+        let contentWidth = self.labelState ? Self.labelledWidth(value: text, label: label) : self.width
+        let width = contentWidth + (self.sidePadding*2)
         let valueSize: CGFloat = self.labelState ? 12 : 14
-        var origin: CGPoint = CGPoint(x: Constants.Widget.margin.x, y: (Constants.Widget.height-valueSize)/2)
+        var origin: CGPoint = CGPoint(x: Constants.Widget.margin.x + self.sidePadding, y: (Constants.Widget.height-valueSize)/2)
         let style = NSMutableParagraphStyle()
         style.alignment = self.labelState ? self.alignment : .center
         
@@ -119,7 +127,7 @@ public class Mini: WidgetWrapper {
                 NSAttributedString.Key.foregroundColor: isDarkMode ? NSColor.white : NSColor.textColor,
                 NSAttributedString.Key.paragraphStyle: style
             ]
-            let rect = CGRect(x: origin.x, y: 12, width: self.width - (Constants.Widget.margin.x*2), height: 7)
+            let rect = CGRect(x: origin.x, y: 12, width: contentWidth - (Constants.Widget.margin.x*2), height: 7)
             let str = NSAttributedString.init(string: label, attributes: stringAttributes)
             str.draw(with: rect)
             
@@ -140,11 +148,22 @@ public class Mini: WidgetWrapper {
             NSAttributedString.Key.foregroundColor: color,
             NSAttributedString.Key.paragraphStyle: style
         ]
-        let rect = CGRect(x: origin.x, y: origin.y, width: self.width - (Constants.Widget.margin.x*2), height: valueSize+1)
-        let str = NSAttributedString.init(string: "\(Int(value.rounded(toPlaces: 2) * 100))\(suffix)", attributes: stringAttributes)
+        let rect = CGRect(x: origin.x, y: origin.y, width: contentWidth - (Constants.Widget.margin.x*2), height: valueSize+1)
+        let str = NSAttributedString.init(string: text, attributes: stringAttributes)
         str.draw(with: rect)
         
         self.setWidth(width)
+    }
+    
+    // Room for two digits, growing only at 100%, so the widget has no wide empty edge.
+    internal static func labelledWidth(value: String, label: String) -> CGFloat {
+        let valueFont = NSFont.systemFont(ofSize: 12, weight: .regular)
+        let labelFont = NSFont.systemFont(ofSize: 7, weight: .light)
+        let measure: (String, NSFont) -> CGFloat = { NSAttributedString(string: $0, attributes: [.font: $1]).size().width }
+        
+        let twoDigits = "00" + value.filter { !$0.isNumber }
+        let labelWidth = min(measure(label, labelFont), 31)
+        return max(measure(twoDigits, valueFont), measure(value, valueFont), labelWidth).rounded(.up)
     }
     
     public func setValue(_ newValue: Double) {

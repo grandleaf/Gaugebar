@@ -180,6 +180,19 @@ public struct Units {
         return omitUnits ? readable.0 : "\(readable.0) \(readable.1)"
     }
     
+    /// The short form for the menu bar: no "/s", and plain bytes below one kilobyte.
+    public func getCompactSpeed(base: DataSizeBase = .byte, unit: String = NetworkSpeedUnitAuto, omitUnits: Bool = false) -> String {
+        var (value, suffix) = self.getReadableTuple(base: base, unit: unit)
+        suffix = suffix.replacingOccurrences(of: "/s", with: "")
+        
+        let amount = base == .byte ? self.bytes : self.bytes * 8
+        if unit == NetworkSpeedUnitAuto && amount < 1_000 {
+            value = "\(max(amount, 0))"
+            suffix = base == .byte ? "B" : "b"
+        }
+        return omitUnits ? value : "\(value) \(suffix)"
+    }
+    
     public func getReadableMemory(style: ByteCountFormatter.CountStyle = .file) -> String {
         var value = FormatterCache.shared.readableMemory(Int64(self.bytes), style: style)
         if let idx = value.lastIndex(of: ",") {

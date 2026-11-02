@@ -104,6 +104,7 @@
 		9A2847612666AA2700EC1F6D /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2847572666AA2700EC1F6D /* PieChart.swift */; };
 		9A2847622666AA2700EC1F6D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2847582666AA2700EC1F6D /* Label.swift */; };
 		9A2847632666AA2700EC1F6D /* Mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2847592666AA2700EC1F6D /* Mini.swift */; };
+		A6A0C0F1000000000000C0F7 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F8 /* Gauge.swift */; };
 		9A2847642666AA2700EC1F6D /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475A2666AA2700EC1F6D /* Battery.swift */; };
 		9A2847652666AA2700EC1F6D /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475B2666AA2700EC1F6D /* Memory.swift */; };
 		9A2847662666AA2700EC1F6D /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475C2666AA2700EC1F6D /* Speed.swift */; };
@@ -584,6 +585,7 @@
 		9A2847572666AA2700EC1F6D /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		9A2847582666AA2700EC1F6D /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		9A2847592666AA2700EC1F6D /* Mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mini.swift; sourceTree = "<group>"; };
+		A6A0C0F1000000000000C0F8 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
 		9A28475A2666AA2700EC1F6D /* Battery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		9A28475B2666AA2700EC1F6D /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		9A28475C2666AA2700EC1F6D /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2847592666AA2700EC1F6D /* Mini.swift */,
+				A6A0C0F1000000000000C0F8 /* Gauge.swift */,
 				9A2847582666AA2700EC1F6D /* Label.swift */,
 				9A28475D2666AA2700EC1F6D /* BarChart.swift */,
 				A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */,
@@ -2058,6 +2061,7 @@
 				9A2847642666AA2700EC1F6D /* Battery.swift in Sources */,
 				9A28480B2666AB3000EC1F6D /* Charts.swift in Sources */,
 				9A2847632666AA2700EC1F6D /* Mini.swift in Sources */,
+				A6A0C0F1000000000000C0F7 /* Gauge.swift in Sources */,
 				5E828A003074086000DB0CA0 /* Icon.swift in Sources */,
 				5CF2210D2B1E7EAF006C583F /* notifications.swift in Sources */,
 				9A6EEBBE2685259500897371 /* Logger.swift in Sources */,

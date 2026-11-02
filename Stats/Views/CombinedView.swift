@@ -107,10 +107,14 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
         var w: CGFloat = 0
         visibleModules.enumerated().forEach { (i, m) in
             if i != 0 {
-                w += self.spacing
                 if self.separator {
+                    w += self.spacing
                     self.view.addSubview(SeparatorLineView(frame: NSRect(x: w, y: 3, width: 1, height: Constants.Widget.height-6)))
                     w += 3 + self.spacing
+                } else {
+                    // Room a widget leaves empty already reads as gap. Only the padding can be taken back.
+                    let slack = visibleModules[i - 1].menuBar.trailingSlack + m.menuBar.leadingSlack
+                    w += max(self.spacing - slack, -Constants.Widget.spacing * 2)
                 }
             }
             self.view.addSubview(m.menuBar.view)

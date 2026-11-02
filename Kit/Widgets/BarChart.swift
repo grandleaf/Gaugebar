@@ -26,17 +26,24 @@ public class BarChart: WidgetWrapper {
     private var frameSettingsView: NSSwitch? = nil
     
     private var coreBoxesSupported: Bool = false
+    private var coreSettingsSupported: Bool = true
     private var coreBoxesState: Bool = true
     private var coreStackState: Bool = true
+    private var coreTemperatureState: Bool = true
     private var coreBarWidth: Int = 9
-    private var coreGap: Int = 4
-    private var coreClusterGap: Int = 7
+    private var coreGap: Int = 0
+    private var coreClusterGap: Int = 11
     private var coreMaxWidth: Int = 300
     private var _coreGroups: [Int]? = nil
+    private var _coreTemperature: String? = nil
     internal var renderScale: CGFloat? = nil
     
     public var coreBoxesEnabled: Bool { self.coreBoxesSupported && self.coreBoxesState }
     public var coreStackEnabled: Bool { self.coreStackState }
+    public var coreTemperatureEnabled: Bool { self.coreTemperatureState }
+    
+    internal static let coreTemperatureGap: CGFloat = 4
+    private static let coreTemperatureFont = NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
     
     public var NSLabelCharts: [NSAttributedString] = []
     
@@ -67,6 +74,9 @@ public class BarChart: WidgetWrapper {
             if let coreBoxes = config!["Core boxes"] as? Bool {
                 self.coreBoxesSupported = coreBoxes
             }
+            if let coreSettings = config!["Core settings"] as? Bool {
+                self.coreSettingsSupported = coreSettings
+            }
             if let unsupportedColors = configuration["Unsupported colors"] as? [String] {
                 self.colors = self.colors.filter{ !unsupportedColors.contains($0.key) }
             }
@@ -93,6 +103,7 @@ public class BarChart: WidgetWrapper {
             self.colorState = SColor.fromString(Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState.key))
             self.coreBoxesState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreBoxes", defaultValue: self.coreBoxesState)
             self.coreStackState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreStack", defaultValue: self.coreStackState)
+            self.coreTemperatureState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreTemperature", defaultValue: self.coreTemperatureState)
             self.coreBarWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreBarWidth", defaultValue: self.coreBarWidth)
             self.coreGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreGap", defaultValue: self.coreGap)
             self.coreClusterGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreClusterGap", defaultValue: self.coreClusterGap)
@@ -133,11 +144,13 @@ public class BarChart: WidgetWrapper {
         var pressureLevel: RAMPressure = .normal
         var colorZones: colorZones = (0.6, 0.8)
         var coreGroups: [Int]? = nil
+        var coreTemperature: String? = nil
         self.queue.sync {
             value = self._value
             pressureLevel = self._pressureLevel
             colorZones = self._colorZones
             coreGroups = self._coreGroups
+            coreTemperature = self._coreTemperature
         }
         
         guard !value.isEmpty else {
@@ -146,7 +159,7 @@ public class BarChart: WidgetWrapper {
         }
         
         if let coreGroups, coreGroups.reduce(0, +) == value.count {
-            self.drawCoreBoxes(value, groups: coreGroups, colorZones: colorZones)
+            self.drawCoreBoxes(value, groups: coreGroups, colorZones: colorZones, temperature: coreTemperature)
             return
         }
         
@@ -278,7 +291,7 @@ public class BarChart: WidgetWrapper {
         }
     }
     
-    private func drawCoreBoxes(_ value: [[ColorValue]], groups: [Int], colorZones: colorZones) {
+    private func drawCoreBoxes(_ value: [[ColorValue]], groups: [Int], colorZones: colorZones, temperature: String?) {
         let scale = self.coreScale
         let dark = NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
         var origin: CGFloat = 0
@@ -295,6 +308,10 @@ public class BarChart: WidgetWrapper {
             origin = letterWidth + Constants.Widget.spacing
         }
         
+        if let temperature {
+            origin = self.drawCoreTemperature(temperature, at: origin, dark: dark, scale: scale)
+        }
+        
         let layout = CoreBoxLayout(
             groups: groups,
             barWidth: CGFloat(self.coreBarWidth),
@@ -307,7 +324,7 @@ public class BarChart: WidgetWrapper {
         
         let outlineColor = (dark ? NSColor.white : NSColor.black).withAlphaComponent(0.8)
         let pixel = 1 / max(scale, 1)
-        let line: CGFloat = 1
+        let line = CoreBoxLayout.outlineWidth
         
         for (i, box) in layout.boxes.enumerated() {
             let frame = box.offsetBy(dx: origin, dy: 0)
@@ -324,13 +341,50 @@ public class BarChart: WidgetWrapper {
                 y += height
             }
             
-            outlineColor.setStroke()
-            let outline = NSBezierPath(rect: frame.insetBy(dx: line/2, dy: line/2))
-            outline.lineWidth = line
-            outline.stroke()
         }
         
+        let outline = NSBezierPath()
+        outline.lineWidth = line
+        layout.outlines.forEach { outline.appendRect($0.offsetBy(dx: origin, dy: 0).insetBy(dx: line/2, dy: line/2)) }
+        outlineColor.setStroke()
+        outline.stroke()
+        
+        let dividers = NSBezierPath()
+        layout.dividers.forEach { dividers.appendRect($0.offsetBy(dx: origin, dy: 0)) }
+        outlineColor.withAlphaComponent(0.18).setFill()
+        dividers.fill()
+        
+        outlineColor.withAlphaComponent(0.4).setFill()
+        layout.separators.forEach { NSBezierPath(ovalIn: $0.offsetBy(dx: origin, dy: 0)).fill() }
+        
         self.setWidth(origin + layout.width + Constants.Widget.margin.x*2)
+    }
+    
+    // Returns where the boxes start.
+    private func drawCoreTemperature(_ text: String, at x: CGFloat, dark: Bool, scale: CGFloat) -> CGFloat {
+        let font = Self.coreTemperatureFont
+        let string = NSAttributedString(string: text, attributes: [
+            .font: font,
+            .foregroundColor: dark ? NSColor.white : NSColor.textColor
+        ])
+        
+        let pixels = max(scale, 1)
+        let width = Self.coreTemperatureWidth(text)
+        let left = x + width - string.size().width
+        let bottom = (self.frame.height - font.capHeight) / 2 + font.descender
+        string.draw(at: NSPoint(x: (left * pixels).rounded() / pixels, y: (bottom * pixels).rounded() / pixels))
+        
+        return x + width + Self.coreTemperatureGap
+    }
+    
+    // Always room for three digits, so going from 99° to 100° doesn't move the boxes.
+    internal static func coreTemperatureWidth(_ text: String) -> CGFloat {
+        let sample = "000" + text.filter { !$0.isNumber }
+        return NSAttributedString(string: sample, attributes: [.font: self.coreTemperatureFont]).size().width.rounded(.up)
+    }
+    
+    internal static func coreTemperatureText(_ value: Double) -> String {
+        String(temperature(value).prefix(while: { !$0.isLetter }))
     }
     
     private func coreFillColor(_ segment: ColorValue, dark: Bool, colorZones: colorZones) -> NSColor {
@@ -361,6 +415,18 @@ public class BarChart: WidgetWrapper {
         }
         if updated {
             self.updateCoreFrame()
+            self.redraw()
+        }
+    }
+    
+    public func setCoreTemperature(_ newValue: Double?) {
+        let text = newValue.map { Self.coreTemperatureText($0) }
+        let updated = self.queue.sync { () -> Bool in
+            guard self._coreTemperature != text else { return false }
+            self._coreTemperature = text
+            return true
+        }
+        if updated {
             self.redraw()
         }
     }
@@ -434,7 +500,7 @@ public class BarChart: WidgetWrapper {
             PreferencesRow(localizedString("Frame"), component: frame)
         ]))
         
-        if self.coreBoxesSupported {
+        if self.coreBoxesSupported && self.coreSettingsSupported {
             view.addArrangedSubview(PreferencesSection([
                 PreferencesRow(localizedString("Separate core boxes"), component: switchView(
                     action: #selector(self.toggleCoreBoxes),
@@ -444,14 +510,18 @@ public class BarChart: WidgetWrapper {
                     action: #selector(self.toggleCoreStack),
                     state: self.coreStackState
                 )),
+                PreferencesRow(localizedString("Temperature"), component: switchView(
+                    action: #selector(self.toggleCoreTemperature),
+                    state: self.coreTemperatureState
+                )),
                 PreferencesRow(localizedString("Box width"), component: self.coreSizeView(
                     action: #selector(self.changeCoreBarWidth), values: [4, 5, 6, 7, 8, 9, 10, 12], selected: self.coreBarWidth
                 )),
                 PreferencesRow(localizedString("Box gap"), component: self.coreSizeView(
-                    action: #selector(self.changeCoreGap), values: [1, 2, 3, 4, 5, 6, 7, 8], selected: self.coreGap
+                    action: #selector(self.changeCoreGap), values: [0, 1, 2, 3, 4, 5, 6, 7, 8], selected: self.coreGap
                 )),
                 PreferencesRow(localizedString("Cluster gap"), component: self.coreSizeView(
-                    action: #selector(self.changeCoreClusterGap), values: [0, 2, 4, 6, 7, 8, 10], selected: self.coreClusterGap
+                    action: #selector(self.changeCoreClusterGap), values: [0, 2, 4, 6, 7, 8, 10, 11, 12], selected: self.coreClusterGap
                 )),
                 PreferencesRow(localizedString("Maximum width"), component: self.coreSizeView(
                     action: #selector(self.changeCoreMaxWidth), values: [120, 160, 200, 250, 300, 400, 500], selected: self.coreMaxWidth
@@ -486,6 +556,14 @@ public class BarChart: WidgetWrapper {
     @objc private func toggleCoreStack(_ sender: NSControl) {
         self.coreStackState = controlState(sender)
         Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_coreStack", value: self.coreStackState)
+    }
+    
+    @objc private func toggleCoreTemperature(_ sender: NSControl) {
+        self.coreTemperatureState = controlState(sender)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_coreTemperature", value: self.coreTemperatureState)
+        if !self.coreTemperatureState {
+            self.setCoreTemperature(nil)
+        }
     }
     
     @objc private func changeCoreBarWidth(_ sender: NSMenuItem) {

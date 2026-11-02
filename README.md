@@ -9,12 +9,13 @@ Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrov
 ## What changed from Stats
 
 ### Per-core meter
-Each core gets its own outlined box, so every core stays identifiable even at 0%.
+Each core gets its own outlined box, so every core stays identifiable even at 0%. An extra box on the far left shows total CPU usage, with the CPU temperature beside it.
 
 - Boxes are 19 points tall and fill from the bottom, with system load under user load.
 - Efficiency cores come first, then performance cores, with a larger gap between clusters.
 - The outline follows the menu bar's appearance, so it matches the menu bar text.
-- On Macs with many cores, boxes shrink to fit the maximum width, down to 3 points wide with 1 point gaps.
+- Neighbouring boxes in a cluster share one faint line, and a dot marks the gap between clusters.
+- On Macs with many cores, boxes shrink to fit the maximum width, down to 3 points wide.
 
 The CPU bar chart with per-core usage is the default widget. Open the settings for that widget to change:
 
@@ -22,14 +23,20 @@ The CPU bar chart with per-core usage is the default widget. Open the settings f
 |---|---|
 | Separate core boxes | On |
 | Stack system and user | On. Turn it off to use the widget's **Color** option instead |
+| Temperature | On. Uses the unit from the **Temperature** app setting, and hides if the Mac reports no CPU temperature |
 | Box width | 9 pt |
-| Box gap | 4 pt |
-| Cluster gap | 7 pt, added to the box gap |
+| Box gap | 0 pt. Above zero, boxes stand apart with their own outlines |
+| Cluster gap | 11 pt, added to the box gap |
 | Maximum width | 300 pt |
 
-The defaults take about 211 points for 16 cores. If that is too much menu bar space, 6 pt boxes with 3 pt gaps take about 148 points.
+The defaults take about 141 points for 16 cores.
 
 The **Cluster** color keeps cluster coloring, using a darker shade for system load.
+
+The GPU bar chart uses the same outlined box, without the per-core settings.
+
+### Gauge widget
+The GPU module has a **Gauge** widget that shows the usage number on top of a pale level, so you can read the value and see the level in one place. It fills from the bottom inside a faint outline, at the same height as the CPU boxes.
 
 ### Runs alongside Stats
 Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it shares no settings or history with an installed Stats.
@@ -40,6 +47,9 @@ Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it sh
 - **Support prompts:** the support window, donation links and bug report link are removed.
 - **Public IP:** off by default. If you turn it on, Gaugebar asks `api.ipify.org`, and the country flag is no longer shown.
 - **Network connectivity check:** unchanged from Stats. While the Network module is on, it pings `1.1.1.1`. You can change the host or switch to an HTTP check of `google.com` in the Network settings.
+
+### Short speed labels
+The Network and Disk speed widgets show `B`, `KB` and `MB` without `/s` to save menu bar space. Popups keep `KB/s`.
 
 ### No privileged helper
 `SMCHelper` and manual fan control are removed, so Gaugebar never asks for an administrator password. macOS manages the fans as usual. Sensor readings and fan speeds still work, because they don't need the helper.

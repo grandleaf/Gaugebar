@@ -139,6 +139,16 @@ public class SpeedWidget: WidgetWrapper {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override var leadingSlack: CGFloat {
+        let rightAligned = self.valueAlignmentState == "right" && self.iconAlignmentState == "right"
+        return self.modeState == "twoRows" && self.valueState && self.unitsState && rightAligned ? 10 : 0
+    }
+    
+    public override var trailingSlack: CGFloat {
+        let leftAligned = self.valueAlignmentState == "left" && self.iconAlignmentState == "left"
+        return self.modeState == "twoRows" && self.valueState && self.unitsState && leftAligned ? 12 : 0
+    }
+    
     public override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
@@ -248,14 +258,14 @@ public class SpeedWidget: WidgetWrapper {
         let size: CGFloat = 10
         
         let inputStringAttributes = [
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 11, weight: .regular),
+            NSAttributedString.Key.font: self.valueFont(size: 11, weight: .regular),
             NSAttributedString.Key.foregroundColor: color,
             NSAttributedString.Key.paragraphStyle: style
         ]
         
         let rect = CGRect(x: offset.x, y: (height-size)/2 + offset.y + 1, width: rowWidth - (Constants.Widget.margin.x*2), height: size)
         let value = NSAttributedString.init(
-            string: Units(bytes: value).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
+            string: Units(bytes: value).getCompactSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
             attributes: inputStringAttributes
         )
         value.draw(with: rect)
@@ -319,7 +329,7 @@ public class SpeedWidget: WidgetWrapper {
         let rowHeight: CGFloat = self.frame.height
         let height: CGFloat = 10
         let inputAttributes = [
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 12, weight: .regular),
+            NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: 12, weight: .regular),
             NSAttributedString.Key.foregroundColor: color,
             NSAttributedString.Key.paragraphStyle: NSMutableParagraphStyle()
         ]
@@ -333,8 +343,10 @@ public class SpeedWidget: WidgetWrapper {
     // MARK: - two rows
     
     private func drawTwoRows() -> CGFloat {
-        var width: CGFloat = 7
-        var x: CGFloat = 7
+        // Room for the icon plus a small gap, so the text doesn't touch it.
+        let iconWidth: CGFloat = 9
+        var width: CGFloat = iconWidth
+        var x: CGFloat = iconWidth
         
         if self.iconAlignmentState == "right" {
             x = 0
@@ -345,18 +357,18 @@ public class SpeedWidget: WidgetWrapper {
         }
         
         if self.valueState {
-            let rowWidth: CGFloat = self.unitsState ? 48 : 30
+            let rowWidth: CGFloat = self.unitsState ? 37 : 30
             let rowHeight: CGFloat = self.frame.height / 2
             let style = NSMutableParagraphStyle()
             style.alignment = self.valueAlignment
             
             let inputStringAttributes = [
-                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 9, weight: .light),
+                NSAttributedString.Key.font: self.valueFont(size: 9, weight: .light),
                 NSAttributedString.Key.foregroundColor: self.inputColor(self.valueColorState),
                 NSAttributedString.Key.paragraphStyle: style
             ]
             let outputStringAttributes = [
-                NSAttributedString.Key.font: NSFont.systemFont(ofSize: 9, weight: .light),
+                NSAttributedString.Key.font: self.valueFont(size: 9, weight: .light),
                 NSAttributedString.Key.foregroundColor: self.outputColor(self.valueColorState),
                 NSAttributedString.Key.paragraphStyle: style
             ]
@@ -366,14 +378,14 @@ public class SpeedWidget: WidgetWrapper {
             
             var rect = CGRect(x: Constants.Widget.margin.x + x, y: inputY, width: rowWidth - (Constants.Widget.margin.x*2), height: rowHeight)
             let input = NSAttributedString.init(
-                string: Units(bytes: self.inputValue).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
+                string: Units(bytes: self.inputValue).getCompactSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
                 attributes: inputStringAttributes
             )
             input.draw(with: rect)
             
             rect = CGRect(x: Constants.Widget.margin.x + x, y: outputY, width: rowWidth - (Constants.Widget.margin.x*2), height: rowHeight)
             let output = NSAttributedString.init(
-                string: Units(bytes: self.outputValue).getReadableSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
+                string: Units(bytes: self.outputValue).getCompactSpeed(base: base, unit: self.speedUnit, omitUnits: !self.unitsState),
                 attributes: outputStringAttributes
             )
             output.draw(with: rect)
@@ -457,6 +469,13 @@ public class SpeedWidget: WidgetWrapper {
         outputArrow.close()
     }
     
+    // Letter icons mean R and W rows, whose digits should line up.
+    private func valueFont(size: CGFloat, weight: NSFont.Weight) -> NSFont {
+        self.icon == "chars"
+            ? NSFont.monospacedDigitSystemFont(ofSize: size, weight: weight)
+            : NSFont.systemFont(ofSize: size, weight: weight)
+    }
+    
     private func drawChars(_ width: CGFloat) {
         let rowHeight: CGFloat = self.frame.height / 2
         let inputY: CGFloat = self.displayValueState == "io" ? rowHeight+1 : 1
@@ -464,7 +483,7 @@ public class SpeedWidget: WidgetWrapper {
         let x: CGFloat = self.iconAlignmentState == "left" ? Constants.Widget.margin.x : Constants.Widget.margin.x+(width-6)
         
         let inputAttributes = [
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 9, weight: .regular),
+            NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: 9, weight: .regular),
             NSAttributedString.Key.foregroundColor: self.inputColor(self.iconColorState),
             NSAttributedString.Key.paragraphStyle: NSMutableParagraphStyle()
         ]
@@ -473,7 +492,7 @@ public class SpeedWidget: WidgetWrapper {
         str.draw(with: rect)
         
         let outputAttributes = [
-            NSAttributedString.Key.font: NSFont.systemFont(ofSize: 9, weight: .regular),
+            NSAttributedString.Key.font: NSFont.monospacedSystemFont(ofSize: 9, weight: .regular),
             NSAttributedString.Key.foregroundColor: self.outputColor(self.iconColorState),
             NSAttributedString.Key.paragraphStyle: NSMutableParagraphStyle()
         ]

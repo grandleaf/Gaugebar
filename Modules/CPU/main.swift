@@ -215,6 +215,7 @@ public class CPU: Module {
                 
                 if self.usagePerCoreState && widget.coreBoxesEnabled {
                     (val, coreGroups) = self.coreBoxValues(value, cores: cores, widget: widget)
+                    widget.setCoreTemperature(self.coreTemperature(for: widget))
                 } else if self.usagePerCoreState {
                     if widget.colorState == .cluster {
                         val = []
@@ -274,6 +275,15 @@ public class CPU: Module {
     }
     
     /// Per-core values ordered by cluster, with the size of each cluster.
+    // Read on the load update only while the widget shows it, so nothing extra runs otherwise.
+    private func coreTemperature(for widget: BarChart) -> Double? {
+        guard widget.coreTemperatureEnabled, let reader = self.temperatureReader else { return nil }
+        if !reader.active {
+            reader.read()
+        }
+        return reader.value
+    }
+    
     private func coreBoxValues(_ value: CPU_Load, cores: [core_s], widget: BarChart) -> ([[ColorValue]], [Int]) {
         let count = value.usagePerCore.count
         let rank: (core_s) -> Int = { $0.type == .efficiency ? 0 : $0.type == .super ? 2 : 1 }
@@ -294,6 +304,9 @@ public class CPU: Module {
         let clusterColors: [coreType: NSColor]? = widget.colorState == .cluster
             ? [.efficiency: self.eCoresColor, .performance: self.pCoresColor, .super: self.sCoresColor]
             : nil
+        let total: [ColorValue] = stacked
+            ? [ColorValue(value.systemLoad, color: systemColor), ColorValue(value.userLoad, color: userColor)]
+            : [ColorValue(value.totalUsage)]
         let val: [[ColorValue]] = order.map { i in
             var clusterColor: NSColor? = nil
             if let clusterColors {
@@ -310,6 +323,6 @@ public class CPU: Module {
             }
             return [ColorValue(system[i], color: systemColor), ColorValue(user[i], color: userColor)]
         }
-        return (val, groups)
+        return ([total] + val, [1] + groups)
     }
 }

@@ -40,6 +40,7 @@ public struct Widget_c_s {
         get { CGPoint(x: 0, y: 2) }
     }
     public let spacing: CGFloat = 2
+    public let mergedSpacing: CGFloat = 5
 }
 
 public struct Constants {

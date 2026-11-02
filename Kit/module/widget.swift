@@ -14,6 +14,7 @@ import Cocoa
 public enum widget_t: String {
     case unknown = ""
     case mini = "mini"
+    case gauge = "gauge"
     case lineChart = "line_chart"
     case barChart = "bar_chart"
     case pieChart = "pie_chart"
@@ -40,6 +41,9 @@ public enum widget_t: String {
         case .mini:
             preview = Mini(title: module, config: widgetConfig, preview: true)
             item = Mini(title: module, config: widgetConfig, preview: false)
+        case .gauge:
+            preview = MiniGauge(title: module, config: widgetConfig, preview: true)
+            item = MiniGauge(title: module, config: widgetConfig, preview: false)
         case .lineChart:
             preview = LineChart(title: module, config: widgetConfig, preview: true)
             item = LineChart(title: module, config: widgetConfig, preview: false)
@@ -134,6 +138,7 @@ public enum widget_t: String {
     public func name() -> String {
         switch self {
         case .mini: return localizedString("Mini widget")
+        case .gauge: return localizedString("Gauge widget")
         case .lineChart: return localizedString("Line chart widget")
         case .barChart: return localizedString("Bar chart widget")
         case .pieChart: return localizedString("Pie chart widget")
@@ -168,6 +173,10 @@ open class WidgetWrapper: NSView, widget_p {
     public var onClick: (() -> Void)? = nil
     public var shadowSize: CGSize
     internal var queue: DispatchQueue
+    
+    /// Empty room this widget usually leaves on its edges, which already reads as a gap.
+    open var leadingSlack: CGFloat { 0 }
+    open var trailingSlack: CGFloat { 0 }
     
     public init(_ type: widget_t, title: String, frame: NSRect) {
         self.type = type
@@ -398,6 +407,16 @@ public class MenuBar {
     public var activeWidgets: [SWidget] {
         self.widgets.filter({ $0.isActive })
     }
+    public var leadingSlack: CGFloat {
+        guard let first = self.sortedWidgets.first,
+              let item = self.activeWidgets.first(where: { $0.type == first })?.item as? WidgetWrapper else { return 0 }
+        return item.leadingSlack
+    }
+    public var trailingSlack: CGFloat {
+        guard let last = self.sortedWidgets.last,
+              let item = self.activeWidgets.first(where: { $0.type == last })?.item as? WidgetWrapper else { return 0 }
+        return item.trailingSlack
+    }
     public var sortedWidgets: [widget_t] {
         get {
             var list: [widget_t: Int] = [:]
@@ -514,7 +533,7 @@ public class MenuBar {
         guard self.oneView, self.active else { return }
         
         let w = self.activeWidgets.isEmpty ? 0 : self.activeWidgets.map({ $0.item.frame.width }).reduce(0, +) +
-            (CGFloat(self.activeWidgets.count - 1) * Constants.Widget.spacing) +
+            (CGFloat(self.activeWidgets.count - 1) * Constants.Widget.mergedSpacing) +
             Constants.Widget.spacing * 2
         self.menuBarItem?.length = w
         self.view.setFrameOrigin(NSPoint(x: 0, y: 0))
@@ -594,7 +613,7 @@ public class MenuBarView: NSView {
         list.forEach { (type: widget_t) in
             if let view = self.subviews.first(where: { $0.identifier == NSUserInterfaceItemIdentifier(type.rawValue) }) {
                 view.setFrameOrigin(NSPoint(x: x, y: view.frame.origin.y))
-                x = view.frame.origin.x + view.frame.width + Constants.Widget.spacing
+                x = view.frame.origin.x + view.frame.width + Constants.Widget.mergedSpacing
             }
         }
     }
