@@ -131,7 +131,7 @@ class MiniGaugeTests: XCTestCase {
             let alpha: (Int, Int) -> CGFloat = { rep.colorAt(x: $0, y: $1)?.alphaComponent ?? 0 }
             let x = Int(scale)
             
-            XCTAssertEqual(alpha(0, rep.pixelsHigh / 2), 0.18, accuracy: 0.02, "outline at \(scale)x")
+            XCTAssertEqual(alpha(0, rep.pixelsHigh / 2), CoreBoxLayout.outlineAlpha, accuracy: 0.02, "outline at \(scale)x")
             XCTAssertEqual(alpha(x, rep.pixelsHigh - Int(3 * scale)), 0.3, accuracy: 0.03, "fill at the bottom at \(scale)x")
             XCTAssertEqual(alpha(x, Int(3 * scale)), 0, accuracy: 0.02, "empty at the top at \(scale)x")
         }
@@ -343,7 +343,7 @@ class CoreBoxLayoutTests: XCTestCase {
             
             XCTAssertEqual(alpha(shared - 1), 0, accuracy: 0.02, "inside the first box at \(scale)x")
             for x in shared..<(shared + stroke) {
-                XCTAssertEqual(alpha(x), 0.18, accuracy: 0.02, "shared line at \(scale)x")
+                XCTAssertEqual(alpha(x), CoreBoxLayout.dividerAlpha, accuracy: 0.02, "shared line at \(scale)x")
             }
             XCTAssertEqual(alpha(shared + stroke), 0, accuracy: 0.02, "inside the second box at \(scale)x")
         }

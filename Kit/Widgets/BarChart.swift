@@ -376,7 +376,7 @@ public class BarChart: WidgetWrapper {
         
         let dividers = NSBezierPath()
         layout.dividers.forEach { dividers.appendRect($0.offsetBy(dx: origin, dy: 0)) }
-        outlineColor.setFill()
+        lineColor.withAlphaComponent(CoreBoxLayout.dividerAlpha).setFill()
         dividers.fill()
         
         lineColor.withAlphaComponent(0.4).setFill()
