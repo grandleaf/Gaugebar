@@ -9,7 +9,7 @@ Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrov
 ## What changed from Stats
 
 ### Per-core meter
-Each core gets its own outlined box, so every core stays identifiable even at 0%. An extra box on the far left shows total CPU usage, with the CPU temperature beside it.
+Each core gets its own outlined box, so every core stays identifiable even at 0%. An extra box on the far left shows total CPU usage, with the CPU temperature and a dot beside it. The Gauge widget for GPU shows the GPU temperature the same way.
 
 - Boxes are 19 points tall and fill from the bottom, with system load under user load.
 - Efficiency cores come first, then performance cores, with a larger gap between clusters.
@@ -54,6 +54,8 @@ The Network and Disk speed widgets show `B`, `KB` and `MB` without `/s` to save 
 ### Combined modules
 With **Combined modules** on and **Combined details** off, a left click opens only the module you clicked, right below it, and a right click opens the whole panel. Turn **Combined details** on to swap them.
 
+Drag the grip at the bottom of the whole panel to give the Sensors section more room. The height is remembered, and the panel always fits the screen it opens on.
+
 ### No privileged helper
 `SMCHelper` and manual fan control are removed, so Gaugebar never asks for an administrator password. It only reads from the SMC and contains no code that writes to it, and `make test-smc` fails if that ever changes. macOS manages the fans as usual, and sensor readings and fan speeds still work.
 
@@ -80,6 +82,17 @@ You need macOS 12 or newer, Xcode, and an Apple Development signing identity.
    ```
 
 The app is at `build/DerivedData/Build/Products/Release/Gaugebar.app`. Copy it to `/Applications` to keep it.
+
+### Default settings
+A fresh install starts with the settings in `Stats/Supporting Files/DefaultSettings.plist` and skips the first-run setup. Settings saved on a Mac always win over this file.
+
+To make your current settings the defaults, run this and rebuild:
+
+```bash
+make save-defaults
+```
+
+Window positions, login state and individual sensor choices stay out of the file because they belong to one Mac.
 
 Run the tests with `make test`.
 

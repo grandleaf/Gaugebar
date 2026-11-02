@@ -12,8 +12,17 @@ public class MiniGauge: Mini {
     
     private static let fillAlpha: CGFloat = 0.3
     
+    private var temperatureSupported: Bool = false
+    private var temperatureState: Bool = true
+    private var _temperature: String? = nil
+    
+    public var temperatureEnabled: Bool { self.temperatureSupported && self.temperatureState }
+    
     override internal var sidePadding: CGFloat { 2 }
     override internal var defaultAlignment: String { "center" }
+    override internal var leadingWidth: CGFloat {
+        self.queue.sync { self._temperature }.map { MeterTemperature.width($0) } ?? 0
+    }
     
     private var scale: CGFloat {
         max(self.renderScale ?? self.window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 1, 1)
@@ -21,6 +30,11 @@ public class MiniGauge: Mini {
     
     public init(title: String, config: NSDictionary?, preview: Bool = false) {
         super.init(title: title, config: config, preview: preview, type: .gauge)
+        self.temperatureSupported = config?["Temperature"] as? Bool ?? false
+        self.temperatureState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_temperature", defaultValue: self.temperatureState)
+        if preview && self.temperatureEnabled {
+            self._temperature = MeterTemperature.text(52)
+        }
         self.updateFrame()
     }
     
@@ -43,10 +57,16 @@ public class MiniGauge: Mini {
     }
     
     public override func draw(_ dirtyRect: NSRect) {
-        let value = self.queue.sync { self._value }
+        let (value, temperature) = self.queue.sync { (self._value, self._temperature) }
         let dark = NSAppearance.currentDrawing().bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
         let line = CoreBoxLayout.outlineWidth
-        let box = NSRect(origin: .zero, size: self.frame.size)
+        
+        var origin: CGFloat = 0
+        if let temperature {
+            origin = MeterTemperature.draw(temperature, at: 0, height: self.frame.height, dark: dark, scale: self.scale)
+        }
+        // The frame catches up after this draw, so size the box from its contents.
+        let box = NSRect(x: origin, y: 0, width: self.meterWidth, height: self.frame.height)
         let inner = box.insetBy(dx: line, dy: line)
         
         let pixel = 1 / self.scale
@@ -65,9 +85,44 @@ public class MiniGauge: Mini {
         // The text is laid out for the shorter mini frame, so keep it where that frame would put it.
         NSGraphicsContext.saveGraphicsState()
         let shift = NSAffineTransform()
-        shift.translateX(by: 0, yBy: Constants.Widget.margin.y - self.frame.origin.y)
+        shift.translateX(by: origin, yBy: Constants.Widget.margin.y - self.frame.origin.y)
         shift.concat()
         super.draw(dirtyRect)
         NSGraphicsContext.restoreGraphicsState()
+    }
+    
+    public func setTemperature(_ newValue: Double?) {
+        let text = newValue.map { MeterTemperature.text($0) }
+        let updated = self.queue.sync { () -> Bool in
+            guard self._temperature != text else { return false }
+            self._temperature = text
+            return true
+        }
+        if updated {
+            self.redraw()
+        }
+    }
+    
+    // MARK: - Settings
+    
+    public override func settings() -> NSView {
+        let view = super.settings()
+        if self.temperatureSupported, let container = view as? SettingsContainerView {
+            container.addArrangedSubview(PreferencesSection([
+                PreferencesRow(localizedString("Temperature"), component: switchView(
+                    action: #selector(self.toggleTemperature),
+                    state: self.temperatureState
+                ))
+            ]))
+        }
+        return view
+    }
+    
+    @objc private func toggleTemperature(_ sender: NSControl) {
+        self.temperatureState = controlState(sender)
+        Store.shared.set(key: "\(self.title)_\(self.type.rawValue)_temperature", value: self.temperatureState)
+        if !self.temperatureState {
+            self.setTemperature(nil)
+        }
     }
 }

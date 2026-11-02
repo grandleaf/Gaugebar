@@ -14,6 +14,8 @@ import Cocoa
 public protocol Portal_p: NSView {
     var name: String { get }
     var height: CGFloat { get }
+    
+    func setExtraHeight(_ value: CGFloat)
 }
 
 open class PortalWrapper: NSStackView, Portal_p {
@@ -22,6 +24,7 @@ open class PortalWrapper: NSStackView, Portal_p {
     
     private let header: PortalHeader
     public let body: NSStackView
+    private var heightConstraint: NSLayoutConstraint?
     
     public init(_ type: ModuleType, height: CGFloat = 100) {
         self.name = type.stringValue
@@ -60,7 +63,9 @@ open class PortalWrapper: NSStackView, Portal_p {
             self.body.addArrangedSubview(NSView())
         }
         
-        self.heightAnchor.constraint(equalToConstant: self.height).isActive = true
+        let heightConstraint = self.heightAnchor.constraint(equalToConstant: self.height)
+        heightConstraint.isActive = true
+        self.heightConstraint = heightConstraint
         self.header.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         self.body.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         self.body.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
@@ -72,6 +77,10 @@ open class PortalWrapper: NSStackView, Portal_p {
     
     open func load() {
         self.body.addArrangedSubview(NSView())
+    }
+    
+    public func setExtraHeight(_ value: CGFloat) {
+        self.heightConstraint?.constant = self.height + value
     }
 }
 

@@ -15,16 +15,25 @@ public class Store {
     public static let shared = Store()
     private let defaults = UserDefaults.standard
     private var cache: [String: Any] = [:]
+    // What a fresh install starts with. Saved settings always win over these.
+    private let shippedDefaults: [String: Any]
     private let cacheQueue = DispatchQueue(label: "io.github.grandleaf.Gaugebar.Store.cache", attributes: .concurrent)
     
     public init() {
+        if let url = Bundle.main.url(forResource: "DefaultSettings", withExtension: "plist"),
+           let settings = NSDictionary(contentsOf: url) as? [String: Any] {
+            self.shippedDefaults = settings
+        } else {
+            self.shippedDefaults = [:]
+        }
         self.loadCache()
     }
     
     private func loadCache() {
+        self.cache = self.shippedDefaults
         guard let bundleId = Bundle.main.bundleIdentifier,
               let domain = self.defaults.persistentDomain(forName: bundleId) else { return }
-        self.cache = domain
+        self.cache.merge(domain) { _, saved in saved }
     }
     
     private func getValue<T>(for key: String, type: T.Type) -> T? {
@@ -98,7 +107,7 @@ public class Store {
     
     public func reset() {
         self.cacheQueue.async(flags: .barrier) {
-            self.cache.removeAll()
+            self.cache = self.shippedDefaults
         }
         
         self.defaults.dictionaryRepresentation().keys.forEach { key in
@@ -117,7 +126,7 @@ public class Store {
               let dict = NSDictionary(contentsOf: url) as? [String: Any] else { return }
         
         self.cacheQueue.async(flags: .barrier) {
-            self.cache = dict
+            self.cache = self.shippedDefaults.merging(dict) { _, imported in imported }
         }
         
         self.defaults.setPersistentDomain(dict, forName: id)

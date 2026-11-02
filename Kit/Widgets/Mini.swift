@@ -33,6 +33,13 @@ public class Mini: WidgetWrapper {
     /// Empty space kept on each side of the text.
     internal var sidePadding: CGFloat { 0 }
     internal var defaultAlignment: String { "left" }
+    /// Space a subclass draws on the left of the text.
+    internal var leadingWidth: CGFloat { 0 }
+    
+    internal var meterWidth: CGFloat {
+        let (value, label, suffix) = self.queue.sync { (self._value, self._label, self._suffix) }
+        return self.contentWidth(text: self.valueText(value, suffix: suffix), label: label) + (self.sidePadding*2)
+    }
     
     private var alignment: NSTextAlignment {
         if let alignmentPair = Alignments.first(where: { $0.key == self.alignmentState }) {
@@ -108,8 +115,8 @@ public class Mini: WidgetWrapper {
             suffix = self._suffix
         }
         
-        let text = "\(Int(value.rounded(toPlaces: 2) * 100))\(suffix)"
-        let contentWidth = self.labelState ? Self.labelledWidth(value: text, label: label) : self.width
+        let text = self.valueText(value, suffix: suffix)
+        let contentWidth = self.contentWidth(text: text, label: label)
         let width = contentWidth + (self.sidePadding*2)
         let valueSize: CGFloat = self.labelState ? 12 : 14
         var origin: CGPoint = CGPoint(x: Constants.Widget.margin.x + self.sidePadding, y: (Constants.Widget.height-valueSize)/2)
@@ -150,7 +157,15 @@ public class Mini: WidgetWrapper {
         let str = NSAttributedString.init(string: text, attributes: stringAttributes)
         str.draw(with: rect)
         
-        self.setWidth(width)
+        self.setWidth(self.leadingWidth + width)
+    }
+    
+    private func valueText(_ value: Double, suffix: String) -> String {
+        "\(Int(value.rounded(toPlaces: 2) * 100))\(suffix)"
+    }
+    
+    private func contentWidth(text: String, label: String) -> CGFloat {
+        self.labelState ? Self.labelledWidth(value: text, label: label) : self.width
     }
     
     // Room for two digits, growing only at 100%, so the widget has no wide empty edge.

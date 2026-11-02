@@ -168,6 +168,9 @@ public class GPU: Module {
             case let widget as Mini:
                 widget.setValue(utilization)
                 widget.setTitle(self.showType ? "\(selectedGPU.type)GPU" : nil)
+                if let gauge = widget as? MiniGauge {
+                    gauge.setTemperature(gauge.temperatureEnabled ? GPUSensors.average() ?? selectedGPU.temperature : nil)
+                }
             case let widget as LineChart: widget.setValue(utilization)
             case let widget as BarChart:
                 widget.setCoreGroups(widget.coreBoxesEnabled ? [1] : nil)

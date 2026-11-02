@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6A0C0F1000000000000C0F9 /* DefaultSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0FA /* DefaultSettings.plist */; };
 		A6A0C0F1000000000000C0F3 /* CoreBoxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */; };
 		A6A0C0F1000000000000C0F5 /* CoreBoxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */; };
 		4A05F9BD83C04F70BFFF7F37 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369463B2B7EA4AF0A895A9B6 /* Kit.swift */; };
@@ -103,6 +104,7 @@
 		9A2847622666AA2700EC1F6D /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2847582666AA2700EC1F6D /* Label.swift */; };
 		9A2847632666AA2700EC1F6D /* Mini.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2847592666AA2700EC1F6D /* Mini.swift */; };
 		A6A0C0F1000000000000C0F7 /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F8 /* Gauge.swift */; };
+		A6A0C0F1000000000000C0F9 /* MeterTemperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0FA /* MeterTemperature.swift */; };
 		9A2847642666AA2700EC1F6D /* Battery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475A2666AA2700EC1F6D /* Battery.swift */; };
 		9A2847652666AA2700EC1F6D /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475B2666AA2700EC1F6D /* Memory.swift */; };
 		9A2847662666AA2700EC1F6D /* Speed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A28475C2666AA2700EC1F6D /* Speed.swift */; };
@@ -462,6 +464,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A6A0C0F1000000000000C0FA /* DefaultSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultSettings.plist; sourceTree = "<group>"; };
 		A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoxLayout.swift; sourceTree = "<group>"; };
 		A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBoxLayout.swift; sourceTree = "<group>"; };
 		A6A0C0F1000000000000C0F1 /* Gaugebar.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Gaugebar.xcconfig; sourceTree = "<group>"; };
@@ -576,6 +579,7 @@
 		9A2847582666AA2700EC1F6D /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		9A2847592666AA2700EC1F6D /* Mini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mini.swift; sourceTree = "<group>"; };
 		A6A0C0F1000000000000C0F8 /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		A6A0C0F1000000000000C0FA /* MeterTemperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterTemperature.swift; sourceTree = "<group>"; };
 		9A28475A2666AA2700EC1F6D /* Battery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battery.swift; sourceTree = "<group>"; };
 		9A28475B2666AA2700EC1F6D /* Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
 		9A28475C2666AA2700EC1F6D /* Speed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Speed.swift; sourceTree = "<group>"; };
@@ -987,6 +991,7 @@
 			children = (
 				9A2847592666AA2700EC1F6D /* Mini.swift */,
 				A6A0C0F1000000000000C0F8 /* Gauge.swift */,
+				A6A0C0F1000000000000C0FA /* MeterTemperature.swift */,
 				9A2847582666AA2700EC1F6D /* Label.swift */,
 				9A28475D2666AA2700EC1F6D /* BarChart.swift */,
 				A6A0C0F1000000000000C0F4 /* CoreBoxLayout.swift */,
@@ -1067,6 +1072,7 @@
 		9A5B1CB3229E72A7008B9D3C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A6A0C0F1000000000000C0FA /* DefaultSettings.plist */,
 				9A6CFC0022A1C9F5001E782D /* Assets.xcassets */,
 				9A27D4A925389EFD001BB651 /* Stats.entitlements */,
 				9A141101229E721200D29793 /* Info.plist */,
@@ -1812,6 +1818,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A0C0F1000000000000C0F9 /* DefaultSettings.plist in Resources */,
 				9A6CFC0122A1C9F5001E782D /* Assets.xcassets in Resources */,
 				9A9B25BB24F7DE2B00C3CCE6 /* Localizable.strings in Resources */,
 			);
@@ -2018,6 +2025,7 @@
 				9A28480B2666AB3000EC1F6D /* Charts.swift in Sources */,
 				9A2847632666AA2700EC1F6D /* Mini.swift in Sources */,
 				A6A0C0F1000000000000C0F7 /* Gauge.swift in Sources */,
+				A6A0C0F1000000000000C0F9 /* MeterTemperature.swift in Sources */,
 				5E828A003074086000DB0CA0 /* Icon.swift in Sources */,
 				5CF2210D2B1E7EAF006C583F /* notifications.swift in Sources */,
 				9A6EEBBE2685259500897371 /* Logger.swift in Sources */,

@@ -43,9 +43,6 @@ public class BarChart: WidgetWrapper {
     internal var showsCoreBoxes: Bool { self.queue.sync { self._coreGroups != nil } }
     public var coreTemperatureEnabled: Bool { self.coreTemperatureState }
     
-    internal static let coreTemperatureGap: CGFloat = 4
-    private static let coreTemperatureFont = NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .regular)
-    
     public var NSLabelCharts: [NSAttributedString] = []
     
     public init(title: String, config: NSDictionary?, preview: Bool = false) {
@@ -282,7 +279,7 @@ public class BarChart: WidgetWrapper {
                 }
             }
             if self.coreTemperatureState {
-                self._coreTemperature = Self.coreTemperatureText(52)
+                self._coreTemperature = MeterTemperature.text(52)
             }
         }
         self.updateCoreFrame()
@@ -333,7 +330,7 @@ public class BarChart: WidgetWrapper {
         }
         
         if let temperature {
-            origin = self.drawCoreTemperature(temperature, at: origin, dark: dark, scale: scale)
+            origin = MeterTemperature.draw(temperature, at: origin, height: self.frame.height, dark: dark, scale: scale)
         }
         
         let layout = CoreBoxLayout(
@@ -379,37 +376,10 @@ public class BarChart: WidgetWrapper {
         lineColor.withAlphaComponent(CoreBoxLayout.dividerAlpha).setFill()
         dividers.fill()
         
-        lineColor.withAlphaComponent(0.4).setFill()
+        lineColor.withAlphaComponent(CoreBoxLayout.separatorAlpha).setFill()
         layout.separators.forEach { NSBezierPath(ovalIn: $0.offsetBy(dx: origin, dy: 0)).fill() }
         
         self.setWidth(origin + layout.width + Constants.Widget.margin.x*2)
-    }
-    
-    // Returns where the boxes start.
-    private func drawCoreTemperature(_ text: String, at x: CGFloat, dark: Bool, scale: CGFloat) -> CGFloat {
-        let font = Self.coreTemperatureFont
-        let string = NSAttributedString(string: text, attributes: [
-            .font: font,
-            .foregroundColor: dark ? NSColor.white : NSColor.textColor
-        ])
-        
-        let pixels = max(scale, 1)
-        let width = Self.coreTemperatureWidth(text)
-        let left = x + width - string.size().width
-        let bottom = (self.frame.height - font.capHeight) / 2 + font.descender
-        string.draw(at: NSPoint(x: (left * pixels).rounded() / pixels, y: (bottom * pixels).rounded() / pixels))
-        
-        return x + width + Self.coreTemperatureGap
-    }
-    
-    // Always room for three digits, so going from 99° to 100° doesn't move the boxes.
-    internal static func coreTemperatureWidth(_ text: String) -> CGFloat {
-        let sample = "000" + text.filter { !$0.isNumber }
-        return NSAttributedString(string: sample, attributes: [.font: self.coreTemperatureFont]).size().width.rounded(.up)
-    }
-    
-    internal static func coreTemperatureText(_ value: Double) -> String {
-        String(temperature(value).prefix(while: { !$0.isLetter }))
     }
     
     private func coreFillColor(_ segment: ColorValue, dark: Bool, colorZones: colorZones) -> NSColor {
@@ -445,7 +415,7 @@ public class BarChart: WidgetWrapper {
     }
     
     public func setCoreTemperature(_ newValue: Double?) {
-        let text = newValue.map { Self.coreTemperatureText($0) }
+        let text = newValue.map { MeterTemperature.text($0) }
         let updated = self.queue.sync { () -> Bool in
             guard self._coreTemperature != text else { return false }
             self._coreTemperature = text

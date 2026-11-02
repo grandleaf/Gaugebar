@@ -13,6 +13,7 @@ public struct CoreBoxLayout {
     public static let outlineAlpha: CGFloat = 0.42
     public static let dividerAlpha: CGFloat = 0.18
     public static let separatorSize: CGFloat = 3
+    public static let separatorAlpha: CGFloat = 0.4
     public static let minimumBarWidth: CGFloat = 3
     public static let minimumGap: CGFloat = 1
 

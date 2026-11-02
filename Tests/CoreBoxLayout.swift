@@ -49,7 +49,7 @@ class WidgetThumbnailTests: XCTestCase {
         let widget = widget_t.barChart.new(module: self.module, config: self.chart(groups: "1,2,4", value: "0.3,0.6,0.4,0.1,0.3,0.1,0.2"), defaultWidget: .barChart)
         XCTAssertEqual(widget?.image.size.height, CoreBoxLayout.boxHeight)
         let boxes = CoreBoxLayout(groups: [1, 2, 4], barWidth: 9, gap: 0, clusterGap: 11, maxWidth: 300, height: 19, scale: 2).width
-        let temperature = BarChart.coreTemperatureWidth("52°") + BarChart.coreTemperatureGap
+        let temperature = MeterTemperature.width(MeterTemperature.text(52))
         XCTAssertEqual(Double(widget?.image.size.width ?? 0), Double(boxes + temperature), accuracy: 1)
     }
     
@@ -84,6 +84,25 @@ class WidgetThumbnailTests: XCTestCase {
         let changed = expectation(forNotification: .storeChanged, object: nil)
         Store.shared.set(key: "\(self.module)_speed_units", value: true)
         wait(for: [changed], timeout: 1)
+    }
+}
+
+class PopupResizeTests: XCTestCase {
+    func testKeepsTheWantedHeightWhenItFits() {
+        XCTAssertEqual(PopupResize.extraHeight(wanted: 200, content: 830, available: 1600), 200)
+        XCTAssertEqual(PopupResize.extraHeight(wanted: 0, content: 830, available: 1600), 0)
+    }
+    
+    func testStopsAtTheBottomOfTheScreen() {
+        XCTAssertEqual(PopupResize.extraHeight(wanted: 2000, content: 830, available: 1600), 770)
+    }
+    
+    func testShrinksOnASmallerScreen() {
+        XCTAssertEqual(PopupResize.extraHeight(wanted: 200, content: 830, available: 790), -40)
+    }
+    
+    func testNeverShrinksPastTheMinimumSoTheRestScrolls() {
+        XCTAssertEqual(PopupResize.extraHeight(wanted: 200, content: 830, available: 500), PopupResize.minimumExtra)
     }
 }
 
@@ -142,6 +161,28 @@ class MiniGaugeTests: XCTestCase {
         XCTAssertEqual(empty.colorAt(x: 2, y: empty.pixelsHigh - 6)!.alphaComponent, 0, accuracy: 0.02)
         let full = render(value: 1, scale: 2)
         XCTAssertEqual(full.colorAt(x: 2, y: 6)!.alphaComponent, 0.3, accuracy: 0.03)
+    }
+    
+    func testTemperatureStaysOffWithoutSupportAndPushesTheBoxWhenSet() {
+        let plain = MiniGauge(title: "GaugeRenderTest", config: nil)
+        XCTAssertFalse(plain.temperatureEnabled)
+        XCTAssertEqual(plain.leadingWidth, 0)
+        
+        let config: NSDictionary = ["Temperature": true]
+        let gauge = MiniGauge(title: "GaugeRenderTest", config: config)
+        XCTAssertTrue(gauge.temperatureEnabled)
+        gauge.setTemperature(47.3)
+        XCTAssertEqual(gauge.leadingWidth, MeterTemperature.width(MeterTemperature.text(47.3)))
+        gauge.setTemperature(nil)
+        XCTAssertEqual(gauge.leadingWidth, 0)
+    }
+    
+    func testThumbnailShowsTheTemperatureOnlyWhereSupported() {
+        let plain: NSDictionary = ["gauge": ["Preview": ["Value": "0.32"]]]
+        let supported: NSDictionary = ["gauge": ["Temperature": true, "Preview": ["Value": "0.32"]] as [String: Any]]
+        let without = widget_t.gauge.new(module: "GaugeRenderTest", config: plain, defaultWidget: .gauge)?.image.size.width ?? 0
+        let with = widget_t.gauge.new(module: "GaugeRenderTest", config: supported, defaultWidget: .gauge)?.image.size.width ?? 0
+        XCTAssertEqual(Double(with - without), Double(MeterTemperature.width(MeterTemperature.text(52))), accuracy: 1)
     }
     
     func testVerySmallValuesStillShowOnePixel() {
@@ -361,19 +402,18 @@ class CoreBoxLayoutTests: XCTestCase {
         }
     }
     
-    func testTemperatureTextDropsTheUnitLetter() {
-        for value in [9.0, 49.4, 100.0] {
-            let text = BarChart.coreTemperatureText(value)
-            XCTAssertTrue(text.hasSuffix("°"), text)
-            XCTAssertFalse(text.contains(where: { $0.isLetter }), text)
+    func testTemperatureTextHasOneDecimalAndTheUnit() {
+        for value in [9.0, 39.44, 100.0] {
+            let text = MeterTemperature.text(value)
+            XCTAssertNotNil(text.range(of: #"^\d+\.\d°[CF]$"#, options: .regularExpression), text)
         }
     }
     
     func testTemperatureSpaceStaysTheSameForAnyDigits() {
-        let width = BarChart.coreTemperatureWidth("100°")
+        let width = MeterTemperature.textWidth("100.0°C")
         XCTAssertGreaterThan(width, 0)
-        XCTAssertEqual(BarChart.coreTemperatureWidth("49°"), width)
-        XCTAssertEqual(BarChart.coreTemperatureWidth("9°"), width)
+        XCTAssertEqual(MeterTemperature.textWidth("49.4°C"), width)
+        XCTAssertEqual(MeterTemperature.textWidth("9.0°C"), width)
     }
     
     func testTemperatureSitsLeftOfTheBoxes() {
@@ -382,8 +422,9 @@ class CoreBoxLayoutTests: XCTestCase {
             let plain = render(scale: scale, appearance: .aqua, values: idle)
             let shown = render(scale: scale, appearance: .aqua, values: idle, temperature: 49)
             let y = plain.pixelsHigh / 2
-            let width = BarChart.coreTemperatureWidth("49°")
-            let boxStart = Int((width + BarChart.coreTemperatureGap) * scale)
+            let text = MeterTemperature.text(49)
+            let width = MeterTemperature.textWidth(text)
+            let boxStart = Int(MeterTemperature.width(text) * scale)
             
             XCTAssertEqual(plain.colorAt(x: 0, y: y)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "boxes start at the edge without it")
             XCTAssertEqual(shown.colorAt(x: boxStart, y: y)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "boxes move right at \(scale)x")
@@ -396,11 +437,27 @@ class CoreBoxLayoutTests: XCTestCase {
         }
     }
     
+    func testDotSitsBetweenTheTemperatureAndTheBoxes() {
+        let idle = [[ColorValue(0)], [ColorValue(0)]]
+        let text = MeterTemperature.text(49)
+        for scale: CGFloat in [1, 2] {
+            let rep = render(scale: scale, appearance: .aqua, values: idle, temperature: 49)
+            let left = MeterTemperature.textWidth(text)
+            let center = (MeterTemperature.width(text) + left) / 2
+            let alpha: (CGFloat, CGFloat) -> CGFloat = { x, y in
+                rep.colorAt(x: Int(x * scale), y: Int(y * scale))?.alphaComponent ?? 0
+            }
+            XCTAssertEqual(alpha(center, 9.5), CoreBoxLayout.separatorAlpha, accuracy: 0.02, "dot at \(scale)x")
+            XCTAssertEqual(alpha(left + 1, 9.5), 0, accuracy: 0.02, "gap before the dot at \(scale)x")
+            XCTAssertEqual(alpha(MeterTemperature.width(text) - 1, 9.5), 0, accuracy: 0.02, "gap after the dot at \(scale)x")
+        }
+    }
+    
     func testTemperatureTextFollowsTheMenuBarAppearance() {
         let idle = [[ColorValue(0)], [ColorValue(0)]]
         let darkest: (NSAppearance.Name) -> (red: CGFloat, alpha: CGFloat) = { appearance in
             let rep = self.render(scale: 2, appearance: appearance, values: idle, temperature: 49)
-            let width = Int(BarChart.coreTemperatureWidth("49°") * 2)
+            let width = Int(MeterTemperature.textWidth(MeterTemperature.text(49)) * 2)
             var best: (red: CGFloat, alpha: CGFloat) = (0, 0)
             for x in 0..<width {
                 for y in 0..<rep.pixelsHigh {

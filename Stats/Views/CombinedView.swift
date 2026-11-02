@@ -16,6 +16,7 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
     private var menuBarItem: NSStatusItem? = nil
     private var view: NSView = NSView(frame: NSRect(x: 0, y: 0, width: 0, height: Constants.Widget.height))
     private var popup: PopupWindow? = nil
+    private let popupView = Popup()
     
     private var status: Bool {
         Store.shared.bool(key: "CombinedModules", defaultValue: false)
@@ -52,7 +53,9 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
             }
         }
         
-        self.popup = PopupWindow(title: "Combined modules", module: .combined, view: Popup()) { _ in }
+        self.popup = PopupWindow(title: "Combined modules", module: .combined, view: self.popupView) { _ in }
+        // Above other apps' floating windows, which would otherwise cover the panel and take its clicks.
+        self.popup?.level = .statusBar
         
         if self.status {
             self.enable()
@@ -168,6 +171,12 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
         if popup.occlusionState.rawValue == 8192 {
             NSApplication.shared.activate(ignoringOtherApps: true)
             
+            let openPoint = NSPoint(x: window.frame.midX, y: window.frame.midY)
+            if let screen = NSScreen.screens.first(where: { $0.frame.contains(openPoint) }) ?? NSScreen.main {
+                popup.setScreenHeight(screen.visibleFrame.height)
+                self.popupView.fit(screenHeight: screen.visibleFrame.height)
+            }
+            
             popup.contentView?.invalidateIntrinsicContentSize()
             
             let windowCenter = popup.contentView!.intrinsicContentSize.width / 2
@@ -232,6 +241,23 @@ private class Popup: NSStackView, Popup_p {
     fileprivate var keyboardShortcut: [UInt16] = []
     fileprivate var sizeCallback: ((NSSize) -> Void)? = nil
     
+    private static let buttonHeight: CGFloat = 24
+    private static let extraHeightKey = "CombinedModules_popup_sensorsHeight"
+    private let activityMonitor = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.ActivityMonitor")
+    
+    private var sensorsPortal: Portal_p?
+    private var contentHeight: CGFloat = 0
+    private var extraHeight: CGFloat = 0
+    private var dragStartHeight: CGFloat = 0
+    private var screenHeight: CGFloat = NSScreen.main?.visibleFrame.height ?? 0
+    
+    private var availableHeight: CGFloat {
+        self.screenHeight - Constants.Popup.headerHeight - (Constants.Popup.margins*2) - 8
+    }
+    private var savedExtraHeight: CGFloat {
+        CGFloat(Store.shared.int(key: Self.extraHeightKey, defaultValue: 0))
+    }
+    
     init() {
         self.keyboardShortcut = Store.shared.array(key: "CombinedModules_popup_keyboardShortcut", defaultValue: []) as? [UInt16] ?? []
         
@@ -266,7 +292,9 @@ private class Popup: NSStackView, Popup_p {
     @objc private func reinit() {
         self.subviews.forEach({ $0.removeFromSuperview() })
         
-        let availableModules = modules.filter({ $0.enabled && $0.portal != nil })
+        // Sensors is a long list, so it goes last.
+        let enabledModules = modules.filter({ $0.enabled && $0.portal != nil })
+        let availableModules = enabledModules.filter({ $0.name != "Sensors" }) + enabledModules.filter({ $0.name == "Sensors" })
         var modulesHeight: CGFloat = 0
         availableModules.forEach { (m: Module) in
             if let p = m.portal {
@@ -276,10 +304,108 @@ private class Popup: NSStackView, Popup_p {
             }
         }
         
-        let h = modulesHeight + (CGFloat(availableModules.count-1)*self.spacing)
+        var h = modulesHeight + (CGFloat(availableModules.count-1)*self.spacing)
+        if self.activityMonitor != nil {
+            let button = NSButton(title: localizedString("Open Activity Monitor"), target: self, action: #selector(self.openActivityMonitor))
+            button.bezelStyle = .rounded
+            button.heightAnchor.constraint(equalToConstant: Self.buttonHeight).isActive = true
+            self.addArrangedSubview(button)
+            button.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+            h += Self.buttonHeight + (availableModules.isEmpty ? 0 : self.spacing)
+        }
+        
+        self.sensorsPortal = availableModules.first(where: { $0.name == "Sensors" })?.portal
+        if self.sensorsPortal != nil {
+            let grip = PopupResizeGrip()
+            grip.onDragBegan = { [weak self] in
+                self?.dragStartHeight = self?.extraHeight ?? 0
+            }
+            grip.onDrag = { [weak self] distance in
+                guard let self else { return }
+                self.setExtraHeight(self.dragStartHeight + distance)
+            }
+            grip.onDragEnded = { [weak self] in
+                guard let self else { return }
+                Store.shared.set(key: Self.extraHeightKey, value: Int(self.extraHeight))
+            }
+            self.addArrangedSubview(grip)
+            grip.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+            h += PopupResizeGrip.height + self.spacing
+        }
+        
+        self.contentHeight = h
+        self.setExtraHeight(self.savedExtraHeight)
+    }
+    
+    // A saved height that doesn't fit this screen is only limited here, not overwritten,
+    // so it comes back on a bigger screen.
+    fileprivate func fit(screenHeight: CGFloat) {
+        self.screenHeight = screenHeight
+        self.setExtraHeight(self.savedExtraHeight)
+    }
+    
+    private func setExtraHeight(_ wanted: CGFloat) {
+        self.extraHeight = self.sensorsPortal == nil ? 0 : PopupResize.extraHeight(
+            wanted: wanted,
+            content: self.contentHeight,
+            available: self.availableHeight
+        )
+        self.sensorsPortal?.setExtraHeight(self.extraHeight)
+        
+        let h = self.contentHeight + self.extraHeight
         if h > 0 {
             self.setFrameSize(NSSize(width: self.frame.width, height: h))
             self.sizeCallback?(self.frame.size)
         }
+    }
+    
+    @objc private func openActivityMonitor() {
+        guard let app = self.activityMonitor else { return }
+        self.window?.setIsVisible(false)
+        NSWorkspace.shared.open([], withApplicationAt: app, configuration: NSWorkspace.OpenConfiguration())
+    }
+}
+
+private class PopupResizeGrip: NSView {
+    static let height: CGFloat = 12
+    
+    var onDragBegan: () -> Void = {}
+    var onDrag: (CGFloat) -> Void = { _ in }
+    var onDragEnded: () -> Void = {}
+    private var startY: CGFloat = 0
+    
+    override var mouseDownCanMoveWindow: Bool { false }
+    
+    init() {
+        super.init(frame: NSRect(x: 0, y: 0, width: Constants.Popup.width, height: Self.height))
+        self.heightAnchor.constraint(equalToConstant: Self.height).isActive = true
+        self.toolTip = localizedString("Drag to resize")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func draw(_ dirtyRect: NSRect) {
+        NSColor.tertiaryLabelColor.setFill()
+        let pill = NSRect(x: (self.bounds.width - 36) / 2, y: (self.bounds.height - 4) / 2, width: 36, height: 4)
+        NSBezierPath(roundedRect: pill, xRadius: 2, yRadius: 2).fill()
+    }
+    
+    override func resetCursorRects() {
+        self.addCursorRect(self.bounds, cursor: .resizeUpDown)
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        self.startY = NSEvent.mouseLocation.y
+        self.onDragBegan()
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        self.onDrag(self.startY - NSEvent.mouseLocation.y)
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        self.onDragEnded()
     }
 }

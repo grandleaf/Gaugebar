@@ -37,6 +37,8 @@
 		<dict>
 			<key>Default</key>
 			<false/>
+			<key>Temperature</key>
+			<true/>
 			<key>Preview</key>
 			<dict>
 				<key>Value</key>

@@ -40,6 +40,33 @@ private func maxANEPower(for platform: Platform?) -> Double {
     }
 }
 
+/// The GPU's own temperature sensors, read only while a widget shows them.
+internal enum GPUSensors {
+    private static let keys: [String] = {
+        guard let platform = SystemKit.shared.device.platform else { return [] }
+        if Platform.m1Gen.contains(platform) {
+            return ["Tg05", "Tg0D", "Tg0L", "Tg0T"]
+        } else if Platform.m2Gen.contains(platform) {
+            return ["Tg0f", "Tg0j"]
+        } else if Platform.m3Gen.contains(platform) {
+            return ["Tf14", "Tf18", "Tf19", "Tf1A", "Tf24", "Tf28", "Tf29", "Tf2A"]
+        } else if Platform.m4Gen.contains(platform) {
+            let first = platform == .m4 ? ["Tg0G", "Tg0H"] : ["Tg1U", "Tg1k"]
+            return first + ["Tg0K", "Tg0L", "Tg0d", "Tg0e", "Tg0j", "Tg0k"]
+        } else if Platform.m5Gen.contains(platform) {
+            return ["Tg0U", "Tg0X", "Tg0d", "Tg0g", "Tg0j", "Tg1Y", "Tg1c", "Tg1g"]
+        } else if Platform.m6Gen.contains(platform) {
+            return ["Tg1e", "Tg0d", "Tg0c", "Tg0b", "Tg1c", "Tg1d", "Tg07", "Tg1f", "Tg09", "Tg0a", "Tg1g", "Tg1h"]
+        }
+        return []
+    }()
+    
+    static func average() -> Double? {
+        let values = self.keys.compactMap { SMC.shared.getValue($0) }.filter { $0 >= 10 && $0 <= 120 }
+        return values.isEmpty ? nil : values.reduce(0, +) / Double(values.count)
+    }
+}
+
 internal class InfoReader: Reader<GPUs> {
     private var gpus: GPUs = GPUs()
     private var displays: [gpu_s] = []

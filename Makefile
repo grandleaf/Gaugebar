@@ -6,7 +6,7 @@ DERIVED_DATA = $(BUILD_PATH)/DerivedData
 APP_PATH = "$(DERIVED_DATA)/Build/Products/Release/$(APP).app"
 UPSTREAM_URL = https://github.com/exelban/stats
 
-.PHONY: build test test-smc run clean leveldb upstream
+.PHONY: build test test-smc run clean leveldb upstream save-defaults
 
 # Requires Config/Local.xcconfig. See the README.
 build:
@@ -33,6 +33,10 @@ run: build
 
 clean:
 	rm -rf $(BUILD_PATH)
+
+# Makes the settings saved on this Mac the defaults for a fresh install.
+save-defaults:
+	python3 Kit/scripts/save-defaults.py
 
 # Shows what Stats has changed since Gaugebar last merged it. Changes nothing but local tags.
 upstream:

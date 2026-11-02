@@ -41,6 +41,16 @@ public protocol Popup_p: NSView {
     func setKeyboardShortcut(_ binding: [UInt16])
 }
 
+public enum PopupResize {
+    /// How far a section can shrink below its normal height.
+    public static let minimumExtra: CGFloat = -60
+    
+    /// The wanted extra height, limited to the room the screen has. What's still too tall scrolls.
+    public static func extraHeight(wanted: CGFloat, content: CGFloat, available: CGFloat) -> CGFloat {
+        return max(self.minimumExtra, min(wanted, available - content))
+    }
+}
+
 open class PopupWrapper: NSStackView, Popup_p {
     public var title: String
     public var keyboardShortcut: [UInt16] = []
@@ -115,6 +125,11 @@ public class PopupWindow: NSWindow, NSWindowDelegate {
         self.delegate = self
     }
     
+    /// The screen the panel is about to open on, which may not be the main one.
+    public func setScreenHeight(_ height: CGFloat) {
+        self.viewController.setScreenHeight(height)
+    }
+    
     public func windowWillMove(_ notification: Notification) {
         self.viewController.setCloseButton(true)
         self.locked = true
@@ -177,6 +192,10 @@ internal class PopupViewController: NSViewController {
     fileprivate func setCloseButton(_ state: Bool) {
         self.popup.setCloseButton(state)
     }
+    
+    fileprivate func setScreenHeight(_ height: CGFloat) {
+        self.popup.screenHeightOverride = height
+    }
 }
 
 internal class PopupView: NSView {
@@ -193,6 +212,11 @@ internal class PopupView: NSView {
     }
     private var windowHeight: CGFloat?
     private var containerHeight: CGFloat?
+    
+    fileprivate var screenHeightOverride: CGFloat?
+    private var screenHeight: CGFloat? {
+        self.screenHeightOverride ?? NSScreen.main?.visibleFrame.height
+    }
     
     init(frame: NSRect, module: ModuleType) {
         self.header = HeaderView(frame: NSRect(
@@ -254,9 +278,9 @@ internal class PopupView: NSView {
             height: (view?.frame.height ?? 0) + Constants.Popup.headerHeight + (Constants.Popup.margins*2)
         )
         
-        self.windowHeight = NSScreen.main?.visibleFrame.height // for height recalculate when appear/disappear
+        self.windowHeight = self.screenHeight // for height recalculate when appear/disappear
         self.containerHeight = self.body.documentView?.frame.height // for scroll diff calculation
-        if let screenHeight = NSScreen.main?.visibleFrame.height, size.height > screenHeight {
+        if let screenHeight = self.screenHeight, size.height > screenHeight {
             size.height = screenHeight - Constants.Widget.height
             isScrollVisible = true
         }
@@ -292,7 +316,7 @@ internal class PopupView: NSView {
         self.display()
         self.body.subviews.first?.display()
         
-        if let screenHeight = NSScreen.main?.visibleFrame.height, let size = self.body.documentView?.frame.size {
+        if let screenHeight = self.screenHeight, let size = self.body.documentView?.frame.size {
             if screenHeight != self.windowHeight {
                 self.recalculateHeight(size)
             }
@@ -315,9 +339,9 @@ internal class PopupView: NSView {
         )
         let h0 = self.containerHeight ?? 0
         
-        self.windowHeight = NSScreen.main?.visibleFrame.height // for height recalculate when appear/disappear
+        self.windowHeight = self.screenHeight // for height recalculate when appear/disappear
         self.containerHeight = self.body.documentView?.frame.height // for scroll diff calculation
-        if let screenHeight = NSScreen.main?.visibleFrame.height, windowSize.height > screenHeight {
+        if let screenHeight = self.screenHeight, windowSize.height > screenHeight {
             windowSize.height = screenHeight - Constants.Widget.height
             isScrollVisible = true
         }

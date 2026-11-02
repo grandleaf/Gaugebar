@@ -121,6 +121,7 @@
 
 // Settings
 "Open Activity Monitor" = "Open Activity Monitor";
+"Drag to resize" = "Drag to resize";
 "Close application" = "Close application";
 "Open application settings" = "Open application settings";
 "Open dashboard" = "Open dashboard";
