@@ -31,7 +31,6 @@ public struct Network_interface: Codable {
 public struct Network_addr: Codable {
     var v4: String? = nil
     var v6: String? = nil
-    var countryCode: String? = nil
 }
 
 public struct Network_wifi: Codable {
@@ -75,7 +74,7 @@ enum WiFiLocationAuthorization: String, Codable {
     case notDetermined, denied, authorized
 }
 
-public struct Network_Usage: Codable, RemoteType {
+public struct Network_Usage: Codable {
     var bandwidth: Bandwidth = Bandwidth()
     var total: Bandwidth = Bandwidth()
     
@@ -103,12 +102,6 @@ public struct Network_Usage: Codable, RemoteType {
         self.connectionType = nil
         
         self.wifiDetails.reset()
-    }
-    
-    public func remote() -> Data? {
-        let addr = "\(self.laddr.v4 ?? ""),\(self.laddr.v6 ?? ""),\(self.raddr.v4 ?? ""),\(self.raddr.v6 ?? "")"
-        let string = "1,\(self.interface?.BSDName ?? ""),1,\(self.bandwidth.download),\(self.bandwidth.upload),\(addr)$"
-        return string.data(using: .utf8)
     }
 }
 
@@ -287,8 +280,6 @@ public class Network: Module {
                         case "private": replacement = value.laddr.v4 ?? value.laddr.v6 ?? "-"
                         case "privateV4": replacement = value.laddr.v4 ?? "-"
                         case "privateV6": replacement = value.laddr.v6 ?? "-"
-                        case "countryCode": replacement = value.raddr.countryCode ?? "-"
-                        case "flag": replacement = value.raddr.countryCode != nil ? countryFlag(value.raddr.countryCode!) : "-"
                         default: return
                         }
                     case "$interface":

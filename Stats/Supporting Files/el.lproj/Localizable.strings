@@ -37,13 +37,11 @@
 "Graphics" = "Γραφικά";
 "Close" = "Κλειστό";
 "Download" = "Λήψη";
-"Install" = "Εγκατάσταση";
 "Cancel" = "Ακύρωση";
 "Unavailable" = "Μη Διαθέσιμο";
 "Yes" = "Ναι";
 "No" = "Οχι";
 "Automatic" = "Αυτόματα";
-"Manual" = "Χειροκίνητα";
 "None" = "Κανένα";
 "Dots" = "Τελείες";
 "Arrows" = "Βέλη";
@@ -59,7 +57,6 @@
 "Right alignment" = "Δεξιά";
 "Dashboard" = "Ταμπλό";
 "Disabled" = "Απενεργοποιημένο";
-"Silent" = "Σίγαση";
 "Units" = "Μονάδες";
 "Fans" = "Ανεμιστήρες";
 "Scaling" = "Κλίμακα";
@@ -73,7 +70,6 @@
 "Settings" = "Ρυθμίσεις";
 "Name" = "Όνομα"; // translategemma:4b
 "Format" = "Μορφή"; // translategemma:4b
-"Turn off" = "Απενεργοποίηση"; // translategemma:4b
 "Normal" = "Κανονικός"; // gemma4:31b
 "Warning" = "Προειδοποίηση"; // translategemma:4b
 "Critical" = "Κρίσιμο"; // translategemma:4b
@@ -88,7 +84,6 @@
 "Save" = "Αποθήκευση"; // translategemma:4b
 "Run" = "Εκτέλεση"; // gemma4:31b
 "Stop" = "Διακοπή"; // gemma4:31b
-"Uninstall" = "Απεγκατάσταση"; // gemma4:31b
 "1 sec" = "1 δευτ"; // gemma4:31b
 "2 sec" = "2 δευτ"; // gemma4:31b
 "3 sec" = "3 δευτ"; // gemma4:31b
@@ -118,29 +113,16 @@
 "Extended" = "Εκτεταμένη"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Εκκίνηση της εφαρμογής αυτόματα κατά την εκκίνηση του Mac σας"; // gemma4:31b
 "Do not start the application automatically when starting your Mac" = "Μην εκκινείτε την εφαρμογή αυτόματα κατά την εκκίνηση του Mac σας"; // gemma4:31b
-"Do everything silently in the background (recommended)" = "Κάντε τα πάντα αθόρυβα στο παρασκήνιο (συνιστάται)"; // translategemma:4b
-"Check for a new version on startup" = "Έλεγχος για νέα έκδοση κατά την εκκίνηση"; // gemma4:31b
-"Check for a new version every day (once a day)" = "Έλεγχος για νέα έκδοση κάθε μέρα (μία φορά την ημέρα)"; // gemma4:31b
-"Check for a new version every week (once a week)" = "Έλεγχος για νέα έκδοση κάθε εβδομάδα (μία φορά την εβδομάδα)"; // gemma4:31b
-"Check for a new version every month (once a month)" = "Έλεγχος για νέα έκδοση κάθε μήνα (μία φορά τον μήνα)"; // gemma4:31b
-"Never check for updates (not recommended)" = "Ποτέ μην ελέγχετε για ενημερώσεις (δεν συνιστάται)"; // gemma4:31b
 "The configuration is completed" = "Η διαμόρφωση ολοκληρώθηκε"; // gemma4:31b
 "finish_setup_message" = "Όλα είναι έτοιμα! \n Το Gaugebar είναι ένα εργαλείο ανοιχτού κώδικα, είναι δωρεάν και θα παραμείνει έτσι.";
  // gemma4:31b
 
 // Alerts
-"New version available" = "Νέα έκδοση διαθέσιμη";
-"Click to install the new version of Stats" = "Πάτησε εδώ για την εγκατάσταση της νέας έκδοσης του Gaugebar";
-"Successfully updated" = "Επιτυχής ενημέρωση";
-"Stats was updated to v" = "Το Gaugebar ενημερώθηκε στην έκδοση %0";
 "Reset settings text" = "Όλες οι ρυθμίσεις της εφαρμογής θα αρχικοποιηθούν και η εφαρμογή θα επανεκκινηθεί. Είστε σίγουροι;";
  // gemma4:31b-it-qat
-"Support text" = "Σας ευχαριστούμε για τη χρήση των Gaugebar!\n\n Η συντήρηση και η βελτίωση αυτού του έργου ανοιχτού κώδικα απαιτεί χρόνο και πόρους. Η υποστήριξή σας μας βοηθά να συνεχίσουμε να παρέχουμε μια δωρεάν και αξιόπιστη εφαρμογή για όλους.\n\nΕάν βρίσκετε το Gaugebar χρήσιμο, παρακαλούμε σκεφτείτε να συνεισφέρετε. Κάθε μικρό ποσό βοηθάει!";
 
 // Settings
 "Open Activity Monitor" = "Άνοιγμα Παρακολούθησης Δραστηριότητας";
-"Report a bug" = "Αναφορά Προβλήματος";
-"Support the application" = "Στηρίξτε την εφαρμογή";
 "Close application" = "Κλείσιμο εφαρμογής";
 "Open application settings" = "Άνοιγμα ρυθμίσεων εφαρμογής";
 "Open dashboard" = "Άνοιγμα ταμπλό";
@@ -151,13 +133,11 @@
 "Close module settings" = "Κλείσιμο ρυθμίσεων μονάδας"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Έλεγχος για ενημερώσεις";
 "At start" = "Κατά την έναρξη";
 "Once per day" = "Μια φορά την ημέρα";
 "Once per week" = "Μια φορά την εβδομάδα";
 "Once per month" = "Μια φορά το μήνα";
 "Never" = "Ποτέ";
-"Check for update" = "Έλεγχος για ενημέρωση";
 "Show icon in dock" = "Εμφάνιση εικονιδίου στο dock";
 "Start at login" = "Εκκίνηση κατά τη σύνδεση";
 "Build number" = "Αριθμός έκδοσης";
@@ -188,14 +168,7 @@
 "Display" = "Οθόνη"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Η τελευταία έκδοση του Gaugebar είναι εγκατεστημένη";
-"Downloading..." = "Λήψη...";
-"Installing..." = "Εγκατάσταση..."; // qwen3.8:27b
 "Updating..." = "Ενημέρωση..."; // qwen3.8:27b
-"Stats will restart automatically" = "Το Gaugebar θα επανεκκινήσει αυτόματα"; // qwen3.8:27b
-"Current version: " = "Τρέχουσα έκδοση:  ";
-"Latest version: " = "Τελευταία έκδοση:    ";
-"Changelog" = "Ημερολόγιο αλλαγών"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Χρώμα";
@@ -391,24 +364,12 @@
 // Sensors
 "Celsius" = "Κελσίου";
 "Fahrenheit" = "Φαρενάιτ";
-"Save the fan speed" = "Αποθήκευση ταχύτητας του ανεμιστήρα";
 "Fan" = "Ανεμιστήρας";
 "HID sensors" = "HID αισθητήρας";
-"Synchronize fan's control" = "Συγχρονισμός ελέγχου ανεμιστήρα"; // gemma4:31b
 "Current" = "Τρέχουσα";
 "Energy" = "Ενέργεια";
 "Show unknown sensors" = "Εμφάνιση άγνωστους αισθητήρες";
-"Install fan helper" = "Εγκατάσταση fan helper";
-"Uninstall fan helper" = "Απεγκατάσταση fan helper";
-"Approve in System Settings ▸ Login Items" = "Εγκρίνετε στις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης"; // gemma4:31b
-"Fan helper needs your approval" = "Ο βοηθός ανεμιστήρα χρειάζεται την έγκρισή σας"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Για να ελέγξετε τους ανεμιστήρες, ενεργοποιήστε το Gaugebar στις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης."; // gemma4:31b
-"Open Login Items" = "Ανοίξτε τα Αντικείμενα σύνδεσης"; // gemma4:31b
-"Could not enable the fan helper" = "Δεν ήταν δυνατή η ενεργοποίηση του βοηθητικού προγράμματος του ανεμιστήρα"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ανοίξτε τις Ρυθμίσεις συστήματος ▸ Αντικείμενα σύνδεσης, βεβαιωθείτε ότι το Gaugebar είναι επιτρεπτό στο παρασκήνιο, και στη συνέχεια δοκιμάστε ξανά."; // gemma4:31b
 "Fan value" = "Τιμή ανεμιστήρα"; // gemma4:31b
-"Turn off fan" = "Απενεργοποίηση ανεμιστήρα"; // gemma4:31b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Πρόκειται να απενεργοποιήσετε τον ανεμιστήρα. Αυτή είναι μια μη προτεινόμενη ενέργεια που μπορεί να προκαλέσει βλάβη στον Mac σας, είστε σίγουροι ότι θέλετε να το κάνετε αυτό;"; // gemma4:31b
 "Sensor threshold" = "Όριο αισθητήρα"; // gemma4:31b
 "Left fan" = "Αριστερά"; // translategemma:4b
 "Right fan" = "Δεξιά"; // gemma4:31b
@@ -456,7 +417,6 @@
 "New IP" = "Νέα διεύθυνση IP: %0"; // translategemma:4b
 "Internet connection lost" = "Χάθηκε η σύνδεση στο Διαδίκτυο"; // gemma4:31b
 "Internet connection established" = "Η σύνδεση στο Internet αποκαταστάθηκε"; // gemma4:31b
-"Show country code instead of emoji" = "Εμφάνιση κώδικα χώρας αντί για emoji"; // gemma4:31b
 "DNS Server" = "Εξυπηρετητής DNS"; // qwen3.8:27b
 "Noise" = "Θόρυβος"; // qwen3.8:27b
 "Signal" = "Σήμα"; // qwen3.8:27b
@@ -553,22 +513,6 @@
 "Indigo" = "Βαθύ μπλε";
 
 // System Stats
-"Authorization" = "Εξουσιοδότηση"; // qwen3.8:27b
-"Identificator" = "Αναγνωριστικό"; // qwen3.8:27b
-"Plan" = "Σχέδιο"; // qwen3.8:27b
-"Monitoring" = "Παρακολούθηση"; // qwen3.8:27b
 "Control" = "Έλεγχος"; // qwen3.8:27b
-"Update" = "Ενημέρωση"; // qwen3.8:27b
-"Sign in" = "Σύνδεση"; // qwen3.8:27b
-"Sign out" = "Αποσύνδεση"; // qwen3.8:27b
-"Deregister" = "Αποεγγραφή"; // qwen3.8:27b
-"Hosts" = "Ξενιστές"; // qwen3.8:27b
-"Machines" = "Μηχανές"; // qwen3.8:27b
-"No hosts yet" = "Δεν υπάρχουν ακόμα ξενιστές"; // qwen3.8:27b
-"No machines yet" = "Καμία μηχανή ακόμα"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Λάβετε ειδοποίηση όταν μια συσκευή αποσυνδεθεί ή φτάσει ένα όριο"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Δεν συνιστάται η ενεργοποίηση του απομακρυσμένου ελέγχου εκτός αν γνωρίζετε τι κάνετε."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Ζωντανές μετρήσεις CPU, RAM, δίσκου και δικτύου"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Παρακολούθηση HTTP, ICMP και προσαρμοσμένων τελείων"; // qwen3.8:27b
  // qwen3.8:27b

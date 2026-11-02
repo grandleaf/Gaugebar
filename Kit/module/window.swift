@@ -39,6 +39,7 @@ open class Window: NSStackView {
     private var widgets: [SWidget]
     
     private var widgetSelector: NSView?
+    private var selectorView: WidgetSelectorView?
     private var segmentedControl: NSSegmentedControl?
     private var tabView: NSTabView?
     
@@ -114,6 +115,7 @@ open class Window: NSStackView {
         
         NotificationCenter.default.addObserver(self, selector: #selector(listenForOneView), name: .toggleOneView, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(listenForToggleView), name: .togglePreview, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(listenForStoreChange), name: .storeChanged, object: nil)
         
         self.segmentedControl?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -(Constants.Settings.margin*2)).isActive = true
         self.widgetSelector?.widthAnchor.constraint(equalTo: self.widthAnchor, constant: -(Constants.Settings.margin*2)).isActive = true
@@ -123,6 +125,7 @@ open class Window: NSStackView {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .toggleOneView, object: nil)
         NotificationCenter.default.removeObserver(self, name: .togglePreview, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .storeChanged, object: nil)
     }
     
     required public init?(coder: NSCoder) {
@@ -162,6 +165,7 @@ open class Window: NSStackView {
         if self.config.name == "Remote" {
             let widgetSelector = WidgetSelectorView(module: self.config.name, widgets: self.widgets, stateCallback: self.loadWidget)
             self.widgetSelector = widgetSelector
+            self.selectorView = widgetSelector
             
             view.addArrangedSubview(widgetSelector)
             
@@ -248,12 +252,43 @@ open class Window: NSStackView {
         }
         
         let widgetSelector = WidgetSelectorView(module: self.config.name, widgets: self.widgets, stateCallback: self.loadWidget)
+        self.selectorView = widgetSelector
         
         view.addArrangedSubview(widgetSelector)
         view.addArrangedSubview(segmentedControl)
         view.addArrangedSubview(tabView)
         
         return view
+    }
+    
+    public override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        if self.window != nil {
+            self.scheduleImageRefresh()
+        }
+    }
+    
+    @objc private func listenForStoreChange() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self, self.window != nil else { return }
+            self.scheduleImageRefresh()
+        }
+    }
+    
+    // Several settings can change together, so wait for them to finish.
+    private func scheduleImageRefresh() {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.refreshWidgetImages), object: nil)
+        self.perform(#selector(self.refreshWidgetImages), with: nil, afterDelay: 0.15)
+    }
+    
+    @objc private func refreshWidgetImages() {
+        self.widgets.forEach { $0.refreshImage() }
+        self.selectorView?.updateImages(self.widgets)
+        self.widgetSettingsContainer?.arrangedSubviews.compactMap({ $0 as? WidgetSettings }).forEach { view in
+            if let widget = self.widgets.first(where: { $0.type == view.type }) {
+                view.setImage(widget.image)
+            }
+        }
     }
     
     private func loadWidget() {
@@ -293,6 +328,7 @@ open class Window: NSStackView {
         
         for i in 0...list.count - 1 {
             self.widgetSettingsContainer?.addArrangedSubview(WidgetSettings(
+                type: list[i].type,
                 title: list[i].type.name(),
                 image: list[i].image,
                 settingsView: list[i].item.settings()
@@ -374,6 +410,14 @@ private class WidgetSelectorView: NSStackView {
     }()
     
     private var separator: NSView?
+    
+    fileprivate func updateImages(_ widgets: [SWidget]) {
+        self.views.compactMap({ $0 as? WidgetPreview }).forEach { view in
+            if let widget = widgets.first(where: { "\($0.module)_\($0.type)" == view.id }) {
+                view.setImage(widget.image)
+            }
+        }
+    }
     
     fileprivate init(module: String, widgets: [SWidget], stateCallback: @escaping () -> Void) {
         self.module = module
@@ -560,12 +604,15 @@ private class WidgetSelectorView: NSStackView {
 private class WidgetPreview: NSStackView {
     private var stateCallback: (_ status: Bool) -> Void = {_ in }
     
-    private let rgbImage: NSImage
-    private let grayImage: NSImage
+    private var rgbImage: NSImage
+    private var grayImage: NSImage
     private let imageView: NSImageView
+    private let type: widget_t
+    private var widthConstraint: NSLayoutConstraint?
+    private var hoverArea: NSTrackingArea?
     
     private var state: Bool
-    private let id: String
+    fileprivate let id: String
     
     fileprivate var position: Int {
         get { Store.shared.int(key: "\(self.id)_position", defaultValue: 0) }
@@ -574,6 +621,7 @@ private class WidgetPreview: NSStackView {
     
     fileprivate init(id: String, type: widget_t, image: NSImage, isActive: Bool, _ callback: @escaping (_ status: Bool) -> Void) {
         self.id = id
+        self.type = type
         self.stateCallback = callback
         self.rgbImage = image
         self.grayImage = type == .icon ? image : grayscaleImage(image) ?? image
@@ -606,7 +654,21 @@ private class WidgetPreview: NSStackView {
         
         self.addArrangedSubview(self.imageView)
         
-        self.addTrackingArea(NSTrackingArea(
+        self.setHoverArea()
+        
+        let width = self.widthAnchor.constraint(equalToConstant: self.imageView.frame.width + Constants.Widget.spacing*2)
+        self.widthConstraint = width
+        NSLayoutConstraint.activate([
+            width,
+            self.heightAnchor.constraint(equalToConstant: self.frame.height)
+        ])
+    }
+    
+    private func setHoverArea() {
+        if let area = self.hoverArea {
+            self.removeTrackingArea(area)
+        }
+        let area = NSTrackingArea(
             rect: NSRect(
                 x: Constants.Widget.spacing,
                 y: 0,
@@ -616,12 +678,18 @@ private class WidgetPreview: NSStackView {
             options: [NSTrackingArea.Options.activeAlways, NSTrackingArea.Options.mouseEnteredAndExited, NSTrackingArea.Options.activeInActiveApp],
             owner: self,
             userInfo: nil
-        ))
-        
-        NSLayoutConstraint.activate([
-            self.widthAnchor.constraint(equalToConstant: self.imageView.frame.width + Constants.Widget.spacing*2),
-            self.heightAnchor.constraint(equalToConstant: self.frame.height)
-        ])
+        )
+        self.hoverArea = area
+        self.addTrackingArea(area)
+    }
+    
+    fileprivate func setImage(_ image: NSImage) {
+        self.rgbImage = image
+        self.grayImage = self.type == .icon ? image : grayscaleImage(image) ?? image
+        self.imageView.image = self.state ? self.rgbImage : self.grayImage
+        self.imageView.setFrameSize(image.size)
+        self.widthConstraint?.constant = image.size.width + Constants.Widget.spacing*2
+        self.setHoverArea()
     }
     
     required init?(coder: NSCoder) {
@@ -653,7 +721,16 @@ private class WidgetPreview: NSStackView {
 }
 
 private class WidgetSettings: NSStackView {
-    fileprivate init(title: String, image: NSImage, settingsView: NSView) {
+    fileprivate let type: widget_t
+    private var imageView: NSImageView?
+    
+    fileprivate func setImage(_ image: NSImage) {
+        self.imageView?.image = image
+        self.imageView?.setFrameSize(image.size)
+    }
+    
+    fileprivate init(type: widget_t, title: String, image: NSImage, settingsView: NSView) {
+        self.type = type
         super.init(frame: NSRect.zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -706,6 +783,7 @@ private class WidgetSettings: NSStackView {
         
         let imageView = NSImageView(frame: NSRect(origin: .zero, size: image.size))
         imageView.image = image
+        self.imageView = imageView
         
         imageContainer.addArrangedSubview(imageView)
         

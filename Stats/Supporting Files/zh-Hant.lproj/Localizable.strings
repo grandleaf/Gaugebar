@@ -37,13 +37,11 @@
 "Graphics" = "顯示卡";
 "Close" = "關閉";
 "Download" = "下載";
-"Install" = "安裝";
 "Cancel" = "取消";
 "Unavailable" = "不可用";
 "Yes" = "是";
 "No" = "否";
 "Automatic" = "自動";
-"Manual" = "手動";
 "None" = "無";
 "Dots" = "點";
 "Arrows" = "箭頭";
@@ -59,7 +57,6 @@
 "Right alignment" = "靠右對齊";
 "Dashboard" = "儀表板";
 "Disabled" = "停用";
-"Silent" = "寧靜執行";
 "Units" = "單位";
 "Fans" = "風扇";
 "Scaling" = "縮放";
@@ -73,7 +70,6 @@
 "Settings" = "設定";
 "Name" = "名稱";
 "Format" = "格式";
-"Turn off" = "關閉";
 "Normal" = "正常";
 "Warning" = "警告";
 "Critical" = "重要通知";
@@ -88,7 +84,6 @@
 "Save" = "儲存";
 "Run" = "執行";
 "Stop" = "停止";
-"Uninstall" = "解除安裝";
 "1 sec" = "1秒";
 "2 sec" = "2秒";
 "3 sec" = "3秒";
@@ -118,28 +113,15 @@
 "Extended" = "擴展"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "啟動 Mac 時自動打開Gaugebar";
 "Do not start the application automatically when starting your Mac" = "不要在啟動Mac時自動打開Gaugebar";
-"Do everything silently in the background (recommended)" = "在背景寧靜執行（建議）";
-"Check for a new version on startup" = "當 Gaugebar 打開時自動檢查新版本";
-"Check for a new version every day (once a day)" = "每天檢查是否有新版本（1天1次）";
-"Check for a new version every week (once a week)" = "每週檢查是否有新版本（1週1次）";
-"Check for a new version every month (once a month)" = "每月檢查是否有新版本（1個月1次）";
-"Never check for updates (not recommended)" = "不要檢查更新（不建議）";
 "The configuration is completed" = "組態設定完成！";
 "finish_setup_message" = "所有設定均已大功告成！\n Gaugebar是一款開源且永久免費的工具程式。";
 
 // Alerts
-"New version available" = "有新版本可用";
-"Click to install the new version of Stats" = "安裝Gaugebar的新版本";
-"Successfully updated" = "更新成功";
-"Stats was updated to v" = "Gaugebar已更新到 v%0";
 "Reset settings text" = "應用程式的所有設定將會重置，並會重新打開此應用程式。您確定要這樣做嗎？";
  // gemma4:31b-it-qat
-"Support text" = "感謝您使用Gaugebar！維護並改進此開放原始碼專案需要花費時間與資源。如果覺得Gaugebar對您有所幫助，歡迎贊助我們。您的一分一毫都帶給我們莫大的幫助！";
 
 // Settings
 "Open Activity Monitor" = "打開活動監視器";
-"Report a bug" = "回報錯誤";
-"Support the application" = "贊助此應用程式";
 "Close application" = "關閉應用程式";
 "Open application settings" = "打開應用程式設定";
 "Open dashboard" = "打開儀表板";
@@ -150,13 +132,11 @@
 "Close module settings" = "關閉模組設定"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "檢查更新";
 "At start" = "打開時檢查";
 "Once per day" = "每天1次";
 "Once per week" = "每週1次";
 "Once per month" = "每月1次";
 "Never" = "不檢查更新";
-"Check for update" = "檢查是否有更新";
 "Show icon in dock" = "在Dock上顯示圖示";
 "Start at login" = "登入時打開";
 "Build number" = "組建號碼";
@@ -187,14 +167,7 @@
 "Display" = "顯示器";
 
 // Update
-"The latest version of Stats installed" = "已安裝最新版本";
-"Downloading..." = "下載中⋯";
-"Installing..." = "安裝中..."; // qwen3.8:27b
 "Updating..." = "更新中..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar 將自動重新啟動"; // qwen3.8:27b
-"Current version: " = "目前版本：";
-"Latest version: " = "最新版本：";
-"Changelog" = "變更記錄"; // qwen3.8:27b
 
 // Widgets
 "Color" = "色彩";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "攝氏 (˚C)";
 "Fahrenheit" = "華氏 (˚F)";
-"Save the fan speed" = "儲存風扇速度";
 "Fan" = "風扇";
 "HID sensors" = "HID感知器";
-"Synchronize fan's control" = "同步風扇控制";
 "Current" = "電流";
 "Energy" = "能耗";
 "Show unknown sensors" = "顯示未知的感知器";
-"Install fan helper" = "安裝風扇輔助程式";
-"Uninstall fan helper" = "解除安裝風扇輔助程式";
-"Approve in System Settings ▸ Login Items" = "在系統設定 ▸ 登入項目中核准"; // gemma4:31b
-"Fan helper needs your approval" = "風扇輔助工具需要您的核准"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "若要控制風扇，請在「系統設定」▸「登入項目」中啟用 Gaugebar。"; // gemma4:31b
-"Open Login Items" = "開啟登入項目"; // gemma4:31b
-"Could not enable the fan helper" = "無法啟用風扇助手"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "開啟「系統設定」▸「登入項目」，確認 Gaugebar 已獲准在背景執行，然後再試一次。"; // gemma4:31b
 "Fan value" = "風扇轉速值";
-"Turn off fan" = "關閉風扇";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "您似乎要關閉您Mac的風扇。不建議進行此操作，因為這可能會造成Mac的損毀，您確定仍要關閉風扇嗎？";
 "Sensor threshold" = "感知器臨界值";
 "Left fan" = "左側風扇";
 "Right fan" = "右側風扇";
@@ -455,7 +416,6 @@
 "New IP" = "新IP：%0";
 "Internet connection lost" = "網際網路連線已遺失";
 "Internet connection established" = "網際網路連線已建立";
-"Show country code instead of emoji" = "顯示國家代碼而非表情符號"; // gemma4:31b
 "DNS Server" = "DNS 伺服器"; // qwen3.8:27b
 "Noise" = "噪音"; // qwen3.8:27b
 "Signal" = "訊號"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "靛色";
 
 // System Stats
-"Authorization" = "授權"; // qwen3.8:27b
-"Identificator" = "識別碼"; // qwen3.8:27b
-"Plan" = "方案"; // qwen3.8:27b
-"Monitoring" = "監控"; // qwen3.8:27b
 "Control" = "控制"; // qwen3.8:27b
-"Update" = "更新"; // qwen3.8:27b
-"Sign in" = "登入"; // qwen3.8:27b
-"Sign out" = "登出"; // qwen3.8:27b
-"Deregister" = "取消註冊"; // qwen3.8:27b
-"Hosts" = "主機"; // qwen3.8:27b
-"Machines" = "機器"; // qwen3.8:27b
-"No hosts yet" = "尚無主機"; // qwen3.8:27b
-"No machines yet" = "尚無機器"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "當裝置離線或達到閾值時，取得通知"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "不建議啟用遠端控制除非您知道自己在做什麼。"; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "即時 CPU、RAM、磁碟與網路指標"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "監控 HTTP、ICMP 及自訂端點"; // qwen3.8:27b
  // qwen3.8:27b

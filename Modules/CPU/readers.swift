@@ -269,6 +269,8 @@ public class ProcessReader: Reader<[TopProcess]> {
 
 public class TemperatureReader: Reader<Double> {
     var list: [String] = []
+    // Macs with a sensor list don't have these keys, so stop asking after the first miss.
+    private var singleKeys: [String] = ["TC0D", "TC0E", "TC0F", "TC0P", "TC0H"]
     
     public override func setup() {
         self.popup = true
@@ -290,17 +292,17 @@ public class TemperatureReader: Reader<Double> {
     public override func read() {
         var temperature: Double? = nil
         
-        if let value = SMC.shared.getValue("TC0D"), value < 110 {
-            temperature = value
-        } else if let value = SMC.shared.getValue("TC0E"), value < 110 {
-            temperature = value
-        } else if let value = SMC.shared.getValue("TC0F"), value < 110 {
-            temperature = value
-        } else if let value = SMC.shared.getValue("TC0P"), value < 110 {
-            temperature = value
-        } else if let value = SMC.shared.getValue("TC0H"), value < 110 {
-            temperature = value
-        } else {
+        for key in self.singleKeys {
+            if let value = SMC.shared.getValue(key), value < 110 {
+                temperature = value
+                break
+            }
+        }
+        
+        if temperature == nil {
+            if !self.list.isEmpty {
+                self.singleKeys = []
+            }
             var total: Double = 0
             var counter: Double = 0
             self.list.forEach { (key: String) in

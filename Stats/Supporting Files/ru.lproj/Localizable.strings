@@ -37,13 +37,11 @@
 "Graphics" = "Графика";
 "Close" = "Закрыть";
 "Download" = "Скачать";
-"Install" = "Установить";
 "Cancel" = "Отменить";
 "Unavailable" = "Недоступно";
 "Yes" = "Да";
 "No" = "Нет";
 "Automatic" = "Автоматический";
-"Manual" = "Ручной";
 "None" = "Никакой";
 "Dots" = "Точки";
 "Arrows" = "Стрелки";
@@ -59,7 +57,6 @@
 "Right alignment" = "по правому";
 "Dashboard" = "Главная страница"; // translategemma:4b
 "Disabled" = "Отключено";
-"Silent" = "Бесшумно";
 "Units" = "Единицы"; // translategemma:4b
 "Fans" = "Вентиляторы";
 "Scaling" = "Масштабирование";
@@ -73,7 +70,6 @@
 "Settings" = "Настройки";
 "Name" = "Название";
 "Format" = "Формат";
-"Turn off" = "Выключить";
 "Normal" = "Нормальный";
 "Warning" = "Предупреждение";
 "Critical" = "Критический";
@@ -88,7 +84,6 @@
 "Save" = "Сохранить";
 "Run" = "Запустить";
 "Stop" = "Остановить";
-"Uninstall" = "Удалить";
 "1 sec" = "1 сек";
 "2 sec" = "2 сек";
 "3 sec" = "3 сек";
@@ -118,27 +113,14 @@
 "Extended" = "Расширенный";
 "Start the application automatically when starting your Mac" = "Запуск приложения автоматически при запуске Mac";
 "Do not start the application automatically when starting your Mac" = "Не запускать приложение автоматически при запуске Mac";
-"Do everything silently in the background (recommended)" = "Делать все тихо в фоновом режиме (рекомендуется)";
-"Check for a new version on startup" = "Проверять наличие новой версии при запуске";
-"Check for a new version every day (once a day)" = "Проверять наличие новой версии каждый день (один раз в день)";
-"Check for a new version every week (once a week)" = "Проверять наличие новой версии каждую неделю (раз в неделю)";
-"Check for a new version every month (once a month)" = "Проверять наличие новой версии каждый месяц (раз в месяц)";
-"Never check for updates (not recommended)" = "Никогда не проверять наличие обновлений (не рекомендуется)";
 "The configuration is completed" = "Настройка завершена";
 "finish_setup_message" = "Все готово! \n Gaugebar — это инструмент с открытым исходным кодом, он бесплатный и всегда будет бесплатным.";
 
 // Alerts
-"New version available" = "Доступна новая версия";
-"Click to install the new version of Stats" = "Нажмите, чтобы установить новую версию Gaugebar";
-"Successfully updated" = "Успешно обновлено";
-"Stats was updated to v" = "Gaugebar обновлено до v%0";
 "Reset settings text" = "Все настройки приложения будут сброшены, и приложение будет перезапущено. Вы уверены, что хотите это сделать?";
-"Support text" = "Спасибо за использование Gaugebar.\n\n Поддержание и улучшение этого проекта с открытым исходным кодом требует времени и ресурсов. Ваша поддержка помогает нам продолжать предоставлять бесплатное и надежное приложение для всех.\n\nЕсли вы находите Gaugebar полезным, пожалуйста, подумайте о том, чтобы сделать взнос. Каждый маленький кусочек помогает!";
 
 // Settings
 "Open Activity Monitor" = "Открыть Мониторинг системы";
-"Report a bug" = "Сообщить об ошибке";
-"Support the application" = "Поддержите приложение";
 "Close application" = "Закрыть приложение";
 "Open application settings" = "Открыть настройки приложения";
 "Open dashboard" = "Открыть главную страницу";
@@ -148,13 +130,11 @@
 "Close module settings" = "Закрыть настройки модуля"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Проверять обновления";
 "At start" = "При включении";
 "Once per day" = "Раз в день";
 "Once per week" = "Раз в неделю";
 "Once per month" = "Раз в месяц";
 "Never" = "Никогда";
-"Check for update" = "Проверить обновление";
 "Show icon in dock" = "Показать значок в Dock";
 "Start at login" = "Запуск при входе";
 "Build number" = "Номер сборки";
@@ -185,14 +165,7 @@
 "Display" = "Монитор";
 
 // Update
-"The latest version of Stats installed" = "Установлена последняя версия";
-"Downloading..." = "Скачивание...";
-"Installing..." = "Установка..."; // qwen3.8:27b
 "Updating..." = "Обновление..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar будет автоматически перезапущен"; // qwen3.8:27b
-"Current version: " = "Текущая версия:      ";
-"Latest version: " = "Последняя версия:  ";
-"Changelog" = "Журнал изменений"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Цвет";
@@ -388,24 +361,12 @@
 // Sensors
 "Celsius" = "Цельсия";
 "Fahrenheit" = "Фаренгейта";
-"Save the fan speed" = "Сохранить скорость вентилятора";
 "Fan" = "Вентилятор";
 "HID sensors" = "HID датчики";
-"Synchronize fan's control" = "Синхронизировать управление вентиляторами";
 "Current" = "Ток";
 "Energy" = "Энергия";
 "Show unknown sensors" = "Показать неизвестные датчики";
-"Install fan helper" = "Установить помощник для вентилятора";
-"Uninstall fan helper" = "Удалить помощник для вентилятора";
-"Approve in System Settings ▸ Login Items" = "Разрешить в Системных настройках ▸ Элементы входа"; // qwen3.8:27b
-"Fan helper needs your approval" = "Помощник вентилятора требует вашего разрешения"; // qwen3.8:27b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Чтобы управлять вентиляторами, включите Gaugebar в Системных настройках ▸ Элементы входа."; // qwen3.8:27b
-"Open Login Items" = "Открыть элементы входа"; // qwen3.8:27b
-"Could not enable the fan helper" = "Не удалось включить помощник вентилятора"; // qwen3.8:27b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Откройте Системные настройки ▸ Элементы входа, убедитесь, что Gaugebar разрешён в фоновом режиме, затем повторите попытку."; // qwen3.8:27b
 "Fan value" = "Значение вентилятора";
-"Turn off fan" = "Выключить вентилятор";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Вы собираетесь выключить вентилятор. Это не рекомендуемое действие, которое может сломать ваш Mac. Вы уверены, что хотите это сделать?";
 "Sensor threshold" = "Порог датчика";
 "Left fan" = "Левый";
 "Right fan" = "Правый";
@@ -453,7 +414,6 @@
 "New IP" = "Новый IP-адрес: %0";
 "Internet connection lost" = "Соединение с интернетом потеряно";
 "Internet connection established" = "Соединение с интернетом восстановлено";
-"Show country code instead of emoji" = "Отображать код страны вместо эмодзи";
 "DNS Server" = "Сервер DNS"; // qwen3.8:27b
 "Noise" = "Шум"; // qwen3.8:27b
 "Signal" = "Сигнал"; // qwen3.8:27b
@@ -550,22 +510,6 @@
 "Indigo" = "Индиго";
 
 // System Stats
-"Authorization" = "Авторизация"; // qwen3.8:27b
-"Identificator" = "Идентификатор"; // qwen3.8:27b
-"Plan" = "План"; // qwen3.8:27b
-"Monitoring" = "Мониторинг"; // qwen3.8:27b
 "Control" = "Управление"; // qwen3.8:27b
-"Update" = "Обновить"; // qwen3.8:27b
-"Sign in" = "Войти"; // qwen3.8:27b
-"Sign out" = "Выйти"; // qwen3.8:27b
-"Deregister" = "Отменить регистрацию"; // qwen3.8:27b
-"Hosts" = "Хосты"; // qwen3.8:27b
-"Machines" = "Устройства"; // qwen3.8:27b
-"No hosts yet" = "Пока нет хостов"; // qwen3.8:27b
-"No machines yet" = "Пока нет машин"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Уведомлять, когда устройство отключается или достигает порога"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Не рекомендуется включать удалённое управление, если вы не знаете, что делаете."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Живые метрики CPU, RAM, диска и сети"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Мониторинг HTTP, ICMP и пользовательских конечных точек"; // qwen3.8:27b
  // qwen3.8:27b

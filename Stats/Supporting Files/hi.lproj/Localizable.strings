@@ -37,13 +37,11 @@
 "Graphics" = "ग्राफिक्स";
 "Close" = "बंद";
 "Download" = "डाउनलोड";
-"Install" = "स्थापित करें";
 "Cancel" = "रद्द करें";
 "Unavailable" = "अनुपलब्ध";
 "Yes" = "हाँ";
 "No" = "नहीं";
 "Automatic" = "स्वचालित";
-"Manual" = "मैनुअल";
 "None" = "कोई नहीं";
 "Dots" = "डॉट्स";
 "Arrows" = "तीर";
@@ -59,7 +57,6 @@
 "Right alignment" = "दायाँ";
 "Dashboard" = "डैशबोर्ड";
 "Disabled" = "अक्षम";
-"Silent" = "मौन";
 "Units" = "इकाइयाँ";
 "Fans" = "पंखे";
 "Scaling" = "स्केलिंग";
@@ -73,7 +70,6 @@
 "Settings" = "सेटिंग्स";
 "Name" = "नाम";
 "Format" = "प्रारूप";
-"Turn off" = "बंद करें";
 "Normal" = "सामान्य"; // translategemma:4b
 "Warning" = "चेतावनी"; // translategemma:4b
 "Critical" = "गंभीर"; // gemma4:31b
@@ -88,7 +84,6 @@
 "Save" = "सहेजें"; // gemma4:31b
 "Run" = "चलाएं"; // translategemma:4b
 "Stop" = "रोकें"; // gemma4:31b
-"Uninstall" = "अनइंस्टॉल करें"; // gemma4:31b
 "1 sec" = "1 सेकंड"; // translategemma:4b
 "2 sec" = "2 सेकंड"; // translategemma:4b
 "3 sec" = "3 सेकंड"; // translategemma:4b
@@ -118,28 +113,15 @@
 "Extended" = "विस्तृत"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "अपना मैक शुरू करते समय एप्लिकेशन को स्वचालित रूप से शुरू करें";
 "Do not start the application automatically when starting your Mac" = "अपना मैक शुरू करते समय एप्लिकेशन को स्वचालित रूप से शुरू न करें";
-"Do everything silently in the background (recommended)" = "पृष्ठभूमि में चुपचाप सब कुछ करें (अनुशंसित)";
-"Check for a new version on startup" = "स्टार्टअप पर एक नए संस्करण की जांच करें";
-"Check for a new version every day (once a day)" = "हर दिन (दिन में एक बार) एक नए संस्करण की जांच करें";
-"Check for a new version every week (once a week)" = "हर हफ्ते (सप्ताह में एक बार) एक नए संस्करण की जांच करें";
-"Check for a new version every month (once a month)" = "हर महीने (महीने में एक बार) एक नए संस्करण की जांच करें";
-"Never check for updates (not recommended)" = "अपडेट की जांच कभी न करें (अनुशंसित नहीं)";
 "The configuration is completed" = "कॉन्फ़िगरेशन पूरा हो गया है";
 "finish_setup_message" = "सब कुछ सेट किया गया है! \n आँकड़े एक खुला स्रोत उपकरण है, यह मुफ़्त है और हमेशा रहेगा।";
 
 // Alerts
-"New version available" = "नया संस्करण उपलब्ध है";
-"Click to install the new version of Stats" = "Gaugebar के नए संस्करण को स्थापित करने के लिए क्लिक करें";
-"Successfully updated" = "सफलतापूर्वक अपडेट किया गया";
-"Stats was updated to v" = "Gaugebar को v%0 पर अपडेट किया गया";
 "Reset settings text" = "सभी एप्लिकेशन सेटिंग्स रीसेट हो जाएंगी और एप्लिकेशन को पुनरारंभ किया जाएगा। क्या आप वाकई ऐसा करना चाहते हैं?";
  // gemma4:31b-it-qat
-"Support text" = "Gaugebar का उपयोग करने के लिए धन्यवाद!\n\n इस ओपन-सोर्स प्रोजेक्ट को बनाए रखने और सुधारने में समय और संसाधन लगते हैं। आपका समर्थन हमें सभी के लिए एक निःशुल्क और विश्वसनीय एप्लिकेशन प्रदान करना जारी रखने में मदद करता है.\n\nयदि आपको Gaugebar मददगार लगता है, तो कृपया योगदान देने पर विचार करें। हर छोटी-छोटी मदद मददगार होती है!";
 
 // Settings
 "Open Activity Monitor" = "ओपन एक्टिविटी मॉनिटर";
-"Report a bug" = "बग की रिपोर्ट करें";
-"Support the application" = "एप्लिकेशन का समर्थन करें";
 "Close application" = "एप्लिकेशन बंद करें";
 "Open application settings" = "एप्लिकेशन सेटिंग्स खोलें";
 "Open dashboard" = "ओपन डैशबोर्ड";
@@ -150,13 +132,11 @@
 "Close module settings" = "मॉड्यूल सेटिंग्स बंद करें"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "अपडेट की जाँच करें";
 "At start" = "शुरुआत में";
 "Once per day" = "प्रति दिन एक बार";
 "Once per week" = "प्रति सप्ताह एक बार";
 "Once per month" = "प्रति माह एक बार";
 "Never" = "कभी नहीं";
-"Check for update" = "अपडेट की जांच करें";
 "Show icon in dock" = "डॉक में आइकन दिखाएं";
 "Start at login" = "लॉगिन पर शुरू करें";
 "Build number" = "बिल्ड नंबर";
@@ -187,14 +167,7 @@
 "Display" = "डिस्प्ले"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Gaugebar का नवीनतम संस्करण स्थापित है";
-"Downloading..." = "डाउनलोडिंग ...";
-"Installing..." = "स्थापना हो रही है..."; // qwen3.8:27b
 "Updating..." = "अपडेट हो रहा है..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar स्वतः पुनः प्रारंभ होगा"; // qwen3.8:27b
-"Current version: " = "वर्तमान संस्करण: ";
-"Latest version: " = "नवीनतम संस्करण: ";
-"Changelog" = "चेंजलॉग"; // qwen3.8:27b
 
 // Widgets
 "Color" = "रंग";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "सेल्सियस";
 "Fahrenheit" = "फ़ारेनहाइट";
-"Save the fan speed" = "पंखे की गति बचाएं";
 "Fan" = "फैन";
 "HID sensors" = "एचआईडी सेंसर";
-"Synchronize fan's control" = "फैन के नियंत्रण को सिंक्रनाइज़ करें";
 "Current" = "वर्तमान";
 "Energy" = "ऊर्जा";
 "Show unknown sensors" = "अज्ञात सेंसर दिखाएं";
-"Install fan helper" = "फैन हेल्पर स्थापित करें";
-"Uninstall fan helper" = "फैन हेल्पर की स्थापना रद्द करें";
-"Approve in System Settings ▸ Login Items" = "सिस्टम सेटिंग्स ▸ लॉगिन आइटम में अनुमोदित करें"; // gemma4:31b
-"Fan helper needs your approval" = "फैन हेल्पर को आपकी अनुमति की आवश्यकता है"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "पंखों को नियंत्रित करने के लिए, सिस्टम सेटिंग्स ▸ लॉगिन आइटम में Gaugebar को सक्षम करें।"; // gemma4:31b
-"Open Login Items" = "लॉगिन आइटम खोलें"; // gemma4:31b
-"Could not enable the fan helper" = "फैन हेल्पर को सक्षम नहीं किया जा सका"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "सिस्टम सेटिंग्स ▸ लॉगिन आइटम खोलें, सुनिश्चित करें कि Gaugebar को बैकग्राउंड में अनुमति दी गई है, फिर से प्रयास करें।"; // gemma4:31b
 "Fan value" = "फैन वैल्यू";
-"Turn off fan" = "पंखा बंद करें";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "आप पंखे को बंद करने जा रहे हैं। यह अनुशंसित कार्रवाई नहीं है जो आपके मैक को नुकसान पहुंचा सकती है, क्या आप वाकई ऐसा करना चाहते हैं?";
 "Sensor threshold" = "सेंसर सीमा"; // gemma4:31b
 "Left fan" = "बायाँ"; // gemma4:31b
 "Right fan" = "दायां"; // gemma4:31b
@@ -455,7 +416,6 @@
 "New IP" = "नया IP: %0"; // gemma4:31b
 "Internet connection lost" = "इंटरनेट कनेक्शन टूट गया"; // gemma4:31b
 "Internet connection established" = "इंटरनेट कनेक्शन स्थापित हुआ"; // gemma4:31b
-"Show country code instead of emoji" = "इमोजी के बजाय देश का कोड दिखाएं"; // gemma4:31b
 "DNS Server" = "DNS सर्वर"; // qwen3.8:27b
 "Noise" = "शोर"; // qwen3.8:27b
 "Signal" = "सिग्नल"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "इंडिगो";
 
 // System Stats
-"Authorization" = "प्रमाणीकरण"; // qwen3.8:27b
-"Identificator" = "पहचानकर्ता"; // qwen3.8:27b
-"Plan" = "योजना"; // qwen3.8:27b
-"Monitoring" = "निगरानी"; // qwen3.8:27b
 "Control" = "नियंत्रण"; // qwen3.8:27b
-"Update" = "अपडेट"; // qwen3.8:27b
-"Sign in" = "साइन इन करें"; // qwen3.8:27b
-"Sign out" = "साइन आउट"; // qwen3.8:27b
-"Deregister" = "अपंजीकृत करें"; // qwen3.8:27b
-"Hosts" = "होस्ट"; // qwen3.8:27b
-"Machines" = "मशीनें"; // qwen3.8:27b
-"No hosts yet" = "अभी तक कोई होस्ट नहीं"; // qwen3.8:27b
-"No machines yet" = "अभी तक कोई मशीन नहीं"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "जब कोई डिवाइस ऑफलाइन हो जाए या किसी सीमा को पार कर जाए तो सूचना प्राप्त करें"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "यदि आप यह नहीं जानते कि आप क्या कर रहे हैं, तो रिमोट कंट्रोल सक्षम करने की अनुशंसा नहीं की जाती।"; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "लाइव CPU, RAM, डिस्क और नेटवर्क मेट्रिक्स"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "HTTP, ICMP और कस्टम एंडपॉइंट की निगरानी करें"; // qwen3.8:27b
  // qwen3.8:27b

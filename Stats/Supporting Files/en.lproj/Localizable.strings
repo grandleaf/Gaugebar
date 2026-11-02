@@ -37,13 +37,11 @@
 "Graphics" = "Graphics";
 "Close" = "Close";
 "Download" = "Download";
-"Install" = "Install";
 "Cancel" = "Cancel";
 "Unavailable" = "Unavailable";
 "Yes" = "Yes";
 "No" = "No";
 "Automatic" = "Automatic";
-"Manual" = "Manual";
 "None" = "None";
 "Dots" = "Dots";
 "Arrows" = "Arrows";
@@ -59,7 +57,6 @@
 "Right alignment" = "Right";
 "Dashboard" = "Dashboard";
 "Disabled" = "Disabled";
-"Silent" = "Silent";
 "Units" = "Units";
 "Fans" = "Fans";
 "Scaling" = "Scaling";
@@ -73,7 +70,6 @@
 "Settings" = "Settings";
 "Name" = "Name";
 "Format" = "Format";
-"Turn off" = "Turn off";
 "Normal" = "Normal";
 "Warning" = "Warning";
 "Critical" = "Critical";
@@ -88,7 +84,6 @@
 "Save" = "Save";
 "Run" = "Run";
 "Stop" = "Stop";
-"Uninstall" = "Uninstall";
 "1 sec" = "1 sec";
 "2 sec" = "2 sec";
 "3 sec" = "3 sec";
@@ -118,27 +113,14 @@
 "Extended" = "Extended";
 "Start the application automatically when starting your Mac" = "Start the application automatically when starting your Mac";
 "Do not start the application automatically when starting your Mac" = "Do not start the application automatically when starting your Mac";
-"Do everything silently in the background (recommended)" = "Do everything silently in the background (recommended)";
-"Check for a new version on startup" = "Check for a new version on startup";
-"Check for a new version every day (once a day)" = "Check for a new version every day (once a day)";
-"Check for a new version every week (once a week)" = "Check for a new version every week (once a week)";
-"Check for a new version every month (once a month)" = "Check for a new version every month (once a month)";
-"Never check for updates (not recommended)" = "Never check for updates (not recommended)";
 "The configuration is completed" = "The configuration is completed";
 "finish_setup_message" = "Everything is set up! \n The Gaugebar is an open source tool, it's free and always will be.";
 
 // Alerts
-"New version available" = "New version available";
-"Click to install the new version of Stats" = "Click to install the new version of Gaugebar";
-"Successfully updated" = "Successfully updated";
-"Stats was updated to v" = "Gaugebar was updated to v%0";
 "Reset settings text" = "All application settings will be reset and the application will be restarted. Are you sure you want to do this?";
-"Support text" = "Thank you for using Gaugebar!\n\n Maintaining and improving this open-source project takes time and resources. Your support helps us continue to provide a free and reliable application for everyone.\n\nIf you find Gaugebar helpful, please consider making a contribution. Every little bit helps!";
 
 // Settings
 "Open Activity Monitor" = "Open Activity Monitor";
-"Report a bug" = "Report a bug";
-"Support the application" = "Support the application";
 "Close application" = "Close application";
 "Open application settings" = "Open application settings";
 "Open dashboard" = "Open dashboard";
@@ -148,13 +130,11 @@
 "Close module settings" = "Close module settings";
 
 // Application settings
-"Check for updates" = "Check for updates";
 "At start" = "At start";
 "Once per day" = "Once per day";
 "Once per week" = "Once per week";
 "Once per month" = "Once per month";
 "Never" = "Never";
-"Check for update" = "Check for update";
 "Show icon in dock" = "Show icon in dock";
 "Start at login" = "Start at login";
 "Build number" = "Build number";
@@ -185,14 +165,7 @@
 "Display" = "Display";
 
 // Update
-"The latest version of Stats installed" = "The latest version of Gaugebar is installed";
-"Downloading..." = "Downloading...";
-"Installing..." = "Installing...";
 "Updating..." = "Updating...";
-"Stats will restart automatically" = "Gaugebar will restart automatically";
-"Current version: " = "Current version:  ";
-"Latest version: " = "Latest version:    ";
-"Changelog" = "Changelog";
 
 // Widgets
 "Color" = "Color";
@@ -389,24 +362,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Save the fan speed";
 "Fan" = "Fan";
 "HID sensors" = "HID sensors";
-"Synchronize fan's control" = "Synchronize fan's control";
 "Current" = "Current";
 "Energy" = "Energy";
 "Show unknown sensors" = "Show unknown sensors";
-"Install fan helper" = "Install fan helper";
-"Uninstall fan helper" = "Uninstall fan helper";
-"Approve in System Settings ▸ Login Items" = "Approve in System Settings ▸ Login Items";
-"Fan helper needs your approval" = "Fan helper needs your approval";
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "To control the fans, enable Gaugebar in System Settings ▸ Login Items.";
-"Open Login Items" = "Open Login Items";
-"Could not enable the fan helper" = "Could not enable the fan helper";
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Open System Settings ▸ Login Items, make sure Gaugebar is allowed in the background, then try again.";
 "Fan value" = "Fan value";
-"Turn off fan" = "Turn off fan";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?";
 "Sensor threshold" = "Sensor threshold";
 "Left fan" = "Left";
 "Right fan" = "Right";
@@ -454,7 +415,6 @@
 "New IP" = "New IP: %0";
 "Internet connection lost" = "Internet connection lost";
 "Internet connection established" = "Internet connection established";
-"Show country code instead of emoji" = "Show country code instead of emoji";
 "DNS Server" = "DNS Server";
 "Noise" = "Noise";
 "Signal" = "Signal";
@@ -551,23 +511,7 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Authorization";
-"Identificator" = "Identificator";
-"Plan" = "Plan";
-"Monitoring" = "Monitoring";
 "Control" = "Control";
-"Update" = "Update";
-"Sign in" = "Sign in";
-"Sign out" = "Sign out";
-"Deregister" = "Deregister";
-"Hosts" = "Hosts";
-"Machines" = "Machines";
-"No hosts yet" = "No hosts yet";
-"No machines yet" = "No machines yet";
-"Get notified when a device goes offline or hits a threshold" = "Get notified when a device goes offline or hits a threshold";
-"It is not recommended to enable remote control unless you know what you are doing." = "It is not recommended to enable remote control unless you know what you are doing.";
-"Live CPU, RAM, disk and network metrics" = "Live CPU, RAM, disk and network metrics";
-"Monitor HTTP, ICMP and custom endpoints" = "Monitor HTTP, ICMP and custom endpoints";
 
 // Core boxes
 "Separate core boxes" = "Separate core boxes";

@@ -37,13 +37,11 @@
 "Graphics" = "グラフィックス";
 "Close" = "閉じる";
 "Download" = "ダウンロード";
-"Install" = "インストール";
 "Cancel" = "キャンセル";
 "Unavailable" = "使用できません";
 "Yes" = "はい";
 "No" = "いいえ";
 "Automatic" = "オート";
-"Manual" = "マニュアル";
 "None" = "なし";
 "Dots" = "ドット";
 "Arrows" = "矢印";
@@ -59,7 +57,6 @@
 "Right alignment" = "右揃え";
 "Dashboard" = "ダッシュボード";
 "Disabled" = "無効";
-"Silent" = "サイレント";
 "Units" = "単位";
 "Fans" = "ファン";
 "Scaling" = "スケーリング"; // translategemma:4b
@@ -73,7 +70,6 @@
 "Settings" = "設定";
 "Name" = "名前";
 "Format" = "フォーマット";
-"Turn off" = "停止";
 "Normal" = "通常"; // translategemma:4b
 "Warning" = "警告"; // translategemma:4b
 "Critical" = "クリティカル";
@@ -88,7 +84,6 @@
 "Save" = "保存"; // translategemma:4b
 "Run" = "実行"; // gemma4:31b
 "Stop" = "停止"; // translategemma:4b
-"Uninstall" = "アンインストール"; // translategemma:4b
 "1 sec" = "1秒"; // gemma4:31b
 "2 sec" = "2秒"; // translategemma:4b
 "3 sec" = "3秒"; // translategemma:4b
@@ -118,29 +113,16 @@
 "Extended" = "拡張"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Macの起動時にアプリを自動起動する";
 "Do not start the application automatically when starting your Mac" = "Macの起動時にアプリを自動起動しない";
-"Do everything silently in the background (recommended)" = "すべてをバックグラウンドで静かに実行する (推奨)"; // gemma4:31b
-"Check for a new version on startup" = "起動時にアップデートを確認する";
-"Check for a new version every day (once a day)" = "毎日アップデートを確認する（1日1回）";
-"Check for a new version every week (once a week)" = "毎週アップデートを確認する（週1回）";
-"Check for a new version every month (once a month)" = "毎月アップデートを確認する（月1回）";
-"Never check for updates (not recommended)" = "アップデートを確認しない（非推奨）";
 "The configuration is completed" = "設定が完了しました"; // translategemma:4b
 "finish_setup_message" = "すべての設定が完了しました！ \n Gaugebar はオープンソースのツールであり、無料で、これからも無料です。";
  // gemma4:31b
 
 // Alerts
-"New version available" = "新しいバージョンが利用可能です";
-"Click to install the new version of Stats" = "クリックして新しいバージョンの Gaugebar をインストール";
-"Successfully updated" = "正常にアップデートされました";
-"Stats was updated to v" = "Gaugebar v%0 にアップデートしました";
 "Reset settings text" = "アプリの設定をすべてリセットし、アプリを再起動します。本当に続けますか？";
  // gemma4:31b-it-qat
-"Support text" = "Gaugebarをご利用いただきありがとうございます！\n\n オープンソースプロジェクトの維持と改善には、時間とリソースが必要です。皆様のご支援が、無料で信頼できるアプリを継続して提供するための力になっています。\n\nGaugebarが役に立っていると感じたら、寄付をご検討ください。少額でも大いに役立ちます！";
 
 // Settings
 "Open Activity Monitor" = "アクティビティモニタを開く";
-"Report a bug" = "バグを報告";
-"Support the application" = "Gaugebar をサポート";
 "Close application" = "Gaugebar を終了";
 "Open application settings" = "Gaugebar の設定を開く";
 "Open dashboard" = "ダッシュボードを開く";
@@ -151,13 +133,11 @@
 "Close module settings" = "モジュール設定を閉じる"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "アップデートの確認頻度";
 "At start" = "起動時";
 "Once per day" = "1日ごと";
 "Once per week" = "1週間ごと";
 "Once per month" = "1ヶ月ごと";
 "Never" = "確認しない";
-"Check for update" = "アップデートを確認する";
 "Show icon in dock" = "Dock にアイコンを表示";
 "Start at login" = "ログイン時に開く";
 "Build number" = "ビルド番号";
@@ -188,14 +168,7 @@
 "Display" = "ディスプレイ"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "最新の Gaugebar がインストールされています";
-"Downloading..." = "ダウンロード中...";
-"Installing..." = "インストール中..."; // qwen3.8:27b
 "Updating..." = "更新中..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebarは自動的に再起動されます"; // qwen3.8:27b
-"Current version: " = "現在のバージョン: ";
-"Latest version: " = "最新のバージョン: ";
-"Changelog" = "変更履歴"; // qwen3.8:27b
 
 // Widgets
 "Color" = "カラー";
@@ -391,24 +364,12 @@
 // Sensors
 "Celsius" = "摂氏（℃）";
 "Fahrenheit" = "華氏（℉）";
-"Save the fan speed" = "ファンの速度を保存";
 "Fan" = "ファン";
 "HID sensors" = "HID センサー";
-"Synchronize fan's control" = "ファン制御を同期"; // gemma4:31b
 "Current" = "電流";
 "Energy" = "電力";
 "Show unknown sensors" = "不明なセンサーを表示"; // gemma4:31b
-"Install fan helper" = "ファンヘルパーをインストール"; // gemma4:31b
-"Uninstall fan helper" = "ファンヘルパーをアンインストール"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "システム設定 ▸ ログイン項目で承認してください"; // gemma4:31b
-"Fan helper needs your approval" = "ファンヘルパーにはあなたの承認が必要です"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "ファンを制御するには、「システム設定」▸「ログイン項目」でGaugebarを有効にしてください。"; // gemma4:31b
-"Open Login Items" = "ログイン項目を開く"; // gemma4:31b
-"Could not enable the fan helper" = "ファンヘルパーを有効にできませんでした"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "「システム設定 ▸ ログイン項目」を開き、Gaugebarがバックグラウンドで許可されていることを確認してから、もう一度お試しください。"; // gemma4:31b
 "Fan value" = "ファンの表示単位";
-"Turn off fan" = "ファンの停止";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "ファンの停止はmacに大きなダメージを与える可能性がある為、推奨されません。本当に実行しますか？";
 "Sensor threshold" = "センサーのしきい値"; // gemma4:31b
 "Left fan" = "左ファン";
 "Right fan" = "右ファン";
@@ -456,7 +417,6 @@
 "New IP" = "新しいIP: %0"; // gemma4:31b
 "Internet connection lost" = "インターネット接続が切断されました"; // gemma4:31b
 "Internet connection established" = "インターネット接続が確立されました"; // translategemma:4b
-"Show country code instead of emoji" = "絵文字の代わりに国コードを表示"; // gemma4:31b
 "DNS Server" = "DNSサーバー"; // qwen3.8:27b
 "Noise" = "ノイズ"; // qwen3.8:27b
 "Signal" = "シグナル"; // qwen3.8:27b
@@ -553,22 +513,6 @@
 "Indigo" = "インディゴ";
 
 // System Stats
-"Authorization" = "認証"; // qwen3.8:27b
-"Identificator" = "識別子"; // qwen3.8:27b
-"Plan" = "プラン"; // qwen3.8:27b
-"Monitoring" = "監視"; // qwen3.8:27b
 "Control" = "コントロール"; // qwen3.8:27b
-"Update" = "更新"; // qwen3.8:27b
-"Sign in" = "サインイン"; // qwen3.8:27b
-"Sign out" = "サインアウト"; // qwen3.8:27b
-"Deregister" = "登録解除"; // qwen3.8:27b
-"Hosts" = "ホスト"; // qwen3.8:27b
-"Machines" = "マシン"; // qwen3.8:27b
-"No hosts yet" = "まだホストがありません"; // qwen3.8:27b
-"No machines yet" = "まだマシンがありません"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "デバイスがオフラインになったり、しきい値に達したりしたときに通知する"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "操作に十分な知識がある場合を除き、リモートコントロールを有効にすることは推奨されません。"; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "リアルタイム CPU、RAM、ディスク、ネットワークメトリクス"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "HTTP、ICMPおよびカスタムエンドポイントの監視"; // qwen3.8:27b
  // qwen3.8:27b

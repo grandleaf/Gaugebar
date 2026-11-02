@@ -37,13 +37,11 @@
 "Graphics" = "گرافیک ها";
 "Close" = "بستن";
 "Download" = "دانلود";
-"Install" = "نصب";
 "Cancel" = "لغو";
 "Unavailable" = "غیر قابل دسترس";
 "Yes" = "بله";
 "No" = "خیر";
 "Automatic" = "خودکار";
-"Manual" = "دستی";
 "None" = "هیچ کدام";
 "Dots" = "نقطه ای";
 "Arrows" = "فلش";
@@ -59,7 +57,6 @@
 "Right alignment" = "راست";
 "Dashboard" = "داشبورد";
 "Disabled" = "غیرفعال";
-"Silent" = "حالت سکوت";
 "Units" = "واحد ها";
 "Fans" = "فن ها";
 "Scaling" = "مقیاس بندی";
@@ -73,7 +70,6 @@
 "Settings" = "تنظیمات"; // translategemma:4b
 "Name" = "نام"; // translategemma:4b
 "Format" = "فرمت"; // translategemma:4b
-"Turn off" = "خاموش کردن"; // translategemma:4b
 "Normal" = "عادی"; // gemma4:31b
 "Warning" = "هشدار"; // translategemma:4b
 "Critical" = "بحرانی"; // gemma4:31b
@@ -88,7 +84,6 @@
 "Save" = "ذخیره"; // translategemma:4b
 "Run" = "اجرا"; // translategemma:4b
 "Stop" = "توقف"; // gemma4:31b
-"Uninstall" = "لغو نصب"; // gemma4:31b
 "1 sec" = "۱ ثانیه"; // translategemma:4b
 "2 sec" = "۲ ثانیه"; // gemma4:31b
 "3 sec" = "۳ ثانیه"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "گسترده"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "اجرای خودکار در زمان راه‌اندازی مک";
 "Do not start the application automatically when starting your Mac" = "اجرا نشدن خودکار در زمان راه‌اندازی مک";
-"Do everything silently in the background (recommended)" = "همه‌چیز در حالت سکوت در پس‌زمینه انجام شود (پیشنهاد شده)";
-"Check for a new version on startup" = "بررسی برای نسخه‌ی جدید در زمان راه‌اندازی مک";
-"Check for a new version every day (once a day)" = "بررسی روزانه برای نسخه جدید (روزی یک بار)";
-"Check for a new version every week (once a week)" = "بررسی هفتگی برای نسخه جدید (هفته‌ای یک بار)";
-"Check for a new version every month (once a month)" = "بررسی ماهانه برای نسخه جدید (ماهی یک بار)";
-"Never check for updates (not recommended)" = "هیچ وقت نسخه‌ی جدید بررسی نشود (پیشنهاد نمی‌شود)";
 "The configuration is completed" = "پیکربندی کامل شد";
 "finish_setup_message" = "همه چیز آماده است! \n Gaugebar یک ابزار متن باز رایگان است و همیشه رایگان خواهد بود";
 
 // Alerts
-"New version available" = "نسخه‌ی جدید در دسترس است";
-"Click to install the new version of Stats" = "برای نصب نسخه‌ی جدید Gaugebar کلیک کنید";
-"Successfully updated" = "با موفقیت به‌روزرسانی شد";
-"Stats was updated to v" = "Gaugebar به نسخه v%0 به‌روزرسانی شد";
 "Reset settings text" = "تمام تنظیمات اپلیکیشن ریست خواهد شد و اپ دوباره راه‌اندازی خواهد شد، آیا از این کار مطمئنید؟";
  // gemma4:31b-it-qat
-"Support text" = "از اینکه از Gaugebar استفاده می کنید متشکریم!\n\nنگهداری و بهبود این پروژه منبع باز زمان و منابع می طلبد. پشتیبانی شما به ما کمک می‌کند تا به ارائه یک برنامه رایگان و قابل اعتماد برای همه ادامه دهیم.\n\nاگر آمارها را مفید می‌دانید، لطفاً در نظر بگیرید. هر ذره کمک می کند!";
 
 // Settings
 "Open Activity Monitor" = "باز کردن نظارت فعالیت‌ها";
-"Report a bug" = "گزارش باگ";
-"Support the application" = "حمایت از اپلیکیشن";
 "Close application" = "بستن اپلیکیشن";
 "Open application settings" = "باز کردن تنظیمات اپلیکیشن";
 "Open dashboard" = "باز کردن داشبورد";
@@ -150,13 +132,11 @@
 "Close module settings" = "بستن تنظیمات ماژول"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "بررسی برای نسخه‌های جدید";
 "At start" = "در زمان شروع";
 "Once per day" = "یک بار در روز";
 "Once per week" = "یک بار در هفته";
 "Once per month" = "یک بار در ماه";
 "Never" = "هیچ وقت";
-"Check for update" = "بررسی برای نسخه‌ی جدید";
 "Show icon in dock" = "نمایش آیکون در داک";
 "Start at login" = "باز شدن در زمان لاگین";
 "Build number" = "شماره ساخت";
@@ -187,14 +167,7 @@
 "Display" = "نمایشگر"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "آخرین نسخه‌ی Gaugebar نصب شده است";
-"Downloading..." = "دانلود...";
-"Installing..." = "در حال نصب..."; // qwen3.8:27b
 "Updating..." = "در حال به‌روزرسانی..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar به‌طور خودکار راه‌اندازی مجدد می‌شود"; // qwen3.8:27b
-"Current version: " = "نسخه فعلی:  ";
-"Latest version: " = "آخرین نسخه:    ";
-"Changelog" = "تغییرات"; // qwen3.8:27b
 
 // Widgets
 "Color" = "رنگ";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "سلسیوس";
 "Fahrenheit" = "فارنهایت";
-"Save the fan speed" = "ذخیره سرعت فن";
 "Fan" = "فن";
 "HID sensors" = "سنسور‌های HID";
-"Synchronize fan's control" = "همگام‌سازی سرعت فن‌ها";
 "Current" = "جریان";
 "Energy" = "انرژی";
 "Show unknown sensors" = "نمایش سنسور‌های ناشناخته";
-"Install fan helper" = "نصب دستیار فن"; // gemma4:31b
-"Uninstall fan helper" = "حذف ابزار کمکی فن"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "در تنظیمات سیستم ▸ موارد ورود تایید کنید"; // gemma4:31b
-"Fan helper needs your approval" = "ابزار کمکی فن به تأیید شما نیاز دارد"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "برای کنترل فن‌ها، Gaugebar را در تنظیمات سیستم ▸ آیتم‌های ورود فعال کنید."; // gemma4:31b
-"Open Login Items" = "باز کردن آیتم‌های ورود"; // gemma4:31b
-"Could not enable the fan helper" = "امکان فعال‌سازی کمک‌کننده فن وجود نداشت"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "تنظیمات سیستم ▸ آیتم‌های ورود را باز کنید، مطمئن شوید که Gaugebar در پس‌زمینه مجاز است، سپس دوباره تلاش کنید."; // gemma4:31b
 "Fan value" = "مقدار فن"; // translategemma:4b
-"Turn off fan" = "خاموش کردن فن"; // gemma4:31b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "شما قصد دارید فن را خاموش کنید. این اقدام توصیه نمی‌شود و می‌تواند به Mac شما آسیب برساند، آیا مطمئن هستید که می‌خواهید این کار را انجام دهید؟"; // gemma4:31b
 "Sensor threshold" = "آستانه حسگر"; // gemma4:31b
 "Left fan" = "چپ"; // translategemma:4b
 "Right fan" = "راست"; // gemma4:31b
@@ -455,7 +416,6 @@
 "New IP" = "IP جدید: %0"; // gemma4:31b
 "Internet connection lost" = "اتصال به اینترنت قطع شد"; // gemma4:31b
 "Internet connection established" = "اتصال اینترنت برقرار شد"; // translategemma:4b
-"Show country code instead of emoji" = "نمایش کد کشور به جای ایموجی"; // gemma4:31b
 "DNS Server" = "سرور DNS"; // qwen3.8:27b
 "Noise" = "نویز"; // qwen3.8:27b
 "Signal" = "سیگنال"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "نیلی";
 
 // System Stats
-"Authorization" = "مجوز"; // qwen3.8:27b
-"Identificator" = "شناسه"; // qwen3.8:27b
-"Plan" = "برنامه"; // qwen3.8:27b
-"Monitoring" = "پایش"; // qwen3.8:27b
 "Control" = "کنترل"; // qwen3.8:27b
-"Update" = "به‌روزرسانی"; // qwen3.8:27b
-"Sign in" = "ورود"; // qwen3.8:27b
-"Sign out" = "خروج"; // qwen3.8:27b
-"Deregister" = "لغو ثبت"; // qwen3.8:27b
-"Hosts" = "میزبان‌ها"; // qwen3.8:27b
-"Machines" = "دستگاه‌ها"; // qwen3.8:27b
-"No hosts yet" = "هنوز میزبانی وجود ندارد"; // qwen3.8:27b
-"No machines yet" = "هنوز دستگاهی وجود ندارد"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "خبردار شوید وقتی دستگاهی آفلاین شود یا به آستانه برسد"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "توصیه نمی‌شود که کنترل از راه دور را فعال کنید مگر اینکه بدانید چه کاری انجام می‌دهید."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "شاخص‌های زنده CPU، RAM، دیسک و شبکه"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "پایش HTTP، ICMP و نقاط پایانی سفارشی"; // qwen3.8:27b
  // qwen3.8:27b

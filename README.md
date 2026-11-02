@@ -51,8 +51,11 @@ Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it sh
 ### Short speed labels
 The Network and Disk speed widgets show `B`, `KB` and `MB` without `/s` to save menu bar space. Popups keep `KB/s`.
 
+### Combined modules
+With **Combined modules** on and **Combined details** off, a left click opens only the module you clicked, right below it, and a right click opens the whole panel. Turn **Combined details** on to swap them.
+
 ### No privileged helper
-`SMCHelper` and manual fan control are removed, so Gaugebar never asks for an administrator password. macOS manages the fans as usual. Sensor readings and fan speeds still work, because they don't need the helper.
+`SMCHelper` and manual fan control are removed, so Gaugebar never asks for an administrator password. It only reads from the SMC and contains no code that writes to it, and `make test-smc` fails if that ever changes. macOS manages the fans as usual, and sensor readings and fan speeds still work.
 
 ## Build
 
@@ -84,15 +87,29 @@ Builds signed this way are for your own Mac. Distributing a notarized build need
 
 The project, targets and folders still use the name `Stats`, and the Xcode scheme is `Stats`. That keeps upstream changes easy to merge.
 
-## Merging upstream changes
+## Following Stats
+
+Gaugebar tracks [Stats](https://github.com/exelban/stats), so check it now and then for fixes and features worth bringing over. Its [releases page](https://github.com/exelban/stats/releases) has the change notes.
+
+This shows what Stats has changed since Gaugebar last merged it:
 
 ```bash
-git remote add upstream https://github.com/exelban/stats.git
-git fetch upstream --tags
+make upstream
+```
+
+To bring over one change, use the commit shown in that list:
+
+```bash
+git cherry-pick <commit>
+```
+
+To take a whole release:
+
+```bash
 git merge v3.0.24
 ```
 
-Expect conflicts where Gaugebar removed code that upstream still changes, mainly the Remote module, the updater and fan control.
+Expect conflicts where Gaugebar removed code that Stats still changes, mainly the Remote module, the updater and fan control. Before keeping a change, check that it doesn't add a dependency on the Stats author's servers or a privileged helper.
 
 ## Credits and license
 

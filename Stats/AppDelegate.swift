@@ -66,7 +66,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
         
         self.suppressStatusBarTilingConstraintUpdates()
         self.parseArguments()
-        self.parseVersion()
         self.setup {
             modules.reversed().forEach{ $0.mount() }
             self.modulesMounted = true
@@ -92,7 +91,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     
     func applicationWillTerminate(_ aNotification: Notification) {
         modules.forEach{ $0.terminate() }
-        DB.shared.flush()
     }
     
     deinit {

@@ -37,13 +37,11 @@
 "Graphics" = "Grafikk";
 "Close" = "Lukk";
 "Download" = "Nedlasting";
-"Install" = "Installer";
 "Cancel" = "Avbryt";
 "Unavailable" = "Utilgjengelig";
 "Yes" = "Ja";
 "No" = "Nei";
 "Automatic" = "Automatisk";
-"Manual" = "Manuell";
 "None" = "Ingen";
 "Dots" = "Prikker";
 "Arrows" = "Piler";
@@ -59,7 +57,6 @@
 "Right alignment" = "Høyre";
 "Dashboard" = "Dashbord"; // gemma4:31b
 "Disabled" = "Deaktivert";
-"Silent" = "Stille";
 "Units" = "Enheter";
 "Fans" = "Vifter";
 "Scaling" = "Skalering";
@@ -73,7 +70,6 @@
 "Settings" = "Innstillinger";
 "Name" = "Navn";
 "Format" = "Format";
-"Turn off" = "Slå av";
 "Normal" = "Normal";
 "Warning" = "Advarsel"; // translategemma:4b
 "Critical" = "Kritisk"; // translategemma:4b
@@ -88,7 +84,6 @@
 "Save" = "Lagre"; // translategemma:4b
 "Run" = "Kjør"; // translategemma:4b
 "Stop" = "Stopp"; // translategemma:4b
-"Uninstall" = "Avinstaller"; // gemma4:31b
 "1 sec" = "1 sek"; // gemma4:31b
 "2 sec" = "2 sek"; // gemma4:31b
 "3 sec" = "3 sek"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "Utvidet"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Start applikasjonen automatisk når du starter Mac-en din";
 "Do not start the application automatically when starting your Mac" = "Ikke start applikasjonen automatisk når du starter Mac-en din";
-"Do everything silently in the background (recommended)" = "Gjør alt stille i bakgrunnen (anbefalt)";
-"Check for a new version on startup" = "Se etter ny versjon ved oppstart";
-"Check for a new version every day (once a day)" = "Se etter ny versjon én gang hver dag";
-"Check for a new version every week (once a week)" = "Se etter ny versjon én gang hver uke";
-"Check for a new version every month (once a month)" = "Se etter ny versjon én gang hver måned";
-"Never check for updates (not recommended)" = "Aldri se etter ny versjon (ikke anbefalt)";
 "The configuration is completed" = "Konfigurasjonen er fullført";
 "finish_setup_message" = "Alt er satt opp! \n Gaugebar er et fritt tilgjengelig verktøy, det er gratis og vil alltid være det.";
 
 // Alerts
-"New version available" = "Ny versjon tilgjengelig";
-"Click to install the new version of Stats" = "Klikk for å installere ny versjon av Gaugebar";
-"Successfully updated" = "Oppdateringen var vellykket";
-"Stats was updated to v" = "Gaugebar ble oppdatert til v%0";
 "Reset settings text" = "Alle innstillinger vil bli nullstilt og applikasjonen vil starte på nytt. Er du sikker på at du vil gjøre dette?";
  // gemma4:31b-it-qat
-"Support text" = "Takk for at du bruker Gaugebar!\n\nDet krever tid og ressurser å vedlikeholde og forbedre dette åpen kildekode-prosjektet. Din støtte hjelper oss med å fortsette å tilby et gratis og pålitelig program for alle. Hvis du synes Gaugebar er nyttig, kan du vurdere å gi et bidrag. Hver eneste lille bit hjelper!";
 
 // Settings
 "Open Activity Monitor" = "Åpne Aktivitetsmonitor";
-"Report a bug" = "Meld en feil";
-"Support the application" = "Støtt programmet";
 "Close application" = "Lukk programmet";
 "Open application settings" = "Åpne programinnstillinger";
 "Open dashboard" = "Åpne dashboard";
@@ -150,13 +132,11 @@
 "Close module settings" = "Lukk modulinnstillinger"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Se etter oppdateringer";
 "At start" = "Ved oppstart";
 "Once per day" = "Daglig";
 "Once per week" = "Ukentlig";
 "Once per month" = "Månedlig";
 "Never" = "Aldri";
-"Check for update" = "Se etter oppdatering";
 "Show icon in dock" = "Vis ikon i dock";
 "Start at login" = "Start ved innlogging";
 "Build number" = "Byggnummer";
@@ -187,14 +167,7 @@
 "Display" = "Skjerm"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Du har den nyeste versjonen av Gaugebar";
-"Downloading..." = "Laster ned...";
-"Installing..." = "Installerer..."; // qwen3.8:27b
 "Updating..." = "Oppdaterer..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar starter på nytt automatisk"; // qwen3.8:27b
-"Current version: " = "Nåværende versjon: ";
-"Latest version: " = "Nyeste version: ";
-"Changelog" = "Endringslogg"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Farge";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Lagre viftehastighet";
 "Fan" = "Vifte";
 "HID sensors" = "HID-sensorer";
-"Synchronize fan's control" = "Synkroniser viftekontroll";
 "Current" = "Strømstyrke";
 "Energy" = "Energi";
 "Show unknown sensors" = "Vis ukjente sensorer";
-"Install fan helper" = "Installer viftehjelper";
-"Uninstall fan helper" = "Avinstaller viftehjelper";
-"Approve in System Settings ▸ Login Items" = "Godkjenn i Systeminnstillinger ▸ Innloggingselementer"; // gemma4:31b
-"Fan helper needs your approval" = "Viftehjelperen trenger din godkjenning"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "For å styre viftene, aktiver Gaugebar i Systeminnstillinger ▸ Innloggingselementer."; // gemma4:31b
-"Open Login Items" = "Åpne påloggingselementer"; // gemma4:31b
-"Could not enable the fan helper" = "Kunne ikke aktivere viftehjelperen"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Åpne Systeminnstillinger ▸ Innloggingselementer, sørg for at Gaugebar er tillatt i bakgrunnen, og prøv deretter på nytt."; // gemma4:31b
 "Fan value" = "Vifteverdi";
-"Turn off fan" = "Slå av viften";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Du skal nå slå av viften. Dette er en ikke-anbefalt handling som kan skade Mac-en din, er du sikker på at du vil gjøre dette?";
 "Sensor threshold" = "Sensorterskel"; // gemma4:31b
 "Left fan" = "Venstre"; // translategemma:4b
 "Right fan" = "Høyre"; // gemma4:31b
@@ -455,7 +416,6 @@
 "New IP" = "Ny IP: %0"; // translategemma:4b
 "Internet connection lost" = "Mistet internettforbindelse"; // gemma4:31b
 "Internet connection established" = "Internettforbindelse opprettet"; // gemma4:31b
-"Show country code instead of emoji" = "Vis landskode i stedet for emoji"; // gemma4:31b
 "DNS Server" = "DNS-server"; // qwen3.8:27b
 "Noise" = "Støy"; // qwen3.8:27b
 "Signal" = "Signal";
@@ -552,22 +512,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Autorisasjon"; // qwen3.8:27b
-"Identificator" = "Identifikator"; // qwen3.8:27b
-"Plan" = "Plan";
-"Monitoring" = "Overvåking"; // qwen3.8:27b
 "Control" = "Kontroll"; // qwen3.8:27b
-"Update" = "Oppdater"; // qwen3.8:27b
-"Sign in" = "Logg inn"; // qwen3.8:27b
-"Sign out" = "Logg ut"; // qwen3.8:27b
-"Deregister" = "Avregistrer"; // qwen3.8:27b
-"Hosts" = "Verts"; // qwen3.8:27b
-"Machines" = "Maskiner"; // qwen3.8:27b
-"No hosts yet" = "Ingen verts ennå"; // qwen3.8:27b
-"No machines yet" = "Ingen maskiner ennå"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Få varsel når en enhet går offline eller når en terskel nås"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Det anbefales ikke å aktivere fjernkontroll med mindre du vet hva du gjør."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Sanntids CPU-, RAM-, disk- og nettverksmålinger"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Overvåk HTTP, ICMP og eigne sluttpunkt"; // qwen3.8:27b
  // qwen3.8:27b

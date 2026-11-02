@@ -14,8 +14,6 @@ import Cocoa
 import ServiceManagement
 import UserNotifications
 import WebKit
-import Metal
-import IOKit.pwr_mgt
 import WidgetKit
 
 public let machHostPort: mach_port_t = mach_host_self()
@@ -675,98 +673,6 @@ public func syncShell(_ args: String) -> String {
     return output
 }
 
-private struct Version {
-    var major: Int = 0
-    var minor: Int = 0
-    var patch: Int = 0
-    var beta: Int? = nil
-}
-
-public func isNewestVersion(currentVersion: String, latestVersion: String) -> Bool {
-    let currentNumber = currentVersion.replacingOccurrences(of: "v", with: "")
-    let latestNumber = latestVersion.replacingOccurrences(of: "v", with: "")
-    
-    let currentArray = currentNumber.condenseWhitespace().split(separator: ".")
-    let latestArray = latestNumber.condenseWhitespace().split(separator: ".")
-    let component: ([Substring], Int) -> Int = { arr, i in
-        arr.indices.contains(i) ? Int(arr[i]) ?? 0 : 0
-    }
-    
-    var current = Version(major: component(currentArray, 0), minor: component(currentArray, 1), patch: component(currentArray, 2))
-    var latest = Version(major: component(latestArray, 0), minor: component(latestArray, 1), patch: component(latestArray, 2))
-    
-    if let patch = currentArray.last, patch.contains("-") {
-        let arr = patch.split(separator: "-")
-        if let patchNumber = arr.first {
-            current.patch = Int(patchNumber) ?? 0
-        }
-        if let beta = arr.last {
-            current.beta = Int(beta.replacingOccurrences(of: "beta", with: "")) ?? 0
-        }
-    }
-    
-    if let patch = latestArray.last, patch.contains("-") {
-        let arr = patch.split(separator: "-")
-        if let patchNumber = arr.first {
-            latest.patch = Int(patchNumber) ?? 0
-        }
-        if let beta = arr.last {
-            latest.beta = Int(beta.replacingOccurrences(of: "beta", with: "")) ?? 0
-        }
-    }
-    
-    // current is not beta + latest is not beta
-    if current.beta == nil && latest.beta == nil {
-        if latest.major > current.major {
-            return true
-        }
-        
-        if latest.minor > current.minor && latest.major >= current.major {
-            return true
-        }
-        
-        if latest.patch > current.patch && latest.minor >= current.minor && latest.major >= current.major {
-            return true
-        }
-    }
-    
-    // current version is beta + last version is not beta
-    if current.beta != nil && latest.beta == nil {
-        if latest.major > current.major {
-            return true
-        }
-        
-        if latest.minor > current.minor && latest.major >= current.major {
-            return true
-        }
-        
-        if latest.patch >= current.patch && latest.minor >= current.minor && latest.major >= current.major {
-            return true
-        }
-    }
-    
-    // current version is beta + last version is beta
-    if current.beta != nil && latest.beta != nil {
-        if latest.major > current.major {
-            return true
-        }
-        
-        if latest.minor > current.minor && latest.major >= current.major {
-            return true
-        }
-        
-        if latest.patch > current.patch && latest.minor >= current.minor && latest.major >= current.major {
-            return true
-        }
-        
-        if latest.beta! > current.beta! && latest.patch >= current.patch && latest.minor >= current.minor && latest.major >= current.major {
-            return true
-        }
-    }
-    
-    return false
-}
-
 public func showNotification(title: String, subtitle: String? = nil, userInfo: [AnyHashable: Any] = [:], delegate: UNUserNotificationCenterDelegate? = nil) -> String {
     let id = UUID().uuidString
     
@@ -1354,24 +1260,6 @@ public func iconFromSymbol(name: String, scale: IconScale) -> NSImage {
         return icon
     }
     return NSImage()
-}
-
-public func showAlert(_ message: String, _ information: String? = nil, _ style: NSAlert.Style = .informational) {
-    let show = {
-        let alert = NSAlert()
-        alert.messageText = message
-        if let information = information {
-            alert.informativeText = information
-        }
-        alert.addButton(withTitle: "OK")
-        alert.alertStyle = style
-        alert.runModal()
-    }
-    if Thread.isMainThread {
-        show()
-    } else {
-        DispatchQueue.main.async(execute: show)
-    }
 }
 
 var isDarkMode: Bool {
@@ -2071,77 +1959,6 @@ public final class SystemWidgetUpdates {
     }
 }
 
-public func countryFlag(_ code: String) -> String? {
-    let uppercased = code.uppercased()
-    guard uppercased.count == 2 else { return nil }
-    let scalars = uppercased.unicodeScalars.compactMap { UnicodeScalar(127397 + $0.value) }
-    return scalars.count == 2 ? String(String.UnicodeScalarView(scalars)) : nil
-}
-
-public class DotView: NSView {
-    private let size: CGFloat
-    
-    public init(color: NSColor, size: CGFloat = 8) {
-        self.size = size
-        super.init(frame: NSRect(x: 0, y: 0, width: size, height: size))
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: size).isActive = true
-        
-        let height = self.heightAnchor.constraint(equalToConstant: size)
-        height.priority = .defaultHigh
-        height.isActive = true
-        
-        self.wantsLayer = true
-        self.layer?.cornerRadius = size / 2
-        self.layer?.backgroundColor = color.cgColor
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public func setColor(_ color: NSColor) {
-        self.layer?.backgroundColor = color.cgColor
-    }
-}
-
-public class LinkButton: NSButton {
-    private var url: URL
-    
-    public init(_ url: URL, size: CGFloat = 14) {
-        self.url = url
-        
-        super.init(frame: .zero)
-        self.target = self
-        self.action = #selector(self.openURL)
-        
-        self.image = NSImage(systemSymbolName: "arrow.up.right.square", accessibilityDescription: localizedString("Open in browser"))
-        self.symbolConfiguration = NSImage.SymbolConfiguration(pointSize: 11, weight: .regular)
-        self.imagePosition = .imageOnly
-        self.isBordered = false
-        self.bezelStyle = .accessoryBar
-        self.contentTintColor = .secondaryLabelColor
-        self.toolTip = url.absoluteString
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.widthAnchor.constraint(equalToConstant: size).isActive = true
-        self.heightAnchor.constraint(equalToConstant: size).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    @objc private func openURL() {
-        NSWorkspace.shared.open(self.url)
-    }
-    
-    public override func resetCursorRects() {
-        self.addCursorRect(self.bounds, cursor: .pointingHand)
-    }
-}
-
 public class ColorBlock: NSView {
     public init(frame: CGRect? = nil, toolTip: String? = nil, color: NSColor? = nil) {
         super.init(frame: frame != nil ? frame! : NSRect(x: 0, y: 0, width: 10, height: 10))
@@ -2285,48 +2102,5 @@ public class SeparatorView: NSStackView {
         view.setContentHuggingPriority(.defaultLow, for: .horizontal)
         view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return view
-    }
-}
-
-public struct UserContext {
-    public static func isScreenLocked() -> Bool {
-        guard let dict = CGSessionCopyCurrentDictionary() as NSDictionary? else { return false }
-        return (dict["CGSSessionScreenIsLocked"] as? Bool) ?? false
-    }
-    
-    public static func secondsSinceLastInput() -> Double {
-        let types: [CGEventType] = [.keyDown, .mouseMoved, .leftMouseDown, .rightMouseDown, .otherMouseDown, .scrollWheel]
-        return types.map { CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: $0) }.min() ?? 0
-    }
-    
-    public static func busyReason() -> String? {
-        if self.isFocusEnabled() {
-            return "focus is enabled"
-        }
-        if self.isDisplaySleepPrevented() {
-            return "display sleep is prevented"
-        }
-        return nil
-    }
-    
-    private static func isDisplaySleepPrevented() -> Bool {
-        var raw: Unmanaged<CFDictionary>?
-        guard IOPMCopyAssertionsStatus(&raw) == kIOReturnSuccess,
-              let dict = raw?.takeRetainedValue() as? [String: Int] else { return false }
-        let types = [kIOPMAssertionTypePreventUserIdleDisplaySleep as String, kIOPMAssertionTypeNoDisplaySleep as String]
-        return types.contains { (dict[$0] ?? 0) > 0 }
-    }
-    
-    private static func isFocusEnabled() -> Bool {
-        let path = NSHomeDirectory() + "/Library/DoNotDisturb/DB/Assertions.json"
-        if let data = FileManager.default.contents(atPath: path) {
-            guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let list = json["data"] as? [[String: Any]] else { return false }
-            return list.contains { entry in
-                guard let records = entry["storeAssertionRecords"] as? [[String: Any]] else { return false }
-                return !records.isEmpty
-            }
-        }
-        return CFPreferencesCopyAppValue("NSStatusItem Visible FocusModes" as CFString, "com.apple.controlcenter" as CFString) as? Bool ?? false
     }
 }

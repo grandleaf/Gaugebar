@@ -67,12 +67,10 @@ public class StackWidget: WidgetWrapper {
             height: Constants.Widget.height - (2*Constants.Widget.margin.y)
         ))
         
-        if !preview {
-            self.modeState = StackMode(rawValue: Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_mode", defaultValue: self.modeState.rawValue)) ?? .auto
-            self.fixedSizeState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_size", defaultValue: self.fixedSizeState)
-            self.monospacedFontState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_monospacedFont", defaultValue: self.monospacedFontState)
-            self.alignmentState = Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_alignment", defaultValue: self.alignmentState)
-        }
+        self.modeState = StackMode(rawValue: Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_mode", defaultValue: self.modeState.rawValue)) ?? .auto
+        self.fixedSizeState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_size", defaultValue: self.fixedSizeState)
+        self.monospacedFontState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_monospacedFont", defaultValue: self.monospacedFontState)
+        self.alignmentState = Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_alignment", defaultValue: self.alignmentState)
         
         self.orderTableView.getList = { [weak self] in
             self?.values ?? []

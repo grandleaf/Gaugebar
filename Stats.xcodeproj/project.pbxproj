@@ -11,7 +11,6 @@
 		A6A0C0F1000000000000C0F5 /* CoreBoxLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0C0F1000000000000C0F6 /* CoreBoxLayout.swift */; };
 		4A05F9BD83C04F70BFFF7F37 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369463B2B7EA4AF0A895A9B6 /* Kit.swift */; };
 		5C044F7A2B3DE6F3005F6951 /* portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C044F792B3DE6F3005F6951 /* portal.swift */; };
-		5C0A2A8A292A5B4D009B4C1F /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 5C0A2A89292A5B4D009B4C1F /* SMJobBlessUtil.py */; };
 		5C0A9CA22C467AA300EE6A89 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A9CA12C467AA300EE6A89 /* widget.swift */; };
 		5C0A9CA42C467F7A00EE6A89 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0A9CA32C467F7A00EE6A89 /* widget.swift */; };
 		5C0A9CA52C46838300EE6A89 /* CPU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A97CECA2537331B00742D8F /* CPU.framework */; };
@@ -82,7 +81,6 @@
 		5CF221172B1F4ACB006C583F /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF221162B1F4ACB006C583F /* notifications.swift */; };
 		5CF221192B1F8B90006C583F /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF221182B1F8B90006C583F /* notifications.swift */; };
 		5CF2211B2B1F8CEF006C583F /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2211A2B1F8CEF006C583F /* notifications.swift */; };
-		5CFE494429265421000F2856 /* changelog.py in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE494329265421000F2856 /* changelog.py */; };
 		5E828A003074086000DB0CA0 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8289FF3074085D00DB0CA0 /* Icon.swift */; };
 		5EC1B2E52E2FEAFB007042A6 /* UnitedWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC1B2E42E2FEAFB007042A6 /* UnitedWidget.swift */; };
 		5EE8037F29C36BDD0063D37D /* portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8037E29C36BDD0063D37D /* portal.swift */; };
@@ -137,8 +135,6 @@
 		9A3E17D9247A94B500449CD1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3E17D8247A94B500449CD1 /* main.swift */; };
 		9A3E17DB247A94BC00449CD1 /* readers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3E17DA247A94BC00449CD1 /* readers.swift */; };
 		9A3E17EA247B07BF00449CD1 /* popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3E17E9247B07BF00449CD1 /* popup.swift */; };
-		9A46BF36266D6E17001A1117 /* i18n.py in Resources */ = {isa = PBXBuildFile; fileRef = 9A46BF35266D6E17001A1117 /* i18n.py */; };
-		9A46BF8A266D7D00001A1117 /* smc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9ADE6FD8265D032100D2FBA8 /* smc */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		9A46C05F266D85F8001A1117 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7038265D059000D2FBA8 /* smc.swift */; };
 		9A46C06B266D8602001A1117 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7038265D059000D2FBA8 /* smc.swift */; };
 		9A53EBF924EAFA5200648841 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53EBF824EAFA5200648841 /* settings.swift */; };
@@ -191,9 +187,6 @@
 		9AD33AC624BCD3EE007E8820 /* helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD33AC524BCD3EE007E8820 /* helpers.swift */; };
 		9AD64FA224BF86C100419D59 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD64FA124BF86C100419D59 /* settings.swift */; };
 		9AD7F866266F759200E5F863 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7038265D059000D2FBA8 /* smc.swift */; };
-		9ADE6FDB265D032100D2FBA8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE6FDA265D032100D2FBA8 /* main.swift */; };
-		9ADE702B265D03D100D2FBA8 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ADE7005265D039300D2FBA8 /* IOKit.framework */; };
-		9ADE7039265D059000D2FBA8 /* smc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADE7038265D059000D2FBA8 /* smc.swift */; };
 		9AE29ADC249A50350071B02D /* Sensors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE29AD5249A50350071B02D /* Sensors.framework */; };
 		9AE29ADD249A50350071B02D /* Sensors.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AE29AD5249A50350071B02D /* Sensors.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AE29AF3249A51D70071B02D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE29AF1249A50CD0071B02D /* main.swift */; };
@@ -422,7 +415,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				9A46BF8A266D7D00001A1117 /* smc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +476,6 @@
 		4921436D25319699000A1C47 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4F92E6432D0F293100EA593F /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C044F792B3DE6F3005F6951 /* portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = portal.swift; sourceTree = "<group>"; };
-		5C0A2A89292A5B4D009B4C1F /* SMJobBlessUtil.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		5C0A9CA12C467AA300EE6A89 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		5C0A9CA32C467F7A00EE6A89 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		5C0E550A2B5D545A00FFF1FB /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -554,7 +545,6 @@
 		5CF221162B1F4ACB006C583F /* notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		5CF221182B1F8B90006C583F /* notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		5CF2211A2B1F8CEF006C583F /* notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
-		5CFE494329265421000F2856 /* changelog.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = changelog.py; sourceTree = "<group>"; };
 		5E8289FF3074085D00DB0CA0 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		5EC1B2E42E2FEAFB007042A6 /* UnitedWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitedWidget.swift; sourceTree = "<group>"; };
 		5EE8037E29C36BDD0063D37D /* portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = portal.swift; sourceTree = "<group>"; };
@@ -678,8 +668,6 @@
 		9AC2FE652699E69F00EBE30A /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9AD33AC524BCD3EE007E8820 /* helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helpers.swift; sourceTree = "<group>"; };
 		9AD64FA124BF86C100419D59 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
-		9ADE6FD8265D032100D2FBA8 /* smc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = smc; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ADE6FDA265D032100D2FBA8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9ADE7005265D039300D2FBA8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9ADE7038265D059000D2FBA8 /* smc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smc.swift; sourceTree = "<group>"; };
 		9AE29AD5249A50350071B02D /* Sensors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sensors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -820,14 +808,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9ADE6FD5265D032100D2FBA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9ADE702B265D03D100D2FBA8 /* IOKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9AE29AD2249A50350071B02D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -964,7 +944,6 @@
 				9AE29AD5249A50350071B02D /* Sensors.framework */,
 				9A90E18924EAD2BB00471E9A /* GPU.framework */,
 				9A97CECA2537331B00742D8F /* CPU.framework */,
-				9ADE6FD8265D032100D2FBA8 /* smc */,
 				9A2846F72666A9CC00EC1F6D /* Kit.framework */,
 				9A11AACF266FD77F000C1C05 /* Bluetooth.framework */,
 				9AAC5E2A280ACC120043D892 /* Tests.xctest */,
@@ -1080,9 +1059,7 @@
 			isa = PBXGroup;
 			children = (
 				9A46BF35266D6E17001A1117 /* i18n.py */,
-				5CFE494329265421000F2856 /* changelog.py */,
 				B4B0D81A85B54E94B7118C30 /* build-leveldb.py */,
-				5C0A2A89292A5B4D009B4C1F /* SMJobBlessUtil.py */,
 			);
 			path = scripts;
 			sourceTree = "<group>";
@@ -1238,7 +1215,6 @@
 		9ADE6FD9265D032100D2FBA8 /* SMC */ = {
 			isa = PBXGroup;
 			children = (
-				9ADE6FDA265D032100D2FBA8 /* main.swift */,
 				9ADE7038265D059000D2FBA8 /* smc.swift */,
 			);
 			path = SMC;
@@ -1624,22 +1600,6 @@
 			productReference = 9ABFF8F6248BEBCB00C9041A /* Battery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9ADE6FD7265D032100D2FBA8 /* SMC */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9ADE6FDC265D032100D2FBA8 /* Build configuration list for PBXNativeTarget "SMC" */;
-			buildPhases = (
-				9ADE6FD4265D032100D2FBA8 /* Sources */,
-				9ADE6FD5265D032100D2FBA8 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SMC;
-			productName = SMC;
-			productReference = 9ADE6FD8265D032100D2FBA8 /* smc */;
-			productType = "com.apple.product-type.tool";
-		};
 		9AE29AD4249A50350071B02D /* Sensors */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AE29ADE249A50350071B02D /* Build configuration list for PBXNativeTarget "Sensors" */;
@@ -1808,7 +1768,6 @@
 			targets = (
 				9A1410F4229E721100D29793 /* Stats */,
 				9A343526243E26A0006B19F9 /* LaunchAtLogin */,
-				9ADE6FD7265D032100D2FBA8 /* SMC */,
 				9A2846F62666A9CC00EC1F6D /* Kit */,
 				9A97CEC92537331B00742D8F /* CPU */,
 				9A90E18824EAD2BB00471E9A /* GPU */,
@@ -1862,9 +1821,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C0A2A8A292A5B4D009B4C1F /* SMJobBlessUtil.py in Resources */,
-				9A46BF36266D6E17001A1117 /* i18n.py in Resources */,
-				5CFE494429265421000F2856 /* changelog.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2166,15 +2122,6 @@
 				9AD64FA224BF86C100419D59 /* settings.swift in Sources */,
 				5CD342F42B2F2FB700225631 /* notifications.swift in Sources */,
 				9ABFF903248BEBD700C9041A /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9ADE6FD4265D032100D2FBA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9ADE6FDB265D032100D2FBA8 /* main.swift in Sources */,
-				9ADE7039265D059000D2FBA8 /* smc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3308,50 +3255,6 @@
 			};
 			name = Release;
 		};
-		9ADE6FDD265D032100D2FBA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/SMC/Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.grandleaf.Gaugebar.SMC;
-				PRODUCT_NAME = smc;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		9ADE6FDE265D032100D2FBA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/SMC/Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.grandleaf.Gaugebar.SMC;
-				PRODUCT_NAME = smc;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 		9AE29ADF249A50350071B02D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3600,15 +3503,6 @@
 			buildConfigurations = (
 				9ABFF8FF248BEBCB00C9041A /* Debug */,
 				9ABFF900248BEBCB00C9041A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9ADE6FDC265D032100D2FBA8 /* Build configuration list for PBXNativeTarget "SMC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9ADE6FDD265D032100D2FBA8 /* Debug */,
-				9ADE6FDE265D032100D2FBA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

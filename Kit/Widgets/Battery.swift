@@ -39,15 +39,13 @@ public class BatteryWidget: WidgetWrapper {
         
         self.canDrawConcurrently = true
         
-        if !preview {
-            self.additional = Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_additional", defaultValue: self.additional)
-            self.timeFormat = Store.shared.string(key: "\(self.title)_timeFormat", defaultValue: self.timeFormat)
-            self.iconState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_icon", defaultValue: self.iconState)
-            self.colorState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState)
-            self.hideAdditionalWhenFull = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_hideAdditionalWhenFull", defaultValue: self.hideAdditionalWhenFull)
-            self.xlSizeState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_xlSize", defaultValue: self.xlSizeState)
-            self.chargerIconInside = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_chargerInside", defaultValue: self.chargerIconInside)
-        }
+        self.additional = Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_additional", defaultValue: self.additional)
+        self.timeFormat = Store.shared.string(key: "\(self.title)_timeFormat", defaultValue: self.timeFormat)
+        self.iconState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_icon", defaultValue: self.iconState)
+        self.colorState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState)
+        self.hideAdditionalWhenFull = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_hideAdditionalWhenFull", defaultValue: self.hideAdditionalWhenFull)
+        self.xlSizeState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_xlSize", defaultValue: self.xlSizeState)
+        self.chargerIconInside = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_chargerInside", defaultValue: self.chargerIconInside)
         
         if preview {
             self._percentage = 0.72

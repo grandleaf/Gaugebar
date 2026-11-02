@@ -37,13 +37,11 @@
 "Graphics" = "Grafika";
 "Close" = "Zavrieť";
 "Download" = "Stiahnuť";
-"Install" = "Inštalovať";
 "Cancel" = "Zrušiť";
 "Unavailable" = "Nedostupné";
 "Yes" = "Áno";
 "No" = "Nie";
 "Automatic" = "Automaticky";
-"Manual" = "Manuálne";
 "None" = "Žiadny";
 "Dots" = "Bodky";
 "Arrows" = "Šípky";
@@ -59,7 +57,6 @@
 "Right alignment" = "Zarovnať doprava";
 "Dashboard" = "Ovládací panel";
 "Disabled" = "Zakázané";
-"Silent" = "Tichý";
 "Units" = "Jednotky";
 "Fans" = "Ventilátory";
 "Scaling" = "Mierka";
@@ -73,7 +70,6 @@
 "Settings" = "Nastavenia";
 "Name" = "Názov"; // gemma4:31b
 "Format" = "Formát"; // translategemma:4b
-"Turn off" = "Vypnúť"; // translategemma:4b
 "Normal" = "Normálny"; // translategemma:4b
 "Warning" = "Varovanie"; // translategemma:4b
 "Critical" = "Kritický"; // translategemma:4b
@@ -88,7 +84,6 @@
 "Save" = "Uložiť"; // translategemma:4b
 "Run" = "Spustiť"; // gemma4:31b
 "Stop" = "Zastaviť"; // gemma4:31b
-"Uninstall" = "Odinstalovať"; // gemma4:31b
 "1 sec" = "1 sek"; // gemma4:31b
 "2 sec" = "2 sek"; // gemma4:31b
 "3 sec" = "3 sek"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "Rozšírené"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Automaticky spustiť aplikáciu pri štarte systému";
 "Do not start the application automatically when starting your Mac" = "Nespúšťať aplikáciu automaticky pri štarte systému";
-"Do everything silently in the background (recommended)" = "Vykonávať všetko v tichosti na pozadí (odporúčané)";
-"Check for a new version on startup" = "Kontrola novej verzie pri spustení";
-"Check for a new version every day (once a day)" = "Kontrola novej verzie každý deň (raz denne)";
-"Check for a new version every week (once a week)" = "Kontrola novej verzie každý týždeň (raz týždenne)";
-"Check for a new version every month (once a month)" = "Kontrola novej verzie každý mesiac (raz mesačne)";
-"Never check for updates (not recommended)" = "Nikdy nekontrolovať aktualizácie (neodporúča sa)";
 "The configuration is completed" = "Konfigurácia je dokončená";
 "finish_setup_message" = "Všetko je pripravené! \n Gaugebar je open source nástroj, který je zadarmo a vždy bude.";
 
 // Alerts
-"New version available" = "Je k dispozícii nová verzia";
-"Click to install the new version of Stats" = "Inštalovať novú verziu Gaugebar";
-"Successfully updated" = "Úspešne aktualizované";
-"Stats was updated to v" = "Gaugebar bol aktualizovaný na v%0";
 "Reset settings text" = "Všetky nastavenia aplikácie budú zresetované a aplikácia bude reštartovaná. Ste si istý, že chcete pokračovať?";
  // gemma4:31b-it-qat
-"Support text" = "Ďakujeme, že používate Gaugebar!\n\n Udržiavanie a zlepšovanie tohto open-source projektu si vyžaduje čas a zdroje. Vaša podpora nám pomáha pokračovať v poskytovaní bezplatnej a spoľahlivej aplikácie pre každého.\n\nAk považujete Gaugebar za užitočné, zvážte prosím možnosť prispieť. Každý malý kúsok pomôže!";
 
 // Settings
 "Open Activity Monitor" = "Otvoriť Monitor aktivity";
-"Report a bug" = "Nahlásiť chybu";
-"Support the application" = "Podporte aplikáciu";
 "Close application" = "Zavrieť aplikáciu";
 "Open application settings" = "Otvoriť nastavenie aplikácie";
 "Open dashboard" = "Otvoriť ovládací panel";
@@ -150,13 +132,11 @@
 "Close module settings" = "Zavrieť nastavenia modulu"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Skontrolovať aktualizácie";
 "At start" = "Pri štarte";
 "Once per day" = "Raz denne";
 "Once per week" = "Raz týždenne";
 "Once per month" = "Raz mesačne";
 "Never" = "Nikdy";
-"Check for update" = "Skontrolovať aktualizáciu";
 "Show icon in dock" = "Zobrazovať ikonu v Docku";
 "Start at login" = "Spustiť po prihlásení";
 "Build number" = "Číslo buildu";
@@ -187,14 +167,7 @@
 "Display" = "Displej"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Bola nainštalovaná najnovšia verzia Gaugebar";
-"Downloading..." = "Sťahovanie...";
-"Installing..." = "Inštalácia..."; // qwen3.8:27b
 "Updating..." = "Aktualizovanie..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar sa automaticky reštartuje"; // qwen3.8:27b
-"Current version: " = "Aktuálna verzia: ";
-"Latest version: " = "Najnovšia verzia: ";
-"Changelog" = "Zoznam zmien"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Farba";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celzius"; // gemma4:31b
 "Fahrenheit" = "Fahrenheita"; // gemma4:31b-it-qat
-"Save the fan speed" = "Uložiť rýchlosť ventilátora"; // gemma4:31b
 "Fan" = "Ventilátor"; // gemma4:31b
 "HID sensors" = "HID senzory"; // gemma4:31b
-"Synchronize fan's control" = "Synchronizovať ovládanie ventilátorov"; // gemma4:31b
 "Current" = "Prúd"; // gemma4:31b
 "Energy" = "Energia"; // gemma4:31b
 "Show unknown sensors" = "Zobraziť neznáme senzory"; // gemma4:31b
-"Install fan helper" = "Inštalovať pomocníka pre ventilátor"; // gemma4:31b
-"Uninstall fan helper" = "Odinštalovať pomocníka pre ventilátor"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "Schváliť v Systemových nastaveniach ▸ Položky pri prihlasovaní"; // gemma4:31b
-"Fan helper needs your approval" = "Pomocník ventilátora potrebuje váš súhlas"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ak chcete ovládať ventilátory, zapnite Gaugebar v Systemových nastaveniach ▸ Položky pri prihlasovaní."; // gemma4:31b
-"Open Login Items" = "Otvoriť položky pri prihlasovaní"; // gemma4:31b
-"Could not enable the fan helper" = "Nebolo možné zapnúť pomocný nástroj pre ventilátor"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otvorte Nastavenia systému ▸ Položky pri prihlasovaní, uistite sa, že je Gaugebar povolený v pozadí, a potom skúste znova."; // gemma4:31b
 "Fan value" = "Hodnota ventilátora"; // gemma4:31b
-"Turn off fan" = "Vypnúť ventilátor"; // gemma4:31b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Chystáte sa vypnúť ventilátor. Toto je neodporúčaná akcia, ktorá môže poškodiť váš Mac, ste si istý, že to chcete urobiť?"; // gemma4:31b
 "Sensor threshold" = "Prah senzora"; // gemma4:31b
 "Left fan" = "Ľavý"; // gemma4:31b
 "Right fan" = "Pravý"; // gemma4:31b
@@ -455,7 +416,6 @@
 "New IP" = "Nová IP: %0"; // translategemma:4b
 "Internet connection lost" = "Ztráta internetového pripojenia"; // translategemma:4b
 "Internet connection established" = "Pripojenie k internetu bolo vytvorené"; // translategemma:4b
-"Show country code instead of emoji" = "Zobrazte kód krajiny namiesto emoji"; // translategemma:4b
 "DNS Server" = "DNS server"; // qwen3.8:27b
 "Noise" = "Hluk"; // qwen3.8:27b
 "Signal" = "Signál"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Autorizácia"; // qwen3.8:27b
-"Identificator" = "Identifikátor"; // qwen3.8:27b
-"Plan" = "Plán"; // qwen3.8:27b
-"Monitoring" = "Monitorovanie"; // qwen3.8:27b
 "Control" = "Ovládanie"; // qwen3.8:27b
-"Update" = "Aktualizovať"; // qwen3.8:27b
-"Sign in" = "Prihlásiť sa"; // qwen3.8:27b
-"Sign out" = "Odhlásiť sa"; // qwen3.8:27b
-"Deregister" = "Odhlásiť"; // qwen3.8:27b
-"Hosts" = "Hosty"; // qwen3.8:27b
-"Machines" = "Stroje"; // qwen3.8:27b
-"No hosts yet" = "Zatiaľ žiadne hosty"; // qwen3.8:27b
-"No machines yet" = "Zatiaľ žiadne stroje"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Dostať upozornenie, keď zariadenie stratí pripojenie alebo dosiahne prahovú hodnotu"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Nedoporučuje sa povoliť diaľkové ovládanie, pokiaľ neviete, čo robíte."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Živé metriky CPU, RAM, disku a siete"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Monitorovať HTTP, ICMP a vlastné koncové body"; // qwen3.8:27b
  // qwen3.8:27b

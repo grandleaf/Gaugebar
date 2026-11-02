@@ -37,13 +37,11 @@
 "Graphics" = "Grafiek";
 "Close" = "Sluiten";
 "Download" = "Downloaden"; // gemma4:31b
-"Install" = "Installeren";
 "Cancel" = "Annuleren";
 "Unavailable" = "Onbereikbaar";
 "Yes" = "Ja";
 "No" = "Nee";
 "Automatic" = "Automatisch";
-"Manual" = "Handmatig";
 "None" = "Geen";
 "Dots" = "Stippen"; // gemma4:31b
 "Arrows" = "Pijlen";
@@ -59,7 +57,6 @@
 "Right alignment" = "Rechts";
 "Dashboard" = "Overzicht"; // qwen3.8:27b
 "Disabled" = "Uitgeschakeld";
-"Silent" = "Stil"; // translategemma:4b
 "Units" = "Eenheden"; // translategemma:4b
 "Fans" = "Ventilatoren";
 "Scaling" = "Schaal";
@@ -73,7 +70,6 @@
 "Settings" = "Instellingen"; // translategemma:4b
 "Name" = "Naam"; // translategemma:4b
 "Format" = "Formaat"; // translategemma:4b
-"Turn off" = "Uitschakelen"; // translategemma:4b
 "Normal" = "Normaal"; // translategemma:4b
 "Warning" = "Waarschuwing"; // translategemma:4b
 "Critical" = "Kritiek";
@@ -88,7 +84,6 @@
 "Save" = "Opslaan"; // translategemma:4b
 "Run" = "Uitvoeren"; // translategemma:4b
 "Stop" = "Stoppen"; // translategemma:4b
-"Uninstall" = "Deinstalleren"; // gemma4:31b
 "1 sec" = "1 seconde"; // translategemma:4b
 "2 sec" = "2 seconden"; // translategemma:4b
 "3 sec" = "3 seconden"; // translategemma:4b
@@ -118,29 +113,16 @@
 "Extended" = "Uitgebreid"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Start de applicatie automatisch bij het opstarten van je Mac"; // gemma4:31b
 "Do not start the application automatically when starting your Mac" = "Start de applicatie niet automatisch bij het opstarten van je Mac"; // gemma4:31b
-"Do everything silently in the background (recommended)" = "Alles stil op de achtergrond doen (aanbevolen)"; // gemma4:31b
-"Check for a new version on startup" = "Controleer op een nieuwe versie bij het opstarten"; // gemma4:31b
-"Check for a new version every day (once a day)" = "Elke dag controleren op een nieuwe versie (één keer per dag)"; // gemma4:31b
-"Check for a new version every week (once a week)" = "Controleer elke week op een nieuwe versie (één keer per week)"; // gemma4:31b
-"Check for a new version every month (once a month)" = "Controleer elke maand op een nieuwe versie (één keer per maand)"; // gemma4:31b
-"Never check for updates (not recommended)" = "Nooit controleren op updates (niet aanbevolen)"; // gemma4:31b
 "The configuration is completed" = "De configuratie is voltooid"; // gemma4:31b
 "finish_setup_message" = "Alles is ingesteld! \n Gaugebar is een open source-tool, het is gratis en dat zal het altijd blijven.";
  // gemma4:31b
 
 // Alerts
-"New version available" = "Nieuwe versie beschikbaar";
-"Click to install the new version of Stats" = "Klik om de nieuwe versie van Gaugebar te installeren";
-"Successfully updated" = "Succesvol bijgewerkt";
-"Stats was updated to v" = "Gaugebar is bijgewerkt naar v%0";
 "Reset settings text" = "Alle applicatie instellingen worden gereset en de applicatie wordt opnieuw opgestart. Weet je zeker dat je dit wilt doen?";
  // gemma4:31b-it-qat
-"Support text" = "Bedankt voor het gebruik van Gaugebar! Het onderhouden en verbeteren van dit open-source project kost tijd en middelen. Als je Gaugebar nuttig vindt, overweeg dan alsjeblieft om een bijdrage te leveren. Alle beetjes helpen!";
 
 // Settings
 "Open Activity Monitor" = "Open Activiteitenweergave";
-"Report a bug" = "Meld een bug";
-"Support the application" = "Ondersteun de applicatie";
 "Close application" = "Applicatie sluiten";
 "Open application settings" = "Open de applicatie-instellingen";
 "Open dashboard" = "Dashboard openen"; // translategemma:4b
@@ -151,13 +133,11 @@
 "Close module settings" = "Moduleinstellingen sluiten"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Controleer op updates";
 "At start" = "Bij het opstarten";
 "Once per day" = "Eenmaal per dag";
 "Once per week" = "Eenmaal per week";
 "Once per month" = "Eenmaal per maand";
 "Never" = "Nooit";
-"Check for update" = "Controleer op updates";
 "Show icon in dock" = "Pictogram in dock weergeven";
 "Start at login" = "Starten bij inloggen";
 "Build number" = "Buildnummer"; // gemma4:31b
@@ -188,14 +168,7 @@
 "Display" = "Scherm"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "De laatste versie van Gaugebar is geïnstalleerd.";
-"Downloading..." = "Aan het downloaden...";
-"Installing..." = "Installeren..."; // qwen3.8:27b
 "Updating..." = "Bijwerken..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar wordt automatisch opnieuw opgestart"; // qwen3.8:27b
-"Current version: " = "Huidige versie:  ";
-"Latest version: " = "Nieuwste versie:    ";
-"Changelog" = "Wijzigingen"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Kleur";
@@ -391,24 +364,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Sla de ventilatorsnelheid op"; // gemma4:31b
 "Fan" = "Ventilator"; // gemma4:31b
 "HID sensors" = "HID-sensoren"; // gemma4:31b
-"Synchronize fan's control" = "Synchroniseer ventilatorbesturing"; // gemma4:31b
 "Current" = "Stroom"; // gemma4:31b
 "Energy" = "Energie"; // gemma4:31b
 "Show unknown sensors" = "Toon onbekende sensoren"; // gemma4:31b
-"Install fan helper" = "Installeer ventilator-helper"; // gemma4:31b
-"Uninstall fan helper" = "Verwijder ventilator-helper"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "Goedkeuren in Systeeminstellingen ▸ Inlogitems"; // gemma4:31b
-"Fan helper needs your approval" = "Fan-helper heeft uw goedkeuring nodig"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Om de ventilatoren te bedienen, schakel Gaugebar in in Systeeminstellingen ▸ Inlogitems."; // gemma4:31b
-"Open Login Items" = "Open Inlogitems"; // gemma4:31b
-"Could not enable the fan helper" = "Kon de fan-helper niet inschakelen"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Open Systeeminstellingen ▸ Inlogitems, zorg ervoor dat Gaugebar is toegestaan op de achtergrond, en probeer het dan opnieuw."; // gemma4:31b
 "Fan value" = "Ventilatorwaarde"; // gemma4:31b
-"Turn off fan" = "Ventilator uitschakelen"; // gemma4:31b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Je gaat de ventilator uitschakelen. Dit is geen aanbevolen actie die je Mac kan beschadigen, weet je zeker dat je dit wilt doen?"; // gemma4:31b
 "Sensor threshold" = "Sensordrempel"; // gemma4:31b
 "Left fan" = "Links"; // gemma4:31b
 "Right fan" = "Rechts"; // gemma4:31b
@@ -456,7 +417,6 @@
 "New IP" = "Nieuw IP-adres: %0"; // translategemma:4b
 "Internet connection lost" = "Internetverbinding verbroken";
 "Internet connection established" = "Internetverbinding tot stand gebracht";
-"Show country code instead of emoji" = "Toon landencode in plaats van een emoji";
 "DNS Server" = "DNS-server"; // qwen3.8:27b
 "Noise" = "Ruis"; // qwen3.8:27b
 "Signal" = "Signaal"; // qwen3.8:27b
@@ -553,22 +513,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Autorisatie"; // qwen3.8:27b
-"Identificator" = "Identificeerder"; // qwen3.8:27b
-"Plan" = "Plan";
-"Monitoring" = "Monitoring";
 "Control" = "Bediening"; // qwen3.8:27b
-"Update" = "Bijwerken"; // qwen3.8:27b
-"Sign in" = "Inloggen"; // qwen3.8:27b
-"Sign out" = "Afmelden"; // qwen3.8:27b
-"Deregister" = "Afmelden"; // qwen3.8:27b
-"Hosts" = "Hosts";
-"Machines" = "Machines";
-"No hosts yet" = "Nog geen hosts"; // qwen3.8:27b
-"No machines yet" = "Nog geen machines"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Wordt ingelicht wanneer een apparaat offline gaat of een drempelwaarde bereikt"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Het wordt niet aanbevolen om afstandsbediening in te schakelen, tenzij u weet wat u doet."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Live CPU-, RAM-, schijf- en netwerkmetrieken"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Bewaken HTTP-, ICMP- en aangepaste endpoints"; // qwen3.8:27b
  // qwen3.8:27b

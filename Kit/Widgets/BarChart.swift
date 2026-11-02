@@ -40,6 +40,7 @@ public class BarChart: WidgetWrapper {
     
     public var coreBoxesEnabled: Bool { self.coreBoxesSupported && self.coreBoxesState }
     public var coreStackEnabled: Bool { self.coreStackState }
+    internal var showsCoreBoxes: Bool { self.queue.sync { self._coreGroups != nil } }
     public var coreTemperatureEnabled: Bool { self.coreTemperatureState }
     
     internal static let coreTemperatureGap: CGFloat = 4
@@ -49,6 +50,7 @@ public class BarChart: WidgetWrapper {
     
     public init(title: String, config: NSDictionary?, preview: Bool = false) {
         var widgetTitle: String = title
+        var previewCoreGroups: [Int]? = nil
         
         if config != nil {
             var configuration = config!
@@ -61,6 +63,9 @@ public class BarChart: WidgetWrapper {
                     configuration = previewConfig
                     if let value = configuration["Value"] as? String {
                         self._value = value.split(separator: ",").map{ ([ColorValue(Double($0) ?? 0)]) }
+                    }
+                    if let groups = configuration["Core groups"] as? String {
+                        previewCoreGroups = groups.split(separator: ",").compactMap { Int($0) }
                     }
                 }
             }
@@ -96,27 +101,29 @@ public class BarChart: WidgetWrapper {
         
         self.canDrawConcurrently = true
         
-        if !preview {
-            self.boxState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_box", defaultValue: self.boxState)
-            self.frameState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_frame", defaultValue: self.frameState)
-            self.labelState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_label", defaultValue: self.labelState)
-            self.colorState = SColor.fromString(Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState.key))
-            self.coreBoxesState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreBoxes", defaultValue: self.coreBoxesState)
-            self.coreStackState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreStack", defaultValue: self.coreStackState)
-            self.coreTemperatureState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreTemperature", defaultValue: self.coreTemperatureState)
-            self.coreBarWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreBarWidth", defaultValue: self.coreBarWidth)
-            self.coreGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreGap", defaultValue: self.coreGap)
-            self.coreClusterGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreClusterGap", defaultValue: self.coreClusterGap)
-            self.coreMaxWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreMaxWidth", defaultValue: self.coreMaxWidth)
-        }
+        self.boxState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_box", defaultValue: self.boxState)
+        self.frameState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_frame", defaultValue: self.frameState)
+        self.labelState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_label", defaultValue: self.labelState)
+        self.colorState = SColor.fromString(Store.shared.string(key: "\(self.title)_\(self.type.rawValue)_color", defaultValue: self.colorState.key))
+        self.coreBoxesState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreBoxes", defaultValue: self.coreBoxesState)
+        self.coreStackState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreStack", defaultValue: self.coreStackState)
+        self.coreTemperatureState = Store.shared.bool(key: "\(self.title)_\(self.type.rawValue)_coreTemperature", defaultValue: self.coreTemperatureState)
+        self.coreBarWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreBarWidth", defaultValue: self.coreBarWidth)
+        self.coreGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreGap", defaultValue: self.coreGap)
+        self.coreClusterGap = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreClusterGap", defaultValue: self.coreClusterGap)
+        self.coreMaxWidth = Store.shared.int(key: "\(self.title)_\(self.type.rawValue)_coreMaxWidth", defaultValue: self.coreMaxWidth)
         
         if preview {
-            if self._value.isEmpty {
-                self._value = [[ColorValue(0.72)], [ColorValue(0.38)]]
+            if let previewCoreGroups, self.coreBoxesEnabled {
+                self.showCorePreview(groups: previewCoreGroups)
+            } else {
+                if self._value.isEmpty {
+                    self._value = [[ColorValue(0.72)], [ColorValue(0.38)]]
+                }
+                self.setFrameSize(NSSize(width: 36, height: self.frame.size.height))
+                self.invalidateIntrinsicContentSize()
+                self.display()
             }
-            self.setFrameSize(NSSize(width: 36, height: self.frame.size.height))
-            self.invalidateIntrinsicContentSize()
-            self.display()
         }
         
         let style = NSMutableParagraphStyle()
@@ -264,6 +271,23 @@ public class BarChart: WidgetWrapper {
         self.setWidth(width)
     }
     
+    // A small sample of the real thing: the whole row would not fit the settings strip.
+    private func showCorePreview(groups: [Int]) {
+        self._coreGroups = groups
+        if self.coreSettingsSupported {
+            if self.coreStackState {
+                self._value = self._value.map { row in
+                    let value = row.first?.value ?? 0
+                    return [ColorValue(value * 0.35, color: .systemRed), ColorValue(value * 0.65, color: .systemBlue)]
+                }
+            }
+            if self.coreTemperatureState {
+                self._coreTemperature = Self.coreTemperatureText(52)
+            }
+        }
+        self.updateCoreFrame()
+    }
+    
     private var coreScale: CGFloat {
         self.renderScale ?? self.window?.backingScaleFactor ?? NSScreen.main?.backingScaleFactor ?? 1
     }
@@ -322,7 +346,8 @@ public class BarChart: WidgetWrapper {
             scale: scale
         )
         
-        let outlineColor = (dark ? NSColor.white : NSColor.black).withAlphaComponent(0.8)
+        let lineColor = dark ? NSColor.white : NSColor.black
+        let outlineColor = lineColor.withAlphaComponent(CoreBoxLayout.outlineAlpha)
         let pixel = 1 / max(scale, 1)
         let line = CoreBoxLayout.outlineWidth
         
@@ -351,10 +376,10 @@ public class BarChart: WidgetWrapper {
         
         let dividers = NSBezierPath()
         layout.dividers.forEach { dividers.appendRect($0.offsetBy(dx: origin, dy: 0)) }
-        outlineColor.withAlphaComponent(0.18).setFill()
+        outlineColor.setFill()
         dividers.fill()
         
-        outlineColor.withAlphaComponent(0.4).setFill()
+        lineColor.withAlphaComponent(0.4).setFill()
         layout.separators.forEach { NSBezierPath(ovalIn: $0.offsetBy(dx: origin, dy: 0)).fill() }
         
         self.setWidth(origin + layout.width + Constants.Widget.margin.x*2)

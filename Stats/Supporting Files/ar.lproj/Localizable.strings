@@ -37,13 +37,11 @@
 "Graphics" = "الرسومات";
 "Close" = "إغلاق";
 "Download" = "تحميل";
-"Install" = "تثبيت";
 "Cancel" = "إلغاء";
 "Unavailable" = "غير متوفر";
 "Yes" = "نعم";
 "No" = "لا";
 "Automatic" = "تلقائي";
-"Manual" = "يدوي";
 "None" = "لا شيء";
 "Dots" = "نقاط";
 "Arrows" = "أسهم";
@@ -59,7 +57,6 @@
 "Right alignment" = "يمين";
 "Dashboard" = "لوحة التحكم";
 "Disabled" = "معطل";
-"Silent" = "صامت";
 "Units" = "وحدات";
 "Fans" = "مراوح";
 "Scaling" = "تحجيم";
@@ -73,7 +70,6 @@
 "Settings" = "الإعدادات";
 "Name" = "الاسم";
 "Format" = "التنسيق";
-"Turn off" = "إيقاف";
 "Normal" = "طبيعي"; // translategemma:4b
 "Warning" = "تحذير";
 "Critical" = "حرج";
@@ -88,7 +84,6 @@
 "Save" = "حفظ"; // translategemma:4b
 "Run" = "تشغيل"; // translategemma:4b
 "Stop" = "إيقاف"; // gemma4:31b
-"Uninstall" = "إلغاء التثبيت"; // translategemma:4b
 "1 sec" = "1 ثانية"; // translategemma:4b
 "2 sec" = "2 ثانية"; // translategemma:4b
 "3 sec" = "3 ثوانٍ"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "موسع"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "بدء تشغيل التطبيق تلقائيًا عند بدء تشغيل Mac الخاص بك";
 "Do not start the application automatically when starting your Mac" = "عدم بدء تشغيل التطبيق تلقائيًا عند بدء تشغيل Mac الخاص بك";
-"Do everything silently in the background (recommended)" = "قم بعمل كل شيء بصمت في الخلفية (موصى به)";
-"Check for a new version on startup" = "التحقق من وجود إصدار جديد عند التشغيل";
-"Check for a new version every day (once a day)" = "التحقق من وجود إصدار جديد كل يوم (مرة واحدة في اليوم)";
-"Check for a new version every week (once a week)" = "التحقق من وجود إصدار جديد كل أسبوع (مرة واحدة في الأسبوع)";
-"Check for a new version every month (once a month)" = "التحقق من وجود إصدار جديد كل شهر (مرة واحدة في الشهر)";
-"Never check for updates (not recommended)" = "عدم التحقق من وجود تحديثات (غير موصى به)";
 "The configuration is completed" = "تم الانتهاء من التكوين";
 "finish_setup_message" = "كل شيء مُعدّ، الإحصاءات هي أداة مفتوحة المصدر، مجانية وستظل دائمًا كذلك. إذا كنت تستمتع بها يمكنك دعم المشروع، دائمًا محل تقدير!";
 
 // Alerts
-"New version available" = "إصدار جديد متاح";
-"Click to install the new version of Stats" = "انقر لتثبيت الإصدار الجديد من Gaugebar";
-"Successfully updated" = "تم التحديث بنجاح";
-"Stats was updated to v" = "تم تحديث Gaugebar إلى الإصدار v%0";
 "Reset settings text" = "سيتم إعادة ضبط جميع إعدادات التطبيق وسيتم إعادة تشغيل التطبيق. هل تريد المتابعة؟";
  // gemma4:31b-it-qat
-"Support text" = "شكرًا لك على استخدامك ل Gaugebar! \n\nيستغرق الحفاظ على هذا المشروع مفتوح المصدر وتحسينه وقتًا وموارد. دعمكم يساعدنا على الاستمرار في توفير تطبيق مجاني وموثوق للجميع. كل جزء صغير يساعدنا!";
 
 // Settings
 "Open Activity Monitor" = "فتح مراقب النشاط";
-"Report a bug" = "الإبلاغ عن خطأ";
-"Support the application" = "دعم التطبيق";
 "Close application" = "إغلاق التطبيق";
 "Open application settings" = "فتح إعدادات التطبيق";
 "Open dashboard" = "فتح لوحة التحكم";
@@ -150,13 +132,11 @@
 "Close module settings" = "إغلاق إعدادات الوحدة"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "التحقق من وجود تحديثات";
 "At start" = "عند البدء";
 "Once per day" = "مرة يوميًا";
 "Once per week" = "مرة أسبوعيًا";
 "Once per month" = "مرة شهريًا";
 "Never" = "أبدًا";
-"Check for update" = "التحقق من وجود تحديث";
 "Show icon in dock" = "إظهار الرمز في القائمة";
 "Start at login" = "بدء التشغيل عند تسجيل الدخول";
 "Build number" = "رقم الإصدار";
@@ -187,14 +167,7 @@
 "Display" = "شاشة"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "تم تثبيت أحدث إصدار من Gaugebar";
-"Downloading..." = "جار التحميل...";
-"Installing..." = "جارٍ التثبيت..."; // qwen3.8:27b
 "Updating..." = "جارٍ التحديث..."; // qwen3.8:27b
-"Stats will restart automatically" = "سيتم إعادة تشغيل Gaugebar تلقائيًا"; // qwen3.8:27b
-"Current version: " = "الإصدار الحالي:  ";
-"Latest version: " = "الإصدار الأحدث:    ";
-"Changelog" = "سجل التغييرات"; // qwen3.8:27b
 
 // Widgets
 "Color" = "لون";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "درجة مئوية";
 "Fahrenheit" = "فهرنهايت";
-"Save the fan speed" = "حفظ سرعة المروحة";
 "Fan" = "مروحة";
 "HID sensors" = "مستشعرات HID";
-"Synchronize fan's control" = "مزامنة تحكم المروحة";
 "Current" = "الحالي";
 "Energy" = "الطاقة";
 "Show unknown sensors" = "عرض المستشعرات غير المعروفة";
-"Install fan helper" = "تثبيت مساعد المروحة";
-"Uninstall fan helper" = "إلغاء تثبيت مساعد المروحة";
-"Approve in System Settings ▸ Login Items" = "وافق في إعدادات النظام ▸ عناصر تسجيل الدخول"; // gemma4:31b
-"Fan helper needs your approval" = "مساعد المروحة يتطلب موافقتك"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "للتحكم في المراوح، قم بتفعيل Gaugebar في إعدادات النظام ▸ عناصر تسجيل الدخول."; // gemma4:31b
-"Open Login Items" = "فتح عناصر تسجيل الدخول"; // gemma4:31b
-"Could not enable the fan helper" = "تعذر تفعيل مساعد المروحة"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "افتح إعدادات النظام ▸ عناصر تسجيل الدخول، وتأكد من السماح لـ Gaugebar في الخلفية، ثم حاول مرة أخرى."; // gemma4:31b
 "Fan value" = "قيمة المروحة";
-"Turn off fan" = "إيقاف تشغيل المروحة";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "أنت على وشك إيقاف تشغيل المروحة. هذا ليس إجراءً مُوصى به يمكن أن يتسبب في تلف جهازك، هل تريد بالتأكيد القيام بذلك؟";
 "Sensor threshold" = "عتبة المستشعر";
 "Left fan" = "المروحة اليسرى";
 "Right fan" = "المروحة اليمنى";
@@ -455,7 +416,6 @@
 "New IP" = "عنوان IP جديد: %0"; // gemma4:31b
 "Internet connection lost" = "فُقد الاتصال بالإنترنت"; // gemma4:31b
 "Internet connection established" = "تم إنشاء اتصال بالإنترنت"; // translategemma:4b
-"Show country code instead of emoji" = "إظهار رمز الدولة بدلاً من الرموز التعبيرية"; // gemma4:31b
 "DNS Server" = "خادم DNS"; // qwen3.8:27b
 "Noise" = "الضوضاء"; // qwen3.8:27b
 "Signal" = "الإشارة"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "نيلي";
 
 // System Stats
-"Authorization" = "التصريح"; // qwen3.8:27b
-"Identificator" = "المعرّف"; // qwen3.8:27b
-"Plan" = "الخطة"; // qwen3.8:27b
-"Monitoring" = "المراقبة"; // qwen3.8:27b
 "Control" = "التحكم"; // qwen3.8:27b
-"Update" = "تحديث"; // qwen3.8:27b
-"Sign in" = "تسجيل الدخول"; // qwen3.8:27b
-"Sign out" = "تسجيل الخروج"; // qwen3.8:27b
-"Deregister" = "إلغاء التسجيل"; // qwen3.8:27b
-"Hosts" = "المضيفات"; // qwen3.8:27b
-"Machines" = "الأجهزة"; // qwen3.8:27b
-"No hosts yet" = "لا توجد مضيفات بعد"; // qwen3.8:27b
-"No machines yet" = "لا توجد أجهزة بعد"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "احصل على إشعار عندما يصبح الجهاز غير متصل أو يصل إلى حد معين"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "لا يُنصح بتفعيل التحكم عن بُعد إلا إذا كنت تعرف ما تفعله."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "مقاييس مباشرة لـ CPU وRAM والقرص والشبكة"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "مراقبة HTTP و ICMP ونقاط النهاية المخصصة"; // qwen3.8:27b
  // qwen3.8:27b

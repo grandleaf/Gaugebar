@@ -37,13 +37,11 @@
 "Graphics" = "Графіка";
 "Close" = "Закрити";
 "Download" = "Завантажити";
-"Install" = "Встановити";
 "Cancel" = "Скасувати";
 "Unavailable" = "Недоступно";
 "Yes" = "Так";
 "No" = "Ні";
 "Automatic" = "Автоматичний";
-"Manual" = "Ручний";
 "None" = "Ніяка";
 "Dots" = "Пункти";
 "Arrows" = "Стрілки";
@@ -59,7 +57,6 @@
 "Right alignment" = "Праворуч";
 "Dashboard" = "Головний екран"; // translategemma:4b
 "Disabled" = "Виключено";
-"Silent" = "Безшумно";
 "Units" = "Одиниці";
 "Fans" = "Вентилятори";
 "Scaling" = "Масштабування";
@@ -73,7 +70,6 @@
 "Settings" = "Налаштування";
 "Name" = "Назва";
 "Format" = "Формат";
-"Turn off" = "Вимкнути";
 "Normal" = "Нормальний";
 "Warning" = "Попередження";
 "Critical" = "Критичний";
@@ -88,7 +84,6 @@
 "Save" = "Зберегти";
 "Run" = "Запустити";
 "Stop" = "Зупинити";
-"Uninstall" = "Видалити";
 "1 sec" = "1 сек";
 "2 sec" = "2 сек";
 "3 sec" = "3 сек";
@@ -118,27 +113,14 @@
 "Extended" = "Розширений";
 "Start the application automatically when starting your Mac" = "Запускати програму автоматично під час запуску Mac";
 "Do not start the application automatically when starting your Mac" = "Не запускати програму автоматично під час запуску Mac";
-"Do everything silently in the background (recommended)" = "Робити усе у фоновому режимі (рекомендовано)";
-"Check for a new version on startup" = "Перевірти наявність нової версії під час запуску програми";
-"Check for a new version every day (once a day)" = "Щодня перевіряти наявність нової версії (один раз на день)";
-"Check for a new version every week (once a week)" = "Щотижня перевіряти наявність нової версії (раз на тиждень)";
-"Check for a new version every month (once a month)" = "Перевіряти наявність нової версії щомісяця (раз на місяць)";
-"Never check for updates (not recommended)" = "Ніколи не перевіряти наявність оновлень (не рекомендовано)";
 "The configuration is completed" = "Налаштування завершено";
 "finish_setup_message" = "Все налаштовано! \n Gaugebar — це інструмент з відкритим вихідним кодом, він безкоштовний і таким завжди буде.";
 
 // Alerts
-"New version available" = "Доступна нова версія";
-"Click to install the new version of Stats" = "Натисніть щоб встановити нову версію Gaugebar";
-"Successfully updated" = "Успішно оновленно";
-"Stats was updated to v" = "Gaugebar оновлено до v%0";
 "Reset settings text" = "Усі налаштування програми буде скинуто, і програма буде перезапущена. Ви впевнені, що хочете це зробити?";
-"Support text" = "Дякуємо за використання Gaugebar!\n\n Підтримка і вдосконалення цього проекту з відкритим вихідним кодом вимагає часу і ресурсів. Ваша підтримка допомагає нам продовжувати надавати безкоштовну і надійну програму для всіх.\n\nЯкщо ви вважаєте Gaugebar корисною, будь ласка, зробіть свій внесок. Кожна копійка допомагає!";
 
 // Settings
 "Open Activity Monitor" = "Відкрити Монітор активності";
-"Report a bug" = "Повідомити про помилку";
-"Support the application" = "Підтримати програму";
 "Close application" = "Закрити програму";
 "Open application settings" = "Відкрити налаштування";
 "Open dashboard" = "Відкрити dashboard";
@@ -148,13 +130,11 @@
 "Close module settings" = "Закрити налаштування модуля"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Перевіряти оновлення";
 "At start" = "При включенні";
 "Once per day" = "Раз на день";
 "Once per week" = "Раз на тиждень";
 "Once per month" = "Раз на місяць";
 "Never" = "Ніколи";
-"Check for update" = "Перевірити оновлення";
 "Show icon in dock" = "Показувати іконку в Dock";
 "Start at login" = "Запускати при логуванні";
 "Build number" = "Номер збірки";
@@ -185,14 +165,7 @@
 "Display" = "Монітор";
 
 // Update
-"The latest version of Stats installed" = "Встановлено останню версію";
-"Downloading..." = "Завантаження...";
-"Installing..." = "Встановлюється..."; // qwen3.8:27b
 "Updating..." = "Оновлення..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar автоматично перезапуститься"; // qwen3.8:27b
-"Current version: " = "Поточна версія:  ";
-"Latest version: " = "Остання версія:  ";
-"Changelog" = "Журнал змін"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Колір";
@@ -388,24 +361,12 @@
 // Sensors
 "Celsius" = "Цельсія";
 "Fahrenheit" = "Фаренгейта";
-"Save the fan speed" = "Зберегти швидкість вентилятора";
 "Fan" = "Вентилятор";
 "HID sensors" = "HID датчики";
-"Synchronize fan's control" = "Синхронізація керування вентиляторами";
 "Current" = "Струм";
 "Energy" = "Енергія";
 "Show unknown sensors" = "Показати невідомі датчики";
-"Install fan helper" = "Встановити помічник для вентилятора";
-"Uninstall fan helper" = "Видалити помічник для вентилятора";
-"Approve in System Settings ▸ Login Items" = "Дозволити в Системних налаштуваннях ▸ Елементи входу"; // qwen3.8:27b
-"Fan helper needs your approval" = "Допоміжник вентилятора потребує вашого дозволу"; // qwen3.8:27b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Щоб керувати вентиляторами, увімкніть Gaugebar у Системних налаштуваннях ▸ Елементи входу."; // qwen3.8:27b
-"Open Login Items" = "Відкрити засоби входу"; // qwen3.8:27b
-"Could not enable the fan helper" = "Не вдалося увімкнути допоміжний процес вентилятора"; // qwen3.8:27b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Відкрийте Параметри системи ▸ Елементи входу, переконайтеся, що Gaugebar дозволений у фоновому режимі, потім спробуйте ще раз."; // qwen3.8:27b
 "Fan value" = "Значення вентилятора";
-"Turn off fan" = "Вимкнути вентилятор";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Ви збираєтеся вимкнути вентилятор. Це не рекомендована дія, яка може зламати ваш Mac. Ви впевнені, що хочете це зробити?";
 "Sensor threshold" = "Поріг датчика";
 "Left fan" = "Лівий";
 "Right fan" = "Правий";
@@ -453,7 +414,6 @@
 "New IP" = "Нова IP-адреса: %0";
 "Internet connection lost" = "З’єднання з інтернетом втрачено";
 "Internet connection established" = "З’єднання з інтернетом відновлено";
-"Show country code instead of emoji" = "Показувати код країни замість емодзі";
 "DNS Server" = "Сервер DNS"; // qwen3.8:27b
 "Noise" = "Шум"; // qwen3.8:27b
 "Signal" = "Сигнал"; // qwen3.8:27b
@@ -550,22 +510,6 @@
 "Indigo" = "Індіго";
 
 // System Stats
-"Authorization" = "Авторизація"; // qwen3.8:27b
-"Identificator" = "Ідентифікатор"; // qwen3.8:27b
-"Plan" = "План"; // qwen3.8:27b
-"Monitoring" = "Моніторинг"; // qwen3.8:27b
 "Control" = "Керування"; // qwen3.8:27b
-"Update" = "Оновити"; // qwen3.8:27b
-"Sign in" = "Увійти"; // qwen3.8:27b
-"Sign out" = "Вийти"; // qwen3.8:27b
-"Deregister" = "Зняти з реєстрації"; // qwen3.8:27b
-"Hosts" = "Хости"; // qwen3.8:27b
-"Machines" = "Комп'ютери"; // qwen3.8:27b
-"No hosts yet" = "Ще немає хостів"; // qwen3.8:27b
-"No machines yet" = "Поки немає машин"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Отримувати сповіщення, коли пристрій виходить з мережі або досягає порогу"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Не рекомендується вмикати віддалене керування, якщо ви не знаєте, що робите."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Живі метрики CPU, RAM, диска та мережі"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Моніторинг HTTP, ICMP та власних кінцевих точок"; // qwen3.8:27b
  // qwen3.8:27b

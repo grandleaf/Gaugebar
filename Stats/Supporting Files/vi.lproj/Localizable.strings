@@ -37,13 +37,11 @@
 "Graphics" = "Đồ họa";
 "Close" = "Đóng";
 "Download" = "Tải xuống";
-"Install" = "Cài đặt";
 "Cancel" = "Hủy";
 "Unavailable" = "Không khả dụng";
 "Yes" = "Có";
 "No" = "Không";
 "Automatic" = "Tự động";
-"Manual" = "Thủ công";
 "None" = "Không có";
 "Dots" = "Dấu chấm";
 "Arrows" = "Mũi tên";
@@ -59,7 +57,6 @@
 "Right alignment" = "Căn phải";
 "Dashboard" = "Bảng điều khiển";
 "Disabled" = "Đã tắt";
-"Silent" = "Im lặng";
 "Units" = "Đơn vị";
 "Fans" = "Quạt";
 "Scaling" = "Tỷ lệ";
@@ -73,7 +70,6 @@
 "Settings" = "Cài đặt";
 "Name" = "Tên";
 "Format" = "Định dạng";
-"Turn off" = "Tắt";
 "Normal" = "Bình thường";
 "Warning" = "Cảnh báo";
 "Critical" = "Nguy cấp";
@@ -88,7 +84,6 @@
 "Save" = "Lưu";
 "Run" = "Chạy";
 "Stop" = "Dừng";
-"Uninstall" = "Gỡ cài đặt";
 "1 sec" = "1 giây";
 "2 sec" = "2 giây";
 "3 sec" = "3 giây";
@@ -118,28 +113,15 @@
 "Extended" = "Mở rộng"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Tự động khởi động ứng dụng khi bật Mac của bạn";
 "Do not start the application automatically when starting your Mac" = "Không tự động khởi động ứng dụng khi bật Mac của bạn";
-"Do everything silently in the background (recommended)" = "Thực hiện mọi thứ âm thầm trong nền (khuyến nghị)";
-"Check for a new version on startup" = "Kiểm tra phiên bản mới khi khởi động";
-"Check for a new version every day (once a day)" = "Kiểm tra phiên bản mới mỗi ngày (một lần một ngày)";
-"Check for a new version every week (once a week)" = "Kiểm tra phiên bản mới mỗi tuần (một lần một tuần)";
-"Check for a new version every month (once a month)" = "Kiểm tra phiên bản mới mỗi tháng (một lần một tháng)";
-"Never check for updates (not recommended)" = "Không bao giờ kiểm tra cập nhật (không khuyến nghị)";
 "The configuration is completed" = "Cấu hình đã hoàn tất";
 "finish_setup_message" = "Tất cả đã được thiết lập! \n Gaugebar là một công cụ mã nguồn mở miễn phí và sẽ luôn như vậy.";
 
 // Alerts
-"New version available" = "Có phiên bản mới";
-"Click to install the new version of Stats" = "Nhấn để cài đặt phiên bản mới của Gaugebar";
-"Successfully updated" = "Cập nhật thành công";
-"Stats was updated to v" = "Gaugebar đã được cập nhật lên v%0";
 "Reset settings text" = "Tất cả cài đặt ứng dụng sẽ được đặt lại và ứng dụng sẽ khởi động lại. Bạn có chắc chắn muốn thực hiện không?";
  // gemma4:31b-it-qat
-"Support text" = "Cảm ơn bạn đã sử dụng Gaugebar!\n\n Việc duy trì và cải thiện dự án nguồn mở này cần có thời gian và nguồn lực. Sự hỗ trợ của bạn giúp chúng tôi tiếp tục cung cấp một ứng dụng miễn phí và đáng tin cậy cho mọi người.\n\nNếu bạn thấy Gaugebar hữu ích, vui lòng cân nhắc đóng góp. Mỗi đóng góp nhỏ đều có ích!";
 
 // Settings
 "Open Activity Monitor" = "Mở Activity Monitor";
-"Report a bug" = "Báo cáo lỗi";
-"Support the application" = "Hỗ trợ ứng dụng";
 "Close application" = "Đóng ứng dụng";
 "Open application settings" = "Mở cài đặt ứng dụng";
 "Open dashboard" = "Mở bảng điều khiển";
@@ -150,13 +132,11 @@
 "Close module settings" = "Đóng cài đặt mô-đun"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Kiểm tra cập nhật";
 "At start" = "Khi khởi động";
 "Once per day" = "Một lần mỗi ngày";
 "Once per week" = "Một lần mỗi tuần";
 "Once per month" = "Một lần mỗi tháng";
 "Never" = "Không bao giờ";
-"Check for update" = "Kiểm tra cập nhật";
 "Show icon in dock" = "Hiển thị biểu tượng trong Dock";
 "Start at login" = "Khởi động cùng đăng nhập";
 "Build number" = "Số bản dựng";
@@ -187,14 +167,7 @@
 "Display" = "Màn hình"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Phiên bản Gaugebar mới nhất đã được cài đặt";
-"Downloading..." = "Đang tải xuống...";
-"Installing..." = "Đang cài đặt..."; // qwen3.8:27b
 "Updating..." = "Đang cập nhật..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar sẽ khởi động lại tự động"; // qwen3.8:27b
-"Current version: " = "Phiên bản hiện tại: ";
-"Latest version: " = "Phiên bản mới nhất: ";
-"Changelog" = "Nhật ký thay đổi"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Màu sắc";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Độ C";
 "Fahrenheit" = "Độ F";
-"Save the fan speed" = "Lưu tốc độ quạt";
 "Fan" = "Quạt";
 "HID sensors" = "Cảm biến HID";
-"Synchronize fan's control" = "Đồng bộ điều khiển quạt";
 "Current" = "Dòng điện";
 "Energy" = "Năng lượng";
 "Show unknown sensors" = "Hiển thị các cảm biến không xác định";
-"Install fan helper" = "Cài đặt trợ lý quạt";
-"Uninstall fan helper" = "Gỡ cài đặt trợ lý quạt";
-"Approve in System Settings ▸ Login Items" = "Phê duyệt trong Cài đặt Hệ thống ▸ Mục Đăng nhập"; // gemma4:31b
-"Fan helper needs your approval" = "Trình hỗ trợ quạt cần sự chấp thuận của bạn"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Để điều khiển quạt, hãy bật Gaugebar trong Cài đặt hệ thống ▸ Mục đăng nhập."; // gemma4:31b
-"Open Login Items" = "Mở Mục Đăng nhập"; // gemma4:31b
-"Could not enable the fan helper" = "Không thể kích hoạt trình hỗ trợ quạt"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Mở Cài đặt Hệ thống ▸ Mục Đăng nhập, đảm bảo Gaugebar được cho phép chạy trong nền, sau đó thử lại."; // gemma4:31b
 "Fan value" = "Giá trị quạt";
-"Turn off fan" = "Tắt quạt";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Bạn sắp tắt quạt. Đây là hành động không được khuyến nghị và có thể gây hư hại cho Mac của bạn. Bạn có chắc chắn muốn thực hiện không?";
 "Sensor threshold" = "Ngưỡng cảm biến";
 "Left fan" = "Quạt bên trái";
 "Right fan" = "Quạt bên phải";
@@ -455,7 +416,6 @@
 "New IP" = "IP mới: %0";
 "Internet connection lost" = "Mất kết nối internet";
 "Internet connection established" = "Kết nối internet được thiết lập";
-"Show country code instead of emoji" = "Hiển thị mã quốc gia thay vì emoji"; // gemma4:31b
 "DNS Server" = "Máy chủ DNS"; // qwen3.8:27b
 "Noise" = "Tiếng ồn"; // qwen3.8:27b
 "Signal" = "Tín hiệu"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Chàm";
 
 // System Stats
-"Authorization" = "Xác thực"; // qwen3.8:27b
-"Identificator" = "Định danh"; // qwen3.8:27b
-"Plan" = "Gói"; // qwen3.8:27b
-"Monitoring" = "Giám sát"; // qwen3.8:27b
 "Control" = "Điều khiển"; // qwen3.8:27b
-"Update" = "Cập nhật"; // qwen3.8:27b
-"Sign in" = "Đăng nhập"; // qwen3.8:27b
-"Sign out" = "Đăng xuất"; // qwen3.8:27b
-"Deregister" = "Hủy đăng ký"; // qwen3.8:27b
-"Hosts" = "Máy chủ"; // qwen3.8:27b
-"Machines" = "Máy"; // qwen3.8:27b
-"No hosts yet" = "Chưa có host nào"; // qwen3.8:27b
-"No machines yet" = "Chưa có máy nào"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Nhận thông báo khi thiết bị ngoại tuyến hoặc chạm ngưỡng"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Không khuyến nghị bật điều khiển từ xa trừ khi bạn biết mình đang làm gì."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Chỉ số CPU, RAM, ổ đĩa và mạng thời gian thực"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Giám sát HTTP, ICMP và điểm cuối tùy chỉnh"; // qwen3.8:27b
  // qwen3.8:27b

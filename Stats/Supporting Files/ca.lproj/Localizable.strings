@@ -37,13 +37,11 @@
 "Graphics" = "Gràfics";
 "Close" = "Tanca";
 "Download" = "Baixa";
-"Install" = "Instal·la";
 "Cancel" = "Cancel·la";
 "Unavailable" = "No disponible";
 "Yes" = "Sí";
 "No" = "No";
 "Automatic" = "Automàtic";
-"Manual" = "Manual";
 "None" = "Cap";
 "Dots" = "Punts";
 "Arrows" = "Fletxes";
@@ -59,7 +57,6 @@
 "Right alignment" = "Dreta";
 "Dashboard" = "Panell";
 "Disabled" = "Desactivat";
-"Silent" = "Silenci";
 "Units" = "Unitats";
 "Fans" = "Ventiladors";
 "Scaling" = "Escalant";
@@ -73,7 +70,6 @@
 "Settings" = "Configuració";
 "Name" = "Nom";
 "Format" = "Format";
-"Turn off" = "Apagar";
 "Normal" = "Normal";
 "Warning" = "Alerta";
 "Critical" = "Crític";
@@ -88,7 +84,6 @@
 "Save" = "Desa"; // gemma4:31b
 "Run" = "Executar"; // translategemma:4b
 "Stop" = "Aturar"; // gemma4:31b
-"Uninstall" = "Desinstal·lar"; // translategemma:4b
 "1 sec" = "1 s"; // gemma4:31b
 "2 sec" = "2 seg"; // gemma4:31b
 "3 sec" = "3 s"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "Estès"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Iniciar automàticament l'aplicació al iniciar el teu Mac";
 "Do not start the application automatically when starting your Mac" = "No iniciar automàticament l'aplicació al iniciar el teu Mac";
-"Do everything silently in the background (recommended)" = "Fer tot silenciosament al radere (recomanat)";
-"Check for a new version on startup" = "Comprovar noves versions al iniciar";
-"Check for a new version every day (once a day)" = "Comprovar noves versions cada dia (una vegada al dia)";
-"Check for a new version every week (once a week)" = "Comprovar noves versions cada setmana (una vegada a la setmana)";
-"Check for a new version every month (once a month)" = "Comprovar noves versions cada mes (una vegada al mes)";
-"Never check for updates (not recommended)" = "No comprovar mai noves versions (no recomanat)";
 "The configuration is completed" = "La configuració s'ha completat"; // gemma4:31b
 "finish_setup_message" = "Tot està configurat! \n Gaugebar és una eina de codi lliure, és gratuït i sempre ho serà.";
 
 // Alerts
-"New version available" = "Nova versió disponible";
-"Click to install the new version of Stats" = "Clica per a instal·lar la nova versió d'Gaugebar";
-"Successfully updated" = "Actualització completada amb èxit";
-"Stats was updated to v" = "Gaugebar s'ha actualitzat a v%0";
 "Reset settings text" = "Tota la configuració actual serà esborrada i l'aplicació es reiniciarà. Estàs segur/segura de voler fer això?";
  // gemma4:31b-it-qat
-"Support text" = "Gràcies per utilitzar Gaugebar!\n\n Mantenir i millorar aquest projecte de codi obert requereix temps i recursos. El vostre suport ens ajuda a continuar oferint una aplicació gratuïta i fiable per a tothom.\n\nSi trobeu Gaugebar útil, penseu a fer una contribució. Cada petita mica ajuda!";
 
 // Settings
 "Open Activity Monitor" = "Obre el Visor d'Activitat";
-"Report a bug" = "Reporta un problema";
-"Support the application" = "Suporta l'aplicació";
 "Close application" = "Tanca l'aplicació";
 "Open application settings" = "Obre la configuració de l'aplicació";
 "Open dashboard" = "Obre el panell";
@@ -150,13 +132,11 @@
 "Close module settings" = "Tancar la configuració del mòdul"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Busca actualitzacions";
 "At start" = "A l'inici";
 "Once per day" = "Un cop al dia";
 "Once per week" = "Un cop per setmana";
 "Once per month" = "Un cop al mes";
 "Never" = "Mai";
-"Check for update" = "Busca actualitzacions";
 "Show icon in dock" = "Mostra l'icona al Dock";
 "Start at login" = "Arranca al iniciar sessió";
 "Build number" = "Número de Build";
@@ -187,14 +167,7 @@
 "Display" = "Pantalla"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "L'última versió d'Gaugebar està instal·lada";
-"Downloading..." = "Baixant...";
-"Installing..." = "Instal·lant..."; // qwen3.8:27b
 "Updating..." = "Actualitzant..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar es reiniciarà automàticament"; // qwen3.8:27b
-"Current version: " = "Versió instal·lada: ";
-"Latest version: " = "Última versió: ";
-"Changelog" = "Registre de canvis"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Color";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit"; // translategemma:4b
-"Save the fan speed" = "Guarda la velocitat del ventilador";
 "Fan" = "Ventilador";
 "HID sensors" = "Sensors HID";
-"Synchronize fan's control" = "Sincronitza el control del ventilador";
 "Current" = "Corrent";
 "Energy" = "Energia";
 "Show unknown sensors" = "Mostra sensors desconeguts";
-"Install fan helper" = "Instal·la l'ajuda del ventilador";
-"Uninstall fan helper" = "Desinstal·la l'ajuda del ventilador";
-"Approve in System Settings ▸ Login Items" = "Aprova a Ajustos del sistema ▸ Elements d'inici"; // gemma4:31b
-"Fan helper needs your approval" = "L'ajudant del ventilador necessita la teva aprovació"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Per controlar els ventiladors, activa Gaugebar als Ajustos del sistema ▸ Elements d'inici."; // gemma4:31b
-"Open Login Items" = "Obre els elements d'inici"; // gemma4:31b
-"Could not enable the fan helper" = "No s'ha pogut activar l'ajudant del ventilador"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Obre els Ajustos del sistema ▸ Elements d'inici, assegura't que Gaugebar estigui permès en segon pla i després torna-ho a intentar."; // gemma4:31b
 "Fan value" = "Valor del ventilador";
-"Turn off fan" = "Apaga el ventilador";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Estàs a punt d'apagar el ventilador. No està recomanat i pot espatllar el teu mac, estàs segur/segura que vols fer això?";
 "Sensor threshold" = "Límit del sensor";
 "Left fan" = "Ventilador esquerre";
 "Right fan" = "Ventilador dret";
@@ -455,7 +416,6 @@
 "New IP" = "Nova IP: %0"; // translategemma:4b
 "Internet connection lost" = "Connexió a Internet perduda"; // gemma4:31b
 "Internet connection established" = "Connexió a internet establida"; // gemma4:31b
-"Show country code instead of emoji" = "Mostrar el codi de país en lloc de l'emoji"; // gemma4:31b
 "DNS Server" = "Servidor DNS"; // qwen3.8:27b
 "Noise" = "Soroll"; // qwen3.8:27b
 "Signal" = "Senyal"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Indi";
 
 // System Stats
-"Authorization" = "Autorització"; // qwen3.8:27b
-"Identificator" = "Identificador"; // qwen3.8:27b
-"Plan" = "Pla"; // qwen3.8:27b
-"Monitoring" = "Monitorització"; // qwen3.8:27b
 "Control" = "Control";
-"Update" = "Actualitzar"; // qwen3.8:27b
-"Sign in" = "Inicia sessió"; // qwen3.8:27b
-"Sign out" = "Tanca la sessió"; // qwen3.8:27b
-"Deregister" = "Desregistrar"; // qwen3.8:27b
-"Hosts" = "Amfitrions"; // qwen3.8:27b
-"Machines" = "Màquines"; // qwen3.8:27b
-"No hosts yet" = "Encara no hi ha amfitrions"; // qwen3.8:27b
-"No machines yet" = "Encara no hi ha màquines"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Rebre notificacions quan un dispositiu es desconnecta o supera un llindar"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "No es recomana activar el control remot a menys que sàpigues què estàs fent."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Mètriques en directe de CPU, RAM, disc i xarxa"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Supervisiona els endpoints HTTP, ICMP i personalitzats"; // qwen3.8:27b
  // qwen3.8:27b

@@ -37,13 +37,11 @@
 "Graphics" = "Grafică";
 "Close" = "Închide";
 "Download" = "Descarcă";
-"Install" = "Instalează";
 "Cancel" = "Anulează";
 "Unavailable" = "Indisponibil";
 "Yes" = "Da";
 "No" = "Nu";
 "Automatic" = "Automat";
-"Manual" = "Manual"; // translategemma:4b
 "None" = "Niciunul";
 "Dots" = "Puncte";
 "Arrows" = "Săgeți";
@@ -59,7 +57,6 @@
 "Right alignment" = "Dreapta"; // gemma4:31b
 "Dashboard" = "Tablou de bord"; // gemma4:31b
 "Disabled" = "Dezactivat"; // gemma4:31b
-"Silent" = "Silențios"; // translategemma:4b
 "Units" = "Unități"; // translategemma:4b
 "Fans" = "Ventilatoare"; // gemma4:31b
 "Scaling" = "Scalare"; // translategemma:4b
@@ -73,7 +70,6 @@
 "Settings" = "Setări"; // translategemma:4b
 "Name" = "Nume"; // translategemma:4b
 "Format" = "Format";
-"Turn off" = "Dezactivează"; // gemma4:31b
 "Normal" = "Normal";
 "Warning" = "Avertizare"; // gemma4:31b
 "Critical" = "Critic"; // gemma4:31b
@@ -88,7 +84,6 @@
 "Save" = "Salvează"; // gemma4:31b
 "Run" = "Execută"; // gemma4:31b
 "Stop" = "Oprire"; // gemma4:31b
-"Uninstall" = "Dezinstalează"; // gemma4:31b
 "1 sec" = "1 secundă"; // translategemma:4b
 "2 sec" = "2 secunde"; // translategemma:4b
 "3 sec" = "3 secunde"; // translategemma:4b
@@ -118,29 +113,16 @@
 "Extended" = "Extins"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Porniți aplicația automat la pornirea Mac-ului"; // gemma4:31b
 "Do not start the application automatically when starting your Mac" = "Nu lansați aplicația automat la pornirea Mac-ului"; // gemma4:31b
-"Do everything silently in the background (recommended)" = "Execută totul silențios în fundal (recomandat)"; // gemma4:31b
-"Check for a new version on startup" = "Verifică dacă există o versiune nouă la pornire"; // gemma4:31b
-"Check for a new version every day (once a day)" = "Verifică dacă există o versiune nouă în fiecare zi (o dată pe zi)"; // gemma4:31b
-"Check for a new version every week (once a week)" = "Verifică dacă există o versiune nouă în fiecare săptămână (o dată pe săptămână)"; // gemma4:31b
-"Check for a new version every month (once a month)" = "Verifică dacă există o versiune nouă în fiecare lună (o dată pe lună)"; // gemma4:31b
-"Never check for updates (not recommended)" = "Nu verifica niciodată actualizările (nu este recomandat)"; // gemma4:31b
 "The configuration is completed" = "Configurarea este finalizată"; // gemma4:31b
 "finish_setup_message" = "Totul este configurat! \n Gaugebar este un instrument open source, este gratuit și va rămâne așa.";
  // gemma4:31b
 
 // Alerts
-"New version available" = "Versiune nouă disponibilă";
-"Click to install the new version of Stats" = "Click aici pentru a instala noua versiune Gaugebar";
-"Successfully updated" = "Actualizat cu succes";
-"Stats was updated to v" = "Gaugebar a fost actualizat la v%0";
 "Reset settings text" = "Toate setările aplicației vor fi resetate și aplicația va fi repornită. Sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b
  // gemma4:31b-it-qat
-"Support text" = "Vă mulțumim pentru utilizarea Gaugebar!\n\n Menținerea și îmbunătățirea acestui proiect open-source necesită timp și resurse. Sprijinul dumneavoastră ne ajută să continuăm să oferim o aplicație gratuită și fiabilă pentru toată lumea.\n\nDacă Gaugebar vă este util, vă rugăm să luați în considerare posibilitatea de a face o contribuție. Fiecare bănuț ajută!";
 
 // Settings
 "Open Activity Monitor" = "Deschide Monitorul de Activitate";
-"Report a bug" = "Raportează o eroare";
-"Support the application" = "Susține aplicația";
 "Close application" = "Închide aplicația";
 "Open application settings" = "Deschide setările aplicației";
 "Open dashboard" = "Deschide dashboard"; // gemma4:31b
@@ -151,13 +133,11 @@
 "Close module settings" = "Închide setările modulului"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Verifică pentru actualizări";
 "At start" = "La pornire";
 "Once per day" = "Odată pe zi";
 "Once per week" = "Odată pe săptămână";
 "Once per month" = "Odată pe lună";
 "Never" = "Niciodată";
-"Check for update" = "Verifică pentru actualizare";
 "Show icon in dock" = "Arată icoana în Dock";
 "Start at login" = "Pornește la autentificare";
 "Build number" = "Numărul compilării"; // gemma4:31b
@@ -188,14 +168,7 @@
 "Display" = "Ecran"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Cea mai recentă versiune de Gaugebar instalată";
-"Downloading..." = "Se descarcă...";
-"Installing..." = "Se instalează..."; // qwen3.8:27b
 "Updating..." = "Se actualizează..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar se va reporni automat"; // qwen3.8:27b
-"Current version: " = "Versiunea curentă: ";
-"Latest version: " = "Versiunea cea mai recentă: ";
-"Changelog" = "Jurnalul modificărilor"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Culoare";
@@ -391,24 +364,12 @@
 // Sensors
 "Celsius" = "Celsius"; // translategemma:4b
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Salvează viteza ventilatorului"; // gemma4:31b
 "Fan" = "Ventilator"; // gemma4:31b
 "HID sensors" = "Senzori HID"; // gemma4:31b
-"Synchronize fan's control" = "Sincronizează controlul ventilatoarelor"; // gemma4:31b
 "Current" = "Curent"; // gemma4:31b
 "Energy" = "Energie"; // translategemma:4b
 "Show unknown sensors" = "Afișează senzorii necunoscuți"; // gemma4:31b
-"Install fan helper" = "Instalează asistentul pentru ventilator"; // gemma4:31b
-"Uninstall fan helper" = "Dezinstalează asistentul pentru ventilator"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "Aprobă în Setări sistem ▸ Elemente de autentificare"; // gemma4:31b
-"Fan helper needs your approval" = "Ajutorul pentru ventilator necesită aprobarea ta"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Pentru a controla ventilatoarele, activează Gaugebar în Setări de sistem ▸ Elementele de autentificare."; // gemma4:31b
-"Open Login Items" = "Deschide elementele de autentificare"; // gemma4:31b
-"Could not enable the fan helper" = "Nu s-a putut activa utilitarul pentru ventilator"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Deschide Setări sistem ▸ Elemente de autentificare, asigură-te că Gaugebar este permis în fundal, apoi încearcă din nou."; // gemma4:31b
 "Fan value" = "Valoarea ventilatorului"; // gemma4:31b
-"Turn off fan" = "Oprește ventilatorul"; // translategemma:4b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Sunteți pe cale să opriți ventilatorul. Aceasta nu este o acțiune recomandată care poate deteriora Mac-ul dumneavoastră, sunteți sigur că doriți să faceți acest lucru?"; // gemma4:31b
 "Sensor threshold" = "Pragul senzorului"; // gemma4:31b
 "Left fan" = "Stânga"; // translategemma:4b
 "Right fan" = "Dreapta"; // gemma4:31b
@@ -456,7 +417,6 @@
 "New IP" = "Noua adresă IP: %0"; // gemma4:31b
 "Internet connection lost" = "Conexiunea la internet pierdută"; // gemma4:31b
 "Internet connection established" = "Conexiunea la internet a fost stabilită"; // translategemma:4b
-"Show country code instead of emoji" = "Afișează codul țării în loc de emoji"; // gemma4:31b
 "DNS Server" = "Server DNS"; // qwen3.8:27b
 "Noise" = "Zgomot"; // qwen3.8:27b
 "Signal" = "Semnal"; // qwen3.8:27b
@@ -553,22 +513,6 @@
 "Indigo" = "Indigou"; // gemma4:31b-it-qat
 
 // System Stats
-"Authorization" = "Autorizare"; // qwen3.8:27b
-"Identificator" = "Identificator";
-"Plan" = "Plan";
-"Monitoring" = "Monitorizare"; // qwen3.8:27b
 "Control" = "Control";
-"Update" = "Actualizare"; // qwen3.8:27b
-"Sign in" = "Autentificare"; // qwen3.8:27b
-"Sign out" = "Deconectare"; // qwen3.8:27b
-"Deregister" = "Deregistrare"; // qwen3.8:27b
-"Hosts" = "Gazde"; // qwen3.8:27b
-"Machines" = "Mașini"; // qwen3.8:27b
-"No hosts yet" = "Nicio gazdă încă"; // qwen3.8:27b
-"No machines yet" = "Nicio mașină încă"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Primești o notificare când un dispozitiv devine offline sau atinge un prag"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Nu este recomandat să activați controlul la distanță dacă nu știți ce faceți."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Metrici în direct pentru CPU, RAM, disc și rețea"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Monitorizează HTTP, ICMP și puncte de acces personalizate"; // qwen3.8:27b
  // qwen3.8:27b

@@ -33,71 +33,56 @@ public enum widget_t: String {
     public func new(module: String, config: NSDictionary, defaultWidget: widget_t, icon: NSImage? = nil) -> SWidget? {
         guard let widgetConfig: NSDictionary = config[self.rawValue] as? NSDictionary else { return nil }
         
-        var image: NSImage? = nil
-        var preview: widget_p? = nil
-        var item: widget_p? = nil
+        let renderImage = { self.previewImage(module: module, config: widgetConfig, icon: icon) }
+        guard let item = self.widget(module: module, config: widgetConfig, icon: icon, preview: false),
+              let image = renderImage() else { return nil }
         
+        return SWidget(self, defaultWidget: defaultWidget, module: module, item: item, image: image, renderImage: renderImage)
+    }
+    
+    private func widget(module: String, config: NSDictionary, icon: NSImage?, preview: Bool) -> widget_p? {
         switch self {
-        case .mini:
-            preview = Mini(title: module, config: widgetConfig, preview: true)
-            item = Mini(title: module, config: widgetConfig, preview: false)
-        case .gauge:
-            preview = MiniGauge(title: module, config: widgetConfig, preview: true)
-            item = MiniGauge(title: module, config: widgetConfig, preview: false)
-        case .lineChart:
-            preview = LineChart(title: module, config: widgetConfig, preview: true)
-            item = LineChart(title: module, config: widgetConfig, preview: false)
-        case .barChart:
-            preview = BarChart(title: module, config: widgetConfig, preview: true)
-            item = BarChart(title: module, config: widgetConfig, preview: false)
-        case .pieChart:
-            preview = PieChart(title: module, config: widgetConfig, preview: true)
-            item = PieChart(title: module, config: widgetConfig, preview: false)
-        case .networkChart:
-            preview = NetworkChart(title: module, config: widgetConfig, preview: true)
-            item = NetworkChart(title: module, config: widgetConfig, preview: false)
-        case .speed:
-            preview = SpeedWidget(title: module, config: widgetConfig, preview: true)
-            item = SpeedWidget(title: module, config: widgetConfig, preview: false)
-        case .battery:
-            preview = BatteryWidget(title: module, preview: true)
-            item = BatteryWidget(title: module, preview: false)
-        case .batteryDetails:
-            preview = BatteryDetailsWidget(title: module, preview: true)
-            item = BatteryDetailsWidget(title: module, preview: false)
-        case .stack:
-            preview = StackWidget(title: module, config: widgetConfig, preview: true)
-            item = StackWidget(title: module, config: widgetConfig, preview: false)
-        case .memory:
-            preview = MemoryWidget(title: module, config: widgetConfig, preview: true)
-            item = MemoryWidget(title: module, config: widgetConfig, preview: false)
-        case .label:
-            preview = Label(title: module, config: widgetConfig)
-            item = Label(title: module, config: widgetConfig)
-        case .tachometer:
-            preview = Tachometer(title: module, preview: true)
-            item = Tachometer(title: module, preview: false)
-        case .state:
-            preview = DotWidget(title: module, config: widgetConfig, preview: true)
-            item = DotWidget(title: module, config: widgetConfig, preview: false)
-        case .text:
-            preview = TextWidget(title: module, preview: true)
-            item = TextWidget(title: module, preview: false)
-        case .icon:
-            preview = IconWidget(title: module, config: widgetConfig, icon: icon, preview: true)
-            item = IconWidget(title: module, config: widgetConfig, icon: icon, preview: false)
-            image = icon?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: 14, weight: .regular)) ?? icon
-        default: break
+        case .mini: return Mini(title: module, config: config, preview: preview)
+        case .gauge: return MiniGauge(title: module, config: config, preview: preview)
+        case .lineChart: return LineChart(title: module, config: config, preview: preview)
+        case .barChart: return BarChart(title: module, config: config, preview: preview)
+        case .pieChart: return PieChart(title: module, config: config, preview: preview)
+        case .networkChart: return NetworkChart(title: module, config: config, preview: preview)
+        case .speed: return SpeedWidget(title: module, config: config, preview: preview)
+        case .battery: return BatteryWidget(title: module, preview: preview)
+        case .batteryDetails: return BatteryDetailsWidget(title: module, preview: preview)
+        case .stack: return StackWidget(title: module, config: config, preview: preview)
+        case .memory: return MemoryWidget(title: module, config: config, preview: preview)
+        case .label: return Label(title: module, config: config)
+        case .tachometer: return Tachometer(title: module, preview: preview)
+        case .state: return DotWidget(title: module, config: config, preview: preview)
+        case .text: return TextWidget(title: module, preview: preview)
+        case .icon: return IconWidget(title: module, config: config, icon: icon, preview: preview)
+        default: return nil
         }
+    }
+    
+    // A preview widget reads the saved settings when created, so a new one always matches the real widget.
+    private func previewImage(module: String, config: NSDictionary, icon: NSImage?) -> NSImage? {
+        if self == .icon, let image = icon?.withSymbolConfiguration(NSImage.SymbolConfiguration(pointSize: 14, weight: .regular)) ?? icon {
+            return image
+        }
+        guard let view = self.widget(module: module, config: config, icon: icon, preview: true) else { return nil }
         
-        if image == nil, let view = preview {
-            var width: CGFloat = view.bounds.width
+        var image: NSImage? = nil
+        // The thumbnails sit on white whatever the system appearance is.
+        NSAppearance(named: .aqua)?.performAsCurrentDrawingAppearance {
+            // Widgets that size themselves report their width while drawing.
+            _ = view.dataWithPDF(inside: view.bounds)
             
-            switch preview {
-            case is Mini:
-                if module == "Battery" {
-                    width = view.bounds.width + 3
-                }
+            var width: CGFloat = view.bounds.width
+            switch view {
+            case let mini as Mini:
+                width = mini.shadowSize.width + (module == "Battery" ? 3 : 0)
+            case let speed as SpeedWidget:
+                width = speed.shadowSize.width
+            case let chart as BarChart where chart.showsCoreBoxes:
+                width = chart.shadowSize.width
             case is BarChart:
                 if module == "GPU" || module == "RAM" || module == "Disk" || module == "Battery" {
                     width = 11 + (Constants.Widget.margin.x*2)
@@ -116,7 +101,11 @@ public enum widget_t: String {
                 width = view.bounds.width + 8 + Constants.Widget.spacing*2
             case is BatteryWidget:
                 width = view.bounds.width - 3
-            default: width = view.bounds.width
+            default: break
+            }
+            
+            if view is Mini || view is SpeedWidget || (view as? BarChart)?.showsCoreBoxes == true {
+                view.setFrameSize(NSSize(width: width, height: view.frame.height))
             }
             
             let r = NSRect(
@@ -127,12 +116,7 @@ public enum widget_t: String {
             )
             image = NSImage(data: view.dataWithPDF(inside: r))
         }
-        
-        if let item = item, let image = image {
-            return SWidget(self, defaultWidget: defaultWidget, module: module, item: item, image: image)
-        }
-        
-        return nil
+        return image
     }
     
     public func name() -> String {
@@ -249,7 +233,8 @@ public class SWidget {
     public let type: widget_t
     public let defaultWidget: widget_t
     public let module: String
-    public let image: NSImage
+    public private(set) var image: NSImage
+    private let renderImage: () -> NSImage?
     public var item: widget_p
     
     public var isActive: Bool {
@@ -289,12 +274,13 @@ public class SWidget {
     private var menuBarItem: NSStatusItem? = nil
     private var originX: CGFloat
     
-    public init(_ type: widget_t, defaultWidget: widget_t, module: String, item: widget_p, image: NSImage) {
+    public init(_ type: widget_t, defaultWidget: widget_t, module: String, item: widget_p, image: NSImage, renderImage: @escaping () -> NSImage?) {
         self.type = type
         self.module = module
         self.item = item
         self.defaultWidget = defaultWidget
         self.image = image
+        self.renderImage = renderImage
         self.originX = item.frame.origin.x
         
         self.item.widthHandler = { [weak self] in
@@ -304,6 +290,13 @@ public class SWidget {
             }
         }
         self.item.identifier = NSUserInterfaceItemIdentifier(self.type.rawValue)
+    }
+    
+    // redraw the settings thumbnail from the saved settings
+    public func refreshImage() {
+        if let image = self.renderImage() {
+            self.image = image
+        }
     }
     
     // show item in the menu bar
@@ -407,6 +400,10 @@ public class MenuBar {
     public var activeWidgets: [SWidget] {
         self.widgets.filter({ $0.isActive })
     }
+    // macOS already keeps separate menu bar items apart, so only combined modules need this.
+    private var edgePadding: CGFloat {
+        self.combinedModules ? Constants.Widget.spacing : 0
+    }
     public var leadingSlack: CGFloat {
         guard let first = self.sortedWidgets.first,
               let item = self.activeWidgets.first(where: { $0.type == first })?.item as? WidgetWrapper else { return 0 }
@@ -462,7 +459,7 @@ public class MenuBar {
                         s.recalculateWidth()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                             s.view.addWidget(w.item)
-                            s.view.recalculate(s.sortedWidgets)
+                            s.view.recalculate(s.sortedWidgets, padding: s.edgePadding)
                         }
                     })
                 } else {
@@ -470,7 +467,7 @@ public class MenuBar {
                         s.view.removeWidget(type: type)
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                             s.recalculateWidth()
-                            s.view.recalculate(s.sortedWidgets)
+                            s.view.recalculate(s.sortedWidgets, padding: s.edgePadding)
                         }
                     })
                 }
@@ -534,12 +531,12 @@ public class MenuBar {
         
         let w = self.activeWidgets.isEmpty ? 0 : self.activeWidgets.map({ $0.item.frame.width }).reduce(0, +) +
             (CGFloat(self.activeWidgets.count - 1) * Constants.Widget.mergedSpacing) +
-            Constants.Widget.spacing * 2
+            self.edgePadding * 2
         self.menuBarItem?.length = w
         self.view.setFrameOrigin(NSPoint(x: 0, y: 0))
         self.view.setFrameSize(NSSize(width: w, height: Constants.Widget.height))
         
-        self.view.recalculate(self.sortedWidgets)
+        self.view.recalculate(self.sortedWidgets, padding: self.edgePadding)
         self.callback?()
     }
     
@@ -585,7 +582,7 @@ public class MenuBar {
         guard let name = notification.userInfo?["module"] as? String, name == self.moduleName else {
             return
         }
-        self.view.recalculate(self.sortedWidgets)
+        self.view.recalculate(self.sortedWidgets, padding: self.edgePadding)
     }
 }
 
@@ -608,8 +605,8 @@ public class MenuBarView: NSView {
         }
     }
     
-    public func recalculate(_ list: [widget_t] = []) {
-        var x: CGFloat = Constants.Widget.spacing
+    public func recalculate(_ list: [widget_t] = [], padding: CGFloat) {
+        var x: CGFloat = padding
         list.forEach { (type: widget_t) in
             if let view = self.subviews.first(where: { $0.identifier == NSUserInterfaceItemIdentifier(type.rawValue) }) {
                 view.setFrameOrigin(NSPoint(x: x, y: view.frame.origin.y))

@@ -380,30 +380,14 @@ internal class Preview: PreviewWrapper {
                 self.localIPField?.stringValue = localIP
                 
                 if let v4 = value.raddr.v4, !v4.isEmpty {
-                    var ip = v4
-                    if let cc = value.raddr.countryCode, !cc.isEmpty {
-                        if let flag = countryFlag(cc) {
-                            ip += " (\(flag) \(cc))"
-                        } else {
-                            ip += " (\(cc))"
-                        }
-                    }
-                    self.publicIPv4Field?.stringValue = ip
+                    self.publicIPv4Field?.stringValue = v4
                     self.publicIPv4Field?.superview?.isHidden = false
                 } else {
                     self.publicIPv4Field?.superview?.isHidden = true
                 }
                 
                 if let v6 = value.raddr.v6, !v6.isEmpty {
-                    var ip = v6
-                    if let cc = value.raddr.countryCode, !cc.isEmpty {
-                        if let flag = countryFlag(cc) {
-                            ip += " (\(flag) \(cc))"
-                        } else {
-                            ip += " (\(cc))"
-                        }
-                    }
-                    self.publicIPv6Field?.stringValue = ip
+                    self.publicIPv6Field?.stringValue = v6
                     self.publicIPv6Field?.superview?.isHidden = false
                 } else {
                     self.publicIPv6Field?.superview?.isHidden = true

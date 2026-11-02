@@ -12,7 +12,7 @@
 import Cocoa
 import Kit
 
-public struct RAM_Usage: Codable, RemoteType {
+public struct RAM_Usage: Codable {
     var total: Double
     var used: Double
     var free: Double
@@ -33,11 +33,6 @@ public struct RAM_Usage: Codable, RemoteType {
     
     public var usage: Double {
         get { Double((self.total - self.free) / self.total) }
-    }
-    
-    public func remote() -> Data? {
-        let string = "\(self.total),\(self.used),\(self.pressure.level),\(self.swap.used)$"
-        return string.data(using: .utf8)
     }
 }
 

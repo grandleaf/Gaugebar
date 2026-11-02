@@ -610,12 +610,6 @@ public extension OperatingSystemVersion {
     }
 }
 
-extension URL {
-    func checkFileExist() -> Bool {
-        return FileManager.default.fileExists(atPath: self.path)
-    }
-}
-
 public extension NSColor {
     convenience init?(hex: String) {
         var value = hex.trimmingCharacters(in: .whitespacesAndNewlines)

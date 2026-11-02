@@ -11,7 +11,6 @@ public class MiniGauge: Mini {
     internal var renderScale: CGFloat? = nil
     
     private static let fillAlpha: CGFloat = 0.3
-    private static let outlineAlpha: CGFloat = 0.18
     
     override internal var sidePadding: CGFloat { 2 }
     override internal var defaultAlignment: String { "center" }
@@ -58,7 +57,7 @@ public class MiniGauge: Mini {
         NSColor.controlAccentColor.withAlphaComponent(Self.fillAlpha).setFill()
         NSBezierPath(rect: NSRect(x: inner.minX, y: inner.minY, width: inner.width, height: height)).fill()
         
-        (dark ? NSColor.white : NSColor.black).withAlphaComponent(Self.outlineAlpha).setStroke()
+        (dark ? NSColor.white : NSColor.black).withAlphaComponent(CoreBoxLayout.outlineAlpha).setStroke()
         let outline = NSBezierPath(rect: box.insetBy(dx: line/2, dy: line/2))
         outline.lineWidth = line
         outline.stroke()

@@ -37,13 +37,11 @@
 "Graphics" = "Grafica";
 "Close" = "Chiudi";
 "Download" = "Scarica";
-"Install" = "Installa";
 "Cancel" = "Annulla";
 "Unavailable" = "Non disponibile";
 "Yes" = "Sì";
 "No" = "No";
 "Automatic" = "Automatico";
-"Manual" = "Manuale";
 "None" = "Nessuno";
 "Dots" = "Punti";
 "Arrows" = "Frecce";
@@ -59,7 +57,6 @@
 "Right alignment" = "Destra";
 "Dashboard" = "Pannello di controllo"; // translategemma:4b
 "Disabled" = "Disabilitato";
-"Silent" = "Silenzioso";
 "Units" = "Unità";
 "Fans" = "Ventole";
 "Scaling" = "Ridimensionamento";
@@ -73,7 +70,6 @@
 "Settings" = "Impostazioni";
 "Name" = "Nome";
 "Format" = "Formato";
-"Turn off" = "Disattiva";
 "Normal" = "Normale"; // translategemma:4b
 "Warning" = "Avviso";
 "Critical" = "Critico";
@@ -88,7 +84,6 @@
 "Save" = "Salva"; // translategemma:4b
 "Run" = "Esegui"; // translategemma:4b
 "Stop" = "Ferma"; // gemma4:31b
-"Uninstall" = "Disinstalla"; // gemma4:31b
 "1 sec" = "1 secondo"; // translategemma:4b
 "2 sec" = "2 secondi"; // translategemma:4b
 "3 sec" = "3 secondi"; // translategemma:4b
@@ -118,28 +113,15 @@
 "Extended" = "Esteso"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Avvia l'applicazione automaticamente all'accensione del Mac";
 "Do not start the application automatically when starting your Mac" = "Non avviare l'applicazione automaticamente all'accensione del Mac";
-"Do everything silently in the background (recommended)" = "Gestisci autonomamente in background (consigliato)";
-"Check for a new version on startup" = "Verifica la disponibilità di nuove versioni all'avvio";
-"Check for a new version every day (once a day)" = "Verifica la disponibilità di nuove versioni ogni giorno (una volta al giorno)";
-"Check for a new version every week (once a week)" = "Verifica la disponibilità di nuove versioni ogni settimana (una volta a settimana)";
-"Check for a new version every month (once a month)" = "Verifica la disponibilità di nuove versioni ogni mese (una volta al mese)";
-"Never check for updates (not recommended)" = "Non verificare mai la disponibilità di nuove versioni (sconsigliato)";
 "The configuration is completed" = "Configurazione completata";
 "finish_setup_message" = "È tutto pronto!\nGaugebar è un software open source gratuito, e lo rimarrà per sempre.";
 
 // Alerts
-"New version available" = "Nuova versione disponibile";
-"Click to install the new version of Stats" = "Clicca per installare la nuova versione di Gaugebar";
-"Successfully updated" = "Aggiornato con successo";
-"Stats was updated to v" = "Gaugebar è stato aggiornato alla v%0";
 "Reset settings text" = "Tutte le impostazioni saranno resettate e l'applicazione sarà riavviata. Sei sicuro di volerlo fare?";
  // gemma4:31b-it-qat
-"Support text" = "Grazie per aver usato Gaugebar!\n\nIl mantenimento e il miglioramento di questo progetto open-source richiede tempo e risorse. Il vostro sostegno ci aiuta a continuare a fornire un'applicazione gratuita e affidabile per tutti.\n\nSe trovate Gaugebar utile, prendete in considerazione l'idea di dare un contributo. Ogni piccolo contributo è utile!";
 
 // Settings
 "Open Activity Monitor" = "Apri Monitoraggio Attività";
-"Report a bug" = "Segnala un bug";
-"Support the application" = "Supporta l'applicazione";
 "Close application" = "Chiudi applicazione";
 "Open application settings" = "Apri le impostazioni dell'applicazione";
 "Open dashboard" = "Apri la dashboard";
@@ -150,13 +132,11 @@
 "Close module settings" = "Chiudi impostazioni del modulo"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Controlla aggiornamenti";
 "At start" = "All'avvio";
 "Once per day" = "Una volta al giorno";
 "Once per week" = "Una volta a settimana";
 "Once per month" = "Una volta al mese";
 "Never" = "Mai";
-"Check for update" = "Verifica la disponibilità di nuove versioni";
 "Show icon in dock" = "Mostra icona nel dock";
 "Start at login" = "Avvia al login";
 "Build number" = "Numero Build";
@@ -187,14 +167,7 @@
 "Display" = "Monitor"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "L'ultima versione di Gaugebar è installata";
-"Downloading..." = "Download in corso...";
-"Installing..." = "Installazione in corso..."; // qwen3.8:27b
 "Updating..." = "Aggiornamento..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar si riavvierà automaticamente"; // qwen3.8:27b
-"Current version: " = "Versione corrente: ";
-"Latest version: " = "Ultima versione: ";
-"Changelog" = "Registro delle modifiche"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Colore";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Salva la velocità delle ventole";
 "Fan" = "Ventola";
 "HID sensors" = "Sensori HID";
-"Synchronize fan's control" = "Sincronizza ventole";
 "Current" = "Corrente";
 "Energy" = "Energia";
 "Show unknown sensors" = "Mostra sensori sconosciuti";
-"Install fan helper" = "Installa estensione ventole";
-"Uninstall fan helper" = "Disinstalla estensione ventole";
-"Approve in System Settings ▸ Login Items" = "Approva in Impostazioni di Sistema ▸ Elementi login"; // gemma4:31b
-"Fan helper needs your approval" = "L'assistente della ventola richiede la tua approvazione"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Per controllare le ventole, abilita Gaugebar in Impostazioni di Sistema ▸ Elementi login."; // gemma4:31b
-"Open Login Items" = "Apri Elementi login"; // gemma4:31b
-"Could not enable the fan helper" = "Impossibile abilitare l'assistente per la ventola"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Apri Impostazioni di Sistema ▸ Elementi login, assicurati che Gaugebar sia consentito in background, poi riprova."; // gemma4:31b
 "Fan value" = "Valore ventola";
-"Turn off fan" = "Disattiva la ventola";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Stai per disattivare la ventola. Questa azione non è consigliata e può danneggiare il tuo mac, sei sicuro di voler proseguire?";
 "Sensor threshold" = "Soglia sensore";
 "Left fan" = "Ventola sinistra";
 "Right fan" = "Ventola destra";
@@ -455,7 +416,6 @@
 "New IP" = "Nuovo IP: %0"; // gemma4:31b
 "Internet connection lost" = "Connessione Internet persa"; // gemma4:31b
 "Internet connection established" = "Connessione a Internet stabilita"; // translategemma:4b
-"Show country code instead of emoji" = "Mostra il codice paese invece dell'emoji"; // gemma4:31b
 "DNS Server" = "Server DNS"; // qwen3.8:27b
 "Noise" = "Rumore"; // qwen3.8:27b
 "Signal" = "Segnale"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Indaco";
 
 // System Stats
-"Authorization" = "Autorizzazione"; // qwen3.8:27b
-"Identificator" = "Identificatore"; // qwen3.8:27b
-"Plan" = "Piano"; // qwen3.8:27b
-"Monitoring" = "Monitoraggio"; // qwen3.8:27b
 "Control" = "Controllo"; // qwen3.8:27b
-"Update" = "Aggiorna"; // qwen3.8:27b
-"Sign in" = "Accedi"; // qwen3.8:27b
-"Sign out" = "Esci"; // qwen3.8:27b
-"Deregister" = "Deregistra"; // qwen3.8:27b
-"Hosts" = "Host"; // qwen3.8:27b
-"Machines" = "Macchine"; // qwen3.8:27b
-"No hosts yet" = "Ancora nessun host"; // qwen3.8:27b
-"No machines yet" = "Ancora nessuna macchina"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Ricevi una notifica quando un dispositivo è offline o raggiunge una soglia"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Non è consigliabile abilitare il controllo remoto a meno che tu non sappia cosa stai facendo."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Metriche in tempo reale di CPU, RAM, disco e rete"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Monitora endpoint HTTP, ICMP e personalizzati"; // qwen3.8:27b
  // qwen3.8:27b

@@ -37,13 +37,11 @@
 "Graphics" = "Grafiikka";
 "Close" = "Sulje";
 "Download" = "Lataa";
-"Install" = "Asenna";
 "Cancel" = "Peruuta";
 "Unavailable" = "Ei saatavilla";
 "Yes" = "Kyllä";
 "No" = "Ei";
 "Automatic" = "Automaattinen";
-"Manual" = "Manuaalinen";
 "None" = "Ei mitään";
 "Dots" = "Pisteet";
 "Arrows" = "Nuolet";
@@ -59,7 +57,6 @@
 "Right alignment" = "Oikea";
 "Dashboard" = "Kojelauta";
 "Disabled" = "Pois käytöstä";
-"Silent" = "Hiljainen";
 "Units" = "Yksiköt";
 "Fans" = "Tuulettimet";
 "Scaling" = "Skaalaus";
@@ -73,7 +70,6 @@
 "Settings" = "Asetukset";
 "Name" = "Nimi";
 "Format" = "Muoto";
-"Turn off" = "Sammuta";
 "Normal" = "Normaali"; // translategemma:4b
 "Warning" = "Varoitus";
 "Critical" = "Kriittinen";
@@ -88,7 +84,6 @@
 "Save" = "Tallenna"; // translategemma:4b
 "Run" = "Suorita"; // gemma4:31b
 "Stop" = "Pysäytä"; // translategemma:4b
-"Uninstall" = "Poista asennus"; // translategemma:4b
 "1 sec" = "1 sek"; // gemma4:31b
 "2 sec" = "2 s"; // gemma4:31b
 "3 sec" = "3 s"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "Laajennettu"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Käynnistä sovellus automaattisesti, kun käynnistät Macin";
 "Do not start the application automatically when starting your Mac" = "Älä käynnistä sovellusta automaattisesti, kun käynnistät Macin";
-"Do everything silently in the background (recommended)" = "Tee kaikki hiljaisesti taustalla (suositeltu)";
-"Check for a new version on startup" = "Tarkista uusi versio käynnistyksen yhteydessä";
-"Check for a new version every day (once a day)" = "Tarkista uusi versio päivittäin (kerran päivässä)";
-"Check for a new version every week (once a week)" = "Tarkista uusi versio viikoittain (kerran viikossa)";
-"Check for a new version every month (once a month)" = "Tarkista uusi versio kuukausittain (kerran kuukaudessa)";
-"Never check for updates (not recommended)" = "Älä koskaan tarkista päivityksiä (ei suositeltu)";
 "The configuration is completed" = "Määritys on valmis";
 "finish_setup_message" = "Kaikki on valmista! \n Gaugebar on avoimen lähdekoodin työkalu, se on ilmainen ja tulee aina olemaan.";
 
 // Alerts
-"New version available" = "Uusi versio saatavilla";
-"Click to install the new version of Stats" = "Klikkaa asentaaksesi uuden version Gaugebarista";
-"Successfully updated" = "Päivitys onnistui";
-"Stats was updated to v" = "Gaugebar päivitettiin versioon v%0";
 "Reset settings text" = "Kaikki sovelluksen asetukset nollataan, ja sovellus käynnistetään uudelleen. Haluatko varmasti tehdä tämän?";
  // gemma4:31b-it-qat
-"Support text" = "Kiitos, että käytät Gaugebaria!\n\n Tämän avoimen lähdekoodin projektin ylläpitäminen ja parantaminen vie aikaa ja resursseja. Tukesi auttaa meitä jatkossakin tarjoamaan ilmaisen ja luotettavan sovelluksen kaikille.\n\nJos Gaugebar on mielestäsi hyödyllinen, harkitse lahjoituksen tekemistä. Jokainen pieni osa auttaa!";
 
 // Settings
 "Open Activity Monitor" = "Avaa Aktiviteettimonitori";
-"Report a bug" = "Ilmoita virheestä";
-"Support the application" = "Tue sovellusta";
 "Close application" = "Sulje sovellus";
 "Open application settings" = "Avaa sovelluksen asetukset";
 "Open dashboard" = "Avaa kojelauta";
@@ -150,13 +132,11 @@
 "Close module settings" = "Sulje moduulin asetukset"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Tarkista päivitykset";
 "At start" = "Käynnistyksessä";
 "Once per day" = "Kerran päivässä";
 "Once per week" = "Kerran viikossa";
 "Once per month" = "Kerran kuukaudessa";
 "Never" = "Ei koskaan";
-"Check for update" = "Tarkista päivitys";
 "Show icon in dock" = "Näytä kuvake telakassa";
 "Start at login" = "Käynnistä kirjautumisen yhteydessä";
 "Build number" = "Build-numero";
@@ -187,14 +167,7 @@
 "Display" = "Näyttö"; // translategemma:4b
 
 // Update
-"The latest version of Stats installed" = "Gaugebar on päivitetty viimeisimpään versioon";
-"Downloading..." = "Ladataan...";
-"Installing..." = "Asennetaan..."; // qwen3.8:27b
 "Updating..." = "Päivitetään..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar käynnistyy uudelleen automaattisesti"; // qwen3.8:27b
-"Current version: " = "Nykyinen versio:  ";
-"Latest version: " = "Viimeisin versio:    ";
-"Changelog" = "Muutosloki"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Väri";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celsius";
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Tallenna tuulettimen nopeus";
 "Fan" = "Tuuletin";
 "HID sensors" = "HID-anturit";
-"Synchronize fan's control" = "Synkronoi tuulettimen hallinta";
 "Current" = "Virta";
 "Energy" = "Energia";
 "Show unknown sensors" = "Näytä tuntemattomat anturit";
-"Install fan helper" = "Asenna tuuletinavustaja";
-"Uninstall fan helper" = "Poista tuuletinavustaja";
-"Approve in System Settings ▸ Login Items" = "Hyväksy Järjestelmäasetuksissa ▸ Kirjautumiskohteet"; // gemma4:31b
-"Fan helper needs your approval" = "Tuuletinapuohjelma tarvitsee hyväksyntäsi"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Hallitaksesi tuulettimia, ota Gaugebar käyttöön kohdassa Järjestelmäasetukset ▸ Kirjautumiskohteet."; // gemma4:31b
-"Open Login Items" = "Avaa kirjautumiskohteet"; // gemma4:31b
-"Could not enable the fan helper" = "Tuulettimen apuohjelmaa ei voitu ottaa käyttöön"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Avaa Järjestelmäasetukset ▸ Kirjautumiskohteet, varmista, että Gaugebar on sallittu taustalla, ja yritä sitten uudelleen."; // gemma4:31b
 "Fan value" = "Tuulettimen arvo";
-"Turn off fan" = "Sammuta tuuletin";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Olet sammuttamassa tuuletinta. Tämä ei ole suositeltavaa ja voi vahingoittaa Maciasi. Haluatko varmasti tehdä tämän?";
 "Sensor threshold" = "Anturin raja";
 "Left fan" = "Vasen tuuletin";
 "Right fan" = "Oikea tuuletin";
@@ -455,7 +416,6 @@
 "New IP" = "Uusi IP: %0"; // gemma4:31b
 "Internet connection lost" = "Internet-yhteys katkesi"; // gemma4:31b
 "Internet connection established" = "Internet-yhteys muodostettu"; // translategemma:4b
-"Show country code instead of emoji" = "Näytä maakoodi emojin sijaan"; // gemma4:31b
 "DNS Server" = "DNS-palvelin"; // qwen3.8:27b
 "Noise" = "Melu"; // qwen3.8:27b
 "Signal" = "Signaali"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Valtuutus"; // qwen3.8:27b
-"Identificator" = "Tunniste"; // qwen3.8:27b
-"Plan" = "Suunnitelma"; // qwen3.8:27b
-"Monitoring" = "Seuranta"; // qwen3.8:27b
 "Control" = "Hallinta"; // qwen3.8:27b
-"Update" = "Päivitä"; // qwen3.8:27b
-"Sign in" = "Kirjaudu sisään"; // qwen3.8:27b
-"Sign out" = "Kirjaudu ulos"; // qwen3.8:27b
-"Deregister" = "Poista rekisteröinti"; // qwen3.8:27b
-"Hosts" = "Isäntäkoneet"; // qwen3.8:27b
-"Machines" = "Koneet"; // qwen3.8:27b
-"No hosts yet" = "Ei vielä isäntäkoneita"; // qwen3.8:27b
-"No machines yet" = "Ei vielä koneita"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Saat ilmoituksen, kun laite poistuu verkosta tai ylittää rajan"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Etäohjauksen käyttöönottoa ei suositella, ellei tiedä mitä tekee."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Reaaliaikaiset CPU-, RAM-, levy- ja verkkometriikat"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Seuraa HTTP-, ICMP- ja mukautettuja päätepisteitä"; // qwen3.8:27b
  // qwen3.8:27b

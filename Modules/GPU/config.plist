@@ -74,6 +74,8 @@
 			<dict>
 				<key>Value</key>
 				<string>0.58</string>
+				<key>Core groups</key>
+				<string>1</string>
 				<key>Color</key>
 				<true/>
 			</dict>

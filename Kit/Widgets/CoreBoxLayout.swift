@@ -10,6 +10,7 @@ import Foundation
 public struct CoreBoxLayout {
     public static let boxHeight: CGFloat = 19
     public static let outlineWidth: CGFloat = 1
+    public static let outlineAlpha: CGFloat = 0.18
     public static let separatorSize: CGFloat = 3
     public static let minimumBarWidth: CGFloat = 3
     public static let minimumGap: CGFloat = 1

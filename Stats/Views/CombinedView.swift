@@ -128,8 +128,12 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
     // call when popup appear/disappear
     private func visibilityCallback(_ state: Bool) {}
     
+    // A left click follows the Combined details setting, and a right click does the opposite.
     @objc private func handleClick() {
-        if self.iconOnly || self.combinedModulesPopup {
+        let event = NSApplication.shared.currentEvent
+        let secondaryClick = event?.type == .rightMouseDown || event?.modifierFlags.contains(.control) == true
+        
+        if self.iconOnly || self.combinedModulesPopup != secondaryClick {
             self.togglePopup()
         } else {
             self.openModulePopup()
@@ -142,10 +146,11 @@ internal class CombinedView: NSObject, NSGestureRecognizerDelegate {
         let visibleModules = self.activeModules.filter({ !$0.menuBar.activeWidgets.isEmpty })
         guard let module = visibleModules.last(where: { $0.menuBar.view.frame.minX <= location.x }) ?? visibleModules.first else { return }
         
+        let moduleFrame = module.menuBar.view.convert(module.menuBar.view.bounds, to: nil)
         var userInfo: [String: Any] = [
             "module": module.name,
             "origin": window.frame.origin,
-            "center": window.frame.width/2
+            "center": moduleFrame.midX
         ]
         let widgetLocation = module.menuBar.view.convert(location, from: self.view)
         let widgets = module.menuBar.activeWidgets

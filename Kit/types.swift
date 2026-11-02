@@ -38,7 +38,6 @@ public struct ColorValue: Equatable {
 }
 
 public enum AppUpdateInterval: String {
-    case silent = "Silent"
     case atStart = "At start"
     case separator1 = "separator_1"
     case oncePerDay = "Once per day"
@@ -48,7 +47,6 @@ public enum AppUpdateInterval: String {
     case never = "Never"
 }
 public let AppUpdateIntervals: [KeyValue_t] = [
-    KeyValue_t(key: "Silent", value: AppUpdateInterval.silent.rawValue),
     KeyValue_t(key: "At start", value: AppUpdateInterval.atStart.rawValue),
     KeyValue_t(key: "separator_1", value: "separator_1"),
     KeyValue_t(key: "Once per day", value: AppUpdateInterval.oncePerDay.rawValue),
@@ -296,6 +294,7 @@ public typealias colorZones = (orange: Double, red: Double)
 
 public extension Notification.Name {
     static let toggleSettings = Notification.Name("toggleSettings")
+    static let storeChanged = Notification.Name("storeChanged")
     static let toggleModule = Notification.Name("toggleModule")
     static let togglePopup = Notification.Name("togglePopup")
     static let popupVisibilityChanged = Notification.Name("popupVisibilityChanged")
@@ -465,21 +464,4 @@ public enum RAMPressure: String, Codable {
             self = .normal
         }
     }
-}
-
-public struct TokenResponse: Codable {
-    public let access_token: String
-    public let refresh_token: String
-}
-
-public struct DeviceResponse: Codable {
-    public let device_code: String
-    public let user_code: String
-    public let verification_uri_complete: URL
-    public let interval: Int?
-}
-
-// Kept so module value types keep their upstream shape. Nothing sends these values.
-public protocol RemoteType {
-    func remote() -> Data?
 }

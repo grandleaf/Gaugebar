@@ -239,7 +239,6 @@ internal class SensorsReader: Reader<Sensors_List> {
                 if let idx = sensors.firstIndex(where: { $0.key == "Fastest fan" }) {
                     if var fan = sensors[idx] as? Fan {
                         fan.value = f.value
-                        fan.minSpeed = f.minSpeed
                         fan.maxSpeed = f.maxSpeed
                         sensors[idx] = fan
                     }
@@ -316,7 +315,7 @@ internal class SensorsReader: Reader<Sensors_List> {
         }
         if !fanSensors.isEmpty && fanSensors.count > 1 {
             if let f = fanSensors.max(by: { $0.value < $1.value }) as? Fan {
-                list.append(Fan(id: -1, key: "Fastest fan", name: "Fastest fan", minSpeed: f.minSpeed, maxSpeed: f.maxSpeed, value: f.value, mode: .automatic, isComputed: true))
+                list.append(Fan(id: -1, key: "Fastest fan", name: "Fastest fan", maxSpeed: f.maxSpeed, value: f.value, isComputed: true))
             }
         }
         
@@ -353,7 +352,6 @@ extension SensorsReader {
         var list: [Fan] = []
         for i in 0..<Int(count) {
             var name = SMC.shared.getStringValue("F\(i)ID")
-            var mode: FanMode
             
             if name == nil && count == 2 {
                 switch i {
@@ -365,50 +363,16 @@ extension SensorsReader {
                 }
             }
             
-            if let md = SMC.shared.getValue(SMC.shared.fanModeKey(i)), let parsed = FanMode(rawValue: Int(md)) {
-                mode = parsed.isAutomatic ? .automatic : parsed
-            } else {
-                mode = self.getFanMode(i)
-            }
-            
             list.append(Fan(
                 id: i,
                 key: "F\(i)Ac",
                 name: name ?? "\(localizedString("Fan")) #\(i)",
-                minSpeed: SMC.shared.getValue("F\(i)Mn") ?? 1,
                 maxSpeed: SMC.shared.getValue("F\(i)Mx") ?? 1,
-                value: SMC.shared.getValue("F\(i)Ac") ?? 0,
-                mode: mode
+                value: SMC.shared.getValue("F\(i)Ac") ?? 0
             ))
         }
         
         return list
-    }
-    
-    private func getFanMode(_ id: Int) -> FanMode {
-        #if arch(arm64)
-        // Apple Silicon: Read F%dMd directly
-        // Mode values: 0 = auto, 1 = manual, 3 = system (treated as auto for UI)
-        let modeValue = Int(SMC.shared.getValue(SMC.shared.fanModeKey(id)) ?? 0)
-        return modeValue == 1 ? .forced : .automatic
-        #else
-        // Legacy Intel: Use FS! bitmask
-        // Bitmask: 0 = all auto, 1 = fan 0 forced, 2 = fan 1 forced, 3 = both forced
-        let fansMode: Int = Int(SMC.shared.getValue("FS! ") ?? 0)
-        var mode: FanMode = .automatic
-        
-        if fansMode == 0 {
-            mode = .automatic
-        } else if fansMode == 3 {
-            mode = .forced
-        } else if fansMode == 1 && id == 0 {
-            mode = .forced
-        } else if fansMode == 2 && id == 1 {
-            mode = .forced
-        }
-        
-        return mode
-        #endif
     }
 }
 

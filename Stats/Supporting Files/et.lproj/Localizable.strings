@@ -37,13 +37,11 @@
 "Graphics" = "Graafika";
 "Close" = "Sulge";
 "Download" = "Lae alla";
-"Install" = "Paigalda";
 "Cancel" = "Tühista";
 "Unavailable" = "Pole saadaval";
 "Yes" = "Jah";
 "No" = "Ei";
 "Automatic" = "Automaatne";
-"Manual" = "Käsitsi";
 "None" = "Pole";
 "Dots" = "Täpid";
 "Arrows" = "Nooled";
@@ -59,7 +57,6 @@
 "Right alignment" = "Parempoolne joondus";
 "Dashboard" = "Töölaud";
 "Disabled" = "Keelatud";
-"Silent" = "Vaigista";
 "Units" = "Ühikud";
 "Fans" = "Ventilaatorid";
 "Scaling" = "Skaleerimine";
@@ -73,7 +70,6 @@
 "Settings" = "Seaded";
 "Name" = "Nimi";
 "Format" = "Vorming";
-"Turn off" = "Lülita välja";
 "Normal" = "Normaalne";
 "Warning" = "Hoiatus";
 "Critical" = "Kriitiline";
@@ -88,7 +84,6 @@
 "Save" = "Salvesta";
 "Run" = "Käivita";
 "Stop" = "Peata";
-"Uninstall" = "Desinstalleeri";
 "1 sec" = "1 sekund";
 "2 sec" = "2 sekundit";
 "3 sec" = "3 sekundit";
@@ -118,28 +113,15 @@
 "Extended" = "Laiendatud"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Käivita rakendus automaatselt Maci käivitamisel";
 "Do not start the application automatically when starting your Mac" = "Ära käivita rakendust automaatselt Maci käivitamisel";
-"Do everything silently in the background (recommended)" = "Tee kõike vaikselt taustal (soovitatav)";
-"Check for a new version on startup" = "Kontrollige käivitamisel uut versiooni";
-"Check for a new version every day (once a day)" = "Kontrolli uut versiooni iga päev (üks kord päevas)";
-"Check for a new version every week (once a week)" = "Kontrolli uut versiooni iga nädal (üks kord nädalas)";
-"Check for a new version every month (once a month)" = "Kontrolli uut versiooni iga kuu (üks kord kuus)";
-"Never check for updates (not recommended)" = "Ära kunagi kontrolli värskendusi (pole soovitatav)";
 "The configuration is completed" = "Seadistamine on lõpetatud";
 "finish_setup_message" = "Kõik on paika pandud! \n Gaugebar on avatud lähtekoodiga tööriist, see on tasuta ja jääb alati tasuta.";
 
 // Alerts
-"New version available" = "Uus versioon on saadaval";
-"Click to install the new version of Stats" = "Klõpsa Gaugebari uue versiooni installimiseks";
-"Successfully updated" = "Edukalt värskendatud";
-"Stats was updated to v" = "Gaugebar värskendati versioonile %0";
 "Reset settings text" = "Kõik rakenduse seaded lähtestatakse ja rakendus taaskäivitatakse. Kas olete kindel, et soovite seda teha?";
  // gemma4:31b-it-qat
-"Support text" = "Täname teid Gaugebari kasutamise eest!\n\n Selle avatud lähtekoodiga projekti hooldamine ja täiustamine nõuab aega ja ressursse. Teie toetus aitab meil jätkuvalt pakkuda kõigile tasuta ja usaldusväärset rakendust.\n\nJa kui Gaugebar on teie arvates kasulik, siis palun kaaluge panuse andmist. Iga väike summa aitab!";
 
 // Settings
 "Open Activity Monitor" = "Ava aktiivsusmonitor";
-"Report a bug" = "Teata veast";
-"Support the application" = "Toetage rakendust";
 "Close application" = "Sule rakendus";
 "Open application settings" = "Ava rakenduse seaded";
 "Open dashboard" = "Ava töölaud";
@@ -150,13 +132,11 @@
 "Close module settings" = "Sulge mooduli seaded"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Otsi värskendusi";
 "At start" = "Käivitamisel";
 "Once per day" = "Üks kord päevas";
 "Once per week" = "Kord nädalas";
 "Once per month" = "Kord kuus";
 "Never" = "Mitte kunagi";
-"Check for update" = "Otsi värskendusi";
 "Show icon in dock" = "Kuva ikoon dokis";
 "Start at login" = "Käivita sisselogimisest";
 "Build number" = "Järgunumber";
@@ -187,14 +167,7 @@
 "Display" = "Ekraan";
 
 // Update
-"The latest version of Stats installed" = "Uusim versioon on installitud";
-"Downloading..." = "Allalaadimine...";
-"Installing..." = "Paigaldamine..."; // qwen3.8:27b
 "Updating..." = "Uuendamine..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar taaskäivitub automaatselt"; // qwen3.8:27b
-"Current version: " = "Praegune versioon: ";
-"Latest version: " = "Uusim version: ";
-"Changelog" = "Muudatuste logi"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Värv";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celsiuse"; // gemma4:31b
 "Fahrenheit" = "Fahrenheit";
-"Save the fan speed" = "Salvesta ventilaatori kiirus";
 "Fan" = "Ventilaator";
 "HID sensors" = "HID-andurid";
-"Synchronize fan's control" = "Sünkroniseeri ventilaatori juhtimine";
 "Current" = "Voolutugevus";
 "Energy" = "Energia";
 "Show unknown sensors" = "Näita tundmatuid sensoreid";
-"Install fan helper" = "Installi ventilaatoriabiline";
-"Uninstall fan helper" = "Desinstalli ventilaatoriabiline";
-"Approve in System Settings ▸ Login Items" = "Kinnita Süsteemi seadetes ▸ Sisselogimise üksused"; // gemma4:31b
-"Fan helper needs your approval" = "Ventilaatori abiutill vajab teie heaks kiitmist"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Ventilaatorite juhtimiseks aktiveeri Gaugebar Süsteemi seadetes ▸ Sisselogimise üksused."; // gemma4:31b
-"Open Login Items" = "Ava sisselogimise üksused"; // gemma4:31b
-"Could not enable the fan helper" = "Ei õnnestunud ventilaatori abiutliiti aktiveerida"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Ava Süsteemi seaded ▸ Logimise üksused, veendu, et Gaugebar on lubatud taustal, seejärel proovi uuesti."; // gemma4:31b
 "Fan value" = "Ventilaatori väärtus";
-"Turn off fan" = "Lülita ventilaator välja";
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Te kavatstate lülitada ventilator välja. See ei ole soovitatav tegevus, mis võib kahjustada teie Mac-i. Kas olete kindel, et soovite seda teha?";
 "Sensor threshold" = "Sensori piirväärtus";
 "Left fan" = "Vasak ventilaator";
 "Right fan" = "Parem ventilaator";
@@ -455,7 +416,6 @@
 "New IP" = "Uus IP-aadress: %0";
 "Internet connection lost" = "Internetühendus katkenud";
 "Internet connection established" = "Internetühendus on loodud";
-"Show country code instead of emoji" = "Näita emoji asemel riigikoodi";
 "DNS Server" = "DNS server"; // qwen3.8:27b
 "Noise" = "Müra"; // qwen3.8:27b
 "Signal" = "Signaal"; // qwen3.8:27b
@@ -552,22 +512,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Volitamine"; // qwen3.8:27b
-"Identificator" = "Idendifikaator"; // qwen3.8:27b
-"Plan" = "Plaan"; // qwen3.8:27b
-"Monitoring" = "Jälgimine"; // qwen3.8:27b
 "Control" = "Kontroll"; // qwen3.8:27b
-"Update" = "Uuenda"; // qwen3.8:27b
-"Sign in" = "Logi sisse"; // qwen3.8:27b
-"Sign out" = "Logi välja"; // qwen3.8:27b
-"Deregister" = "Deregistreeri"; // qwen3.8:27b
-"Hosts" = "Hostid"; // qwen3.8:27b
-"Machines" = "Masinad"; // qwen3.8:27b
-"No hosts yet" = "Pole veel hoste"; // qwen3.8:27b
-"No machines yet" = "Masinaid pole veel"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Teavita mind, kui seade on võrgust väljas või ületab piirmäära"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Ei ole soovitatav lubada kaugjuhtimist, kui te ei tea, mida teete."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Reaalajas CPU, RAM, ketta ja võrgu meetrikad"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Jälgi HTTP, ICMP ja kohandatud lõpppunkte"; // qwen3.8:27b
  // qwen3.8:27b

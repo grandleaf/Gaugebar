@@ -57,7 +57,9 @@
 			<key>Preview</key>
 			<dict>
 				<key>Value</key>
-				<string>0.36,0.28,0.32,0.26</string>
+				<string>0.3,0.6,0.45,0.15,0.3,0.1,0.2</string>
+				<key>Core groups</key>
+				<string>1,2,4</string>
 				<key>Color</key>
 				<true/>
 			</dict>

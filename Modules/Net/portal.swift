@@ -45,9 +45,6 @@ public class Portal: PortalWrapper {
     private var publicIPState: Bool {
         Store.shared.bool(key: "\(self.name)_publicIP", defaultValue: false)
     }
-    private var emojiCCState: Bool {
-        Store.shared.bool(key: "\(self.name)_emojiCC", defaultValue: true)
-    }
     
     private var downloadColor: NSColor {
         let v = SColor.fromString(Store.shared.string(key: "\(self.name)_downloadColor", defaultValue: SColor.secondBlue.key))
@@ -172,16 +169,7 @@ public class Portal: PortalWrapper {
             
             if let view = self.publicIPField, view.stringValue != value.raddr.v4 {
                 if let addr = value.raddr.v4 {
-                    var ip = addr
-                    if let cc = value.raddr.countryCode, !cc.isEmpty {
-                        if self.emojiCCState, let flag = countryFlag(cc) {
-                            ip += " \(flag)"
-                        } else {
-                            ip += " (\(cc))"
-                        }
-                        view.toolTip = cc
-                    }
-                    view.stringValue = ip
+                    view.stringValue = addr
                 } else {
                     view.stringValue = localizedString("Unknown")
                 }

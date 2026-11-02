@@ -37,13 +37,11 @@
 "Graphics" = "Grafičke kartice";
 "Close" = "Zatvori";
 "Download" = "Preuzmi";
-"Install" = "Instaliraj";
 "Cancel" = "Odustani";
 "Unavailable" = "Nedostupno";
 "Yes" = "Da";
 "No" = "Ne";
 "Automatic" = "Automatski";
-"Manual" = "Ručno";
 "None" = "Ništa";
 "Dots" = "Točke";
 "Arrows" = "Strelice";
@@ -59,7 +57,6 @@
 "Right alignment" = "Desno";
 "Dashboard" = "Pregledna ploča";
 "Disabled" = "Deaktivirano";
-"Silent" = "Tiho";
 "Units" = "Jedinice";
 "Fans" = "Ventilatori";
 "Scaling" = "Skaliranje"; // translategemma:4b
@@ -73,7 +70,6 @@
 "Settings" = "Postavke"; // translategemma:4b
 "Name" = "Naziv"; // gemma4:31b
 "Format" = "Format";
-"Turn off" = "Isključi"; // gemma4:31b
 "Normal" = "Normalno"; // gemma4:31b
 "Warning" = "Upozorenje"; // translategemma:4b
 "Critical" = "Kritično"; // gemma4:31b
@@ -88,7 +84,6 @@
 "Save" = "Spremi"; // translategemma:4b
 "Run" = "Pokreni"; // gemma4:31b
 "Stop" = "Zaustavi"; // gemma4:31b
-"Uninstall" = "Deinstaliraj"; // translategemma:4b
 "1 sec" = "1 sek"; // gemma4:31b
 "2 sec" = "2 sek"; // gemma4:31b
 "3 sec" = "3 sek"; // gemma4:31b
@@ -118,28 +113,15 @@
 "Extended" = "Prošireno"; // gemma4:31b
 "Start the application automatically when starting your Mac" = "Pokreni program automatski pri pokretanju računala";
 "Do not start the application automatically when starting your Mac" = "Nemoj pokrenuti program automatski pri pokretanju računala";
-"Do everything silently in the background (recommended)" = "Obavi sve tiho u pozadini (preporučuje se)";
-"Check for a new version on startup" = "Traži nove verzije pri pokretanju programa";
-"Check for a new version every day (once a day)" = "Traži nove verzije svaki dan (jednom dnevno)";
-"Check for a new version every week (once a week)" = "Traži nove verzije svaki tjedan (jednom tjedno)";
-"Check for a new version every month (once a month)" = "Traži nove verzije svaki mjesec (jednom mjesečno)";
-"Never check for updates (not recommended)" = "Nikada nemoj tražiti nove verzije (ne preporučuje se)";
 "The configuration is completed" = "Konfiguracija je završena";
 "finish_setup_message" = "Sve je postavljeno! \n Gaugebar je alat otvorenog koda, besplatan je i uvijek će takav biti.";
 
 // Alerts
-"New version available" = "Dostupna je nova verzija";
-"Click to install the new version of Stats" = "Pritisni za instaliranje nove verzije programa Gaugebar";
-"Successfully updated" = "Aktualiziranje je uspjelo";
-"Stats was updated to v" = "Gaugebar je aktualiziran na v%0";
 "Reset settings text" = "Sve postavke programa će se resetirati i program će se ponovo pokrenuti. Stvarno to želiš učiniti?";
  // gemma4:31b-it-qat
-"Support text" = "Hvala vam što koristite Gaugebar!\n\nOdržavanje i poboljšanje ovog projekta otvorenog koda zahtijeva vrijeme i resurse. Vaša nam podrška pomaže da nastavimo pružati besplatnu i pouzdanu aplikaciju za sve.\n\nAko smatrate da je Gaugebar koristan, razmislite o davanju doprinosa. Svako malo pomaže!";
 
 // Settings
 "Open Activity Monitor" = "Otvori program „Praćenje aktivnosti”";
-"Report a bug" = "Prijavi grešku";
-"Support the application" = "Podrži program";
 "Close application" = "Zatvori program";
 "Open application settings" = "Otvori postavke programa";
 "Open dashboard" = "Otvori preglednu ploču";
@@ -150,13 +132,11 @@
 "Close module settings" = "Zatvori postavke modula"; // qwen3.8:27b
 
 // Application settings
-"Check for updates" = "Traži nove verzije";
 "At start" = "Prilikom pokretanja programa";
 "Once per day" = "Jednom dnevno";
 "Once per week" = "Jednom tjedno";
 "Once per month" = "Jednom mjesečno";
 "Never" = "Nikada";
-"Check for update" = "Traži novu verziju";
 "Show icon in dock" = "Prikaži ikonu u programskoj traci";
 "Start at login" = "Pokreni nakon prijave";
 "Build number" = "Broj izgradnje";
@@ -187,14 +167,7 @@
 "Display" = "Zaslon"; // gemma4:31b
 
 // Update
-"The latest version of Stats installed" = "Instalirana je najnovija verzija programa Gaugebar";
-"Downloading..." = "Preuzimanje...";
-"Installing..." = "Instaliranje..."; // qwen3.8:27b
 "Updating..." = "Ažuriranje..."; // qwen3.8:27b
-"Stats will restart automatically" = "Gaugebar će se automatski ponovno pokrenuti"; // qwen3.8:27b
-"Current version: " = "Trenutačna verzija:  ";
-"Latest version: " = "Najnovija verzija:    ";
-"Changelog" = "Izmjene"; // qwen3.8:27b
 
 // Widgets
 "Color" = "Boja";
@@ -390,24 +363,12 @@
 // Sensors
 "Celsius" = "Celzij";
 "Fahrenheit" = "Fahrenheita"; // qwen3.8:27b
-"Save the fan speed" = "Spremi brzinu ventilatora";
 "Fan" = "Ventilator";
 "HID sensors" = "Senzori HID uređaja";
-"Synchronize fan's control" = "Sinkroniziraj upravljanje ventilatora";
 "Current" = "Struja"; // gemma4:31b
 "Energy" = "Energija"; // translategemma:4b
 "Show unknown sensors" = "Prikaži nepoznate senzore"; // gemma4:31b
-"Install fan helper" = "Instaliraj pomoćnik za ventilator"; // gemma4:31b
-"Uninstall fan helper" = "Deinstaliraj pomoćnika za ventilator"; // gemma4:31b
-"Approve in System Settings ▸ Login Items" = "Odobri u Sistemskim postavkama ▸ Stavke pri prijavi"; // gemma4:31b
-"Fan helper needs your approval" = "Pomoćnik za ventilator treba vaše odobrenje"; // gemma4:31b
-"To control the fans, enable Stats in System Settings ▸ Login Items." = "Za upravljanje ventilatorima, omogućite Gaugebar u Sistemskim postavkama ▸ Stavke pri prijavi."; // gemma4:31b
-"Open Login Items" = "Otvori stavke pri prijavi"; // gemma4:31b
-"Could not enable the fan helper" = "Nije bilo moguće omogućiti pomoćni program za ventilator"; // gemma4:31b
-"Open System Settings ▸ Login Items, make sure Stats is allowed in the background, then try again." = "Otvorite Sistemske postavke ▸ Stavke pri prijavi, uvjerite se da je Gaugebar dopušten u pozadini, zatim pokušajte ponovno."; // gemma4:31b
 "Fan value" = "Vrijednost ventilatora"; // gemma4:31b
-"Turn off fan" = "Isključi ventilator"; // gemma4:31b
-"You are going to turn off the fan. This is not recommended action that can damage your mac, are you sure you want to do that?" = "Isključit ćete ventilator. Ovo nije preporučena radnja koja može oštetiti vaš Mac, jeste li sigurni da to želite učiniti?"; // gemma4:31b
 "Sensor threshold" = "Prag senzora"; // gemma4:31b
 "Left fan" = "Lijevo"; // translategemma:4b
 "Right fan" = "Desno"; // gemma4:31b
@@ -455,7 +416,6 @@
 "New IP" = "Nova IP adresa: %0"; // translategemma:4b
 "Internet connection lost" = "Internet veza je prekinuta"; // gemma4:31b
 "Internet connection established" = "Internet veza uspostavljena"; // gemma4:31b
-"Show country code instead of emoji" = "Prikaži kod države umjesto emojija"; // gemma4:31b
 "DNS Server" = "DNS poslužitelj"; // qwen3.8:27b
 "Noise" = "Šum"; // qwen3.8:27b
 "Signal" = "Signal";
@@ -552,22 +512,6 @@
 "Indigo" = "Indigo";
 
 // System Stats
-"Authorization" = "Ovlaštenje"; // qwen3.8:27b
-"Identificator" = "Identifikator"; // qwen3.8:27b
-"Plan" = "Plan";
-"Monitoring" = "Praćenje"; // qwen3.8:27b
 "Control" = "Upravljanje"; // qwen3.8:27b
-"Update" = "Ažuriraj"; // qwen3.8:27b
-"Sign in" = "Prijava"; // qwen3.8:27b
-"Sign out" = "Odjava"; // qwen3.8:27b
-"Deregister" = "Odjaviti"; // qwen3.8:27b
-"Hosts" = "Domaćini"; // qwen3.8:27b
-"Machines" = "Uređaji"; // qwen3.8:27b
-"No hosts yet" = "Još nema hostova"; // qwen3.8:27b
-"No machines yet" = "Još nema uređaja"; // qwen3.8:27b
-"Get notified when a device goes offline or hits a threshold" = "Primite obavijest kada uređaj postane nedostupan ili dostigne prag"; // qwen3.8:27b
-"It is not recommended to enable remote control unless you know what you are doing." = "Ne preporučuje se omogućiti daljinsko upravljanje osim ako ne znate što radite."; // qwen3.8:27b
-"Live CPU, RAM, disk and network metrics" = "Užive metrike CPU, RAM, diska i mreže"; // qwen3.8:27b
  // qwen3.8:27b
-"Monitor HTTP, ICMP and custom endpoints" = "Praćenje HTTP, ICMP i prilagođenih točaka pristupa"; // qwen3.8:27b
  // qwen3.8:27b

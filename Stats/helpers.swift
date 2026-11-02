@@ -36,37 +36,6 @@ extension AppDelegate {
         
     }
     
-    internal func parseVersion() {
-        let key = "version"
-        let currentVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        guard let updateInterval = AppUpdateInterval(rawValue: Store.shared.string(key: "update-interval", defaultValue: AppUpdateInterval.silent.rawValue)) else {
-            return
-        }
-        
-        if !Store.shared.exist(key: key) {
-            debug("Previous version not detected. Current version (\(currentVersion) set")
-        } else {
-            let prevVersion = Store.shared.string(key: key, defaultValue: "")
-            if prevVersion == currentVersion {
-                return
-            }
-            
-            if updateInterval != .silent && isNewestVersion(currentVersion: prevVersion, latestVersion: currentVersion) {
-                let title: String = localizedString("Successfully updated")
-                let subtitle: String = localizedString("Stats was updated to v", currentVersion)
-                
-                let id = showNotification(title: title, subtitle: subtitle, delegate: self)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                    removeNotification(id)
-                }
-            }
-            
-            debug("Detected previous version \(prevVersion). Current version (\(currentVersion) set")
-        }
-        
-        Store.shared.set(key: key, value: currentVersion)
-    }
-    
     internal func defaultValues() {
         if Store.shared.exist(key: "runAtLoginInitialized") {
             LaunchAtLogin.migrate()

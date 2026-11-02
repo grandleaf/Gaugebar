@@ -33,6 +33,60 @@ class CompactSpeedTests: XCTestCase {
     }
 }
 
+class WidgetThumbnailTests: XCTestCase {
+    private let module = "ThumbnailTest"
+    
+    override func tearDown() {
+        Store.shared.remove("\(self.module)_speed_units")
+        Store.shared.remove("\(self.module)_bar_chart_coreTemperature")
+    }
+    
+    private func chart(groups: String, value: String) -> NSDictionary {
+        ["bar_chart": ["Core boxes": true, "Preview": ["Value": value, "Core groups": groups]] as [String: Any]]
+    }
+    
+    func testCoreChartThumbnailUsesTheBoxesAtTheirRealSize() {
+        let widget = widget_t.barChart.new(module: self.module, config: self.chart(groups: "1,2,4", value: "0.3,0.6,0.4,0.1,0.3,0.1,0.2"), defaultWidget: .barChart)
+        XCTAssertEqual(widget?.image.size.height, CoreBoxLayout.boxHeight)
+        let boxes = CoreBoxLayout(groups: [1, 2, 4], barWidth: 9, gap: 0, clusterGap: 11, maxWidth: 300, height: 19, scale: 2).width
+        let temperature = BarChart.coreTemperatureWidth("52°") + BarChart.coreTemperatureGap
+        XCTAssertEqual(Double(widget?.image.size.width ?? 0), Double(boxes + temperature), accuracy: 1)
+    }
+    
+    func testChartThumbnailWithoutCoreGroupsKeepsTheOldLook() {
+        let config: NSDictionary = ["bar_chart": ["Preview": ["Value": "0.5"]]]
+        let widget = widget_t.barChart.new(module: self.module, config: config, defaultWidget: .barChart)
+        XCTAssertEqual(widget?.image.size.width, 36)
+    }
+    
+    func testThumbnailFollowsASavedSettingWhenRefreshed() {
+        let config: NSDictionary = ["bar_chart": ["Core boxes": true, "Preview": ["Value": "0.3,0.6", "Core groups": "1,1"]] as [String: Any]]
+        let widget = widget_t.barChart.new(module: self.module, config: config, defaultWidget: .barChart)
+        let before = widget?.image.size.width ?? 0
+        
+        Store.shared.set(key: "\(self.module)_bar_chart_coreTemperature", value: false)
+        widget?.refreshImage()
+        
+        XCTAssertLessThan(widget?.image.size.width ?? 0, before)
+    }
+    
+    func testSpeedThumbnailIsAsWideAsTheWidget() {
+        let config: NSDictionary = ["speed": [:] as [String: Any]]
+        let widget = widget_t.speed.new(module: self.module, config: config, defaultWidget: .speed)
+        XCTAssertEqual(widget?.image.size.width, 46)
+        
+        Store.shared.set(key: "\(self.module)_speed_units", value: false)
+        widget?.refreshImage()
+        XCTAssertEqual(widget?.image.size.width, 39)
+    }
+    
+    func testStoreAnnouncesChanges() {
+        let changed = expectation(forNotification: .storeChanged, object: nil)
+        Store.shared.set(key: "\(self.module)_speed_units", value: true)
+        wait(for: [changed], timeout: 1)
+    }
+}
+
 class MiniGaugeTests: XCTestCase {
     private func render(value: Double, scale: CGFloat) -> NSBitmapImageRep {
         let gauge = MiniGauge(title: "GaugeRenderTest", config: nil)
@@ -273,8 +327,8 @@ class CoreBoxLayoutTests: XCTestCase {
             let y = rep.pixelsHigh / 2
             let alpha: (Int) -> CGFloat = { rep.colorAt(x: $0, y: y)?.alphaComponent ?? 0 }
             let stroke = Int(scale)
-            XCTAssertEqual(alpha(0), 0.8, accuracy: 0.02, "outline at \(scale)x")
-            XCTAssertEqual(alpha(stroke - 1), 0.8, accuracy: 0.02, "outline at \(scale)x")
+            XCTAssertEqual(alpha(0), CoreBoxLayout.outlineAlpha, accuracy: 0.02, "outline at \(scale)x")
+            XCTAssertEqual(alpha(stroke - 1), CoreBoxLayout.outlineAlpha, accuracy: 0.02, "outline at \(scale)x")
             XCTAssertEqual(alpha(stroke), 0, accuracy: 0.02, "inside the box at \(scale)x")
         }
     }
@@ -331,8 +385,8 @@ class CoreBoxLayoutTests: XCTestCase {
             let width = BarChart.coreTemperatureWidth("49°")
             let boxStart = Int((width + BarChart.coreTemperatureGap) * scale)
             
-            XCTAssertEqual(plain.colorAt(x: 0, y: y)!.alphaComponent, 0.8, accuracy: 0.02, "boxes start at the edge without it")
-            XCTAssertEqual(shown.colorAt(x: boxStart, y: y)!.alphaComponent, 0.8, accuracy: 0.02, "boxes move right at \(scale)x")
+            XCTAssertEqual(plain.colorAt(x: 0, y: y)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "boxes start at the edge without it")
+            XCTAssertEqual(shown.colorAt(x: boxStart, y: y)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "boxes move right at \(scale)x")
             XCTAssertEqual(shown.colorAt(x: boxStart - 1, y: y)!.alphaComponent, 0, accuracy: 0.02, "gap before the boxes at \(scale)x")
             
             let ink = (0..<Int(width * scale)).flatMap { x in
@@ -364,7 +418,7 @@ class CoreBoxLayoutTests: XCTestCase {
     func testSingleBoxIsOutlinedWithAnEmptyTop() {
         let rep = render(scale: 2, appearance: .aqua, values: [[ColorValue(0.5, color: .blue)]], groups: [1])
         let x = 9
-        XCTAssertEqual(rep.colorAt(x: x, y: 0)!.alphaComponent, 0.8, accuracy: 0.02, "outline")
+        XCTAssertEqual(rep.colorAt(x: x, y: 0)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "outline")
         XCTAssertEqual(rep.colorAt(x: x, y: 8)!.alphaComponent, 0, accuracy: 0.02, "empty above the fill")
         XCTAssertGreaterThan(rep.colorAt(x: x, y: rep.pixelsHigh - 8)!.usingColorSpace(.deviceRGB)!.blueComponent, 0.9, "fill")
     }
