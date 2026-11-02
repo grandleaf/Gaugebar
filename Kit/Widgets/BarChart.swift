@@ -347,6 +347,13 @@ public class BarChart: WidgetWrapper {
         let outlineColor = lineColor.withAlphaComponent(CoreBoxLayout.outlineAlpha)
         let pixel = 1 / max(scale, 1)
         let line = CoreBoxLayout.outlineWidth
+        let radius = layout.outlineRadius
+        let outlines = layout.outlines.map { $0.offsetBy(dx: origin, dy: 0) }
+        
+        NSGraphicsContext.saveGraphicsState()
+        let fillArea = NSBezierPath()
+        outlines.forEach { fillArea.appendRoundedRect($0.insetBy(dx: line, dy: line), xRadius: max(radius - line, 0), yRadius: max(radius - line, 0)) }
+        fillArea.addClip()
         
         for (i, box) in layout.boxes.enumerated() {
             let frame = box.offsetBy(dx: origin, dy: 0)
@@ -362,12 +369,12 @@ public class BarChart: WidgetWrapper {
                 NSRect(x: inner.minX, y: y, width: inner.width, height: height).fill()
                 y += height
             }
-            
         }
+        NSGraphicsContext.restoreGraphicsState()
         
         let outline = NSBezierPath()
         outline.lineWidth = line
-        layout.outlines.forEach { outline.appendRect($0.offsetBy(dx: origin, dy: 0).insetBy(dx: line/2, dy: line/2)) }
+        outlines.forEach { outline.appendRoundedRect($0.insetBy(dx: line/2, dy: line/2), xRadius: max(radius - line/2, 0), yRadius: max(radius - line/2, 0)) }
         outlineColor.setStroke()
         outline.stroke()
         

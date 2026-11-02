@@ -10,6 +10,7 @@ import Foundation
 public struct CoreBoxLayout {
     public static let boxHeight: CGFloat = 19
     public static let outlineWidth: CGFloat = 1
+    public static let cornerRadius: CGFloat = 3
     public static let outlineAlpha: CGFloat = 0.42
     public static let dividerAlpha: CGFloat = 0.18
     public static let separatorSize: CGFloat = 3
@@ -20,6 +21,8 @@ public struct CoreBoxLayout {
     public let boxes: [CGRect]
     /// Rectangles to outline: one per box, or one per cluster when boxes share outlines.
     public let outlines: [CGRect]
+    /// Only outlines around a whole cluster are rounded, never those of single boxes.
+    public let outlineRadius: CGFloat
     /// The edges shared by neighbouring boxes.
     public let dividers: [CGRect]
     /// Dots between clusters, where the gap has room for one.
@@ -39,6 +42,7 @@ public struct CoreBoxLayout {
         guard count > 0 else {
             self.boxes = []
             self.outlines = []
+            self.outlineRadius = 0
             self.dividers = []
             self.separators = []
             self.width = 0
@@ -124,6 +128,7 @@ public struct CoreBoxLayout {
 
         self.boxes = rects
         self.outlines = outlines
+        self.outlineRadius = sharesOutlines ? Self.cornerRadius : 0
         self.dividers = dividers
         self.separators = separators
         self.width = x - space + overlap

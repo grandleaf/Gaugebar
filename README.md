@@ -36,7 +36,7 @@ The **Cluster** color keeps cluster coloring, using a darker shade for system lo
 The GPU bar chart uses the same outlined box, without the per-core settings.
 
 ### Gauge widget
-The GPU module has a **Gauge** widget that shows the usage number on top of a pale level, so you can read the value and see the level in one place. It fills from the bottom inside a faint outline, at the same height as the CPU boxes.
+The GPU module has a **Gauge** widget that shows the usage number on top of a pale level, so you can read the value and see the level in one place. It fills from left to right inside a faint, slightly rounded outline, at the same height as the CPU boxes.
 
 ### Runs alongside Stats
 Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it shares no settings or history with an installed Stats.

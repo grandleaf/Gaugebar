@@ -110,8 +110,9 @@ class MiniGaugeTests: XCTestCase {
     private func render(value: Double, scale: CGFloat) -> NSBitmapImageRep {
         let gauge = MiniGauge(title: "GaugeRenderTest", config: nil)
         gauge.renderScale = scale
-        gauge.setFrameSize(NSSize(width: 30, height: CoreBoxLayout.boxHeight))
+        gauge.setTitle("GPU")
         gauge._value = value
+        gauge.setFrameSize(NSSize(width: gauge.meterWidth, height: CoreBoxLayout.boxHeight))
         
         let size = gauge.frame.size
         let rep = NSBitmapImageRep(
@@ -137,6 +138,11 @@ class MiniGaugeTests: XCTestCase {
         return rep
     }
     
+    // Just inside the bottom outline, below the text.
+    private func clearRow(_ rep: NSBitmapImageRep, scale: CGFloat) -> Int {
+        rep.pixelsHigh - 1 - Int(CoreBoxLayout.outlineWidth * scale)
+    }
+    
     func testUsesItsOwnWidgetTypeAndTheCoreBoxHeight() {
         let gauge = MiniGauge(title: "GaugeRenderTest", config: nil)
         XCTAssertEqual(gauge.type, .gauge)
@@ -144,23 +150,51 @@ class MiniGaugeTests: XCTestCase {
         XCTAssertEqual(Mini(title: "GaugeRenderTest", config: nil).type, .mini)
     }
     
-    func testFillsFromTheBottomBehindAFaintOutline() {
+    func testFillsFromTheLeftBehindAFaintOutline() {
         for scale: CGFloat in [1, 2] {
             let rep = render(value: 0.5, scale: scale)
+            let y = clearRow(rep, scale: scale)
+            let width = rep.pixelsWide
             let alpha: (Int, Int) -> CGFloat = { rep.colorAt(x: $0, y: $1)?.alphaComponent ?? 0 }
-            let x = Int(scale)
             
             XCTAssertEqual(alpha(0, rep.pixelsHigh / 2), CoreBoxLayout.outlineAlpha, accuracy: 0.02, "outline at \(scale)x")
-            XCTAssertEqual(alpha(x, rep.pixelsHigh - Int(3 * scale)), 0.3, accuracy: 0.03, "fill at the bottom at \(scale)x")
-            XCTAssertEqual(alpha(x, Int(3 * scale)), 0, accuracy: 0.02, "empty at the top at \(scale)x")
+            XCTAssertEqual(alpha(width * 2 / 5, y), 0.3, accuracy: 0.03, "fill on the left at \(scale)x")
+            XCTAssertEqual(alpha(width * 3 / 5, y), 0, accuracy: 0.02, "empty on the right at \(scale)x")
         }
     }
     
     func testZeroHasNoFillAndFullFillsTheBox() {
         let empty = render(value: 0, scale: 2)
-        XCTAssertEqual(empty.colorAt(x: 2, y: empty.pixelsHigh - 6)!.alphaComponent, 0, accuracy: 0.02)
+        let row = clearRow(empty, scale: 2)
+        XCTAssertEqual(empty.colorAt(x: empty.pixelsWide / 2, y: row)!.alphaComponent, 0, accuracy: 0.02)
         let full = render(value: 1, scale: 2)
-        XCTAssertEqual(full.colorAt(x: 2, y: 6)!.alphaComponent, 0.3, accuracy: 0.03)
+        XCTAssertEqual(full.colorAt(x: full.pixelsWide - 4, y: full.pixelsHigh / 2)!.alphaComponent, 0.3, accuracy: 0.03)
+    }
+    
+    func testCornersAreRounded() {
+        for scale: CGFloat in [1, 2] {
+            let rep = render(value: 1, scale: scale)
+            let corners = [(0, 0), (rep.pixelsWide - 1, 0), (0, rep.pixelsHigh - 1), (rep.pixelsWide - 1, rep.pixelsHigh - 1)]
+            for (x, y) in corners {
+                XCTAssertLessThan(rep.colorAt(x: x, y: y)!.alphaComponent, CoreBoxLayout.outlineAlpha / 2, "corner at \(scale)x")
+            }
+        }
+    }
+    
+    func testTextKeepsAMarginInsideTheOutline() {
+        let scale: CGFloat = 2
+        let rep = render(value: 0, scale: scale)
+        let outline = Int(CoreBoxLayout.outlineWidth * scale)
+        // Clear of the rounded corners, where the outline curves into these rows.
+        let side = Int(4 * scale)
+        let columns = side..<(rep.pixelsWide - side)
+        let inked = (outline..<(rep.pixelsHigh - outline)).filter { y in
+            columns.contains { rep.colorAt(x: $0, y: y)!.alphaComponent > 0.1 }
+        }
+        
+        let margin = Int(scale)
+        XCTAssertGreaterThanOrEqual(inked.first! - outline, margin, "above the label")
+        XCTAssertGreaterThanOrEqual((rep.pixelsHigh - outline - 1) - inked.last!, margin, "below the value")
     }
     
     func testTemperatureStaysOffWithoutSupportAndPushesTheBoxWhenSet() {
@@ -187,7 +221,7 @@ class MiniGaugeTests: XCTestCase {
     
     func testVerySmallValuesStillShowOnePixel() {
         let rep = render(value: 0.001, scale: 2)
-        XCTAssertEqual(rep.colorAt(x: 2, y: rep.pixelsHigh - 3)!.alphaComponent, 0.3, accuracy: 0.03)
+        XCTAssertEqual(rep.colorAt(x: 2, y: rep.pixelsHigh / 2)!.alphaComponent, 0.3, accuracy: 0.03)
     }
 }
 
@@ -337,6 +371,30 @@ class CoreBoxLayoutTests: XCTestCase {
         }
         NSGraphicsContext.restoreGraphicsState()
         return rep
+    }
+    
+    func testOnlyClusterOutlinesAreRounded() {
+        XCTAssertEqual(layout([1, 4]).outlineRadius, CoreBoxLayout.cornerRadius)
+        XCTAssertEqual(layout([1, 4], gap: 2).outlineRadius, 0)
+    }
+    
+    func testClusterCornersAreRoundedAndTheFillStaysInside() {
+        let groups = [2, 4]
+        let values = (0..<6).map { _ in [ColorValue(1, color: .blue)] }
+        for scale: CGFloat in [1, 2] {
+            let rep = render(scale: scale, appearance: .aqua, values: values, groups: groups)
+            let outlines = CoreBoxLayout(groups: groups, barWidth: 9, gap: 0, clusterGap: 11, maxWidth: 300, height: CoreBoxLayout.boxHeight, scale: scale).outlines
+            XCTAssertEqual(outlines.count, groups.count)
+            
+            for outline in outlines {
+                let left = Int(outline.minX * scale)
+                let right = Int(outline.maxX * scale) - 1
+                for (x, y) in [(left, 0), (right, 0), (left, rep.pixelsHigh - 1), (right, rep.pixelsHigh - 1)] {
+                    XCTAssertLessThan(rep.colorAt(x: x, y: y)!.alphaComponent, 0.1, "corner at \(scale)x")
+                }
+                XCTAssertEqual(rep.colorAt(x: left, y: rep.pixelsHigh / 2)!.alphaComponent, CoreBoxLayout.outlineAlpha, accuracy: 0.02, "side at \(scale)x")
+            }
+        }
     }
     
     func testCoreBoxesAreTallerOnlyWhileShown() {

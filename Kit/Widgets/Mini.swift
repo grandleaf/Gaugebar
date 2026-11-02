@@ -12,7 +12,7 @@
 import Cocoa
 
 public class Mini: WidgetWrapper {
-    private var labelState: Bool = true
+    internal var labelState: Bool = true
     private var colorState: SColor = .monochrome
     private var alignmentState: String = "left"
     
@@ -35,6 +35,9 @@ public class Mini: WidgetWrapper {
     internal var defaultAlignment: String { "left" }
     /// Space a subclass draws on the left of the text.
     internal var leadingWidth: CGFloat { 0 }
+    internal var valueSize: CGFloat { self.labelState ? 12 : 14 }
+    internal var valueBaseline: CGFloat { self.labelState ? 1 : (Constants.Widget.height - self.valueSize) / 2 }
+    internal var labelBaseline: CGFloat { 12 }
     
     internal var meterWidth: CGFloat {
         let (value, label, suffix) = self.queue.sync { (self._value, self._label, self._suffix) }
@@ -118,8 +121,8 @@ public class Mini: WidgetWrapper {
         let text = self.valueText(value, suffix: suffix)
         let contentWidth = self.contentWidth(text: text, label: label)
         let width = contentWidth + (self.sidePadding*2)
-        let valueSize: CGFloat = self.labelState ? 12 : 14
-        var origin: CGPoint = CGPoint(x: Constants.Widget.margin.x + self.sidePadding, y: (Constants.Widget.height-valueSize)/2)
+        let valueSize = self.valueSize
+        let origin = CGPoint(x: Constants.Widget.margin.x + self.sidePadding, y: self.valueBaseline)
         let style = NSMutableParagraphStyle()
         style.alignment = self.labelState ? self.alignment : .center
         
@@ -132,11 +135,9 @@ public class Mini: WidgetWrapper {
                 NSAttributedString.Key.foregroundColor: isDarkMode ? NSColor.white : NSColor.textColor,
                 NSAttributedString.Key.paragraphStyle: style
             ]
-            let rect = CGRect(x: origin.x, y: 12, width: contentWidth - (Constants.Widget.margin.x*2), height: 7)
+            let rect = CGRect(x: origin.x, y: self.labelBaseline, width: contentWidth - (Constants.Widget.margin.x*2), height: 7)
             let str = NSAttributedString.init(string: label, attributes: stringAttributes)
             str.draw(with: rect)
-            
-            origin.y = 1
         }
         
         var color: NSColor = .controlAccentColor

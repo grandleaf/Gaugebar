@@ -2,7 +2,7 @@
 //  Gauge.swift
 //  Kit
 //
-//  The mini widget's text on top of a level that fills from the bottom.
+//  The mini widget's text on top of a level that fills from the left.
 //
 
 import Cocoa
@@ -11,6 +11,7 @@ public class MiniGauge: Mini {
     internal var renderScale: CGFloat? = nil
     
     private static let fillAlpha: CGFloat = 0.3
+    private static let cornerRadius: CGFloat = 4
     
     private var temperatureSupported: Bool = false
     private var temperatureState: Bool = true
@@ -20,6 +21,10 @@ public class MiniGauge: Mini {
     
     override internal var sidePadding: CGFloat { 2 }
     override internal var defaultAlignment: String { "center" }
+    // Sized to leave a margin between the text and the outline.
+    override internal var valueSize: CGFloat { self.labelState ? 11 : 14 }
+    override internal var valueBaseline: CGFloat { self.labelState ? 2.5 : 4.5 }
+    override internal var labelBaseline: CGFloat { 11.5 }
     override internal var leadingWidth: CGFloat {
         self.queue.sync { self._temperature }.map { MeterTemperature.width($0) } ?? 0
     }
@@ -68,24 +73,27 @@ public class MiniGauge: Mini {
         // The frame catches up after this draw, so size the box from its contents.
         let box = NSRect(x: origin, y: 0, width: self.meterWidth, height: self.frame.height)
         let inner = box.insetBy(dx: line, dy: line)
+        let radius = Self.cornerRadius
         
         let pixel = 1 / self.scale
-        var height = (inner.height * CGFloat(min(max(value, 0), 1)) / pixel).rounded() * pixel
+        var width = (inner.width * CGFloat(min(max(value, 0), 1)) / pixel).rounded() * pixel
         if value > 0 {
-            height = max(height, pixel)
+            width = max(width, pixel)
         }
+        NSGraphicsContext.saveGraphicsState()
+        NSBezierPath(roundedRect: inner, xRadius: radius - line, yRadius: radius - line).addClip()
         NSColor.controlAccentColor.withAlphaComponent(Self.fillAlpha).setFill()
-        NSBezierPath(rect: NSRect(x: inner.minX, y: inner.minY, width: inner.width, height: height)).fill()
+        NSBezierPath(rect: NSRect(x: inner.minX, y: inner.minY, width: width, height: inner.height)).fill()
+        NSGraphicsContext.restoreGraphicsState()
         
         (dark ? NSColor.white : NSColor.black).withAlphaComponent(CoreBoxLayout.outlineAlpha).setStroke()
-        let outline = NSBezierPath(rect: box.insetBy(dx: line/2, dy: line/2))
+        let outline = NSBezierPath(roundedRect: box.insetBy(dx: line/2, dy: line/2), xRadius: radius - line/2, yRadius: radius - line/2)
         outline.lineWidth = line
         outline.stroke()
         
-        // The text is laid out for the shorter mini frame, so keep it where that frame would put it.
         NSGraphicsContext.saveGraphicsState()
         let shift = NSAffineTransform()
-        shift.translateX(by: origin, yBy: Constants.Widget.margin.y - self.frame.origin.y)
+        shift.translateX(by: origin, yBy: 0)
         shift.concat()
         super.draw(dirtyRect)
         NSGraphicsContext.restoreGraphicsState()
