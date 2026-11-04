@@ -1,21 +1,41 @@
 # Gaugebar
 
-A macOS system monitor for your menu bar, with a per-core CPU meter you can read at a glance.
+A macOS system monitor for your menu bar, with a per-core CPU meter and a GPU gauge you can read at a glance.
 
-Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrovtsiy. It keeps the full monitor: CPU, GPU, memory, disk, network, battery, sensors, Bluetooth and clocks.
+Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrovtsiy. It keeps the full monitor: CPU, GPU, memory, disk, network, battery, sensors, Bluetooth and clocks. The meters take their look from [MenuMeters](https://github.com/yujitach/MenuMeters).
 
-![Gaugebar per-core meter](docs/core-boxes.png)
+<p align="center">
+  <img src="docs/menu-bar.png" alt="Gaugebar in the menu bar, with numbered callouts for each item">
+</p>
 
-## What changed from Stats
+| | What it shows |
+|---|---|
+| **1** | CPU temperature, to one decimal |
+| **2** | Total CPU usage |
+| **3** | Efficiency cores, one box per core |
+| **4** | Performance cores, one box per core |
+| **5** | GPU temperature, the average of the GPU's own sensors |
+| **6** | GPU usage. The box is the gauge: it fills from left to right behind the number |
+| **7** | Memory used, with a pie of app, wired and compressed memory |
+| **8** | Space used on the startup disk |
+| **9** | Disk read (**R**) and write (**W**) speed |
+| **10** | Network upload (red dot) and download (blue dot) speed |
 
-### Per-core meter
-Each core gets its own outlined box, so every core stays identifiable even at 0%. An extra box on the far left shows total CPU usage, with the CPU temperature and a dot beside it. The Gauge widget for GPU shows the GPU temperature the same way.
+All screenshots are real captures from a MacBook Pro with an M3 Max, which has 4 efficiency cores and 12 performance cores.
 
-- Boxes are 19 points tall and fill from the bottom, with system load under user load.
-- Efficiency cores come first, then performance cores, with a larger gap between clusters.
-- The outline follows the menu bar's appearance, so it matches the menu bar text.
-- Neighbouring boxes in a cluster share one faint line, and a dot marks the gap between clusters.
-- On Macs with many cores, boxes shrink to fit the maximum width, down to 3 points wide.
+## CPU: one box per core
+
+<p align="center">
+  <img src="docs/cpu-meter.png" width="524" alt="The CPU meter with its temperature, total box, efficiency cores and performance cores labelled">
+</p>
+
+Every core gets its own outlined box, so each one stays identifiable even at 0%.
+
+- **Core groups:** efficiency cores come first, then performance cores, the same order macOS numbers them in. Each group sits in one rounded outline, and a small dot separates the groups.
+- **Total:** the narrow box on the left shows usage across all cores.
+- **System and user:** each box fills from the bottom, red for system load under blue for user load.
+- **Temperature:** the CPU temperature sits on the left, followed by a dot that ties it to the meter. It uses the unit from the **Temperature** app setting, and hides if the Mac reports no CPU temperature.
+- **Fits any Mac:** on Macs with many cores, boxes shrink to fit the maximum width, down to 3 points wide.
 
 The CPU bar chart with per-core usage is the default widget. Open the settings for that widget to change:
 
@@ -23,20 +43,46 @@ The CPU bar chart with per-core usage is the default widget. Open the settings f
 |---|---|
 | Separate core boxes | On |
 | Stack system and user | On. Turn it off to use the widget's **Color** option instead |
-| Temperature | On. Uses the unit from the **Temperature** app setting, and hides if the Mac reports no CPU temperature |
+| Temperature | On |
 | Box width | 9 pt |
-| Box gap | 0 pt. Above zero, boxes stand apart with their own outlines |
+| Box gap | 0 pt. Above zero, boxes stand apart with their own square outlines |
 | Cluster gap | 11 pt, added to the box gap |
 | Maximum width | 300 pt |
 
-The defaults take about 141 points for 16 cores.
+The boxes are 19 points tall, and the defaults take about 141 points for 16 cores. The **Cluster** color keeps cluster coloring, using a darker shade for system load.
 
-The **Cluster** color keeps cluster coloring, using a darker shade for system load.
+## GPU: the box is the gauge
 
-The GPU bar chart uses the same outlined box, without the per-core settings.
+<p align="center">
+  <img src="docs/gpu-gauge.png" width="668" alt="The GPU gauge at idle, busy and full load, each with the GPU temperature on its left">
+</p>
 
-### Gauge widget
-The GPU module has a **Gauge** widget that shows the usage number on top of a pale level, so you can read the value and see the level in one place. It fills from left to right inside a faint, slightly rounded outline, at the same height as the CPU boxes.
+The **Gauge** widget shows the GPU usage number on top of a pale level, so you can read the value and see the level in one place. The level fills from left to right inside a rounded outline, at the same height as the CPU boxes.
+
+The GPU temperature sits on its left with a dot, just like the CPU temperature. It's the average of the GPU's own temperature sensors, 8 of them on an M3 Max. Turn it off with the **Temperature** switch in the Gauge widget's settings.
+
+The GPU bar chart widget uses the same outlined box as the CPU meter, without the per-core settings.
+
+## Panels
+
+<table>
+  <tr>
+    <td align="center" valign="top"><img src="docs/panel-module.png" width="280" alt="The CPU panel"><br><b>Left click</b>: just the module you clicked</td>
+    <td align="center" valign="top"><img src="docs/panel-all.png" width="280" alt="The panel with all modules, sensors and the Open Activity Monitor button"><br><b>Right click</b>: every module in one panel</td>
+  </tr>
+</table>
+
+With **Combined modules** on, all meters share one menu bar item with even gaps between them.
+
+- **Left click** opens only the module you clicked, right below it.
+- **Right click** opens the whole panel, with Sensors last and an **Open Activity Monitor** button at the bottom.
+- **Resize:** drag the grip at the bottom of the whole panel to give Sensors more room. The height is remembered, and the panel always fits the screen it opens on.
+- Turn **Combined details** on to swap the two clicks.
+
+## Other changes from Stats
+
+### Short speed labels
+The Network and Disk speed widgets show `B`, `KB` and `MB` without `/s` to save menu bar space. Panels keep `KB/s`.
 
 ### Runs alongside Stats
 Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it shares no settings or history with an installed Stats.
@@ -48,20 +94,12 @@ Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it sh
 - **Public IP:** off by default. If you turn it on, Gaugebar asks `api.ipify.org`, and the country flag is no longer shown.
 - **Network connectivity check:** unchanged from Stats. While the Network module is on, it pings `1.1.1.1`. You can change the host or switch to an HTTP check of `google.com` in the Network settings.
 
-### Short speed labels
-The Network and Disk speed widgets show `B`, `KB` and `MB` without `/s` to save menu bar space. Popups keep `KB/s`.
-
-### Combined modules
-With **Combined modules** on and **Combined details** off, a left click opens only the module you clicked, right below it, and a right click opens the whole panel. Turn **Combined details** on to swap them.
-
-Drag the grip at the bottom of the whole panel to give the Sensors section more room. The height is remembered, and the panel always fits the screen it opens on.
-
 ### No privileged helper
 `SMCHelper` and manual fan control are removed, so Gaugebar never asks for an administrator password. It only reads from the SMC and contains no code that writes to it, and `make test-smc` fails if that ever changes. macOS manages the fans as usual, and sensor readings and fan speeds still work.
 
 ## Build
 
-You need macOS 12 or newer, Xcode, and an Apple Development signing identity.
+There's no downloadable release yet, so you build Gaugebar yourself. You need macOS 12 or newer, Xcode, and an Apple Development signing identity.
 
 1. Create your local signing config:
 
