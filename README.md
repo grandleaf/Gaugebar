@@ -23,6 +23,18 @@ Gaugebar is a fork of [Stats](https://github.com/exelban/stats) by Serhiy Mytrov
 
 All screenshots are real captures from a MacBook Pro with an M3 Max, which has 4 efficiency cores and 12 performance cores.
 
+## Download
+
+Get **Gaugebar-1.0.0.zip** from the [latest release](https://github.com/grandleaf/Gaugebar/releases/latest). It needs macOS 12 or later and runs natively on Apple silicon and Intel Macs.
+
+1. Unzip it and move **Gaugebar.app** to your Applications folder.
+2. Open Gaugebar. macOS says it can't verify the app, because this build isn't notarized by Apple. Click **Done**.
+3. Open **System Settings → Privacy & Security**, scroll down, and click **Open Anyway** next to the message about Gaugebar. Confirm, then click **Open**.
+
+You only need to do this once. On macOS 14 or earlier, you can instead Control-click the app, choose **Open**, and click **Open** again.
+
+Gaugebar doesn't update itself. To hear about new versions, choose **Watch → Custom → Releases** on this repository.
+
 ## CPU: one box per core
 
 <p align="center">
@@ -99,7 +111,7 @@ Gaugebar has its own name, icon, bundle IDs, app group and data folder, so it sh
 
 ## Build
 
-There's no downloadable release yet, so you build Gaugebar yourself. You need macOS 12 or newer, Xcode, and an Apple Development signing identity.
+To build Gaugebar yourself, you need macOS 12 or newer, Xcode, and an Apple Development signing identity.
 
 1. Create your local signing config:
 
