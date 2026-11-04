@@ -140,6 +140,8 @@ The project, targets and folders still use the name `Stats`, and the Xcode schem
 
 ## Following Stats
 
+Gaugebar has its own version numbers. Version 1.0.0 is based on Stats 3.0.23.
+
 Gaugebar tracks [Stats](https://github.com/exelban/stats), so check it now and then for fixes and features worth bringing over. Its [releases page](https://github.com/exelban/stats/releases) has the change notes.
 
 This shows what Stats has changed since Gaugebar last merged it:
