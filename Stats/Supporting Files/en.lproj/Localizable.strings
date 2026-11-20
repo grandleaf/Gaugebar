@@ -210,6 +210,8 @@
 "Custom..." = "Custom...";
 "Icon widget" = "Icon widget";
 "Animate icon" = "Animate icon";
+"Fill blades by fan speed" = "Fill blades by fan speed";
+"All blades filled at" = "All blades filled at";
 
 // Module Kit
 "Open module settings" = "Open module settings";

@@ -256,6 +256,8 @@ public struct Fan: Sensor_p, Codable {
     public var name: String
     public var maxSpeed: Double
     public var value: Double
+    /// The slowest the fan runs while spinning. Optional so saved sensor lists without it still decode.
+    public var minSpeed: Double? = nil
     
     public var percentage: Int {
         if self.value != 0 && self.maxSpeed != 0 && self.value != 1 && self.maxSpeed != 1 {

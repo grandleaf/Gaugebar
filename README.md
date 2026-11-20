@@ -75,6 +75,21 @@ The GPU temperature sits on its left with a dot, just like the CPU temperature. 
 
 The GPU bar chart widget uses the same outlined box as the CPU meter, without the per-core settings.
 
+## Fans: the icon shows how hard they work
+
+The Sensors module's **Icon** widget turns its fan symbol into a fan meter. The fastest fan decides what it shows.
+
+- **All four blades outlined:** the fans are off, which is normal on Apple silicon while the Mac is cool.
+- **More blades filled as the fans speed up:** one blade fills when the fans start, and more fill as they approach the full point. Two filled blades sit opposite each other, so the fan stays balanced while it spins.
+- **All four filled:** the fans are at or above the full point, 60% of their maximum by default. macOS rarely runs the fans near their maximum. On an M3 Max at 100% CPU, both fans ran at about 64%.
+- **Spinning:** the fan turns while the fans run, faster as they speed up, and stops when they stop. It also stays still when **Reduce motion** is on in the system's accessibility settings.
+
+| Setting | Default |
+|---|---|
+| Fill blades by fan speed | On |
+| All blades filled at | 60% of max speed |
+| Animate icon | On |
+
 ## Panels
 
 <table>

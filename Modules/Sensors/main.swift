@@ -138,7 +138,8 @@ public class Sensors: Module {
                 }
                 widget.setValue(flatList)
             case let widget as IconWidget:
-                widget.setValue(value.sensors.contains(where: { $0 is Fan && !$0.isComputed && $0.value > 0 }))
+                let fans = value.sensors.compactMap { $0 as? Fan }.filter { !$0.isComputed }
+                widget.setFans(fans.map { FanSpeed(rpm: $0.value, min: $0.minSpeed ?? 0, max: $0.maxSpeed) })
             default: break
             }
         }

@@ -368,7 +368,8 @@ extension SensorsReader {
                 key: "F\(i)Ac",
                 name: name ?? "\(localizedString("Fan")) #\(i)",
                 maxSpeed: SMC.shared.getValue("F\(i)Mx") ?? 1,
-                value: SMC.shared.getValue("F\(i)Ac") ?? 0
+                value: SMC.shared.getValue("F\(i)Ac") ?? 0,
+                minSpeed: SMC.shared.getValue("F\(i)Mn")
             ))
         }
         

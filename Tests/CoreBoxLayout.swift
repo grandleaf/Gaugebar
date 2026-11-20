@@ -87,6 +87,97 @@ class WidgetThumbnailTests: XCTestCase {
     }
 }
 
+class FanIconTests: XCTestCase {
+    // Measured on an M3 Max: the left fan runs from 1,350 to 5,349 rpm.
+    private func fan(_ rpm: Double) -> FanSpeed { FanSpeed(rpm: rpm, min: 1350, max: 5349) }
+    
+    func testStoppedFanFillsNoBlades() {
+        XCTAssertEqual(fan(0).blades(fullAt: 0.7), 0)
+        XCTAssertEqual(fan(60).blades(fullAt: 0.7), 0, "winding down")
+    }
+    
+    func testBladesFillFromTheSlowestSpeedUpToTheFullPoint() {
+        // Full at 70% of 5,349 is 3,744.3 rpm, so steps fall at about 2,148 and 2,946 rpm.
+        XCTAssertEqual(fan(1350).blades(fullAt: 0.7), 1)
+        XCTAssertEqual(fan(2100).blades(fullAt: 0.7), 1)
+        XCTAssertEqual(fan(2200).blades(fullAt: 0.7), 2)
+        XCTAssertEqual(fan(3450).blades(fullAt: 0.7), 3, "heavy load measured at 3,450 rpm")
+        XCTAssertEqual(fan(3740).blades(fullAt: 0.7), 3)
+        XCTAssertEqual(fan(3745).blades(fullAt: 0.7), 4)
+        XCTAssertEqual(fan(5349).blades(fullAt: 0.7), 4)
+        XCTAssertEqual(fan(3745).blades(fullAt: 1), 2, "a higher full point needs more speed")
+    }
+    
+    func testFullCPULoadFillsEveryBladeAtTheDefault() {
+        // Both fans measured at about 64% of their maximum with the CPU 100% busy.
+        XCTAssertEqual(fan(3452).blades(fullAt: 0.6), 4)
+        XCTAssertEqual(FanSpeed(rpm: 3729, min: 1458, max: 5777).blades(fullAt: 0.6), 4)
+    }
+    
+    func testMissingLimitsStillShowASpinningFan() {
+        XCTAssertEqual(FanSpeed(rpm: 2000, min: 0, max: 0).blades(fullAt: 0.7), 4)
+        XCTAssertEqual(FanSpeed(rpm: 2000, min: 0, max: 5000).blades(fullAt: 0.7), 2)
+    }
+    
+    private func render(filled: Int) -> NSBitmapImageRep {
+        let configuration = NSImage.SymbolConfiguration(pointSize: 14, weight: .regular)
+        let view = FanBladesView(frame: NSRect(x: 0, y: 0, width: 20, height: 20), configuration: configuration)
+        view.filled = filled
+        let scale: CGFloat = 4
+        let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 80, pixelsHigh: 80, bitsPerSample: 8, samplesPerPixel: 4,
+                                   hasAlpha: true, isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0)!
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
+        NSGraphicsContext.current?.cgContext.scaleBy(x: scale, y: scale)
+        NSAppearance(named: .aqua)!.performAsCurrentDrawingAppearance {
+            view.draw(view.bounds)
+        }
+        NSGraphicsContext.restoreGraphicsState()
+        return rep
+    }
+    
+    // Ink inside each blade, measured at its middle: top right, bottom right, bottom left, top left.
+    private func bladeInk(_ rep: NSBitmapImageRep) -> [CGFloat] {
+        let c = CGFloat(rep.pixelsWide) / 2, r = c * 0.55
+        return [45, -45, -135, 135].map { (degrees: CGFloat) in
+            let t = degrees * .pi / 180
+            // Bitmap rows run downward.
+            return rep.colorAt(x: Int(c + cos(t) * r), y: Int(c - sin(t) * r))!.alphaComponent
+        }
+    }
+    
+    func testHubLooksTheSameWhateverIsFilled() {
+        let one = render(filled: 1), full = render(filled: 4)
+        let c = one.pixelsWide / 2, r = Int(Double(one.pixelsWide) * 0.12)
+        var worst: CGFloat = 0
+        for y in (c - r)...(c + r) {
+            for x in (c - r)...(c + r) where (x - c) * (x - c) + (y - c) * (y - c) <= r * r {
+                worst = max(worst, abs(one.colorAt(x: x, y: y)!.alphaComponent - full.colorAt(x: x, y: y)!.alphaComponent))
+            }
+        }
+        XCTAssertLessThan(worst, 0.05)
+    }
+    
+    func testTwoFilledBladesSitOpposite() {
+        // Order of the samples: top right, bottom right, bottom left, top left.
+        XCTAssertEqual(bladeInk(render(filled: 0)).map { $0 > 0.5 }, [false, false, false, false])
+        XCTAssertEqual(bladeInk(render(filled: 1)).map { $0 > 0.5 }, [true, false, false, false])
+        XCTAssertEqual(bladeInk(render(filled: 2)).map { $0 > 0.5 }, [true, false, true, false])
+        XCTAssertEqual(bladeInk(render(filled: 3)).map { $0 > 0.5 }, [true, true, true, false])
+        XCTAssertEqual(bladeInk(render(filled: 4)).map { $0 > 0.5 }, [true, true, true, true])
+    }
+}
+
+class ShippedDefaultsTests: XCTestCase {
+    // 1.0.0 shipped without this file because two project entries shared an ID.
+    func testTheAppBundlesItsDefaultSettings() throws {
+        let url = try XCTUnwrap(Bundle.main.url(forResource: "DefaultSettings", withExtension: "plist"))
+        let defaults = try XCTUnwrap(NSDictionary(contentsOf: url))
+        XCTAssertEqual(defaults["setupProcess"] as? Bool, true)
+        XCTAssertGreaterThan(defaults.count, 10)
+    }
+}
+
 class PopupResizeTests: XCTestCase {
     func testKeepsTheWantedHeightWhenItFits() {
         XCTAssertEqual(PopupResize.extraHeight(wanted: 200, content: 830, available: 1600), 200)
