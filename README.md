@@ -25,7 +25,7 @@ All screenshots are real captures from a MacBook Pro with an M3 Max, which has 4
 
 ## Download
 
-Get **Gaugebar-1.0.0.zip** from the [latest release](https://github.com/grandleaf/Gaugebar/releases/latest). It needs macOS 12 or later and runs natively on Apple silicon and Intel Macs.
+Get **Gaugebar-1.0.1.zip** from the [latest release](https://github.com/grandleaf/Gaugebar/releases/latest). It needs macOS 12 or later and runs natively on Apple silicon and Intel Macs.
 
 1. Unzip it and move **Gaugebar.app** to your Applications folder.
 2. Open Gaugebar. macOS says it can't verify the app, because this build isn't notarized by Apple. Click **Done**.
@@ -157,7 +157,7 @@ To make your current settings the defaults, run this and rebuild:
 make save-defaults
 ```
 
-Window positions, login state and individual sensor choices stay out of the file because they belong to one Mac.
+Window positions, the panel height, login state and individual sensor choices stay out of the file because they belong to one Mac.
 
 Run the tests with `make test`.
 
@@ -167,7 +167,7 @@ The project, targets and folders still use the name `Stats`, and the Xcode schem
 
 ## Following Stats
 
-Gaugebar has its own version numbers. Version 1.0.0 is based on Stats 3.0.23.
+Gaugebar has its own version numbers. Versions 1.0.0 and 1.0.1 are based on Stats 3.0.23.
 
 Gaugebar tracks [Stats](https://github.com/exelban/stats), so check it now and then for fixes and features worth bringing over. Its [releases page](https://github.com/exelban/stats/releases) has the change notes.
 

@@ -12,7 +12,7 @@ DOMAIN = "io.github.grandleaf.Gaugebar"
 TARGET = Path(__file__).resolve().parents[2] / "Stats/Supporting Files/DefaultSettings.plist"
 
 SKIP_PREFIXES = ("NS", "sensor_", "LaunchAtLogin")
-SKIP_KEYS = {"pause", "runAtLoginInitialized"}
+SKIP_KEYS = {"pause", "runAtLoginInitialized", "CombinedModules_popup_sensorsHeight"}
 
 
 def main():

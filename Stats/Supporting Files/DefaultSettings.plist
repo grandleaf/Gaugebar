@@ -155,21 +155,21 @@
 	<key>SSD_mini_alignment</key>
 	<string>center</string>
 	<key>Sensors_barChart_position</key>
-	<integer>3</integer>
-	<key>Sensors_icon_position</key>
 	<integer>4</integer>
+	<key>Sensors_icon_position</key>
+	<integer>0</integer>
 	<key>Sensors_label_position</key>
-	<integer>1</integer>
-	<key>Sensors_mini_position</key>
 	<integer>2</integer>
+	<key>Sensors_mini_position</key>
+	<integer>3</integer>
 	<key>Sensors_sensors_mode</key>
 	<string>automatic</string>
 	<key>Sensors_stack_position</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>Sensors_state</key>
 	<true/>
 	<key>Sensors_widget</key>
-	<string></string>
+	<string>icon</string>
 	<key>keep_menubar_positions</key>
 	<false/>
 	<key>setupProcess</key>
